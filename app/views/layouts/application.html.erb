@@ -11,6 +11,15 @@
 <%= render 'layouts/header' %>
 
 <div class="container">
+
+  <!-- Display flash messages -->
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, class: "alert alert-info alert-dismissable") do %>
+      <%= msg %>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <% end %>
+  <% end %>
+
   <%= yield %>
   <%= render 'layouts/footer' %>
 </div>
