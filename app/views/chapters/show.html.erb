@@ -7,7 +7,7 @@
   <div class="col-md-9">
 
     <div class="center">
-      <iframe width="560" height="315" src="//www.youtube.com/embed/z1rYmzQ8C9Q" frameborder="0" allowfullscreen></iframe>
+      <iframe class="tscplayer_inline embeddedObject" name="tsc_player" scrolling="no" frameborder="0" type="text/html" style="overflow:hidden;" src="http://www.screencast.com/users/SusieYe/folders/Camtasia/media/3564bf66-3b8a-47d9-b838-42b12b87444b/embed" height="525" width="840" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 
     <h3><%= @chapter.title %></h3>
@@ -41,7 +41,9 @@
       </div>
     </div>
 
-    <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-    <%= link_to 'Back', chapters_path %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+      <%= link_to 'Back', chapters_path %>
+    <% end %>
   </div>
 </div>
