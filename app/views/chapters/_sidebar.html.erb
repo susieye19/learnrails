@@ -1,0 +1,14 @@
+<div class="sidebar">
+  <% sections = chapters.to_a.map { |c| c.section }.uniq %>
+  <% sections.each do |section| %>
+    <h4><%= "#{section}" %></h4>
+
+    <% subchapters = chapters.select { |c| c.section == section } %>
+    <% subchapters.each do |subchapter| %>
+      <h5><%= link_to "-#{subchapter.title}", chapter_path(subchapter.id) %></h5>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+<%= link_to 'New Chapter', new_chapter_path %>

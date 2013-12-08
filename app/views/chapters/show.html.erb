@@ -1,0 +1,47 @@
+<div class="row">
+
+  <div class="col-md-3">
+    <%= render partial: "sidebar", locals: {chapters: @chapters} %>
+  </div>
+
+  <div class="col-md-9">
+
+    <div class="center">
+      <iframe width="560" height="315" src="//www.youtube.com/embed/z1rYmzQ8C9Q" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <h3><%= @chapter.title %></h3>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <%= link_to "Notes", "#notes", :'data-toggle' => "tab" %>
+          </li>
+          <li><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
+          <li><%= link_to "Comments", "#comments", :'data-toggle' => "tab" %></li>
+        </ul>
+
+        <br>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="notes">
+            <%= @chapter.notes.try(:html_safe) %>
+          </div>
+          <div class="tab-pane fade" id="transcript">
+            <%= @chapter.transcript.try(:html_safe) %>
+          </div>
+          <div class="tab-pane fade" id="comments">
+            Comments here
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+    <%= link_to 'Back', chapters_path %>
+  </div>
+</div>
