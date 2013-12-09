@@ -10,6 +10,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise'
+gem 'pg'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :doc do
   gem 'sdoc', require: false
@@ -26,5 +31,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gem 'sqlite3'
