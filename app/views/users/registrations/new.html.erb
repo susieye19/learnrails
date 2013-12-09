@@ -1,0 +1,58 @@
+<% content_for :head do %>
+  <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Sign up</h2>
+  </div>
+
+  <div class="panel-body">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, :autofocus => true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+
+      <legend>Payment Details</legend>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-lg-6">
+            <%= label_tag :card_number, "Credit Card Number" %>
+            <%= text_field_tag :card_number, nil,
+                { :name => nil, :'data-stripe' => "number",
+                  maxlength: "16", autocompletetype: "cc-number",
+                  class: "form-control card-number" } %>
+          </div>
+          <div class="col-lg-3">
+            <%= label_tag :card_code, "CVC" %>
+            <%= text_field_tag :card_code, nil,
+                { :name => nil, :'data-stripe' => "cvc",
+                  maxlength: "4", autocomplete: "off",
+                  autocompletetype: "cc-csc",
+                  class: "form-control card-cvc" } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Sign up", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="panel-footer">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
