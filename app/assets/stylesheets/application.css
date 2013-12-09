@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+  .jumbotron {
+  	background-image: url('chalk.jpg');
+  	background-size: cover;
+  	background-position: top center;
+  	background-repeat: no-repeat;
+  	height: 450px;
+  }
+
+  .jumbotron .container {
+ 	width: 500px;
+ 	float: left;
+ 	margin: 70px 80px;
+  }
+
+  .jumbotron .container h2 {
+  	color: white;
+  }
+
+  .jumbotron .container h3 {
+  	color: white;
+  }
