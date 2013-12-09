@@ -6,6 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.delete_all
+Chapter.delete_all
+
 User.create!( email:    "admin@example.com",
               password: "!X0bi1e1",
               admin:    true)
+
+Chapter.create!(  section: "Bootstrap",
+                  title: "Installing Bootstrap")
+Chapter.create!(  section: "Bootstrap",
+                  title: "Setting Up Bootstrap")
+Chapter.create!(  section: "Adding Users",
+                  title: "Installing Devise")
