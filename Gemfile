@@ -13,6 +13,7 @@ gem 'devise'
 gem 'pg'
 gem 'figaro'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'jquery-turbolinks'
 
 group :production do
   gem 'rails_12factor'

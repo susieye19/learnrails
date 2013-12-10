@@ -1,5 +1,7 @@
-<% content_for :head do %>
-  <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
+<% if false %>
+  <% content_for :head do %>
+    <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
+  <% end %>
 <% end %>
 
 <div class="panel panel-default">
@@ -8,8 +10,14 @@
   </div>
 
   <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: "payment_form" }) do |f| %>
       <%= devise_error_messages! %>
+
+      <div id="stripe_error" class="alert alert-danger" style="display:none">
+        <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+      </div>
+
+      <%= f.hidden_field :stripe_card_token %>
 
       <div class="form-group">
         <%= f.label :email %>
@@ -19,32 +27,47 @@
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control" %>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
-      </div>
 
-      <legend>Payment Details</legend>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-lg-6">
-            <%= label_tag :card_number, "Credit Card Number" %>
-            <%= text_field_tag :card_number, nil,
-                { :name => nil, :'data-stripe' => "number",
-                  maxlength: "16", autocompletetype: "cc-number",
-                  class: "form-control card-number" } %>
+      <% if @user.stripe_card_token %>
+        <p>Credit card has already been provided.</p>
+      <% else %>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-6">
+              <%= label_tag :card_number, "Credit Card Number" %>
+              <%= text_field_tag :card_number, nil,
+                  { :name => nil, :'data-stripe' => "number", maxlength: "16",
+                    autocompletetype: "cc-number", class: "form-control card-number" } %>
+            </div>
+            <div class="col-lg-3">
+              <%= label_tag :card_code, "CVC" %>
+              <%= text_field_tag :card_code, nil,
+                  { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
+                    autocomplete: "off", autocompletetype: "cc-csc",
+                    class: "form-control card-cvc" } %>
+            </div>
           </div>
-          <div class="col-lg-3">
-            <%= label_tag :card_code, "CVC" %>
-            <%= text_field_tag :card_code, nil,
-                { :name => nil, :'data-stripe' => "cvc",
-                  maxlength: "4", autocomplete: "off",
-                  autocompletetype: "cc-csc",
-                  class: "form-control card-cvc" } %>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <%= select_month nil,
+                  {use_two_digit_numbers: true}, { :name => nil, :id => "card_month",
+                    :'data-stripe' => "exp-month", :class => "form-control" } %>
+            </div>
+            <div class="col-lg-3">
+              <%= select_year nil,
+                  {start_year: Date.today.year, end_year: Date.today.year+15},
+                  { :name => nil, :id => "card_year", :'data-stripe' => "exp-year",
+                    :class => "form-control" } %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
 
       <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary" %>
