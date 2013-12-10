@@ -2,7 +2,7 @@ body {
   background-color: #fff;
   color: #333;
   font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
-  font-weight: 500;  
+  font-weight: 500;
   font-size: 20px;
   line-height: 29px;
 }
@@ -83,7 +83,7 @@ div {
 }
 
 .jumbotron {
-  background-image: url('chalk2.jpg');
+  background-image: url('https://s3.amazonaws.com/learnrails/images/chalk2.jpg');
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;

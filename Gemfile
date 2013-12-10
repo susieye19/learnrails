@@ -14,6 +14,7 @@ gem 'pg'
 gem 'figaro'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'jquery-turbolinks'
+gem 'aws-sdk', '~> 1.0'
 
 group :production do
   gem 'rails_12factor'
