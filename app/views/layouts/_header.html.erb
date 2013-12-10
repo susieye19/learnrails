@@ -26,8 +26,10 @@
 <% if (controller_name == 'pages') && (action_name == 'home') %>
   <div class="jumbotron">
     <div class="container">
-      <h2>Got an idea? Build it.<h2>
-      <h3>We provide the most streamlined and effective course for learning to build web applications. </h3>
+      <div class="center">
+        <h2>Got an idea? Build it.<h2>
+        <h3>Learn to code web applications from scratch. </h3>
+      </div><br><br>
       <div class="center">
         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-success" %>
       </div>

@@ -2,3 +2,116 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*
+.method {
+	background-image: url('cloth_alike.png');
+	height: 375px;
+}
+
+.method .col-md-4 .well-sm {
+	font-size: 20px;
+	line-height: 29px;
+	background-color: #bfbfbf;
+	border: none;
+	margin-top: 50px;
+	margin-bottom: 0px;
+	height: 260px;
+	border-radius: 15px;
+}
+
+.method .col-md-4 .well-sm h3 {
+	color: #474747;
+	padding-bottom: 10px;
+}
+
+.method .col-md-4 .well-sm p {
+	color: #5b5b5b;
+}
+
+*/
+
+.has-padding {
+	padding-left: 1rem;
+	padding-right: 1rem;
+} 
+
+.max-width {
+	max-width: 960px;
+	margin: auto;
+	position: relative;
+}
+
+.summary {
+	padding-top: 6rem;
+	padding-bottom: 1rem;
+	background-image: url('cloth_alike.png');
+}
+
+.summary header {
+	width: 42%;
+	padding-right: 5rem;
+	float: left;
+}
+
+.summary header h1 {
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.summary .course-takeaways {
+	width: 58%;
+	float: left;
+}
+
+.course-takeaway {
+	position: relative;
+	margin-bottom: 7rem;
+}
+
+.course-takeaway>p {
+	margin: 0 0 0 120px;
+	padding-left: 1.25rem;
+	vertical-align: baseline;
+	font-size: 25px;
+	color: #5b5b5b;
+}
+
+.course-takeaway> .a {
+	height: 100px;
+	width: 100px;
+	margin-top: -50px;
+	position: absolute;
+	top: 50%;
+	overflow: hidden;
+}
+
+.course-takeaway>.a img {
+	left: 0;
+}
+.course-takeaway>.b {
+	height: 100px;
+	width: 100px;
+	margin-top: -50px;
+	position: absolute;
+	top: 50%;
+	overflow: hidden;
+}
+
+.course-takeaway>.b img {
+	left: -100px;
+	height: 100px;
+}
+
+.course-takeaway>.c {
+	height: 100px;
+	width: 100px;
+	margin-top: -50px;
+	position: absolute;
+	top: 50%;
+	overflow: hidden;
+}
+
+.course-takeaway>.c img {
+	left: -200px;
+}
+
