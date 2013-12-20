@@ -16,6 +16,7 @@
       <% if user_signed_in? %>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
     </ul>
@@ -28,10 +29,11 @@
     <div class="container">
       <div class="center">
         <h2>Got an idea? Build it.<h2>
-        <h3>Learn to code web applications from scratch. </h3>
+        <h3>Learn to code web applications from scratch.<br>
+        </h3>
       </div><br><br>
       <div class="center">
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-success" %>
+        <%= link_to "Enroll today for $99", new_user_registration_path, class: "btn btn-lg btn-success" %>
       </div>
     </div>
   </div>

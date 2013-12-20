@@ -12,4 +12,54 @@
 
 .navbar {
 	margin-bottom: 0;
+	border: none;
+	border-radius: 0px;
+}
+
+.navbar-default {
+	background-color: black;
+	border: none;
+	border-radius: 0px;
+}
+
+.navbar-default .navbar-brand {
+	color: #e5e5e5;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #e5e5e5;
+}
+
+.jumbotron {
+  background-image: url('https://s3.amazonaws.com/learnrails/images/chalk2.jpg');
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+  height: 500px;
+  margin-bottom: 0px;
+}
+
+.jumbotron .container {
+  width: 550px;
+  float: left;
+  margin: 70px 50px;
+}
+
+.jumbotron .container h2 {
+  color: white;
+  font-size: 50px;
+}
+
+.jumbotron .container h3 {
+  color: white;
+  line-height: 3rem;
+}
+
+.panel-default > .panel-heading {
+	border: none;
+}
+
+.panel-heading {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
 }
