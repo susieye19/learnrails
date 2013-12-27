@@ -16,18 +16,25 @@
 
 <body class="<%= controller_name %> <%= action_name %>">
 
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, class: "alert alert-info alert-dismissable center") do %>
+      <%= msg %>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <% end %>
+  <% end %>
+
   <%= render 'layouts/header' %>
 
 
 <!-- <div class="container"> -->
 
     <!-- Display flash messages -->
-    <% flash.each do |name, msg| %>
+<!--     <% flash.each do |name, msg| %>
       <%= content_tag(:div, class: "alert alert-info alert-dismissable") do %>
         <%= msg %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <% end %>
-    <% end %>
+    <% end %> -->
 
   <%= yield %>
   <%= render 'layouts/footer' %>

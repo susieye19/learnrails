@@ -1,10 +1,10 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: #5e5e5e;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 29px;
+  font-size: 15px;
+  line-height: 1.49;
 }
 
 p, ol, ul, td, {
@@ -17,6 +17,7 @@ h2, h3 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
+  color: #5e5e5e;
 }
 
 h1 {
@@ -40,7 +41,7 @@ div {
   color: green;
 }
 
-.field_with_errors {
+/*.field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
@@ -64,6 +65,47 @@ div {
     font-weight: bold;
     padding: 0px 0px 0px 15px;
   //   padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.sessions .new .main-container  {
+  margin-top: 50px;
+} */
+
+
+.field_with_errors .form-control {
+  padding: 2px;
+  border: 1px solid #b94a48;
+  }
+
+.field_with_errors label{
+  color: #b94a48;
+}
+
+
+#error_explanation {
+  .alert {
+    padding: 0px;
+  }
+  width: 410px;
+  border: none;
+  padding: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0px;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 0px 0px 0px 15px;
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;

@@ -152,15 +152,17 @@
 
 .syllabus .section-header h1 {
 	color: #e5e5e5;
+	margin-bottom: 5rem;
 }
 .syllabus-details {
 	margin-bottom: 4rem;
 }
 
 .syllabus-details h3 {
-	color: #e5e5e5;
-	padding-bottom: 2rem;
-	padding-top: 4rem;
+	color: #cecece;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	font-size: 20px;
 }
 
 .syllabus .center h1 {
@@ -194,12 +196,15 @@
 	background-color: none;
 	padding-left: 20px;
 	text-decoration: none;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .aboutus {
 	/*background-color: #edeff0;*/
-	background-image: url('brushed.png');
+	/*background-image: url('brushed.png');*/
+	background-color: #DCDCDC;
+	padding-top: 5rem;
+	padding-bottom: 9rem;
 }
 
 .aboutus .long {
@@ -221,11 +226,6 @@
 .aboutus .big {
 	padding-left: 30px;
 	padding-right: 20px;
-}
-
-.aboutus {
-	padding-top: 5rem;
-	padding-bottom: 9rem;
 }
 
 .aboutus h1 {
