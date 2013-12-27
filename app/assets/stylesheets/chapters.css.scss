@@ -1,3 +1,55 @@
-// Place all the styles related to the Chapters controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.show .sidebar {
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.show .sidebar a {
+	color: #5e5e5e;
+}
+
+.show .sidebar a:hover {
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.show .sidebar h4 {
+	padding-top: 10px;
+}
+
+.show .btn-primary {
+	margin-left: 20px;
+}
+
+.show .nav-tabs > li > a {
+	color: #5e5e5e;
+}
+
+.index .sidebar {
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.index .sidebar a {
+	color: #5e5e5e;
+}
+
+.index .sidebar a:hover {
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.index .sidebar h4 {
+	padding-top: 10px;
+}
+
+.index .btn-primary {
+	margin-left: 20px;
+}
+
+.index .nav-tabs > li > a {
+	color: #5e5e5e;
+}
+
+.index .col-md-9 h3 {
+	margin-top: 70px;
+}

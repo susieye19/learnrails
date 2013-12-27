@@ -33,6 +33,8 @@
 .has-padding {
 	padding-left: 1rem;
 	padding-right: 1rem;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 } 
 
 .max-width {
@@ -56,6 +58,7 @@
 .summary header h1 {
 	font-size: 4rem;
 	font-weight: 600;
+	color: #3f3f3f;
 }
 
 .summary .course-takeaways {
@@ -113,5 +116,168 @@
 
 .course-takeaway>.c img {
 	left: -200px;
+}
+
+.etsy .max-width {
+	max-width: 1200px;
+}
+
+.etsy .has-padding {
+	padding-top: 35px;
+}
+
+.etsy .section-header {
+	padding-bottom: 6rem;
+}
+
+.etsy .col-md-4 p {
+	color: #888;
+}
+
+.etsy .col-md-4 h3 {
+	color: #5b5b5b;
+	font-weight: 600;
+}
+.etsy .section-header h1 {
+	color: #3f3f3f;
+}
+
+.etsy img {
+	margin-bottom: 2rem;
+}
+
+.syllabus {
+	background-image: url('dark_fish.png');
+}
+
+.syllabus .section-header h1 {
+	color: #e5e5e5;
+	margin-bottom: 5rem;
+}
+.syllabus-details {
+	margin-bottom: 4rem;
+}
+
+.syllabus-details h3 {
+	color: #cecece;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	font-size: 20px;
+}
+
+.syllabus .center h1 {
+	margin-top: 0px;
+	padding-top: 30px;
+}
+
+.syllabus .panel-default > .panel-heading {
+	background-image: url('dark_fish.png');
+	background-color: gray;
+	color: #e5e5e5;
+	border-bottom: solid 1px #e5e5e5;
+}
+
+.syllabus .panel {
+	background-color: whitesmoke;
+}
+
+.syllabus .panel-group .panel-default {
+	border-radius: 0px;
+	border: none;
+}
+
+.syllabus .panel-title a {
+	display: block;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.syllabus .panel-title a:hover {
+	background-color: none;
+	padding-left: 20px;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.aboutus {
+	/*background-color: #edeff0;*/
+	/*background-image: url('brushed.png');*/
+	background-color: #DCDCDC;
+	padding-top: 5rem;
+	padding-bottom: 9rem;
+}
+
+.aboutus .long {
+	background-color: white;
+	margin: 10px 47px;
+	padding-top: 10px;
+	border-radius: 10px;
+}
+
+.aboutus .thumbnail {
+	background-color: white;
+}
+
+.aboutus .name{
+	border: none;
+	padding-top: 3rem;;
+}
+
+.aboutus .big {
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.aboutus h1 {
+	padding-bottom: 4rem;
+	color: #3f3f3f;
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.aboutus h2 {
+	font-weight: 600;
+	color: #484848;
+}
+
+.aboutus h3 {
+	color: #7b7b7b;
+	font-weight: 400;
+}
+
+.aboutus p {
+	color: #7b7b7b;
+	font-weight: 300;
+	font-size: 19px;
+}
+
+.contact {
+	background-color: #2e2e2e;
+	padding-top: 3rem;
+	padding-bottom: 4rem;
+}
+
+.contact .well-sm {
+	background-color: #2e2e2e;
+	border: none;
+}
+
+.contact .pull-right {
+	text-align: right;
+}
+
+.contact .pull-right a{
+	color: #cecece;
+}
+
+.contact h3, p, a {
+	color: #cecece;
+	font-weight: 400;
+}
+
+.contact .btn-lg {
+	padding-right: 4px;
+	padding-left: 35px;
+	padding-top: 0px;
 }
 
