@@ -28,6 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:stripe_card_token)
+    devise_parameter_sanitizer.for(:sign_up) << :stripe_card_token
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:account_update) << :name
   end
 end
