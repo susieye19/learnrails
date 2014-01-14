@@ -10,8 +10,10 @@
   border-radius: 5px;
 }
 
+.sidebar h4
+
 .navbar {
-	margin-bottom: 0;
+	margin-bottom: 0px;
 	border: none;
 	border-radius: 0px;
 }
@@ -21,6 +23,7 @@
 	border: none;
 	border-radius: 0px;
   padding: 10px 45px;
+  margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -35,6 +38,7 @@
 
 .navbar-default .navbar-nav > li > a {
 	color: #e5e5e5;
+  font-size: 20px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -58,12 +62,13 @@
 
 .jumbotron .container h2 {
   color: white;
-  font-size: 50px;
+  font-size: 45px;
 }
 
 .jumbotron .container h3 {
   color: white;
   line-height: 3rem;
+  font-weight: 400;
 }
 
 .jumbotron .btn-lg {
