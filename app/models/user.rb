@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   before_create :save_new_user
 
   def save_new_user
-    return if email.include?('@example.com') and not Rails.env.production?
+    return if email == 'alex@baserails.com'
 
     # Remember to change this to your live secret key in production
     Stripe.api_key = ENV["STRIPE_API_KEY"]
@@ -20,10 +20,9 @@ class User < ActiveRecord::Base
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
-        :amount => 20000,
+        :amount => 9900,
         :currency => "usd",
         :card => token,
-        :description => "payinguser@example.com"
       )
       # flash[:success] = "Thanks for ordering!"
     rescue Stripe::CardError => e

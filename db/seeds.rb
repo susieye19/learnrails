@@ -10,7 +10,7 @@ User.delete_all
 Chapter.delete_all
 
 User.create!( name:     "Alex Yang",
-              email:    "admin@example.com",
+              email:    "alex@baserails.com",
               password: "!X0bi1e1",
               admin:    true)
 
