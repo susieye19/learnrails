@@ -100,11 +100,13 @@
 
 .etsy .col-md-4 p {
 	color: #888;
+	font-size: 18px;
 }
 
 .etsy .col-md-4 h3 {
 	color: #5b5b5b;
-	font-weight: 600;
+	font-weight: 500;
+	font-size: 25px;
 }
 .etsy .section-header h1 {
 	color: #3f3f3f;
@@ -120,18 +122,25 @@
 
 .syllabus .section-header h1 {
 	color: #e5e5e5;
-	margin-bottom: 5rem;
-}
-.syllabus-details {
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
 }
 
-.syllabus-details h3 {
-	color: #cecece;
+.syllabus .section-header h3 {
+	color: #e5e5e5;
+	font-weight: 200;
+	margin-bottom: 7rem;
+}
+
+.syllabus-details {
+	margin-bottom: 7rem;
+}
+
+/*.syllabus-details h3 {
+	color: #e5e5e5;
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 	font-size: 20px;
-}
+}*/
 
 .syllabus .center h1 {
 	margin-top: 0px;
@@ -154,23 +163,60 @@
 	border: none;
 }
 
+.syllabus .panel-title {
+	font-size: 20px;
+}
+
 .syllabus .panel-title a {
 	display: block;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: 400;
 }
 
 .syllabus .panel-title a:hover {
 	background-color: none;
-	padding-left: 20px;
+	padding-left: 30px;
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: 400;
 }
 
+.value .section-header {
+	margin-bottom: 7rem;
+}
+
+.value .thumbnail {
+	border: none;
+	margin-bottom: 3rem;
+}
+
+.value .col-md-4 h4 {
+	margin-top: 2rem;
+	font-weight: 400;
+}
+
+.quote {
+	background-color: black;
+	padding-bottom: 4rem;
+}
+
+.quote h1 {
+	color: #cecece;
+	font-size: 35px;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+.quote h2 {
+	color: #cecece;
+	font-size: 20px;
+	font-weight: 300;
+	text-align: right;
+	padding-right: 20px;
+}
 .aboutus {
-	/*background-color: #edeff0;*/
-	/*background-image: url('brushed.png');*/
-	background-color: #DCDCDC;
+	background-image: url('shattered.png');
+/*	background-color: #DCDCDC;*/
 	padding-top: 5rem;
 	padding-bottom: 9rem;
 }
@@ -219,6 +265,26 @@
 	font-size: 19px;
 }
 
+.action {
+	height: 820px;
+	background-image: url('enroll.png');
+}
+.action .section-header {
+	margin-bottom: 3rem;
+}
+
+.action .btn-lg {
+  height: 60px;
+  width: 300px;
+  margin-top: 520px;
+
+}
+
+.action .btn-success {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
 .contact {
 	background-color: #2e2e2e;
 	padding-top: 3rem;
@@ -241,6 +307,13 @@
 .contact h3, p, a {
 	color: #cecece;
 	font-weight: 400;
+}
+
+.contact .col-md-6 h4 {
+	font-size: 20px;
+	color: #cecece;
+	font-weight: 400;
+	letter-spacing: 1px;
 }
 
 .contact .btn-lg {
