@@ -11,10 +11,10 @@ Chapter.delete_all
 
 User.create!( name:     "Alex Yang",
               email:    "alex@baserails.com",
-              password: "!X0bi1e1",
+              password: ENV["ALEX_PASSWORD"],
               admin:    true)
 
-Chapter.create!(  section: "Get Up and Running", title: "Course Introduction")
+Chapter.create!(  section: "Get Up and Running", title: "Course Introduction", url: "//player.vimeo.com/video/84193363")
 Chapter.create!(  section: "Get Up and Running", title: "Installation for Mac Users")
 Chapter.create!(  section: "Get Up and Running", title: "Installation for Non-Mac Users")
 
