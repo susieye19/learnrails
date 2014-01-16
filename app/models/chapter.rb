@@ -1,3 +1,10 @@
 class Chapter < ActiveRecord::Base
-  validates :title, :section, presence: true
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+
+  validates :title, :section, :slug, presence: true
+
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
 end

@@ -1,5 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_correct_url, only: [:show]
   before_action :authenticate_user!
 
   # GET /chapters
@@ -66,7 +67,14 @@ class ChaptersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chapter
-      @chapter = Chapter.find(params[:id])
+      @chapter = Chapter.friendly.find(params[:id])
+    end
+
+    def redirect_to_correct_url
+      # Redirect to the correct URL if the title of the chapter has since been changed
+      if request.path != chapter_path(@chapter)
+        return redirect_to @chapter, :status => :moved_permanently
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

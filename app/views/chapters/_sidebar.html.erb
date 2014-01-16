@@ -7,7 +7,7 @@
     <% subchapters = (chapters.select { |c| c.section == section }).sort_by(&:id) %>
 
     <% subchapters.each do |subchapter| %>
-      <h5><%= link_to "#{subchapter.title}", chapter_path(subchapter.id) %></h5>
+      <h5><%= link_to "#{subchapter.title}", chapter_path(subchapter) %></h5>
     <% end %>
   <% end %>
 </div>
