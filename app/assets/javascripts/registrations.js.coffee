@@ -8,18 +8,10 @@ subscription =
     $('#payment_form').submit ->
       $('input[type=submit]').attr('disabled', true)
       if $('#card_number').length
-        subscription.processCard()
+        Stripe.card.createToken($('#payment_form'), subscription.handleStripeResponse)
         false
       else
         true
-
-  processCard: ->
-    card =
-      number: $('#card_number').val()
-      cvc: $('#card_code').val()
-      expMonth: $('#card_month').val()
-      expYear: $('#card_year').val()
-    Stripe.createToken(card, subscription.handleStripeResponse)
 
   handleStripeResponse: (status, response) ->
     if status == 200

@@ -14,25 +14,44 @@
       <div class="panel-body">
         <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: "payment_form" }) do |f| %>
           <%= devise_error_messages! %>
-          
-          <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, :autofocus => true, class: "form-control" %>
-          </div>
 
           <div class="form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, class: "form-control" %>
+            <div class="row">
+              <div class="col-lg-9">
+                <%= f.label :name %>
+                <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-9">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-9">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <%= f.label :password %>
-            <%= f.password_field :password, class: "form-control" %>
+          <br>
+
+          <%= f.hidden_field :stripe_card_token %>
+
+          <div id="stripe_error" class="alert alert-danger" style="display:none">
+            <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
           </div>
 
           <% if @user.stripe_card_token %>
             <p>Credit card has already been provided.</p>
           <% else %>
+            <h3> Payment Info </h3><br/>
             <div class="form-group">
               <div class="row">
                 <div class="col-lg-6">
@@ -50,66 +69,32 @@
                 </div>
               </div>
 
-              <%= f.hidden_field :stripe_card_token %>
-
-              <div class="form-group">
-                <%= f.label :email %>
-                <%= f.email_field :email, :autofocus => true, class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control" %>
-              </div>
-              <br>
-              <h3> Payment Info </h3><br/>
-
-              <% if @user.stripe_card_token %>
-                <p>Credit card has already been provided.</p>
-              <% else %>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <%= label_tag :card_number, "Credit Card Number" %>
-                      <%= text_field_tag :card_number, nil,
-                          { :name => nil, :'data-stripe' => "number", maxlength: "16",
-                            autocompletetype: "cc-number", class: "form-control card-number" } %>
-                    </div>
-                    <div class="col-lg-3">
-                      <%= label_tag :card_code, "CVC" %>
-                      <%= text_field_tag :card_code, nil,
-                          { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
-                            autocomplete: "off", autocompletetype: "cc-csc",
-                            class: "form-control card-cvc" } %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <%= select_month nil,
-                          {use_two_digit_numbers: true}, { :name => nil, :id => "card_month",
-                            :'data-stripe' => "exp-month", :class => "form-control" } %>
-                    </div>
-                    <div class="col-lg-3">
-                      <%= select_year nil,
-                          {start_year: Date.today.year, end_year: Date.today.year+15},
-                          { :name => nil, :id => "card_year", :'data-stripe' => "exp-year",
-                            :class => "form-control" } %>
-                    </div>
-                  </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
                 </div>
-              <% end %>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <%= select_month nil, {use_two_digit_numbers: true},
+                      { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control" } %>
+                </div>
+                <div class="col-lg-3">
+                  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15},
+                      { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control" } %>
+                </div>
+              </div>
 
-              <div class="form-group">
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-12">
                 <%= f.submit "Sign up", class: "btn btn-primary" %>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
 

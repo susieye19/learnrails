@@ -11,11 +11,6 @@
     <div class="center">
       <div class="embed-container">
         <iframe src=<%= @chapter.url %> frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-        <% if false %>
-        <iframe src=<%= @chapter.url %> width="940" height="550" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <% end %>
-
       </div>
     </div>
 
@@ -26,9 +21,7 @@
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-          <li class="active">
-            <%= link_to "Notes", "#notes", :'data-toggle' => "tab" %>
-          </li>
+          <li class="active"><%= link_to "Notes", "#notes", :'data-toggle' => "tab" %></li>
           <li><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
           <li><%= link_to "Comments", "#comments", :'data-toggle' => "tab" %></li>
         </ul>
