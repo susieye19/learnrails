@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   def save_new_user
     return if email == 'alex@baserails.com'
+    return if email == 'demo@baserails.com'
 
     # Remember to change this to your live secret key in production
     Stripe.api_key = ENV["STRIPE_API_KEY"]

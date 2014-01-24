@@ -23,8 +23,8 @@ Chapter.create!(  section: "Create Our Website", title: "Add Our First Pages", u
 Chapter.create!(  section: "Create Our Website", title: "Add Links", url: "//player.vimeo.com/video/84249635")
 Chapter.create!(  section: "Create Our Website", title: "Add Listings", url: "//player.vimeo.com/video/84249636")
 
-Chapter.create!(  section: "Add Front-End Design", title: "Install Bootstrap", url: "//player.vimeo.com/video/84252034")
-Chapter.create!(  section: "Add Front-End Design", title: "Add a Navigation Bar", url: "//player.vimeo.com/video/84252035")
+Chapter.create!(  section: "Add Front-End Design", title: "Install Bootstrap", url: "//player.vimeo.com/video/84822384")
+Chapter.create!(  section: "Add Front-End Design", title: "Add a Navigation Bar", url: "//player.vimeo.com/video/84832051")
 Chapter.create!(  section: "Add Front-End Design", title: "Simplify Our Code", url: "//player.vimeo.com/video/84252037")
 Chapter.create!(  section: "Add Front-End Design", title: "Build Beautiful Forms", url: "//player.vimeo.com/video/84252038")
 
