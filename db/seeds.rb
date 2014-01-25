@@ -34,7 +34,7 @@ Chapter.create!(  section: "Update Listings With Images", title: "Design Page La
 Chapter.create!(  section: "Update Listings With Images", title: "Add Custom CSS", url: "//player.vimeo.com/video/84253377")
 
 Chapter.create!(  section: "Save Our Progress", title: "Set Up GitHub", url: "//player.vimeo.com/video/84253379")
-Chapter.create!(  section: "Save Our Progress", title: "Commit Our Code to GitHub", url: "//player.vimeo.com/video/84254038")
+Chapter.create!(  section: "Save Our Progress", title: "Commit Our Code to GitHub", url: "//player.vimeo.com/video/85017268")
 Chapter.create!(  section: "Save Our Progress", title: "Deploy On Heroku", url: "//player.vimeo.com/video/84254039")
 
 Chapter.create!(  section: "Host Images Online", title: "Set Up Dropbox", url: "//player.vimeo.com/video/84254040")
