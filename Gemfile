@@ -17,6 +17,8 @@ gem 'jquery-turbolinks'
 gem 'aws-sdk', '~> 1.0'
 gem 'newrelic_rpm'
 gem 'friendly_id', '~> 5.0.0'
+gem 'coderay'
+gem 'RedCloth'
 
 group :production do
   gem 'rails_12factor'
