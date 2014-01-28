@@ -32,7 +32,9 @@
         <div class="tab-content">
           <div class="tab-pane fade in active" id="notes">
             <div class="notes">
-              <%= @chapter.notes.try(:html_safe) %>
+              <% unless @chapter.notes.blank? %>
+                <%= raw textilize(coderay(@chapter.try(:notes))) %>
+              <% end %>
             </div>
           </div>
           <div class="tab-pane fade" id="transcript">
