@@ -17,31 +17,16 @@ class User < ActiveRecord::Base
     # Get the credit card details submitted by the form
     token = stripe_card_token
 
-    if email == 'subrat2040@gmail.com'
-      # Create the charge on Stripe's servers - this will charge the user's card
-      begin
-        charge = Stripe::Charge.create(
-          :amount => 2900,
-          :currency => "usd",
-          :card => token,
-        )
-        # flash[:success] = "Thanks for ordering!"
-      rescue Stripe::CardError => e
-        # flash[:danger] = e.message
-      end
-
-    else
-      # Create the charge on Stripe's servers - this will charge the user's card
-      begin
-        charge = Stripe::Charge.create(
-          :amount => 4900,
-          :currency => "usd",
-          :card => token,
-        )
-        # flash[:success] = "Thanks for ordering!"
-      rescue Stripe::CardError => e
-        # flash[:danger] = e.message
-      end
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => 4900,
+        :currency => "usd",
+        :card => token,
+      )
+      # flash[:success] = "Thanks for ordering!"
+    rescue Stripe::CardError => e
+      # flash[:danger] = e.message
     end
   end
 end

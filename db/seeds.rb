@@ -43,7 +43,7 @@ Chapter.create!(  section: "Host Images Online", title: "Configure Dropbox Setti
 
 Chapter.create!(  section: "Add Users", title: "Install Devise", url: "//player.vimeo.com/video/84259232")
 Chapter.create!(  section: "Add Users", title: "Insert Conditional Links", url: "//player.vimeo.com/video/84259235")
-Chapter.create!(  section: "Add Users", title: "Customize Devise Forms and Alerts", url: "//player.vimeo.com/video/84259236")
+Chapter.create!(  section: "Add Users", title: "Customize Devise Forms and Alerts", url: "//player.vimeo.com/video/85287343")
 Chapter.create!(  section: "Add Users", title: "Add Names to Users", url: "//player.vimeo.com/video/84259238")
 Chapter.create!(  section: "Add Users", title: "Validate User and Listing Data", url: "//player.vimeo.com/video/84259239")
 
@@ -55,7 +55,7 @@ Chapter.create!(  section: "Connect Users to Listings", title: "Create a Homepag
 
 Chapter.create!(  section: "Place Orders", title: "Link Orders, Listings, Users (Part 1)", url: "//player.vimeo.com/video/84262523")
 Chapter.create!(  section: "Place Orders", title: "Link Orders, Listings, Users (Part 2)", url: "//player.vimeo.com/video/84262524")
-Chapter.create!(  section: "Place Orders", title: "Create Order History Pages", url: "//player.vimeo.com/video/84262526")
+Chapter.create!(  section: "Place Orders", title: "Create Order History Pages", url: "//player.vimeo.com/video/85383755")
 Chapter.create!(  section: "Place Orders", title: "Reorganize Order Links and URLs", url: "//player.vimeo.com/video/84262530")
 
 Chapter.create!(  section: "Accept Payments", title: "Set Up Stripe", url: "//player.vimeo.com/video/84262532")
@@ -65,5 +65,5 @@ Chapter.create!(  section: "Accept Payments", title: "Charge Credit Cards", url:
 
 Chapter.create!(  section: "Transfer Payments", title: "Collect Bank Account Info", url: "//player.vimeo.com/video/84267009")
 Chapter.create!(  section: "Transfer Payments", title: "Verify Bank Account Info", url: "//player.vimeo.com/video/84262610")
-Chapter.create!(  section: "Transfer Payments", title: "Transfer Funds", url: "//player.vimeo.com/video/84265606")
+Chapter.create!(  section: "Transfer Payments", title: "Transfer Funds", url: "//player.vimeo.com/video/85403808")
 Chapter.create!(  section: "Transfer Payments", title: "Course Summary", url: "//player.vimeo.com/video/84265607")
