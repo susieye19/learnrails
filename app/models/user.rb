@@ -14,30 +14,16 @@ class User < ActiveRecord::Base
     Stripe.api_key = ENV["STRIPE_API_KEY"]
     token = stripe_card_token
 
-    if email == 'rgwbarnes@gmail.com'
-      # Create the charge on Stripe's servers - this will charge the user's card
-      begin
-        charge = Stripe::Charge.create(
-          :amount => 2900,
-          :currency => "usd",
-          :card => token,
-        )
-        # flash[:success] = "Thanks for ordering!"
-      rescue Stripe::CardError => e
-        # flash[:danger] = e.message
-      end
-    else
-      # Create the charge on Stripe's servers - this will charge the user's card
-      begin
-        charge = Stripe::Charge.create(
-          :amount => 9900,
-          :currency => "usd",
-          :card => token,
-        )
-        # flash[:success] = "Thanks for ordering!"
-      rescue Stripe::CardError => e
-        # flash[:danger] = e.message
-      end
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => 9900,
+        :currency => "usd",
+        :card => token,
+      )
+      # flash[:success] = "Thanks for ordering!"
+    rescue Stripe::CardError => e
+      # flash[:danger] = e.message
     end
   end
 end
