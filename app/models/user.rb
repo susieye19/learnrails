@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
       rescue Stripe::CardError => e
         # flash[:danger] = e.message
       end
+    elsif email == 'wasatchcode@gmail.com'
+      # Do nothing
     else
       # Create the charge on Stripe's servers - this will charge the user's card
       begin
