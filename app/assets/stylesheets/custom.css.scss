@@ -127,4 +127,41 @@
   height: 100%;
 }
 
+.codeblock {
+  margin: 12px 0;
+  clear: both;
+}
 
+.codeheader {
+  position: relative;
+  background-color: #cecece;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 7px;
+  border: solid 1px #b6b6b6;
+  border-bottom: none;
+}
+
+.coderay {
+  font-family: "Menlo","Courier New","Terminal",monospace;
+  background-color: #232323;
+  color: #E6E0DB;
+  overflow: auto;
+  border: 1px solid #777;
+  border-top: none;
+  padding: 5px 7px;
+  font-size: 13px;
+  margin: 0;
+  line-height: 17px;
+}
+
+.coderay pre {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Menlo","Courier New","Terminal",monospace;
+  background-color: #232323;
+  color: #E6E0DB;
+  font-size: 13px;
+  line-height: 17px;
+  border: none;
+}

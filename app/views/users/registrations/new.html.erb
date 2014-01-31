@@ -76,11 +76,11 @@
               </div>
               <div class="row">
                 <div class="col-lg-3">
-                  <%= select_month nil, {use_two_digit_numbers: true},
+                  <%= select_month nil, {use_two_digit_numbers: true, prompt: "Month"},
                       { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control" } %>
                 </div>
                 <div class="col-lg-3">
-                  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15},
+                  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15, prompt: "Year"},
                       { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control" } %>
                 </div>
               </div>

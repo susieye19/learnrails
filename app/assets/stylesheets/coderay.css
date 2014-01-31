@@ -48,7 +48,8 @@
 .CodeRay .keyword             { color: #F92672; }
 .CodeRay .key                 { color: #F92672; }
 .CodeRay .predefined-constant { color: #AE81FF; }
-.CodeRay .constant            { color: #66D9EF; }
+.CodeRay .constant            { color: #66D9EF; font-style: italic; }
+.CodeRay .function            { color: #A6E22E; }
 
 /*HTML styling*/
 .CodeRay .tag                 { color: #F92672; }
@@ -64,3 +65,6 @@
 
 /*Javascript styling*/
 .CodeRay .comment             { color: #75715E; }
+.CodeRay .integer             { color: #66D9EF; }
+.CodeRay .predefined          { color: #F92672; }
+
