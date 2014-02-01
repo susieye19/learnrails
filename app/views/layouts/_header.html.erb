@@ -1,4 +1,4 @@
-<span itemscope itemtype="http://schema.org/Product">
+<span itemscope itemtype="http://schema.org/WebPage">
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -14,8 +14,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Blog", "http://blog.baserails.com" %></li>
-
+      <a href="http://blog.baserails.com"><span itemprop="url">Blog</span></a>
       <% if user_signed_in? %>
         <li><%= link_to "Course", chapters_path %></li>
         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
@@ -33,13 +32,13 @@
   <div class="jumbotron">
     <div class="container">
       <div class="center">
-      <meta itemprop="description" content="Have an idea? Build it. Learn to code web applications from scratch">
+      <meta itemprop="about" content="Have an idea? Build it. Learn to code web applications from scratch">
         <h2>Have an idea? Build it.<h2>
         <h3>Learn to code web applications from scratch.<br>
         </h3>
       </div><br><br>
       <div class="center">
-        <a itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="price">Enroll today for $99</span></a>
+        <a class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="url">Enroll today for $99</span></a>
       </div>
     </div>
   </div></span>
