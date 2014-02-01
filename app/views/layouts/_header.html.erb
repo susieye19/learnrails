@@ -1,4 +1,4 @@
-<span itemscope itemtype="http://schema.org/WebPage">
+<span itemscope itemtype="http://data-vocabulary.org/Organization">
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -8,13 +8,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a href="https://www.baserails.com" class="navbar-brand"><span itemprop="name">BaseRails</span></a>
+    <a href="https://www.baserails.com" itemprop="url" class="navbar-brand"><span itemprop="name">BaseRails</span></a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Blog", "http://blog.baserails.com" %></li>
+
+      <li><%=link_to "Blog", "http://blog.baserails.com" %></li>
 
       <% if user_signed_in? %>
         <li><%= link_to "Course", chapters_path %></li>
@@ -33,13 +34,18 @@
   <div class="jumbotron">
     <div class="container">
       <div class="center">
-      <meta itemprop="description" content="Have an idea? Build it. Learn to code web applications from scratch">
+      <meta itemprop="description" content="Have an idea? Build it. Learn to code web applications from scratch.">
         <h2>Have an idea? Build it.<h2>
-        <h3>Learn to code web applications from scratch.<br>
-        </h3>
+        <h3>Learn to code web applications from scratch.<br></h3>
       </div><br><br>
       <div class="center">
+<<<<<<< HEAD
         <a class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up">Enroll today for $99</a>
+=======
+      <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a itemprop="url" class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="title">Enroll today for $99</span></a>
+      </div>
+>>>>>>> 79f479f06a903f0d85d76979910389487694bfd0
       </div>
     </div>
   </div></span>
