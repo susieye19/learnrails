@@ -1,3 +1,4 @@
+<span itemscope itemtype="http://schema.org/Product">
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -37,9 +38,8 @@
         <h3>Learn to code web applications from scratch.<br>
         </h3>
       </div><br><br>
-      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="center">
-        <%= link_to "Enroll today for $99", new_user_registration_path,
-            class: "btn btn-lg btn-success center", data: { no_turbolink: true } %><span itemprop="price">
+      <div class="center">
+        <a itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="price">Enroll today for $99</span></a>
       </div>
     </div>
   </div>
