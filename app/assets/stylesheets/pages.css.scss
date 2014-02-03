@@ -183,6 +183,11 @@
 
 .value .section-header {
 	margin-bottom: 7rem;
+	h1 {
+	color: #3f3f3f;
+	font-size: 4rem;
+	font-weight: 600;
+	}
 }
 
 .value .thumbnail {
@@ -202,7 +207,7 @@
 
 .quote h1 {
 	color: #cecece;
-	font-size: 35px;
+	font-size: 30px;
 	letter-spacing: 1px;
 	font-weight: 300;
 }
