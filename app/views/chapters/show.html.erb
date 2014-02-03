@@ -39,7 +39,9 @@
           </div>
           <div class="tab-pane fade" id="transcript">
             <div class="transcript">
-
+              <% unless @chapter.transcript.blank? %>
+                <%= raw textilize(coderay(@chapter.try(:transcript))) %>
+              <% end %>
             </div>
           </div>
           <div class="tab-pane fade" id="comments">
