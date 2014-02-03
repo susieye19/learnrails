@@ -53,3 +53,14 @@
 .index .col-md-9 h3 {
 	margin-top: 70px;
 }
+
+.show .col-md-9 .notes {
+	margin-top: -30px;
+}
+
+.show .col-md-9 .panel-default .notes {
+	h4 {
+		font-size: 25px;
+		margin-top: 40px
+	}
+}
