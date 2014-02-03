@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
-        :amount => 9900,
+        :amount => 4900,
         :currency => "usd",
         :card => token,
         :description => "Charge for #{email}"

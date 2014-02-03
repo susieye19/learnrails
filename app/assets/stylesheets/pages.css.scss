@@ -86,6 +86,49 @@
 	left: -200px;
 }
 
+.video {
+	background-color: black;
+}
+
+.difference {
+	background-image: url('green_cup.png');
+}
+
+.difference .section-header {
+	padding-bottom: 2rem;
+}
+
+.difference h3 {
+	font-weight: 300;
+	font-size: 25px;
+	line-height: 34px;
+}
+.difference .section-header h1 {
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.difference .check {
+	list-style-image: url("checkmark.png");
+	list-style-position: inside;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.difference .features {
+	padding: 30px 0px;
+	margin: 0px 30px;
+	li {
+		font-size: 20px;
+		font-weight: 500;
+		padding: 10px 0px;
+	}
+	.col-md-6 {
+		background-color: #fff;
+		padding: 20px 20px;
+	}
+}
+
 .etsy .max-width {
 	max-width: 1200px;
 }
@@ -207,7 +250,7 @@
 
 .quote h1 {
 	color: #cecece;
-	font-size: 30px;
+	font-size: 25px;
 	letter-spacing: 1px;
 	font-weight: 300;
 }
