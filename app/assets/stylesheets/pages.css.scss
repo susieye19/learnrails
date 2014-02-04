@@ -91,7 +91,7 @@
 }
 
 .difference {
-	background-image: url('green_cup.png');
+	background-image: url('https://dl.dropboxusercontent.com/s/mylfyh8kh30vicl/green_cup.png');
 }
 
 .difference .section-header {
@@ -109,7 +109,7 @@
 }
 
 .difference .check {
-	list-style-image: url("checkmark.png");
+	list-style-image: url('https://dl.dropboxusercontent.com/s/ly1407fah0viibt/checkmark.png');
 	list-style-position: inside;
 	font-size: 16px;
 	line-height: 26px;
@@ -129,6 +129,10 @@
 	}
 }
 
+.etsy {
+	background-color: #d8d8d8;
+}
+
 .etsy .max-width {
 	max-width: 1200px;
 }
@@ -141,9 +145,16 @@
 	padding-bottom: 6rem;
 }
 
-.etsy .col-md-4 p {
+.etsy .col-md-4 {
+	.thumbnail {
+		background-color: #f2f2f2;
+		padding: 15px 10px;
+		border-radius: 7px;
+	}
+	p {
 	color: #888;
 	font-size: 18px;
+	}
 }
 
 .etsy .col-md-4 h3 {
@@ -153,10 +164,19 @@
 }
 .etsy .section-header h1 {
 	color: #3f3f3f;
+	margin-bottom: 5rem;
 }
 
 .etsy img {
 	margin-bottom: 2rem;
+}
+
+.video {
+	background-image: url('https://dl.dropboxusercontent.com/s/m4pjclnyevrol68/shattered.png');
+	h1 {
+		color: #fff;
+		margin-bottom: 4rem;
+	}
 }
 
 .syllabus {
@@ -177,13 +197,6 @@
 .syllabus-details {
 	margin-bottom: 7rem;
 }
-
-/*.syllabus-details h3 {
-	color: #e5e5e5;
-	padding-bottom: 1rem;
-	padding-top: 1rem;
-	font-size: 20px;
-}*/
 
 .syllabus .center h1 {
 	margin-top: 0px;
@@ -371,5 +384,49 @@
 	padding-right: 4px;
 	padding-left: 35px;
 	padding-top: 0px;
+}
+ .faq .section-header{
+ 	margin-bottom: 4rem;
+ }
+
+.faqbody {
+	margin-bottom: 7rem;
+}
+
+.faq .center h1 {
+	margin-top: 0px;
+	padding-top: 30px;
+}
+
+.faq .panel-default > .panel-heading {
+	color: #5b5b5b;
+	border-bottom: solid 1px #e5e5e5;
+}
+
+.faq .panel {
+	background-color: #fff;
+}
+
+.faq .panel-group .panel-default {
+	border-radius: 0px;
+	border: none;
+}
+
+.faq .panel-title {
+	font-size: 20px;
+}
+
+.faq .panel-title a {
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: 400;
+}
+
+.faq .panel-title a:hover {
+	background-color: none;
+	padding-left: 30px;
+	text-decoration: none;
+	font-weight: 400;
 }
 

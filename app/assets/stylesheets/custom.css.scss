@@ -47,6 +47,35 @@
   color: #b7b7b7;
 }
 
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus, {
+  background-color: black;
+  color: #b7b7b7;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: #e5e5e5;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #b7b7b7;
+}
+
+.dropdown-menu {
+  min-width: 120px;
+  background-color: black;
+}
+
+.dropdown-menu > li > a {
+  color: #e5e5e5;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: black;
+  color: #b7b7b7;
+}
+
 .jumbotron {
   background-image: url('https://dl.dropboxusercontent.com/s/frecarakyfvddee/chalk2.jpg');
   background-size: cover;
