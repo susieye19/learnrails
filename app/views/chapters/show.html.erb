@@ -21,8 +21,8 @@
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-          <li class="active"><%= link_to "Notes", "#notes", :'data-toggle' => "tab" %></li>
-          <li><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
+          <li class="active"><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
+          <li><%= link_to "Notes", "#notes", :'data-toggle' => "tab" %></li>
           <li><%= link_to "Comments", "#comments", :'data-toggle' => "tab" %></li>
         </ul>
 
@@ -30,17 +30,17 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div class="tab-pane fade in active" id="notes">
-            <div class="notes">
-              <% unless @chapter.notes.blank? %>
-                <%= raw textilize(coderay(@chapter.try(:notes))) %>
-              <% end %>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="transcript">
+          <div class="tab-pane fade in active" id="transcript">
             <div class="transcript">
               <% unless @chapter.transcript.blank? %>
                 <%= raw textilize(coderay(@chapter.try(:transcript))) %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="notes">
+            <div class="notes">
+              <% unless @chapter.notes.blank? %>
+                <%= raw textilize(coderay(@chapter.try(:notes))) %>
               <% end %>
             </div>
           </div>
