@@ -1,5 +1,7 @@
 Learnrails::Application.routes.draw do
 
+  get 'generate' => 'generate#form'
+  get 'thanks' => 'generate#thanks'
   resources :chapters
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
