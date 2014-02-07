@@ -10,7 +10,7 @@ $(".registrations.create").ready ->
 
 subscription =
   setupForm: ->
-    $('#verify-coupon').click ->
+    $('#verify_coupon').click ->
       if $('#user_coupon').val().toUpperCase() == "SWSD"
         $('#coupon_success').text("75% off discount applied!").show()
         $('#coupon_error').hide()
