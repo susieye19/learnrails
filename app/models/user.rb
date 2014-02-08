@@ -6,25 +6,37 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  before_create :save_new_user
+  def save_with_payment
+    if valid?
+      Stripe.api_key = ENV["STRIPE_API_KEY"]
+      token = stripe_card_token
 
-  def save_new_user
-    return if email == 'alex@baserails.com'
+      amount = 9900
+      if coupon.upcase == "SWSD"
+        amount = ((1 - 0.75)*amount).floor
+      elsif coupon.upcase == "BROC"
+        amount = ((1 - 0.50)*amount).floor
+      end
 
-    Stripe.api_key = ENV["STRIPE_API_KEY"]
-    token = stripe_card_token
-
-    # Create the charge on Stripe's servers - this will charge the user's card
-    begin
-      charge = Stripe::Charge.create(
-        :amount => 4900,
-        :currency => "usd",
-        :card => token,
-        :description => "Charge for #{email}"
-      )
-      # flash[:success] = "Thanks for ordering!"
-    rescue Stripe::CardError => e
-      # flash[:danger] = e.message
+      unless coupon.upcase == "UDEMY"
+        charge = Stripe::Charge.create(
+          :amount => amount,
+          :currency => "usd",
+          :card => token,
+          :description => "Charge for #{email}"
+        )
+      end
+      save!
     end
+  rescue Stripe::CardError => e
+    errors.add :base, "There was a problem with your credit card."
+    self.stripe_card_token = nil
+    self.coupon = nil
+    false
+  rescue Stripe::InvalidRequestError => e
+    errors.add :base, "#{e.message}"
+    self.stripe_card_token = nil
+    self.coupon = nil
+    false
   end
 end

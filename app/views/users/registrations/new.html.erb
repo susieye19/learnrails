@@ -19,7 +19,7 @@
             <div class="row">
               <div class="col-lg-9">
                 <%= f.label :name %>
-                <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+                <%= f.text_field :name, :autofocus => true, class: "form-control input-sm" %>
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@
             <div class="row">
               <div class="col-lg-9">
                 <%= f.label :email %>
-                <%= f.email_field :email, class: "form-control" %>
+                <%= f.email_field :email, class: "form-control input-sm" %>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
             <div class="row">
               <div class="col-lg-9">
                 <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control" %>
+                <%= f.password_field :password, class: "form-control input-sm" %>
               </div>
             </div>
           </div>
@@ -44,7 +44,8 @@
 
           <%= f.hidden_field :stripe_card_token %>
 
-          <div id="stripe_error" class="alert alert-danger" style="display:none">
+          <div id="stripe_error" class="alert alert-danger alert-dismissable" style="display:none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
           </div>
 
@@ -58,14 +59,14 @@
                   <%= label_tag :card_number, "Credit Card Number" %>
                   <%= text_field_tag :card_number, nil,
                       { :name => nil, :'data-stripe' => "number", maxlength: "16",
-                        autocompletetype: "cc-number", class: "form-control card-number" } %>
+                        autocompletetype: "cc-number", class: "form-control card-number input-sm" } %>
                 </div>
                 <div class="col-lg-3">
                   <%= label_tag :card_code, "CVC" %>
                   <%= text_field_tag :card_code, nil,
                       { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
                         autocomplete: "off", autocompletetype: "cc-csc",
-                        class: "form-control card-cvc" } %>
+                        class: "form-control card-cvc input-sm" } %>
                 </div>
               </div>
 
@@ -77,16 +78,40 @@
               <div class="row">
                 <div class="col-lg-3">
                   <%= select_month nil, {use_two_digit_numbers: true, prompt: "Month"},
-                      { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control" } %>
+                      { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control input-sm" } %>
                 </div>
                 <div class="col-lg-3">
                   <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15, prompt: "Year"},
-                      { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control" } %>
+                      { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control input-sm" } %>
                 </div>
               </div>
 
+              <br>
+
+              <div id="coupon_success" class="alert alert-success alert-dismissable" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+              </div>
+
+              <div id="coupon_error" class="alert alert-danger alert-dismissable" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="input-group">
+                    <%= f.text_field :coupon, { placeholder: "Coupon (optional)", class: "form-control input-sm" } %>
+                    <span class="input-group-btn">
+                      <%= button_tag "Verify", { id: "verify_coupon", class: "btn btn-default btn-sm" } %>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           <% end %>
+
+          <br>
 
           <div class="form-group">
             <div class="row">

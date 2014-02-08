@@ -8,7 +8,11 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a href="https://www.baserails.com" itemprop="url" class="navbar-brand"><span itemprop="name">BaseRails</span></a>
+    <% if Rails.env.development? %>
+      <%= link_to "BaseRails", root_path, class: "navbar-brand" %>
+    <% else %>
+      <a href="https://www.baserails.com" itemprop="url" class="navbar-brand"><span itemprop="name">BaseRails</span></a>
+    <% end %>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -47,7 +51,7 @@
       </div><br><br>
       <div class="center">
         <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a itemprop="url" class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="title">Enroll today for $49</span></a>
+          <a itemprop="url" class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="title">Enroll today for $99</span></a>
         </div>
       </div>
     </div>
