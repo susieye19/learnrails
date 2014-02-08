@@ -18,12 +18,14 @@ class User < ActiveRecord::Base
         amount = ((1 - 0.50)*amount).floor
       end
 
-      charge = Stripe::Charge.create(
-        :amount => amount,
-        :currency => "usd",
-        :card => token,
-        :description => "Charge for #{email}"
-      )
+      unless coupon.upcase == "UDEMY"
+        charge = Stripe::Charge.create(
+          :amount => amount,
+          :currency => "usd",
+          :card => token,
+          :description => "Charge for #{email}"
+        )
+      end
       save!
     end
   rescue Stripe::CardError => e
