@@ -15,6 +15,10 @@ subscription =
         $('#coupon_success').text("75% off discount applied!").show()
         $('#coupon_error').hide()
         false
+      else if $('#user_coupon').val().toUpperCase() == "BROC"
+        $('#coupon_success').text("50% off discount applied!").show()
+        $('#coupon_error').hide()
+        false
       else
         $('#coupon_error').text("Sorry, the coupon you entered isn't valid").show()
         $('#coupon_success').hide()

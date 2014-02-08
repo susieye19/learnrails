@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
       amount = 9900
       if coupon.upcase == "SWSD"
         amount = ((1 - 0.75)*amount).floor
+      elsif coupon.upcase == "BROC"
+        amount = ((1 - 0.50)*amount).floor
       end
 
       charge = Stripe::Charge.create(
