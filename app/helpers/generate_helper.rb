@@ -2,9 +2,9 @@ module GenerateHelper
   def login(browser)
     browser.goto "https://github.com/login"
     browser.text_field(:id, "login_field").set("alexyang.personal@gmail.com")
-    browser.text_field(:id, "password").set("!X0bi1e1")
+    browser.text_field(:id, "password").set(ENV["ALEX_PASSWORD"])
     browser.button(:class => 'button').click
-    browser.goto "https://github.com/alexyang21/test020314"
+    browser.goto "https://github.com/alexyang21/typecast"
   end
 
   def navigate(browser, path)
