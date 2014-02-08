@@ -21,5 +21,7 @@ class GenerateController < ApplicationController
     view_context.login(browser)
     view_context.generate_controller(browser, "pages", pages_array_with_homepage, homepage)
     view_context.add_navbar(browser, app_name, pages_array_without_homepage)
+    sleep(10)
+    browser.close
   end
 end
