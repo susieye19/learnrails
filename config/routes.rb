@@ -1,6 +1,6 @@
 Learnrails::Application.routes.draw do
 
-  match "/blog" => redirect("/blog/")
+  get "/blog" => redirect("/blog/")
   get 'generate' => 'generate#form'
   get 'thanks' => 'generate#thanks'
   resources :chapters
