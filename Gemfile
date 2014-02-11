@@ -21,6 +21,7 @@ gem 'coderay'
 gem 'RedCloth'
 gem 'sitemap_generator'
 gem 'watir'
+gem "rack-reverse-proxy", :require => "rack/reverse_proxy"
 
 group :production do
   gem 'rails_12factor'
