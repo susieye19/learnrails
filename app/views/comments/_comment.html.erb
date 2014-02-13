@@ -1,0 +1,36 @@
+<li class="comment">
+  <% if current_user == comment.user %>
+    <h4>
+      <%= link_to "×", chapter_comment_path(chapter, comment), :method => :delete, :remote => true, data: { confirm: "Are you sure you want to remove this comment?", disable_with: "×" }, :class => 'close' %>
+    </h4>
+  <% end %>
+
+  <small>
+    <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by #{comment.user.name}" %>
+  </small>
+  <p><%= comment.body %></p>
+
+  <div class="reply">
+    <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>
+
+    <div class="comment-form" style="display:none">
+      <%= form_for([chapter, new_comment], remote: true) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :body, :input_html => { rows: "2" }, placeholder: "", class: "form-control" %>
+        </div>
+        <%= f.hidden_field :parent_id, value: comment.id %>
+        <div class="form-group">
+          <%= f.button :Submit, class: "btn btn-primary",
+              data: { disable_with: "Submitting…" } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% if comment.has_children? %>
+    <ul class="comment-list">
+      <%= render(:partial => 'comments/comment', collection: comment.children,
+          as: :comment, locals: { new_comment: new_comment, chapter: chapter }) %>
+    </ul>
+  <% end %>
+</li>

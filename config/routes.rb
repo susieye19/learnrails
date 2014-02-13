@@ -1,9 +1,13 @@
 Learnrails::Application.routes.draw do
 
   get "/blog" => redirect("/blog/")
+
   get 'generate' => 'generate#form'
   get 'thanks' => 'generate#thanks'
-  resources :chapters
+
+  resources :chapters do
+    resources :comments, only: [:create, :destroy]
+  end
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   get 'faq' => 'pages#faq'

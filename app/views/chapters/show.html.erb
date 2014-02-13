@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-md-3">
-    <%= render partial: "sidebar", locals: {chapters: @chapters} %>
+    <%= render partial: "sidebar", locals: { chapters: @chapters } %>
   </div>
 
   <div class="col-md-9">
@@ -23,7 +23,7 @@
         <ul class="nav nav-tabs">
           <li class="active"><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
           <li><%= link_to "Notes", "#notes", :'data-toggle' => "tab" %></li>
-          <li><%= link_to "Comments", "#comments", :'data-toggle' => "tab" %></li>
+          <li><%= link_to "Discussion", "#discussion", :'data-toggle' => "tab" %></li>
         </ul>
 
         <br>
@@ -44,8 +44,14 @@
               <% end %>
             </div>
           </div>
-          <div class="tab-pane fade" id="comments">
-            Comments here
+          <div class="tab-pane fade" id="discussion">
+
+            <%= render partial: 'comments/form', locals: { new_comment: @new_comment,
+                chapter: @chapter } %>
+
+            <%= render partial: 'comments/comment', collection: @comments,
+                as: :comment, locals:
+                { new_comment: @new_comment, chapter: @chapter } %>
           </div>
         </div>
       </div>

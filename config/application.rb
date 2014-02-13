@@ -21,5 +21,6 @@ module Learnrails
     # config.i18n.default_locale = :de
 
     config.i18n.enforce_available_locales = true
+    config.time_zone = 'Pacific Time (US & Canada)'
   end
 end
