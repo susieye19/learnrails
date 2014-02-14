@@ -25,8 +25,20 @@ var google_remarketing_only = false;
   </div>
 
   <div class="col-md-9">
-  	<h3>Welcome to BaseRails!</h3>
-    <h3>Choose a chapter on the left to get started.</h3>
+  	<h3>Welcome to BaseRails! Choose a chapter on the left to get started.</h3>
+
+    <h3>Recent discussion:</h3>
+    <% @comments.each do |comment| %>
+      <div class="comment">
+        <div class="comment-chapter">
+          <%= "#{comment.chapter.section}: #{comment.chapter.title}" %>
+        </div>
+        <small>
+          <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by #{comment.user.name}" %>
+        </small>
+        <p><%= comment.body %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 
