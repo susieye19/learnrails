@@ -64,3 +64,65 @@
 		margin-top: 40px
 	}
 }
+
+.index .col-md-9 {
+	h3 {
+		color: #59657D;
+		font-weight: 400;
+	}
+	h4 {
+		color: #5D951F;
+		font-size: 20px;
+	}
+}
+
+#discussion {
+	.tab-content {
+		small {
+			font-size: 12px;
+			color: #59657D;
+		}
+		p {
+			font-size: 17px;
+			color: #5b5b5b;
+		}
+	}
+
+	.comment {
+		list-style-type: none;
+		border-top: 1px solid #ddd;
+		padding: 0px;
+		p {
+			margin-top: 0px;
+		}
+	}
+
+	.comment-list > .comment {
+		border-top: none !important;
+	}
+
+	.reply-link {
+		font-size: 15px !important;
+		margin-top: 0px;
+	}
+}
+
+.comment-chapter {
+	font-size: 17px;
+	color: #5b5b5b;
+}
+
+.col-md-9 .comment {
+	list-style-type: none;
+	border-top: 1px solid #ddd;
+	padding: 10px;
+	small {
+		font-size: 12px;
+		color: #5b5b5b;
+	}
+	p {
+		font-size: 18px;
+		margin-top: 10px;
+	}
+}
+

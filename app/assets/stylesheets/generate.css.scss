@@ -1,44 +1,80 @@
-.generate .form {
-	
+.generate {
+
+	.has-padding {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+	.max-width {
+		max-width: 960px;
+		margin: auto;
+		position: relative;
+	}
 	h2 {
-		margin-bottom: 10rem;
+		margin-bottom: 6rem;
+		color: #5e5e5e;
+		font-weight: 500;
+		font-size: 40px;
+	}
+	h2, h3, h4, p {
+		font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 300;
+		line-height: 1.1;
+	} 
+	h3, p {
+		color: #5b5b5b;
+	}
+	.thumbnail {
+		border: none;
 	}
 
+	.stepone {
+		height: 800px;
+		background-image: url('https://dl.dropboxusercontent.com/s/q72fos982hdfb87/websitebackground.jpg');
+		background-position: center;
+		h2 {
+			color: #191919;
+		}
+		#q2 {
+			height: 45px;
+			width: 300px;
+			margin: 5rem auto;
+		}
+	}
 
+	.steptwo {
+		height: 800px;
+		background-image: url('cloth_alike.png')
+	}
 
+	.stepthree {
+		background-color: #ffc966;
+		height: 800px;
+		.thumbnail {
+			padding: 10px;
+			border-radius: 8px;
+		}
+	}
 
+	.stepfour {
+		height: 800px;
+		h4 {
+			font-size: 22px;
+		}
+		.thumbnail {
+			background-color: #e5e5e5;
+		}
+	}
 
+	.stepfive {
+		height: 800px;
+	}
 
+	.stepsix {
+		height: 800px;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	.stepseven {
+	}
 }
