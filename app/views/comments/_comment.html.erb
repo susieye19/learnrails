@@ -8,7 +8,7 @@
   <small>
     <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by" %> <span id="name"><%= "#{comment.user.name}" %></span>
   </small>
-  <p><%= comment.body %></p>
+  <p><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
 
   <div class="reply">
     <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>
