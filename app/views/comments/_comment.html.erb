@@ -6,7 +6,7 @@
   <% end %>
 
   <small>
-    <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by #{comment.user.name}" %>
+    <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by" %> <span id="name"><%= "#{comment.user.name}" %></span>
   </small>
   <p><%= comment.body %></p>
 
