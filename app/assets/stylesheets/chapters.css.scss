@@ -91,9 +91,9 @@
 	.comment {
 		list-style-type: none;
 		border-top: 1px solid #ddd;
-		padding: 0px;
+		padding: 5px;
 		p {
-			margin-top: 0px;
+			margin-top: 5px;
 		}
 	}
 
@@ -109,20 +109,27 @@
 
 .comment-chapter {
 	font-size: 17px;
-	color: #5b5b5b;
+	color: #333;
+	font-weight: 500;
 }
 
 .col-md-9 .comment {
 	list-style-type: none;
 	border-top: 1px solid #ddd;
 	padding: 10px;
+	#name {
+	color: #5b5b5b;
+	font-weight: 600;
+	}
 	small {
 		font-size: 12px;
-		color: #5b5b5b;
+		color: #5e5e5e;
 	}
 	p {
 		font-size: 15px;
-		margin-top: 10px;
+		margin-top: 5px;
+		margin-bottom: 0px;
+		color: #5e5e5e;
 	}
 }
 
