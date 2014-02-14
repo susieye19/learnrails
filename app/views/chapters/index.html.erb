@@ -42,7 +42,7 @@ var google_remarketing_only = false;
       			<%= "#{comment.user.name}" %>
     		</span>
         </small>
-        <p><%= comment.body %></p>
+        <p><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
       </div>
     <% end %>
   </div>
