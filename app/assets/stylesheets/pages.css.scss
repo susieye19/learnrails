@@ -91,8 +91,9 @@
 }
 
 .difference {
-	background-image: url('https://dl.dropboxusercontent.com/s/mylfyh8kh30vicl/green_cup.png');
-}
+	background-image: url('https://dl.dropboxusercontent.com/s/y9o9sowgjowy855/cloth_alike.png');
+/*	background-image: url('https://dl.dropboxusercontent.com/s/mylfyh8kh30vicl/green_cup.png');
+*/}
 
 .difference .section-header {
 	padding-bottom: 2rem;
@@ -256,25 +257,52 @@
 	font-weight: 400;
 }
 
-.quote {
-	background-color: black;
-	padding-bottom: 4rem;
+.testimonialsample {
+	background-image: url('https://dl.dropboxusercontent.com/s/mylfyh8kh30vicl/green_cup.png');
+	padding: 5rem 15rem 8rem 15rem;
+	.two, .four, .six {
+		padding-left: 10rem;
+	}
+	.one, .three, .five {
+		padding-right: 10rem;
+	}
+	.thumbnail {
+		padding: none;
+		border-radius: 8px;
+		background-color: #d8d8d8;
+	}
+	.quotes {
+		color: #fff;
+		font-size: 40px;
+		line-height: 22px;
+		font-family: "Helvitica";
+		position: relative;
+		top: 10px;
+	}
+	.btn-success {
+		background-color: #b8c2ad !important;
+  		border: none;
+  		margin-top: 20px;
+	}
 }
 
-.quote h1 {
-	color: #cecece;
-	font-size: 25px;
-	letter-spacing: 1px;
-	font-weight: 300;
+.testimonialsample h1 {
+	color: #666;
+	font-size: 18px;
+	font-family: Arial;
+	margin: 0px;
+	padding: 20px 0px;
+	line-height: 24px;
+	font-style: italic;
 }
 
-.quote h2 {
-	color: #cecece;
-	font-size: 20px;
-	font-weight: 300;
-	text-align: right;
-	padding-right: 20px;
+.testimonialsample h2 {
+	font-family: Arial;
+	color: #5e5e5e;
+	font-weight: 600;
 }
+
+
 .aboutus {
 	background-image: url('https://dl.dropboxusercontent.com/s/m4pjclnyevrol68/shattered.png');
 /*	background-color: #DCDCDC;*/
@@ -429,4 +457,24 @@
 	text-decoration: none;
 	font-weight: 400;
 }
+
+.testimonial {
+	background-image: url('https://dl.dropboxusercontent.com/s/mylfyh8kh30vicl/green_cup.png');
+	h1 {
+		font-family: Arial;
+		font-weight: 600;
+		margin-bottom: 40px;
+	}
+	.user {
+		border-top: 1px solid #b8c2ad;
+		padding: 10px 0px;
+		h2 {
+			font-size: 18px;
+			font-weight: 500;
+			text-align: right;
+			padding-right: 80px;
+		}
+	}
+}
+
 
