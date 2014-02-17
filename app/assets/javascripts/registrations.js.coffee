@@ -23,6 +23,10 @@ subscription =
         $('#coupon_success').text("50% off discount applied!").show()
         $('#coupon_error').hide()
         false
+      else if $('#user_coupon').val().toUpperCase() == "DRAGAN"
+        $('#coupon_success').text("Thanks for your support! Your price is now $35.00!").show()
+        $('#coupon_error').hide()
+        false
       else if $('#user_coupon').val().toUpperCase() == "UDEMY"
         $('#coupon_success').text("Free! You'll still need to input a valid credit card though").show()
         $('#coupon_error').hide()
