@@ -18,10 +18,6 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-
-      <li><%=link_to "Blog", blog_path %></li>
-      <li><%=link_to "FAQ", faq_path %></li>
-
       <% if user_signed_in? %>
         <li><%= link_to "Course", chapters_path %></li>
         <li class="dropdown">
@@ -34,6 +30,8 @@
           </ul>
         </li>
       <% else %>
+        <li><%= link_to "Enroll", new_user_registration_path %></li>
+        <li><%= link_to "FAQ", faq_path %></li>
         <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
     </ul>
@@ -51,7 +49,8 @@
       </div><br><br>
       <div class="center">
         <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a itemprop="url" class="btn btn-lg btn-success center" data-no-turbolink="true" href="/users/sign_up"><span itemprop="title">Enroll today for $99</span></a>
+          <a itemprop="url" class="btn btn-lg btn-success" data-no-turbolink="true" href="/users/sign_up"><span itemprop="title">Enroll today for $99</span></a>
+          <a itemprop="url" class="btn btn-lg btn-success button-secondary" data-no-turbolink="true" href="/testimonial"><span class="infotext">Hear from our students</span></a>
         </div>
       </div>
     </div>

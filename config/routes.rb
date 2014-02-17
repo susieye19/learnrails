@@ -11,6 +11,7 @@ Learnrails::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   get 'faq' => 'pages#faq'
+  get 'testimonial' => 'pages#testimonial'
   root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
