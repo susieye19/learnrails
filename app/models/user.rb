@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
         amount = 2400
       end
 
-      unless coupon.upcase == "UDEMY"
+      unless (coupon.upcase == "UDEMY") || (coupon.upcase == "RHONDA") || (coupon.upcase == "FREEACCESS")
         charge = Stripe::Charge.create(
           :amount => amount,
           :currency => "usd",

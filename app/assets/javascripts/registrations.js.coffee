@@ -35,6 +35,14 @@ subscription =
         $('#coupon_success').text("Free! You'll still need to input a valid credit card though").show()
         $('#coupon_error').hide()
         false
+      else if $('#user_coupon').val().toUpperCase() == "RHONDA"
+        $('#coupon_success').text("Free! You'll still need to input a valid credit card though").show()
+        $('#coupon_error').hide()
+        false
+      else if $('#user_coupon').val().toUpperCase() == "FREEACCESS"
+        $('#coupon_success').text("Free! You'll still need to input a valid credit card though").show()
+        $('#coupon_error').hide()
+        false
       else
         $('#coupon_error').text("Sorry, the coupon you entered isn't valid").show()
         $('#coupon_success').hide()
