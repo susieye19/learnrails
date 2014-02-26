@@ -2,7 +2,7 @@ class GenerateController < ApplicationController
   def form
   end
 
-  def thanks
+  def done
     app_name = params["q1"]
     homepage = params["q2"]
 
