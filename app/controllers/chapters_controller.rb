@@ -7,7 +7,7 @@ class ChaptersController < ApplicationController
   # GET /chapters.json
   def index
     @chapters = Chapter.all
-    @comments = Comment.find(:all, limit: 20, order: 'created_at desc')
+    @comments = Comment.find(:all, limit: 15, order: 'created_at desc')
   end
 
   # GET /chapters/1

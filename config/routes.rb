@@ -3,7 +3,7 @@ Learnrails::Application.routes.draw do
   get "/blog" => redirect("/blog/")
 
   get 'generate' => 'generate#form'
-  get 'thanks' => 'generate#thanks'
+  get 'done' => 'generate#thanks'
 
   resources :chapters do
     resources :comments, only: [:create, :destroy]
@@ -12,6 +12,8 @@ Learnrails::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   get 'faq' => 'pages#faq'
   get 'testimonial' => 'pages#testimonial'
+  get 'thanks' => 'pages#thanks'
+
   root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.

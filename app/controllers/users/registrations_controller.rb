@@ -56,7 +56,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    chapters_path
+    thanks_path
   end
 
   def configure_permitted_parameters

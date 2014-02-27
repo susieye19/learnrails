@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def testimonial
   end
+
+  def thanks
+  end
 end
