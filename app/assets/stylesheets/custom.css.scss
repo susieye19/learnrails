@@ -203,3 +203,44 @@
   line-height: 17px;
   border: none;
 }
+
+.moreinfo {
+  h3 {
+    padding: 70px 10px 30px 10px;
+    color: #5b5b5b;
+    font-weight: 400;
+  }
+  .check {
+    list-style: none;
+  }
+  li {
+    padding: 10px 3px;
+    color: #5b5b5b;
+    font-family: "Helvetica neue";
+    font-size: 17px;
+  }
+  img {
+    width: 60px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  .onequote {
+    padding: 10px 20px;
+    margin-left: 30px;
+    margin-top: 20px;
+/*    border-top: 1px solid #333;
+*/  }
+  .quote {
+    color: #5b5b5b;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+  }
+  .name {
+    text-align: right;
+    color: #5b5b5b;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
