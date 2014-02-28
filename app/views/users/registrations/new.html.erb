@@ -5,127 +5,149 @@
 <% end %>
 
 <div class="container">
-  <div class="maincontainer">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2>Sign up</h2>
-      </div>
+  <div class="col-md-6">
+    <div class="maincontainer">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Sign up</h2>
+        </div>
 
-      <div class="panel-body">
-        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: "payment_form" }) do |f| %>
-          <%= devise_error_messages! %>
+        <div class="panel-body">
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: "payment_form" }) do |f| %>
+            <%= devise_error_messages! %>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-lg-9">
-                <%= f.label :name %>
-                <%= f.text_field :name, :autofocus => true, class: "form-control input-sm" %>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-lg-9">
-                <%= f.label :email %>
-                <%= f.email_field :email, class: "form-control input-sm" %>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <div class="col-lg-9">
-                <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control input-sm" %>
-              </div>
-            </div>
-          </div>
-
-          <br>
-
-          <%= f.hidden_field :stripe_card_token %>
-
-          <div id="stripe_error" class="alert alert-danger alert-dismissable" style="display:none">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-          </div>
-
-          <% if @user.stripe_card_token %>
-            <p>Credit card has already been provided.</p>
-          <% else %>
-            <h3> Payment Info </h3><br/>
             <div class="form-group">
               <div class="row">
-                <div class="col-lg-6">
-                  <%= label_tag :card_number, "Credit Card Number" %>
-                  <%= text_field_tag :card_number, nil,
-                      { :name => nil, :'data-stripe' => "number", maxlength: "16",
-                        autocompletetype: "cc-number", class: "form-control card-number input-sm" } %>
-                </div>
-                <div class="col-lg-3">
-                  <%= label_tag :card_code, "CVC" %>
-                  <%= text_field_tag :card_code, nil,
-                      { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
-                        autocomplete: "off", autocompletetype: "cc-csc",
-                        class: "form-control card-cvc input-sm" } %>
+                <div class="col-lg-12">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, :autofocus => true, class: "form-control input-sm" %>
                 </div>
               </div>
-
+            </div>
+            <div class="form-group">
               <div class="row">
-                <div class="col-lg-6">
-                  <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
+                <div class="col-lg-12">
+                  <%= f.label :email %>
+                  <%= f.email_field :email, class: "form-control input-sm" %>
                 </div>
               </div>
+            </div>
+            <div class="form-group">
               <div class="row">
-                <div class="col-lg-3">
-                  <%= select_month nil, {use_two_digit_numbers: true, prompt: "Month"},
-                      { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control input-sm" } %>
-                </div>
-                <div class="col-lg-3">
-                  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15, prompt: "Year"},
-                      { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control input-sm" } %>
+                <div class="col-lg-12">
+                  <%= f.label :password %>
+                  <%= f.password_field :password, class: "form-control input-sm" %>
                 </div>
               </div>
+            </div>
 
-              <br>
+            <br>
 
-              <div id="coupon_success" class="alert alert-success alert-dismissable" style="display:none">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-              </div>
+            <%= f.hidden_field :stripe_card_token %>
 
-              <div id="coupon_error" class="alert alert-danger alert-dismissable" style="display:none">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-              </div>
+            <div id="stripe_error" class="alert alert-danger alert-dismissable" style="display:none">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+            </div>
 
-              <div class="row">
-                <div class="col-lg-3">
-                  <div class="input-group">
-                    <%= f.text_field :coupon, { placeholder: "Coupon (optional)", class: "form-control input-sm" } %>
-                    <span class="input-group-btn">
-                      <%= button_tag "Verify", { id: "verify_coupon", class: "btn btn-default btn-sm" } %>
-                    </span>
+            <% if @user.stripe_card_token %>
+              <p>Credit card has already been provided.</p>
+            <% else %>
+              <h3> Payment Info </h3><br/>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-9">
+                    <%= label_tag :card_number, "Credit Card Number" %>
+                    <%= text_field_tag :card_number, nil,
+                        { :name => nil, :'data-stripe' => "number", maxlength: "16",
+                          autocompletetype: "cc-number", class: "form-control card-number input-sm" } %>
                   </div>
+                  <div class="col-lg-3">
+                    <%= label_tag :card_code, "CVC" %>
+                    <%= text_field_tag :card_code, nil,
+                        { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
+                          autocomplete: "off", autocompletetype: "cc-csc",
+                          class: "form-control card-cvc input-sm" } %>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-8">
+                    <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <%= select_month nil, {use_two_digit_numbers: true, prompt: "Month"},
+                        { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control input-sm" } %>
+                  </div>
+                  <div class="col-lg-4">
+                    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15, prompt: "Year"},
+                        { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control input-sm" } %>
+                  </div>
+                </div>
+
+                <br>
+
+                <div id="coupon_success" class="alert alert-success alert-dismissable" style="display:none">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+                </div>
+
+                <div id="coupon_error" class="alert alert-danger alert-dismissable" style="display:none">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <%= f.text_field :coupon, { placeholder: "Coupon (optional)", class: "form-control input-sm" } %>
+                      <span class="input-group-btn">
+                        <%= button_tag "Verify", { id: "verify_coupon", class: "btn btn-default btn-sm" } %>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+            <br>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-12">
+                  <%= f.submit "Sign up", class: "btn btn-primary" %>
                 </div>
               </div>
             </div>
           <% end %>
+        </div>
 
-          <br>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-lg-12">
-                <%= f.submit "Sign up", class: "btn btn-primary" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="panel-footer">
-        <%= render "devise/shared/links" %>
+        <div class="panel-footer">
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="col-md-6">
+    <div class="maincontainer moreinfo">
+      <h3 class="center">We believe in learning by working on projects</h3>
+      <div class="features">
+        <ul class="check">
+          <li class="a"><%= image_tag "https://dl.dropboxusercontent.com/s/sg39vjwcoq8r179/video.png" %>40+ video lectures with step-by-step instructions</li>
+          <li class="b"><%= image_tag "https://dl.dropboxusercontent.com/s/lm1vewtq0lnd323/transcript.png" %>Full transcript of each lecture to follow along with</li>
+          <li class="c"><%= image_tag "https://dl.dropboxusercontent.com/s/2dox2qjrh74qrrx/source.png" %>Source Code for immediate reference and readibility</li>
+          <li class="d"><%= image_tag "https://dl.dropboxusercontent.com/s/weyre4minw59e10/support.png" %>24-hour response time for troubleshooting help</li>
+<!--           <li class="e"><%= image_tag "https://dl.dropboxusercontent.com/s/uzkouh0i6ax72nk/community.png" %>Community of students commenting on lessons</li> -->
+        </ul>
+      </div>
+      <div class="onequote">
+        <h4 class="quote">"I personally and wholeheartedly recommend this course for anyone who wants to jump in with both feet and learn as you go by creating an actual application that you can use and or modify for your own use."</h4>
+        <h4 class="name">- William P.</h4>
+      </div>
+    </div>
+  </div>
+
 </div>
