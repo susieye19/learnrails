@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
           amount = ((1 - 0.50)*amount).floor
         elsif coupon.upcase == "JEFF"
           amount = 2400
+        elsif coupon.upcase == "BRFFC"
+          amount = ((1 - 0.50)*amount).floor
         end
       end
 

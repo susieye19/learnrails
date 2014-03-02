@@ -19,6 +19,10 @@ subscription =
         $('#coupon_success').text("50% off discount applied!").show()
         $('#coupon_error').hide()
         false
+      else if $('#user_coupon').val().toUpperCase() == "BRFFC"
+        $('#coupon_success').text("50% off discount applied!").show()
+        $('#coupon_error').hide()
+        false
       else if $('#user_coupon').val().toUpperCase() == "BRSM"
         $('#coupon_success').text("50% off discount applied!").show()
         $('#coupon_error').hide()
