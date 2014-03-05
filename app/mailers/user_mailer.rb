@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "Alex Yang <alex@baserails.com>"
+  default from: "BaseRails <alex@baserails.com>"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
