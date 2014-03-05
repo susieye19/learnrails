@@ -23,6 +23,7 @@ gem 'sitemap_generator'
 gem 'watir'
 gem "rack-reverse-proxy", :require => "rack/reverse_proxy"
 gem 'acts_as_commentable_with_threading'
+gem "rest-client"
 
 group :production do
   gem 'rails_12factor'
