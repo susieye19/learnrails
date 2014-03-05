@@ -13,7 +13,14 @@ class CommentsController < ApplicationController
 
     if @comment.save
       if @parent
+        UserMailer.comment_notification(@parent.user.email, @parent.user.name, @comment.user.name, @comment.body, @chapter.id).deliver
         @comment.move_to_child_of(@parent)
+      end
+
+      puts @comment.user.email
+      unless @comment.user.email == "alex@baserails.com"
+        puts "Inside unless statement"
+        UserMailer.alex_notification(@comment.user.name, @comment.body).deliver
       end
       render :partial => "comments/comment", locals: { comment: @comment, new_comment: @new_comment, chapter: @chapter }, layout: false, status: :created
     else
