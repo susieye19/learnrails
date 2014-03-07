@@ -8,3 +8,20 @@
   ga('send', 'pageview');
 
 </script>
+
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-links center">
+			<%= link_to "Who we are" %>
+			<%= link_to "testimonials", testimonial_path %>
+			<%= link_to "FAQ", faq_path %>
+			<%=link_to "Blog", blog_path %>
+			<%= link_to "Contact" %>
+		</div>
+		<div class="social center">
+			<%= link_to image_tag("https://dl.dropboxusercontent.com/s/onv8sst20hjsqrn/twitter.png"), "http://www.twitter.com/baserails" %>
+			<%= link_to image_tag("https://dl.dropboxusercontent.com/s/99aqgtpqitvo9vs/facebook.png"), "https://www.facebook.com/baserails" %>
+		</div>
+		<p class="copyright center">Copyright © 2014 BaseRails</p>
+	</div>
+</footer>

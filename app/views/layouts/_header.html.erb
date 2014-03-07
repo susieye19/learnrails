@@ -20,6 +20,7 @@
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li><%= link_to "Course", chapters_path %></li>
+        <li><%= link_to "24/7 support", faq_path %></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
              <%= current_user.name %> <span class="caret"></span>
@@ -30,30 +31,12 @@
           </ul>
         </li>
       <% else %>
+        <li><%= link_to "About Us" %></li>
+        <li><%=link_to "Project Library" %></li>
+        <li><%= link_to "24/7 support", faq_path %></li>
         <li><%= link_to "Enroll", new_user_registration_path %></li>
-        <li><%= link_to "FAQ", faq_path %></li>
-        <li><%=link_to "Blog", blog_path %></li>
         <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-
-
-<% if (controller_name == 'pages') && (action_name == 'home') %>
-  <div class="jumbotron">
-    <div class="container">
-      <div class="center">
-      <meta itemprop="description" content="Master new skills by diving into a web project. Learn the fundamentals of Rails 4, Ruby 2, Bootstrap, databases, APIs, and other powerful tools.">
-        <h2>Have an idea? Build it.<h2>
-        <h3>Learn to code web applications from scratch.<br></h3>
-      </div><br><br>
-      <div class="center">
-        <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a itemprop="url" class="btn btn-lg btn-success" data-no-turbolink="true" href="/users/sign_up"><span itemprop="title">Enroll today for $99</span></a>
-          <a itemprop="url" class="btn btn-lg btn-success button-secondary" data-no-turbolink="true" href="/testimonial"><span class="infotext">Hear from our students</span></a>
-        </div>
-      </div>
-    </div>
-  </div></span>
-<% end %>
