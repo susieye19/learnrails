@@ -9,9 +9,19 @@
     <br>
 
     <div class="center">
-      <div class="embed-container">
-        <iframe src=<%= @chapter.url %> frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-      </div>
+      <!-- <div class="embed-container"> -->
+        <div id= <%= "wistia_#{@chapter.url}" %> class="wistia_embed">&nbsp;</div>
+        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+        <script>
+          wistiaEmbed = Wistia.embed("<%= @chapter.url %>", {
+            videoFoam: true,
+            videoQuality: "hd-only",
+            playerPreference: "html5",
+            trackEmail: "<%= current_user.email %>"
+          });
+        </script>
+
+      <!-- </div> -->
     </div>
 
     <h3><%= @chapter.title %></h3>

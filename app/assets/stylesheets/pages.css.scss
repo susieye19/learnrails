@@ -163,9 +163,17 @@
 	font-weight: 500;
 	font-size: 25px;
 }
-.etsy .section-header h1 {
+.etsy .section-header {
+	h1 {
 	color: #3f3f3f;
 	margin-bottom: 5rem;
+	}
+	.demovideo {
+		width: 700px;
+		height: 394px;
+		margin: auto;
+		position: relative;
+	}
 }
 
 .etsy img {
@@ -491,7 +499,7 @@
 		}
 		h4 {
 			margin-bottom: 40px;
-			font-weight: 400; 
+			font-weight: 400;
 		}
 	}
 }
