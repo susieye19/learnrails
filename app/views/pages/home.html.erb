@@ -15,7 +15,7 @@
             <li class="divider"></li>
             <li><a href="#">Social Network:<br>Follow other users and share content</a></li>
             <li class="divider"></li>
-            <li><a href="#"></a>Blog:<br>Personal blog or business portfolio</li>
+            <li><a href="#">Blog:<br>Personal blog or business portfolio</a></li>
             <li class="divider"></li>
             <li><a href="#">Landing Page:<br>Test demand by collecting emails</a></li>
             <li class="divider"></li>
@@ -25,7 +25,8 @@
           </ul>
         </div>
         <div class="btn-group">
-          <button type="button" class="btn btn-default single">All projects</button>
+          <%= link_to "All projects", courses_path, class: "btn btn-default single", data: { no_turbolink: true } %>
+          <!-- <button type="button" class="btn btn-default single">All projects</button> -->
         </div>
       </div>
       <div class="enroll center">

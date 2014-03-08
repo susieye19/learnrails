@@ -134,7 +134,7 @@
 		letter-spacing: 0.5px;
 		color: #fff;
 		text-shadow: 0 -1px 1px rgba(0,0,0,1);
-		margin-top: 14rem;
+		margin-top: 15rem;
 	}
 	h2 {
 		font-weight: 500;
@@ -160,7 +160,7 @@
 		background-color: #fff;
 	}
 	.dropdown-toggle:hover {
-		color: #515151;
+		color: #333;
 	}
 
 	.single {
@@ -274,9 +274,12 @@
 		}
 	}
 	.btn-success {
-		background-color: #70a885 !important;
+		background-color: #70a885;
 		border: none;
 		margin-top: 2rem;
+	}
+	.btn-success:hover {
+		background-color: #9ac2a9;
 	}
 }
 

@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def thanks
   end
+
+  def courses
+  end
 end

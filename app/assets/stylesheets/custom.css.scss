@@ -28,6 +28,17 @@
   margin-bottom: 0px;
 }
 
+.navbar-header {
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #5b5b5b;
+  }
+}
+.navbar-right {
+  margin-top: 2rem;
+}
+
 .navbar-default .navbar-brand {
 	color: #5b5b5b;
   font-size: 45px;
@@ -41,7 +52,8 @@
 
 .navbar-default .navbar-nav > li > a {
 	color: #5b5b5b;
-  font-size: 19px;
+  font-size: 17px;
+  text-transform: uppercase;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
