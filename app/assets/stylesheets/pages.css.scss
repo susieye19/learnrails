@@ -11,28 +11,6 @@
 	position: relative;
 }
 
-
-.action {
-	height: 820px;
-	background-image: url('https://dl.dropboxusercontent.com/s/kanaf75ft66e3t3/enroll.png');
-	background-position: center top;
-}
-.action .section-header {
-	margin-bottom: 3rem;
-}
-
-.action .btn-lg {
-  height: 60px;
-  width: 300px;
-  margin-top: 520px;
-
-}
-
-.action .btn-success {
-  font-size: 25px;
-  padding-top: 10px;
-}
-
  .faq .section-header{
  	margin-bottom: 4rem;
  }
@@ -79,14 +57,16 @@
 }
 
 .testimonial {
-	background-image: url('https://dl.dropboxusercontent.com/s/mylfyh8kh30vicl/green_cup.png');
+	background-color: #f4f3ee;
 	h1 {
 		font-family: Arial;
 		font-weight: 600;
 		margin-bottom: 40px;
+		color: #5b5b5b;
 	}
 	p, li {
 		font-size: 18px;
+		color: #5b5b5b;
 	}
 	.user {
 		border-top: 1px solid #b8c2ad;
@@ -96,6 +76,7 @@
 			font-weight: 500;
 			text-align: right;
 			padding-right: 80px;
+			color: #5b5b5b;
 		}
 	}
 }
@@ -104,7 +85,7 @@
 	.box {
 		margin: 150px 200px;
 		padding: 60px;
-		background-image: url('https://dl.dropboxusercontent.com/s/y9o9sowgjowy855/cloth_alike.png');
+		background-color: #f4f3ee;
 		border-radius: 10px;
 		h3 {
 			margin-bottom: 35px;
@@ -113,6 +94,13 @@
 		h4 {
 			margin-bottom: 40px;
 			font-weight: 400; 
+		}
+		.btn-primary {
+			background-color: #70a885;
+			border: none;
+		}
+		.btn-primary:hover {
+			background-color: #8cb99d;
 		}
 	}
 }
@@ -282,4 +270,243 @@
 		background-color: #9ac2a9;
 	}
 }
+
+.courses {
+	h1 {
+		color: #a0a0a0;
+		margin-bottom: 5rem;
+		font-weight: 600;
+		font-size: 45px;
+		background-color: #666666;
+	    -webkit-background-clip: text;
+	    -moz-background-clip: text;
+	    background-clip: text;
+	    color: transparent;
+	    text-shadow: rgba(255,255,255,0.3) 0px 2px 2px;
+	}
+	.thumbnail {
+		box-shadow: 5px 5px 3px #cecece;
+	}
+	.title {
+		color: #5b5b5b;
+		}
+	p {
+		color: #7b7b7b;
+	}
+}
+
+.etsy {
+	background-color:  #f4f3ee;
+}
+
+.etsy .max-width {
+	max-width: 1200px;
+}
+
+.etsy .has-padding {
+	padding-top: 35px;
+}
+
+.etsy .section-header {
+	padding-bottom: 6rem;
+}
+
+.etsy .col-md-4 {
+	.thumbnail {
+		background-color: #fff;
+		padding: 15px 10px;
+		border-radius: 7px;
+	}
+	p {
+	color: #888;
+	font-size: 18px;
+	}
+}
+
+.etsy .col-md-4 h3 {
+	color: #5b5b5b;
+	font-weight: 500;
+	font-size: 25px;
+}
+.etsy .section-header {
+	h1 {
+	color: #3f3f3f;
+	font-size: 45px;
+	font-weight: 600;
+	margin-bottom: 5rem;
+	background-color: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255,255,255,0.3) 0px 2px 2px;
+	}
+	.demovideo {
+		width: 700px;
+		height: 394px;
+		margin: auto;
+		position: relative;
+	}
+}
+
+.etsy img {
+	margin-bottom: 2rem;
+}
+
+.video {
+	background-image: url('https://dl.dropboxusercontent.com/s/m4pjclnyevrol68/shattered.png');
+	h1 {
+		color: #fff;
+		margin-bottom: 4rem;
+	}
+}
+
+.syllabus {
+/*	background-image: url('https://dl.dropboxusercontent.com/s/cla2doim9l3m12g/dark_fish.png');
+*/
+	background-color: #2d2d2d;
+}
+
+.syllabus .section-header h1 {
+	color: #e5e5e5;
+	margin-bottom: 3rem;
+}
+
+.syllabus .section-header h3 {
+	color: #e5e5e5;
+	font-weight: 200;
+	margin-bottom: 7rem;
+}
+
+.syllabus-details {
+	margin-bottom: 7rem;
+}
+
+.syllabus .center h1 {
+	margin-top: 0px;
+	padding-top: 30px;
+}
+
+.syllabus .panel-default > .panel-heading {
+/*	background-image: url('https://dl.dropboxusercontent.com/s/cla2doim9l3m12g/dark_fish.png');
+*/
+	background-color: #2d2d2d;
+	color: #e5e5e5;
+	border-bottom: solid 1px #e5e5e5;
+}
+
+.syllabus .panel {
+	background-color: whitesmoke;
+}
+
+.syllabus .panel-group .panel-default {
+	border-radius: 0px;
+	border: none;
+}
+
+.syllabus .panel-title {
+	font-size: 20px;
+}
+
+.syllabus .panel-title a {
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: 400;
+}
+
+.syllabus .panel-title a:hover {
+	background-color: none;
+	padding-left: 30px;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+.marketplaces {
+	.thumbnail {
+		border: none;
+	}
+	h1 {
+		color: #a0a0a0;
+		margin: 10rem 0rem 5rem;
+		font-weight: 600;
+		font-size: 45px;
+		background-color: #666666;
+	    -webkit-background-clip: text;
+	    -moz-background-clip: text;
+	    background-clip: text;
+	    color: transparent;
+	    text-shadow: rgba(255,255,255,0.3) 0px 2px 2px;
+	}
+	.btn-xs {
+		position: right;
+		margin: 0px 5px;
+		font-size: 13px;
+		text-transform: uppercase;
+		padding: 10px;
+		color: #fff;
+		font-weight: 500;
+		border: none;
+	}
+	.a {
+		background-color: #70a885;
+	}
+	.a:hover {
+		background-color: #8cb99d;
+	}
+	.b {
+		background-color: #b7b7b7;
+	}
+	.b:hover {
+		background-color: #cecece;
+	}
+}
+
+.action {
+	background-color:  #f4f3ee;
+	.section-header {
+	margin-bottom: 3rem;
+	}
+	h1 {
+		color: #a0a0a0;
+		margin: 5rem 0rem 5rem;
+		font-weight: 600;
+		font-size: 30px;
+		background-color: #666666;
+	    -webkit-background-clip: text;
+	    -moz-background-clip: text;
+	    background-clip: text;
+	    color: transparent;
+	    text-shadow: rgba(255,255,255,0.3) 0px 2px 2px;
+	}
+	.btn-xs {
+		position: right;
+		margin: 0px 5px;
+		font-size: 13px;
+		text-transform: uppercase;
+		padding: 10px;
+		color: #fff;
+		font-weight: 500;
+		margin-top: 3rem;
+		border: none;
+	}
+	.a {
+		background-color: #70a885;
+	}
+	.a:hover {
+		background-color: #8cb99d;
+	}
+	.b {
+		background-color: #b7b7b7;
+	}
+	.b:hover {
+		background-color: #cecece;
+	}
+	li {
+		font-size: 20px;
+		color: #5b5b5b;
+		line-height: 1.5;
+	}
+}
+
 

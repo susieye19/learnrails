@@ -13,4 +13,10 @@ class PagesController < ApplicationController
 
   def courses
   end
+
+  def marketplace
+  end
+
+  def about
+  end
 end

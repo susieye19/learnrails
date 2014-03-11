@@ -11,7 +11,7 @@
             Project Library <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Two-sided Marketplace:<br>A platform to connect two parties</a></li>
+            <li><%= link_to "Two-sided Marketplace:<br />A platform to connect two parties".html_safe, courses_marketplace_path %></li>
             <li class="divider"></li>
             <li><a href="#">Social Network:<br>Follow other users and share content</a></li>
             <li class="divider"></li>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="enroll center">
-        <%= link_to "Enroll today for only $19/mo", new_user_registration_path,
+        <%= link_to "Enroll for $50 per course", new_user_registration_path,
         class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
       </div>
     </div>
@@ -48,8 +48,8 @@
       <div class="col-md-4">
         <div class="thumbnail">
           <%= image_tag "https://dl.dropboxusercontent.com/s/gtdmac42c9qta2c/webstore.png" %>
-          <h2 class="center">Enroll for $19/mo</h2>
-          <p class="center">Access our library of video screencasts with step-by-step instructions</p>
+          <h2 class="center">$50 flat rate per course</h2>
+          <p class="center">Get lifetime access to our library of video screencasts with step-by-step instructions</p>
         </div>
       </div>
       <div class="col-md-4">
