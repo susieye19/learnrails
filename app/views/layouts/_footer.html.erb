@@ -16,7 +16,9 @@
 			<%= link_to "testimonials", testimonial_path %>
 			<%= link_to "FAQ", faq_path %>
 			<%=link_to "Blog", blog_path %>
-			<%= link_to "Contact" %>
+			<%= mail_to "alex@baserails.com" do %>
+			  Contact
+			<% end %>
 		</div>
 		<div class="social center">
 			<%= link_to image_tag("https://dl.dropboxusercontent.com/s/onv8sst20hjsqrn/twitter.png"), "http://www.twitter.com/baserails" %>
