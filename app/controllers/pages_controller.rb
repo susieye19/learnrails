@@ -10,4 +10,13 @@ class PagesController < ApplicationController
 
   def thanks
   end
+
+  def courses
+  end
+
+  def marketplace
+  end
+
+  def about
+  end
 end

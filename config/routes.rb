@@ -13,6 +13,9 @@ Learnrails::Application.routes.draw do
   get 'faq' => 'pages#faq'
   get 'testimonial' => 'pages#testimonial'
   get 'thanks' => 'pages#thanks'
+  get 'courses' => 'pages#courses'
+  get 'courses/marketplace' => 'pages#marketplace'
+  get 'about' => 'pages#about'
 
   root 'pages#home'
 
