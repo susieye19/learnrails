@@ -1,16 +1,15 @@
 <section class="projects">
   <div class="max-width has-padding">
-    <header class="section-header center">
-      <h1>&ldquo;Build an MVP for your startup in 4 weeks&rdquo;</h1>
-      <h2>The #1 resource in getting you from idea to working prototype</h2>
-    </header>
+    <div class="center">
+      <header class="section-header center">
+        <h1>&ldquo;Build an MVP for your startup in 4 weeks&rdquo;</h1>
+        <h2>The #1 resource in getting you from idea to working prototype</h2>
+      </header>
+    </div>
     <div class="center">
       <div class="marketplaceproject">
+        <%= link_to "Enroll today for $99", new_user_registration_path, class: "btn btn-lg btn-default center", data: { no_turbolink: true } %>
         <%= link_to "View course info", courses_marketplace_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
-      </div>
-      <div class="enroll center">
-        <%= link_to "Enroll today for $99", new_user_registration_path,
-        class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
       </div>
     </div>
   </div>

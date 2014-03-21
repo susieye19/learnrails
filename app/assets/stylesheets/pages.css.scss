@@ -106,11 +106,11 @@
 }
 
 .projects {
-	background-image: url('https://dl.dropboxusercontent.com/s/3etjdp2jn7c9kth/banner4.png');
-	background-position: bottom;
+	background-image: url('https://dl.dropboxusercontent.com/s/0x4yhpdt689zoy1/BRbanner3.png');
+	background-position: center;
 	background-repeat: no-repeat;
 	padding-bottom: 6rem;
-	height: 700px;
+	height: 600px;
 	.section-header {
 		margin-bottom: 5rem;
 		padding: 0rem 10rem;
@@ -121,7 +121,7 @@
 		letter-spacing: 0.5px;
 		color: #fff;
 		text-shadow: 0 -1px 1px rgba(0,0,0,1);
-		margin-top: 17rem;
+		margin-top: 16rem;
 	}
 	h2 {
 		font-weight: 500;
@@ -134,32 +134,31 @@
 	p {
 		color: #6b6b6b;
 	}
-	.enroll {
-		.btn-success {
-			background-color: #70a885;
-			border: none;
-			font-size: 15px;
-			margin-top: 7rem;
-			border-radius: 15px;
-			padding: 7px 20px;
-		}
-		.btn-success:hover {
-		background-color: #8cb99d;
-		}
-	}
 	.marketplaceproject {
 		.btn-success {
 			background-color: #7b7b7b;
 			color: #fff;
 			border: none;
-			width: 250px;
-			font-weight: 500;
 			letter-spacing: 1px;
-			font-size: 22px;
-			padding: 7px;
+			font-size: 20px;
+			padding: 7px 15px;
+			font-weight: 400;
 		}
 		.btn-success:hover {
 			background-color: #5b5b5b;
+		}
+		.btn-default {
+			background-color: #70a885;
+			border: none;
+			color: #fff;
+			letter-spacing: 1px;
+			font-size: 20px;
+			padding: 7px 15px;
+			margin-right: 1rem;
+			font-weight: 400;
+		}
+		.btn-default:hover {
+			background-color: #9ac2a9;
 		}
 	}
 }
