@@ -10,9 +10,9 @@
 
     <div class="center">
       <!-- <div class="embed-container"> -->
-        <div id= <%= "wistia_#{@chapter.url}" %> class="wistia_embed">&nbsp;</div>
+        <div id="<%= "wistia_#{@chapter.url}" %>" class="wistia_embed">&nbsp;</div>
         <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-        <script>
+        <script type="text/javascript">
           wistiaEmbed = Wistia.embed("<%= @chapter.url %>", {
             videoFoam: true,
             videoQuality: "hd-only",
