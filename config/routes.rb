@@ -2,9 +2,6 @@ Learnrails::Application.routes.draw do
 
   get "/blog" => redirect("/blog/")
 
-  get 'generate' => 'generate#form'
-  get 'done' => 'generate#thanks'
-
   resources :chapters do
     resources :comments, only: [:create, :destroy]
   end
