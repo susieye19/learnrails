@@ -8,30 +8,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
 
-    # if resource.save
-    #   begin
-    #     Stripe.api_key = ENV["STRIPE_API_KEY"]
-    #     token = params[:user][:stripe_card_token]
-    #     logger.info "Stripe card token is #{params[:user][:stripe_card_token]}"
-
-    #     charge = Stripe::Charge.create(
-    #       :amount => 9900,
-    #       :currency => "usd",
-    #       :card => token,
-    #       :description => %Q[Charge for #{params[:user][:email]}]
-    #     )
-    #     redirect_to root_url
-    #   rescue Stripe::CardError => e
-    #     resource.errors.add :base, "There was a problem with your credit card."
-    #     # self.stripe_card_token = nil
-    #     false
-    #   rescue Stripe::InvalidRequestError => e
-    #     # resource.errors.add :base, "Stripe::InvalidRequestError"
-    #     # self.stripe_card_token = nil
-    #     redirect_to root_url, flash[:error] = "Invalid Request Error"
-    #   end
-    # end
-
     if resource.save_with_payment
       yield resource if block_given?
       if resource.active_for_authentication?

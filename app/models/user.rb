@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
           :description => "Charge for #{email}"
         )
       end
+
+      self.amount = amount/100.0
       save!
     end
   rescue Stripe::CardError => e
