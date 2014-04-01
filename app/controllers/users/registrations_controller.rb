@@ -9,6 +9,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
 
     if resource.save_with_payment
+
+      if resource.amount > 0
+        Analytics.track(
+          user_id: resource.id,
+          event: 'Enrolled on Etsydemo - PAID',
+          properties: {
+            coupon: resource.coupon,
+            amount: resource.amount
+          })
+      else
+        Analytics.track(
+          user_id: resource.id,
+          event: 'Enrolled on Etsydemo - FREE',
+          properties: {
+            coupon: resource.coupon,
+            amount: resource.amount
+          })
+      end
+
       yield resource if block_given?
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?

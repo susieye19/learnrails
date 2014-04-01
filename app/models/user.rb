@@ -11,24 +11,25 @@ class User < ActiveRecord::Base
       Stripe.api_key = ENV["STRIPE_API_KEY"]
       token = stripe_card_token
 
-      amount = 9900
-      unless coupon.blank?
-        if coupon.upcase == "SWSD"
-          amount = ((1 - 0.75)*amount).floor
-        elsif coupon.upcase == "BROC"
-          amount = ((1 - 0.50)*amount).floor
-        elsif coupon.upcase == "BRSM"
-          amount = ((1 - 0.50)*amount).floor
-        elsif coupon.upcase == "EVENTSOC"
-          amount = ((1 - 0.50)*amount).floor
-        elsif coupon.upcase == "JEFF"
-          amount = 2400
-        elsif coupon.upcase == "BETASPRING"
-          amount = 5000
-        end
+      if coupon.blank?
+        amount = 9900
+      elsif coupon.upcase == "SWSD"
+        amount = 2500
+      elsif coupon.upcase == "BROC"
+        amount = 5000
+      elsif coupon.upcase == "BRSM"
+        amount = 5000
+      elsif coupon.upcase == "EVENTSOC"
+        amount = 5000
+      elsif coupon.upcase == "BETASPRING"
+        amount = 5000
+      elsif coupon.upcase == "UDEMY"
+        amount = 0
+      elsif coupon.upcase == "FREEACCESS"
+        amount = 0
       end
 
-      unless (!coupon.blank?) && ((coupon.upcase == "UDEMY") || (coupon.upcase == "FREEACCESS"))
+      if amount > 0
         charge = Stripe::Charge.create(
           :amount => amount,
           :currency => "usd",
