@@ -20,10 +20,10 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'coderay'
 gem 'RedCloth'
 gem 'sitemap_generator'
-gem 'watir'
 gem "rack-reverse-proxy", :require => "rack/reverse_proxy"
 gem 'acts_as_commentable_with_threading'
 gem "rest-client"
+gem 'analytics-ruby', '~>1.0'
 
 group :production do
   gem 'rails_12factor'
