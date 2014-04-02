@@ -17,7 +17,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
           properties: {
             coupon: resource.coupon,
             amount: resource.amount
-          })
+          },
+          context: {
+            'Google Analytics' => {
+              clientId: '471240751.1390206154'
+            }
+          }
+        )
       else
         Analytics.track(
           user_id: resource.id,
@@ -25,7 +31,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
           properties: {
             coupon: resource.coupon,
             amount: resource.amount
-          })
+          },
+          context: {
+            'Google Analytics' => {
+              clientId: '471240751.1390206154'
+            }
+          }
+        )
       end
 
       yield resource if block_given?
