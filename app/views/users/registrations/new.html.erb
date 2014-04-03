@@ -151,3 +151,9 @@
   </div>
 
 </div>
+
+<% if Rails.env.production? %>
+  <script>
+    mixpanel.track("Visited signup form");
+  </script>
+<% end %>

@@ -77,3 +77,9 @@
     </div>
   </div>
 </section>
+
+<% if Rails.env.production? %>
+  <script>
+    mixpanel.track("Visit homepage");
+  </script>
+<% end %>

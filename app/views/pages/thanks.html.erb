@@ -27,3 +27,33 @@ var google_remarketing_only = false;
 <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/976333359/?value=99&amp;label=1nKSCKG-uwgQr9TG0QM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
+
+<% if Rails.env.production? %>
+  <% if current_user.amount > 0 %>
+    <script>
+      mixpanel.track("Enrolled on Etsydemo - PAID", {
+        "Paid": "<%= current_user.amount %>"
+      });
+
+      mixpanel.alias("<%= current_user.id %>");
+      mixpanel.people.set({
+        "$name": "<%= current_user.name %>",
+        "$email": "<%= current_user.email %>",
+        "Paid": "<%= current_user.amount %>"
+      })
+    </script>
+  <% else %>
+    <script>
+      mixpanel.track("Enrolled on Etsydemo - FREE", {
+        "Paid": "0"
+      });
+
+      mixpanel.alias("<%= current_user.id %>");
+      mixpanel.people.set({
+        "$name": "<%= current_user.name %>",
+        "$email": "<%= current_user.email %>",
+        "Paid": "0"
+      })
+    </script>
+  <% end %>
+<% end %>
