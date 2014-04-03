@@ -10,7 +10,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if resource.save_with_payment
 
+      # Identify users for Segment.io analytics
+      Analytics.identify(
+        user_id: resource.id,
+        traits: {
+          name: resource.name,
+          email: resource.email,
+          amount
+          }
+        )
+
+      # Identify user and track both paid and free enrollments for Segment.io analytics
       if resource.amount > 0
+
+        Analytics.identify(
+          user_id: resource.id,
+          traits: {
+            name: resource.name,
+            email: resource.email,
+            amount: resource.amount
+          }
+        )
+
         Analytics.track(
           user_id: resource.id,
           event: 'Enrolled on Etsydemo - PAID',
@@ -25,6 +46,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
           }
         )
       else
+        Analytics.identify(
+          user_id: resource.id,
+          traits: {
+            name: resource.name,
+            email: resource.email,
+            amount: "FREE"
+          }
+        )
+
         Analytics.track(
           user_id: resource.id,
           event: 'Enrolled on Etsydemo - FREE',

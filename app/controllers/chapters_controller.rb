@@ -16,6 +16,39 @@ class ChaptersController < ApplicationController
     @chapters = Chapter.all
     @comments = @chapter.root_comments.order('created_at asc')
     @new_comment = Comment.build_from(@chapter, current_user, "")
+
+    if current_user.amount > 0
+      Analytics.identify(
+        user_id: current_user.id,
+        traits: {
+          name: current_user.name,
+          email: current_user.email,
+          amount: current_user.amount
+        }
+      )
+    else
+      Analytics.identify(
+        user_id: current_user.id,
+        traits: {
+          name: current_user.name,
+          email: current_user.email,
+          amount: "FREE"
+        }
+      )
+    end
+
+    Analytics.track(
+      user_id: current_user.id,
+      event: 'Viewed chapter',
+      properties: {
+        chapter: @chapter.title
+      },
+      context: {
+        'Google Analytics' => {
+          clientId: '471240751.1390206154'
+        }
+      }
+    )
   end
 
   # GET /chapters/new
