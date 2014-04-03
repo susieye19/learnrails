@@ -4,14 +4,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     super
 
-    Analytics.track(
-      event: 'View Signup Form',
-      context: {
-        'Google Analytics' => {
-          clientId: '471240751.1390206154'
-        }
-      }
-    )
+    # Analytics.track(
+    #   event: 'View Signup Form',
+    #   context: {
+    #     'Google Analytics' => {
+    #       clientId: '471240751.1390206154'
+    #     }
+    #   }
+    # )
   end
 
   def create
