@@ -4,36 +4,36 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     super
 
-    # Identify user and track 'Visit Signup Form' event
-    if user_signed_in?
-      Analytics.identify(
-        user_id: current_user.id,
-        traits: {
-          name: current_user.name,
-          email: current_user.email,
-          amount: current_user.amount
-        }
-      )
-      Analytics.track(
-        user_id: current_user.id,
-        event: 'Visit Signup Form',
-        context: {
-          'Google Analytics' => {
-            clientId: '471240751.1390206154'
-          }
-        }
-      )
-    else
-      Analytics.track(
-        user_id: request.session_options[:id],
-        event: 'Visit Signup Form',
-        context: {
-          'Google Analytics' => {
-            clientId: '471240751.1390206154'
-          }
-        }
-      )
-    end
+    # # Identify user and track 'Visit Signup Form' event
+    # if user_signed_in?
+    #   Analytics.identify(
+    #     user_id: current_user.id,
+    #     traits: {
+    #       name: current_user.name,
+    #       email: current_user.email,
+    #       amount: current_user.amount
+    #     }
+    #   )
+    #   Analytics.track(
+    #     user_id: current_user.id,
+    #     event: 'Visit Signup Form',
+    #     context: {
+    #       'Google Analytics' => {
+    #         clientId: '471240751.1390206154'
+    #       }
+    #     }
+    #   )
+    # else
+    #   Analytics.track(
+    #     user_id: request.session_options[:id],
+    #     event: 'Visit Signup Form',
+    #     context: {
+    #       'Google Analytics' => {
+    #         clientId: '471240751.1390206154'
+    #       }
+    #     }
+    #   )
+    # end
   end
 
   def create
