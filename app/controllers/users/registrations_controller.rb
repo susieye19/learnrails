@@ -4,20 +4,45 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     super
 
-    # Analytics.track(
-    #   event: 'View Signup Form',
-    #   context: {
-    #     'Google Analytics' => {
-    #       clientId: '471240751.1390206154'
-    #     }
-    #   }
-    # )
+    # Identify user and track 'Visit Signup Form' event
+    if user_signed_in?
+      Analytics.identify(
+        user_id: current_user.id,
+        traits: {
+          name: current_user.name,
+          email: current_user.email,
+          amount: current_user.amount
+        }
+      )
+      Analytics.track(
+        user_id: current_user.id,
+        event: 'Visit Signup Form',
+        context: {
+          'Google Analytics' => {
+            clientId: '471240751.1390206154'
+          }
+        }
+      )
+    else
+      Analytics.track(
+        user_id: request.session_options[:id],
+        event: 'Visit Signup Form',
+        context: {
+          'Google Analytics' => {
+            clientId: '471240751.1390206154'
+          }
+        }
+      )
+    end
   end
 
   def create
     build_resource(sign_up_params)
 
     if resource.save_with_payment
+
+      # Alias anonymous user to user_id
+      Analytics.alias(from: request.session_options[:id], to: resource.id)
 
       # Identify user and track both paid and free enrollments for Segment.io analytics
       if resource.amount > 0
