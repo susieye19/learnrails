@@ -23,20 +23,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
           }
         }
       )
-    else
-      Analytics.identify(
-        user_id: request.session_options[:id]
-      )
-      Analytics.track(
-        user_id: request.session_options[:id],
-        event: 'Visit Signup Form',
-        context: {
-          'Google Analytics' => {
-            clientId: '471240751.1390206154'
-          }
-        }
-      )
-    end
+    # else
+    #   Analytics.identify(
+    #     user_id: request.session_options[:id]
+    #   )
+    #   Analytics.track(
+    #     user_id: request.session_options[:id],
+    #     event: 'Visit Signup Form',
+    #     context: {
+    #       'Google Analytics' => {
+    #         clientId: '471240751.1390206154'
+    #       }
+    #     }
+    #   )
+    # end
   end
 
   def create
