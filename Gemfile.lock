@@ -184,7 +184,6 @@ DEPENDENCIES
   rack-reverse-proxy
   rails (= 4.0.0)
   rails_12factor
-  rest-client
   sass-rails (~> 4.0.0)
   sdoc
   sitemap_generator

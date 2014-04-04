@@ -106,28 +106,37 @@
 }
 
 .projects {
-	background-image: url('https://dl.dropboxusercontent.com/s/0x4yhpdt689zoy1/BRbanner3.png');
-	background-position: center;
+	background-image: url('https://dl.dropboxusercontent.com/s/5kkwgd01wzvajui/banner2.png');
+	background-position: bottom;
 	background-repeat: no-repeat;
 	padding-bottom: 6rem;
-	height: 600px;
+	height: 460px;
+	.containertagline {
+		max-width: 980px;
+		width: 100%;
+	}
 	.section-header {
-		margin-bottom: 5rem;
-		padding: 0rem 10rem;
+		background-color: rgba(255,255,255,0.85);
+		margin: 20px auto 0 auto;
+		max-width: 760px;
+		text-align: center;
+		border-radius: 5px;
+		padding: 10px;
+		z-index: 150;
 	}
 	h1 {
 		font-weight: 700;
-		font-size: 50px;
+		font-size: 39px;
 		letter-spacing: 0.5px;
-		color: #fff;
-		text-shadow: 0 -1px 1px rgba(0,0,0,1);
-		margin-top: 16rem;
-	}
+		color: #333;
+/*		text-shadow: 0 -1px 1px rgba(0,0,0,1);
+*/	}
 	h2 {
 		font-weight: 500;
-		color: #fff;
-		text-shadow: 0 -1px 1px rgba(0,0,0,1);
-		font-size: 32px;
+		color: #333;
+/*		text-shadow: 0 -1px 1px rgba(0,0,0,1);
+*/		font-size: 24px;
+		margin: 0px;
 	}
 	h3 {
 		color: #5b5b5b;
@@ -136,13 +145,13 @@
 		color: #6b6b6b;
 	}
 	.marketplaceproject {
+		margin: 30px 0px;
 		.btn-success {
 			background-color: #7b7b7b;
 			color: #fff;
 			border: none;
-			letter-spacing: 1px;
-			font-size: 20px;
-			padding: 7px 15px;
+			font-size: 18px;
+			padding: 7px 20px;
 			font-weight: 400;
 		}
 		.btn-success:hover {
@@ -152,10 +161,9 @@
 			background-color: #70a885;
 			border: none;
 			color: #fff;
-			letter-spacing: 1px;
-			font-size: 20px;
-			padding: 7px 15px;
-			margin-right: 1rem;
+			font-size: 18px;
+			padding: 7px 20px;
+			margin-right: 3rem;
 			font-weight: 400;
 		}
 		.btn-default:hover {
@@ -166,7 +174,7 @@
 
 .summary {
 	padding-top: 6rem;
-	padding-bottom: 1rem;
+	padding-bottom: 5rem;
 	background-color: #f4f3ee;
 	.section-header {
 		padding-right: 5rem;
@@ -179,33 +187,50 @@
 	.thumbnail {
 		background-color: #f4f3ee;
 		border: none;
-		margin-bottom: 0px;
+		margin: 10px 0px;
 	}
 	.title {
 		.container {
 			background-color: #f4f3ee;
-			margin-top: -105px;
-			width: 15%;
+			margin-top: -95px;
+			width: 20%;
 			height: 70px;
 			border-radius: 5px;
 			h1 {
-				color: #5b5b5b;
+				color: #333;
 				font-size: 25px;
-				margin-top: 20px;
+				margin-top: 10px;
 				margin-bottom: 20px;
-				font-weight: 600;
+				font-weight: 500;
 			}
 		}
 	}
 	h2 {
 		font-size: 22px;
 		font-weight: 500;
-		color: #5b5b5b;
+		color: #59866a;
 	}
 	p {
 		font-size: 16px;
-		color: #6b6b6b;
+		color: #333;
+		margin-bottom: 2rem;
 	}
+	h1 {
+		color: #333;
+		font-size: 33px;
+		margin-top: 10px;
+		font-weight: 400;
+		margin-bottom: 2rem;
+	}
+	table.center {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 950px;
+/*    .solid {
+    	background-color: #fff;
+    	border: 1px solid #e5e5e5;
+    }*/
+  }
 }
 
 .difference {
@@ -554,4 +579,37 @@
 	color: #5b5b5b;
 	font-weight: 300;
 	font-size: 19px;
+}
+
+.trust {
+/*	background-image: url('https://dl.dropboxusercontent.com/s/ij4ewlomp5beuqt/map.png');
+*/
+	background-image: url('https://dl.dropboxusercontent.com/s/s1m3qngsgd1tr96/map2.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 10rem 0rem 5rem 0rem;
+	h1 {
+		font-size: 40px;
+		text-shadow: -1px 2px 2px #e5e5e5;
+		color: #5b5b5b;
+		width: 85%;
+		margin: auto;
+	}
+	table.center {
+    margin-left:auto;
+    margin-right:auto;
+  }
+  h2 {
+  	color: #5b5b5b;
+  	font-size: 22px;
+  	font-weight: 300;
+  	width: 80%;
+  	margin: auto;
+  }
+  h3 {
+  	text-align: right;
+  	font-size: 20px;
+  	margin-right: 100px;
+  	font-weight: 400;
+  }
 }

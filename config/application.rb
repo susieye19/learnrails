@@ -20,8 +20,6 @@ module Learnrails
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.action_mailer.default_url_options = { host: 'baserails.com' }
-
     config.i18n.enforce_available_locales = true
     config.time_zone = 'Pacific Time (US & Canada)'
   end
