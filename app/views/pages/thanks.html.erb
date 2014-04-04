@@ -28,7 +28,7 @@ var google_remarketing_only = false;
 </div>
 </noscript>
 
-<!-- Mixpanel event tracking -->
+<!-- Mixpanel event and identity tracking -->
 <% if current_user.amount > 0 %>
   <script>
     mixpanel.track("Enrolled on Etsydemo - PAID", {
@@ -41,6 +41,8 @@ var google_remarketing_only = false;
       "$email": "<%= current_user.email %>",
       "Paid": "<%= current_user.amount %>"
     })
+
+    mixpanel.people.track_charge(<%= current_user.amount %>);
   </script>
 <% else %>
   <script>
