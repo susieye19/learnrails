@@ -1,15 +1,13 @@
 <section class="projects">
   <div class="max-width has-padding">
-    <div class="center">
-      <header class="section-header center">
-        <h1>&ldquo;Build an MVP for your startup in 4 weeks&rdquo;</h1>
+    <div class="containertagline center">
+      <div class="section-header center">
+        <h1>Build an MVP for your startup in 4 weeks</h1>
         <h2>The #1 resource in getting you from idea to working prototype</h2>
-      </header>
-    </div>
-    <div class="center">
-      <div class="marketplaceproject">
-        <%= link_to "Enroll today for $99", new_user_registration_path, class: "btn btn-lg btn-default center", data: { no_turbolink: true } %>
-        <%= link_to "View course info", courses_marketplace_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
+        <div class="marketplaceproject">
+          <%= link_to "Enroll today for $99", new_user_registration_path, class: "btn btn-lg btn-default center", data: { no_turbolink: true } %>
+          <%= link_to "View course info", courses_marketplace_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
+      </div>
       </div>
     </div>
   </div>
@@ -18,10 +16,10 @@
 <section class="summary">
   <div class="title">
     <div class="container">
-      <h1 class="center">How It Works</h1>
+      <h1 class="center">How We Help You</h1>
     </div>
   </div>
-  <div class="max-width has-padding">
+  <!-- <div class="max-width has-padding">
     <div class="row">
       <div class="col-md-4">
         <div class="thumbnail">
@@ -45,38 +43,75 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="difference">
+  </div> -->
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <header class="section-header center">
-          <h1>The BaseRails Difference</h1>
-        </header>
-        <h3>Here at BaseRails, we'll walk you step-by-step through building fully functional web apps from beginning to end. You'll learn practical, up-to-date skills that can be instantly useful for implementing your idea and testing your MVP with real users.</h3>
-        <h3>We don't think you need to memorize complicated programming syntax, get a computer science degree, or shell out $20,000 for an in-person class just to build a website.
-        </h3>
-        <div class="center">
-          <%= link_to "Enroll today for $99", new_user_registration_path,
-            class: "btn btn-lg btn-success", data: { no_turbolink: true } %>
-          <%= link_to "View course info", courses_marketplace_path, class: "btn btn-lg btn-default", data: { no_turbolink: true } %>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+          <h2 class="center">Get startup advice</h2>
+          <p class="center">Learn how others did it before you and get the practical advice you need to get your idea off the ground.</p>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/z2yt9b2i7104lx1/placeholders.png" %>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="features">
-          <ul class="check">
-            <li>Hundreds of video lectures with step-by-step instructions </li>
-            <li>Full transcript of each lecture to follow along with as you watch the videos</li>
-            <li>Source Code for immediate reference and readability</li>
-            <li>24-hour response time from instructors to help with troubleshooting</li>
-          <ul>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+          <h2 class="center">Build a robust web app</h2>
+          <p class="center">Enroll in our comprehensive 4-week online course and learn how to build a fully functional Rails app from scratch.</p>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/z2yt9b2i7104lx1/placeholders.png" %>        
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+          <h2 class="center">Become a technical founder</h2>
+          <p class="center">Ready to take your web app to the next level? Subscribe to our video library of easy-to-follow tutorials for popular features.</p>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/z2yt9b2i7104lx1/placeholders.png" %>
         </div>
       </div>
     </div>
+    <h1 class="center">A few of the features we teach you to build</h1>
+    <table cellspacing="0" cellpadding="10" class="center">
+      <tbody>
+        <tr>
+          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
+          Social Media Integration</td>
+          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/z6039t8a3burj53/searchicon.png" %><br>
+          Search Bar Implementation</td>
+          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
+          Social Media Integration</td>
+          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
+          Social Media Integration</td>
+          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
+          Social Media Integration</td>
+          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
+          Social Media Integration</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </section>
+
+<section class="trust">
+  <div class="container">
+    <h1 class="center">We're a globally trusted resource for entrepreneurs from all walks of life</h1>          
+    <table cellspacing="0" cellpadding="20" class="center">
+      <tbody>
+        <tr>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/pfvdfdyrkt47rut/ebaybw.png" %></td>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/m5q6mkj3la9sv7q/IMBbw.png" %></td>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/n5w2u6k5z02nhgb/teespring.png" %></td>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/6mk7czvhzi79ken/kpmg.png" %></td>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/bcqdk4o9e3lyajo/cambridge.png" %></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="center">&ldquo;I personally and wholeheartedly recommend this for anyone who wants to jump in with both feet and learn as you go by creating an actual application that you can use and or modify for your own use.&rdquo;</h2>
+    <h3>- William P.</h3>
+
+  </div>
+</section>
+
+
 
 
 
