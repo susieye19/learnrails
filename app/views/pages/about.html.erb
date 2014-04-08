@@ -1,59 +1,42 @@
 <section class="aboutus">
 	<div class="max-width has-padding">
 		<h1>Hello and welcome to BaseRails!</h1>
-		<p>First of all, congratulations on learning to implement your startup ideas, most people never even make it there.</p>
-		<p>Here at BaseRails, we think of building web apps as working on a 100,000-piece jigsaw puzzle. There are tiny pieces strewn everywhere and you have no clue where to even start. BaseRails will serve as an instruction manual on how to put all those puzzle pieces together.</p>
-		<p>We're a team of self-taught developers and we take a more practical approach to learning than most traditional classes. Our goal is to get you up to speed faster and save you months of time in building your websites.</p>
-		<p>We believe that feedback and support are crucial to self-learning which is why we’ll do our best to respond to emails within 24 hours. You can reach our instructor at alex@baserails.com.</p>
-		<p>By the end of this course, you’ll have the ability to apply what you’ve learned toward implementing any idea of your own. You'll finally be able to build a product that actually works.</p>
-		<p>Good luck and happy building!</p>
-	</div>
-		<div class="team">
-			<div class="container">
-		     <h1 class="max-width">Our Team</h1>
-
-		    <div class ="col-md-5 long">
-		      <div class="row">
-		        <div class="col-md-6">
-		          <div class="thumbnail">
-		            <%= image_tag "https://dl.dropboxusercontent.com/s/j1aiq616595df0d/alex.jpg" %>
-		          </div>
-		        </div>
-		        <div class="col-md-6">
-		          <div class="thumbnail name">
-		            <h2>Alex Yang</h2>
-		            <h3>Instructor</h3>
-		          </div>
-		        </div>
-		      </div>
-		      <div class="row big">
-		        <p>Alex spent 4 years at Harvard studying math, then 2 years at the Boston Consulting Group studying PowerPoint.<br><br>
-		          He taught himself to code by wading through coding exercises, programming books, and online tutorials before realizing there was a better way.<br><br>Currently, he's working on further building out the BaseRails curriculum and developing content for Codecademy to teach British kids to program.
-		        </p><br>
-		      </div>
-		    </div>
-
-		   	<div class="col-md-5 long">
-		      <div class="row">
-		        <div class="col-md-6">
-		          <div class="thumbnail">
-		            <%= image_tag "https://dl.dropboxusercontent.com/s/9u279iingo4jg5y/susie.jpg" %>
-		          </div>
-		        </div>
-		        <div class="col-md-6">
-		          <div class="thumbnail name">
-		            <h2>Susie Ye</h2>
-		            <h3>Producer</h3>
-		          </div>
-		        </div>
-		      </div>
-		      <div class="row big">
-		        <p>Susie comes from a medical background, but after completing a startup accelerator program, she realized she needed to work on her technical skills.<br><br>She became Alex's first student for BaseRails and has since learned front-end web development as well.<br><br>She previously taught a course at DUMBO Incubator NYC to help students learn the customer development methodology.
-		        </p><br><br>
-		      </div>
-		    </div>
-
-		  </div>
+		<div class="message">
+			<p>First of all, congratulations on learning to implement your startup ideas! Developing the ability to build a working prototype of any idea is an incredibly powerful tool for all entrepreneurs.</p><br>
+			<p>Here at BaseRails, we think of building web apps as working on a 100,000-piece jigsaw puzzle. There are tiny pieces strewn everywhere and you have no clue where to even start. BaseRails will serve as an instruction manual on how to put all those puzzle pieces together.</p><br>
+			<p>We're a team of self-taught developers and we take a more practical approach to learning than most traditional classes. Our goal is to get you up to speed faster and save you months of time in building your websites.</p><br>
+			<p>By the end of this course, you’ll have the ability to apply what you’ve learned toward implementing any idea of your own. You'll finally be able to build a product that actually works. Good luck and happy building!</p>
+		</div>
+		<div class="row bio-main">
+			<div class="col-md-3 info">
+				<%= image_tag "https://dl.dropboxusercontent.com/s/9u279iingo4jg5y/susie.jpg" %>
+				<div class="name">
+					<h4>Susie Ye</h4>
+					<h5>Co-Founder</h5>
+					<%= mail_to "susie@baserails.com" do %>susie@baserails.com<% end %>
+					<%= link_to image_tag("https://dl.dropboxusercontent.com/s/kpx2i5usp95n9n2/followme.png"), "http://www.twitter.com/yesusie" %>
+				</div>
+			</div>
+			<div class="col-md-8 details">
+				<p> Susie graduated with a doctorate in pharmacy but after attending a tech event in New York, she decided to launch her own company instead of working in the medical field.<br><br>Her experience co-founding a social selling platform for STEM-inspired toys helped her realize she needed to learn technical skills to further build out her ideas. However, the lack of practical web development resources led to the inspration for BaseRails as a resource where anyone can learn to build out their idea.<br><br>She has previously taught a 4-week course at DUMBO Incubator NYC to help students learn the customer development methodology.
+		        </p>
+			</div>
+		</div>
+		<div class="row bio-main">
+			<div class="col-md-3 info">
+				<%= image_tag "https://dl.dropboxusercontent.com/s/j1aiq616595df0d/alex.jpg" %>
+				<div class="name">
+					<h4>Alex Yang</h4>
+					<h5>Co-Founder</h5>
+					<%= mail_to "alex@baserails.com" do %>alex@baserails.com<% end %>
+					<%= link_to image_tag("https://dl.dropboxusercontent.com/s/kpx2i5usp95n9n2/followme.png"), "http://www.twitter.com/alexyang21" %>
+				</div>
+			</div>
+			<div class="col-md-8 details">
+				<p>Alex graduated from Harvard with a degree in Applied Math and spent two years at the Boston Consulting Group in New York.<br><br>
+		          He was always interested in the tech space and eventually decided to quit his job to become an entrepreneur. He taught himself to code to prototype his business ideas, but the process of wading through coding exercises, online videos, and programming books was slow and ineffective.<br><br>He co-founded BaseRails to save others the time and hassle he went through when learning to build web apps. In his spare time, he also works with the Codecademy team to bring programming into the UK national school curriculum.
+		        </p>
+			</div>
 		</div>
 	</div>
 </section>

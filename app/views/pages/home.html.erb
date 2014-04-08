@@ -2,8 +2,8 @@
   <div class="max-width has-padding">
     <div class="containertagline center">
       <div class="section-header center">
-        <h1>Build an MVP for your startup in 4 weeks</h1>
-        <h2>The #1 resource in getting you from idea to working prototype</h2>
+        <h1>Build an MVP for your startup idea in 4 weeks</h1>
+        <h2>Learn to build web apps with practical video tutorials. <br>Work on real projects. Get results.</h2>
         <div class="marketplaceproject">
           <%= link_to "Enroll today for $99", new_user_registration_path, class: "btn btn-lg btn-default center", data: { no_turbolink: true } %>
           <%= link_to "View course info", courses_marketplace_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
@@ -16,80 +16,71 @@
 <section class="summary">
   <div class="title">
     <div class="container">
-      <h1 class="center">How We Help You</h1>
+      <h1 class="center">How It Works</h1>
     </div>
   </div>
-  <!-- <div class="max-width has-padding">
+
+  <div class="max-width has-padding">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/gtdmac42c9qta2c/webstore.png" %>
-          <h2 class="center">Enroll for $99</h2>
-          <p class="center">Get lifetime access to our library of video screencasts with step-by-step instructions</p>
+          <h2 class="steps center">Step 1</h2>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/lc8o41zcv4fg38d/rubyicon.png" %>
+          <h2 class="center">Build your base web app</h2>
+          <p class="center">Learn to build a fully functional Rails app from scratch with our 4-week comprehensive online course.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/b825bpqes9cuvcu/rails.png" %>
-          <h2 class="center">Dive into a project</h2>
-          <p class="center">Master Rails 4, Ruby 2, Bootstrap, databases, APIs, and other powerful tools</p>
+          <h2 class="steps center">Step 2</h2>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/13pqwl6plnsef0o/features.png" %>
+          <h2 class="center">Customize your features</h2>
+          <p class="center">Tailor your web app with our library of step-by-step video tutorials for adding additional features.</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/lzr2582u1yx1z4r/smile.png" %>
-          <h2 class="center">Protoype your ideas</h2>
-          <p class="center">Become your own technical co-founder and build your MVP within 4 weeks</p>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail three">
+          <h2 class="steps center">Step 3</h2>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/dxulweg9dyt2vs2/communityicon.png" %>
+          <h2 class="center">Showcase your project</h2>
+          <p class="center">Get feedback on your web app and browse other student project in our BaseRails community.</p>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+
+</section>
+
+<section class="difference">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-          <h2 class="center">Get startup advice</h2>
-          <p class="center">Learn how others did it before you and get the practical advice you need to get your idea off the ground.</p>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/z2yt9b2i7104lx1/placeholders.png" %>
+      <div class="col-md-6">
+        <header class="section-header center">
+          <h1>The BaseRails Difference</h1>
+        </header>
+        <h3>Here at BaseRails, we'll walk you step-by-step through building fully functional web apps from beginning to end. You'll learn practical, up-to-date skills that can be instantly useful for implementing your idea and testing your MVP with real users.</h3>
+        <h3>We don't think you need to memorize complicated programming syntax, get a computer science degree, or shell out $20,000 for an in-person class just to build a website.
+        </h3>
+        <div class="center">
+          <%= link_to "Enroll today for $99", new_user_registration_path,
+            class: "btn btn-lg btn-success", data: { no_turbolink: true } %>
+          <%= link_to "View course info", courses_marketplace_path, class: "btn btn-lg btn-default", data: { no_turbolink: true } %>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-          <h2 class="center">Build a robust web app</h2>
-          <p class="center">Enroll in our comprehensive 4-week online course and learn how to build a fully functional Rails app from scratch.</p>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/z2yt9b2i7104lx1/placeholders.png" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-          <h2 class="center">Become a technical founder</h2>
-          <p class="center">Ready to take your web app to the next level? Subscribe to our video library of easy-to-follow tutorials for popular features.</p>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/z2yt9b2i7104lx1/placeholders.png" %>
+      <div class="col-md-6">
+        <div class="features">
+          <ul class="check">
+            <li>Hundreds of video screencast lectures with step-by-step instructions </li>
+            <li>Word-for-word transcript of each lecture to follow along with as you watch each video</li>
+            <li>Source Code for immediate reference and readability</li>
+            <li>24-hour response time from instructors to help with troubleshooting</li>
+          <ul>
         </div>
       </div>
     </div>
-    <h1 class="center">A few of the features we teach you to build</h1>
-    <table cellspacing="0" cellpadding="10" class="center">
-      <tbody>
-        <tr>
-          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
-          Social Media Integration</td>
-          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/z6039t8a3burj53/searchicon.png" %><br>
-          Search Bar Implementation</td>
-          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
-          Social Media Integration</td>
-          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
-          Social Media Integration</td>
-          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
-          Social Media Integration</td>
-          <td class="solid"><%= image_tag "https://dl.dropboxusercontent.com/s/r479k8bt6zu2k3t/facebookicon.png" %><br>
-          Social Media Integration</td>
-        </tr>
-      </tbody>
-    </table>
-
   </div>
 </section>
+
 
 <section class="trust">
   <div class="container">
@@ -98,9 +89,9 @@
       <tbody>
         <tr>
           <td><%= image_tag "https://dl.dropboxusercontent.com/s/pfvdfdyrkt47rut/ebaybw.png" %></td>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/m5q6mkj3la9sv7q/IMBbw.png" %></td>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/4k8pw37ilfef7id/disney.png" %></td>
           <td><%= image_tag "https://dl.dropboxusercontent.com/s/n5w2u6k5z02nhgb/teespring.png" %></td>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/6mk7czvhzi79ken/kpmg.png" %></td>
+          <td><%= image_tag "https://dl.dropboxusercontent.com/s/ma0e48jgnj8ovgb/micosoftlogo.png" %></td>
           <td><%= image_tag "https://dl.dropboxusercontent.com/s/bcqdk4o9e3lyajo/cambridge.png" %></td>
         </tr>
       </tbody>
