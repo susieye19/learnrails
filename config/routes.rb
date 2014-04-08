@@ -13,6 +13,7 @@ Learnrails::Application.routes.draw do
   get 'courses' => 'pages#courses'
   get 'courses/marketplace' => 'pages#marketplace'
   get 'about' => 'pages#about'
+  get 'info' => 'pages#info'
 
   root 'pages#home'
 
