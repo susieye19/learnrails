@@ -585,8 +585,6 @@
 
 
 .trust {
-/*	background-image: url('https://dl.dropboxusercontent.com/s/ij4ewlomp5beuqt/map.png');
-*/
 	background-image: url('https://dl.dropboxusercontent.com/s/s1m3qngsgd1tr96/map2.png');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -619,4 +617,23 @@
   	margin-right: 100px;
   	font-weight: 400;
   }
+}
+
+.info {
+	header {
+		padding: 5rem 0rem 7rem 0rem;
+		h1 {
+			color: #48505e;
+			font-size: 27px;
+			font-weight: 200;
+		}
+		h2 {
+			color: #999da9;
+			font-size: 19px;
+			font-weight: 200;
+		}
+	}
+	.step1 {
+		background-color: #fdfdfb;
+	}
 }
