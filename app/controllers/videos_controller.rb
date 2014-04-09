@@ -6,8 +6,6 @@ class VideosController < ApplicationController
   def index
     # Compile list of categories sorted alphabetically
     @categories = Video.all.to_a.map { |v| v.category }.uniq.sort_by{ |c| c.downcase }
-    @features = Video.where(category: "Features")
-    @apis     = Video.where(category: "APIs")
   end
 
   # GET /videos/1
