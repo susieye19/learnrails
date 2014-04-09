@@ -3,6 +3,10 @@ class ChaptersController < ApplicationController
   before_action :redirect_to_correct_url, only: [:show]
   before_action :authenticate_user!
 
+  def catalog
+    @videos = Chapter.all
+  end
+
   # GET /chapters
   # GET /chapters.json
   def index
