@@ -7,75 +7,28 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Features</h3>
-    </div>
-  </div>
-
-  <% @features.each do |video| %>
+  <% @categories.each do |category| %>
     <div class="row">
       <div class="col-md-12">
-        <div class="thumbnail">
-          <h4><%= video.title %></h4>
-          <p><%= video.notes %></p>
-        </div>
+        <h3><%= category %></h3>
       </div>
     </div>
-  <% end %>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h3>APIs</h4>
-    </div>
-  </div>
-
-  <% @apis.each do |video| %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="thumbnail">
-          <h4><%= video.title %></h4>
-          <p><%= video.notes %></p>
+    <% Video.where(category: category).each do |video| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="thumbnail">
+            <h4><%= video.title %></h4>
+            <p><%= video.notes %></p>
+            <%= link_to "Show", video_path(video), class: "btn btn-link" %>
+            <%= link_to "Edit", edit_video_path(video), class: "btn btn-link" %>
+            <%= link_to "Destroy", video_path(video), method: :delete, class: "btn btn-link" %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Front-End Design</h3>
-    </div>
-  </div>
-  
-  <% @features.each do |video| %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="thumbnail">
-          <h4><%= video.title %></h4>
-          <p><%= video.notes %></p>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Launching Your Website</h3>
-    </div>
-  </div>
-
-  <% @features.each do |video| %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="thumbnail">
-          <h4><%= video.title %></h4>
-          <p><%= video.notes %></p>
-        </div>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 
   <%= link_to 'New Video', new_video_path %>
 
 </div>
-

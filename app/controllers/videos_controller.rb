@@ -4,15 +4,14 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @features = Video.where(category: "Features")
-    @apis     = Video.where(category: "APIs")
-    @design   = Video.where(category: "Front-End Design")
-    @launch   = Video.where(category: "Launching Your Website")
+    # Compile list of categories sorted alphabetically
+    @categories = Video.all.to_a.map { |v| v.category }.uniq.sort_by{ |c| c.downcase }
   end
 
   # GET /videos/1
   # GET /videos/1.json
   def show
+
   end
 
   # GET /videos/new
