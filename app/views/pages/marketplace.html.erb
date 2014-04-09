@@ -1,76 +1,14 @@
-<section class="marketplaces">
-  <div class="max-width has-padding">
-    <%= link_to "Enroll today for $99", new_user_registration_path,
-            class: "btn btn-default btn-xs pull-right a", data: { no_turbolink: true } %>
-    <%= link_to "See course reviews", testimonial_path,
-            class: "btn btn-default btn-xs pull-right b", data: { no_turbolink: true } %>
-    <header class="section-header center">
-      <h1>Learn to build a two-sided marketplace</h1>
-    </header>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/2mc9lncb8utu4os/airbnblogo.png" %>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/qcuwwljkj8mex6c/etsylogo.png" %>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/f4vghvn3ca9d2kq/ebay.png" %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="etsy">
-  <div class="max-width has-padding">
-    <header class="section-header center">
-      <h1>Watch our project demo video</h1>
-      <div class="demovideo">
-        <div id="wistia_um6vq12bst" class="wistia_embed" style="width: 650px; height: 388px;"> </div>
-        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-        <script>
-        wistiaEmbed = Wistia.embed("um6vq12bst", {
-          videoFoam: true,
-          videoQuality: "hd-only",
-          playerPreference: "html5"
-        });
-        </script>
-      </div>
-    </header>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <h3 class="feature center">Upload products</h3>
-          <p class="center">Upload images, descriptions, and prices for individual product listings</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <h3 class="feature center">Create user accounts</h3>
-          <p class="center">Allow sellers and buyers to create accounts to keep track of their products</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <h3 class="feature center">Accept credit card payments</h3>
-          <p class="center">Use the Stripe API to accept credit card payments securely over the web</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="syllabus">
   <div class="max-width has-padding">
+    <div class="buttons">
+      <h2 class="left"><%= link_to info_path do %>
+            <i class="glyphicon glyphicon-arrow-left"></i> Back to course info 
+          <% end %>
+      <h2>
+    </div> 
     <header class="section-header center">
       <h1>Explore Our Syllabus</h1>
-      <h3>Each topic is comprised of 5 - 20 minute video lectures that will take you through implementing a specific feature of our app</h3>
+      <h2>Each topic is comprised of 5 - 20 minute video lectures that will take you through implementing a specific feature of our app</h2>
     </header>
     <div class="syllabus-details">
 
@@ -291,7 +229,7 @@
 <section class="action">
   <div class="max-width has-padding">
     <header class="section-header center">
-      <h1>Learn to code features common to many websites including:</h1>
+      <h1>Learn to build the fundamentals of many web apps including:</h1>
     </header>
       <ul>
         <li>Upload product listings complete with prices, descriptions, and images</li>
@@ -307,6 +245,10 @@
         <%= link_to "Hear from students", testimonial_path,
             class: "btn btn-default btn-xs b", data: { no_turbolink: true } %>
     </div>
+    <h2 class="right"><%= link_to library_path do %>
+            <i class="glyphicon glyphicon-arrow-right"></i> Go to step 2
+          <% end %>
+    </h2>
   </div>
 </section>
 
