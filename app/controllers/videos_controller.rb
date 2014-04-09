@@ -6,6 +6,8 @@ class VideosController < ApplicationController
   def index
     @features = Video.where(category: "Features")
     @apis     = Video.where(category: "APIs")
+    @design   = Video.where(category: "Front-End Design")
+    @launch   = Video.where(category: "Launching Your Website")
   end
 
   # GET /videos/1
