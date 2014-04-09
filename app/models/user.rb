@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
         amount = 0
       elsif coupon.upcase == "FREEACCESS"
         amount = 0
+      elsif coupon.upcase == "WAIHON"
+        amount = 3500
       end
 
       if amount > 0
