@@ -2,6 +2,8 @@ Learnrails::Application.routes.draw do
 
   get "/blog" => redirect("/blog/")
 
+  resources :videos
+
   resources :chapters do
     resources :comments, only: [:create, :destroy]
   end
@@ -14,6 +16,7 @@ Learnrails::Application.routes.draw do
   get 'about' => 'pages#about'
   get 'info' => 'pages#info'
   get 'library' => 'pages#library'
+  get 'dashboard' => 'pages#dashboard'
 
   root 'pages#home'
 

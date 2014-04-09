@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="center">
+    <h1>Browse our catalog of video tutorials</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Features</h4>
+  </div>
+</div>
+
+<% @features.each do |video| %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <%= image_tag "https://dl.dropboxusercontent.com/s/pfvdfdyrkt47rut/ebaybw.png" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h3><%= video.title %></h3>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>APIs</h4>
+  </div>
+</div>
+
+<% @apis.each do |video| %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <%= image_tag "https://dl.dropboxusercontent.com/s/pfvdfdyrkt47rut/ebaybw.png" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h3><%= video.title %></h3>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'New Video', new_video_path %>

@@ -42,12 +42,6 @@ class PagesController < ApplicationController
   def testimonial
   end
 
-  def thanks
-  end
-
-  def courses
-  end
-
   def marketplace
   end
 
@@ -55,5 +49,11 @@ class PagesController < ApplicationController
   end
 
   def info
+  end
+
+  def thanks
+  end
+
+  def dashboard
   end
 end
