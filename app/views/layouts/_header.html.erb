@@ -20,8 +20,9 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Dashboard", dashboard_path %></li>
-        <li><%= link_to "Blog", blog_path %></li>
+        <li><%= link_to "Course dashboard", chapters_path %></li>
+        <li><%= link_to "Video library", videos_path %></li>
+        <li><%= link_to "Developer Q&A", info_path %></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
              <%= current_user.name %> <span class="caret"></span>
@@ -34,10 +35,10 @@
       </ul>
     <% else %>
       <ul class="nav navbar-nav">
-        <li><%= link_to "About Us", about_path %></li>
-        <li><%= link_to "Course Info", marketplace_path %></li>
-        <li><%= link_to "Student Reviews", testimonial_path %></li>
-        <li><%= link_to "Blog", blog_path %></li>
+        <li><%= link_to "How it works", info_path %></li>
+        <li><%= link_to "Immersive course", marketplace_path %></li>
+        <li><%= link_to "Video library", videos_path %></li>
+        <li><%= link_to "Developer Q&A", info_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Enroll", new_user_registration_path %></li>

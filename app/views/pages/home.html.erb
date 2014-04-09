@@ -2,8 +2,8 @@
   <div class="max-width has-padding">
     <div class="containertagline center">
       <div class="section-header center">
-        <h1>Build an MVP for your startup idea in 4 weeks</h1>
-        <h2>Learn to build web apps with practical video tutorials. <br>Work on real projects. Get results.</h2>
+        <h1>Practical video tutorials to build your MVP in 4 weeks</h1>
+        <h2>Learn to build web apps with screencasts and expert troubleshooting support. <br>Work on real projects. Get results.</h2>
         <div class="marketplaceproject">
           <%= link_to "Enroll today for $99", new_user_registration_path, class: "btn btn-lg btn-default center", data: { no_turbolink: true } %>
           <%= link_to "Learn more", info_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
@@ -16,36 +16,43 @@
 <section class="summary">
   <div class="title">
     <div class="container">
-      <h1 class="center">How It Works</h1>
+      <h1 class="center">How we help you</h1>
     </div>
   </div>
 
   <div class="max-width has-padding">
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-          <h2 class="steps center">Step 1</h2>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/lc8o41zcv4fg38d/rubyicon.png" %>
-          <h2 class="center">Build your base web app</h2>
-          <p class="center">Learn to build a fully functional Rails app from scratch with our 4-week comprehensive online course.</p>
-        </div>
+        <%= link_to info_path(anchor: "step1") do %>
+          <div class="thumbnail one">
+  <!--      <h2 class="steps center">Start here</h2>
+   -->      <%= image_tag "https://dl.dropboxusercontent.com/s/lc8o41zcv4fg38d/rubyicon.png" %>
+            <h2 class="center">Build your base web app</h2>
+            <p class="center">Learn to build a fully functional Rails app from scratch with our 4-week comprehensive online course.</p>
+          </div>
+        <% end %>
       </div>
+
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-          <h2 class="steps center">Step 2</h2>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/13pqwl6plnsef0o/features.png" %>
-          <h2 class="center">Customize your features</h2>
-          <p class="center">Tailor your web app with our library of step-by-step video tutorials for adding additional features.</p>
-        </div>
+        <%= link_to info_path(anchor: "step2") do %>
+          <div class="thumbnail two">
+    <!--            <h2 class="steps center">Next step</h2>
+   -->      <%= image_tag "https://dl.dropboxusercontent.com/s/13pqwl6plnsef0o/features.png" %>
+            <h2 class="center">Customize your features</h2>
+            <p class="center">Tailor your web app with our library of step-by-step video tutorials for adding additional features.</p>
+          </div>
+        <% end %>
       </div>
+
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail three">
-          <h2 class="steps center">Step 3</h2>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/dxulweg9dyt2vs2/communityicon.png" %>
-          <h2 class="center">Get help from developers</h2>
-          <p class="center">Get feedback on your web app and ask any questions you have from our experienced BaseRails developers</p>
-        </div>
-      </div>
+        <%= link_to info_path(anchor: "step3") do %>
+          <div class="thumbnail three">
+  <!--            <h2 class="steps center">Support</h2>
+   -->      <%= image_tag "https://dl.dropboxusercontent.com/s/dxulweg9dyt2vs2/communityicon.png" %>
+            <h2 class="center">Get help from developers</h2>
+            <p class="center">Get feedback on your web app and ask any questions you have from our experienced BaseRails developers.</p>
+          </div>
+        <% end %>
     </div>
   </div>
 
@@ -64,13 +71,13 @@
         <div class="center">
           <%= link_to "Enroll today for $99", new_user_registration_path,
             class: "btn btn-lg btn-success", data: { no_turbolink: true } %>
-          <%= link_to "View course info", marketplace_path, class: "btn btn-lg btn-default", data: { no_turbolink: true } %>
+          <%= link_to "Hear from students", testimonial_path, class: "btn btn-lg btn-default", data: { no_turbolink: true } %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="features">
           <ul class="check">
-            <li>Hundreds of video screencast lectures with step-by-step instructions </li>
+            <li>Practical video screencast lectures with step-by-step instructions </li>
             <li>Word-for-word transcript of each lecture to follow along with as you watch each video</li>
             <li>Source Code for immediate reference and readability</li>
             <li>24-hour response time from instructors to help with troubleshooting</li>
