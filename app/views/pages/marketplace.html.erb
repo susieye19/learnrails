@@ -1,13 +1,13 @@
 <section class="syllabus">
   <div class="max-width has-padding">
-    <div class="buttons">
+    <!-- <div class="buttons">
       <h2 class="left"><%= link_to info_path do %>
             <i class="glyphicon glyphicon-arrow-left"></i> Back to course info 
           <% end %>
       <h2>
-    </div> 
+    </div>  -->
     <header class="section-header center">
-      <h1>Explore Our Syllabus</h1>
+      <h1>Explore our course syllabus</h1>
       <h2>Each topic is comprised of 5 - 20 minute video lectures that will take you through implementing a specific feature of our app</h2>
     </header>
     <div class="syllabus-details">
@@ -240,15 +240,128 @@
         <li>Deploy your website live</li>
       </ul>
      <div class="center">
+        <%= link_to "Read student testimonials", testimonial_path,
+            class: "btn btn-default btn-xs b", data: { no_turbolink: true } %>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="max-width has-padding">
+    <header class="section-header">
+      <h1 class="center">Get your questions answered</h1>
+    </header>
+    <div class="faqbody">
+
+      <div class="panel-group" id="accordion2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapsetwelve">
+                What makes this course different than the other online tutorials?
+              </a>
+            </h4>
+          </div>
+          <div id="collapsetwelve" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>We are the only online video learning platform that focuses exclusively on content that walks students through building fully functional web apps.</p> 
+              <p>Other methods have a heavy focus on understanding syntax and grasping computer science concepts. However, few students actually progress from this to building functional apps on their own.</p>
+              <p>The end result is that millions of students start learning how to code, but few end up with something to show for their efforts.</p>
+              <p>We make sure that students finish our course with a product they can either turn into a business or add to their portfolio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapsethirteen">
+                What project will we be building throughout the course?
+              </a>
+            </h4>
+          </div>
+          <div id="collapsethirteen" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Our pilot course will walk you through building an online marketplace similar to Etsy. You will learn to develop functionalities common to many websites including:</p>
+              <ul>
+                <li>Upload product listings complete with prices, descriptions, and images</li>
+                <li>Create user accounts and login to see personalized dashboards</li>
+                <li>Implement powerful design features with CSS</li>
+                <li>Accept credit card payments and initiate transfers to third-party bank accounts</li>
+                <li>Secure your sensitive account data</li>
+                <li>Deploy your website live</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapsefourteen">
+                What practical skills will I have learned after the course?              
+              </a>
+            </h4>
+          </div>
+          <div id="collapsefourteen" class="panel-collapse collapse">
+            <div class="panel-body">
+             <p>We'll learn to use the latest versions of popular technologies. We’ll be working with Ruby on Rails, as well as front-end tools like Twitter Bootstrap and CSS. We’ll touch upon databases with SQLite; APIs with Stripe; and even hosting platforms such as GitHub, Heroku, and Dropbox.</p>
+             <p>Along the way, you’ll learn how to create a new app, implement features, read documentation, and deploy an app. These skills are useful for prototyping your own ideas or building up your code portfolio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapsefifteen">
+                Is this course for beginners? Do I need prior knowledge of coding?              
+              </a>
+            </h4>
+          </div>
+          <div id="collapsefifteen" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Not at all. We assume all our students have never written a single line of code before.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapsesixteen">
+                What support do you offer if I run into problems?
+              </a>
+            </h4>
+          </div>
+          <div id="collapsesixteen" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>We have an active community of students who post questions and answers on our comments thread for each individual lecture. Our instructors also moderate each question within 24 hours. If you need additional troubleshooting help, we also offer 7 days per week email and chat support. Please send us a screenshot with the error message as well as your code.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseseventeen">
+                What happens after I finish the course? 
+              </a>
+            </h4>
+          </div>
+          <div id="collapseseventeen" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>You can move on to customize your web app by following the tutorials in our video library. All our tutorials build upon this base course so you know exactly how to implement each feature. Don’t forget to send us an update with your project so we can feature your work in our blog! </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="center">
         <%= link_to "Enroll today for $99", new_user_registration_path,
             class: "btn btn-default btn-xs a", data: { no_turbolink: true } %>
-        <%= link_to "Read testimonials", testimonial_path,
-            class: "btn btn-default btn-xs b", data: { no_turbolink: true } %>
     </div>
     <h2 class="right"><%= link_to videos_path do %>
             <i class="glyphicon glyphicon-arrow-right"></i> View video library
           <% end %>
     </h2>
+  </div>
   </div>
 </section>
 
