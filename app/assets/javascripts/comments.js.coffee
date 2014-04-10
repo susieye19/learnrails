@@ -14,7 +14,8 @@ jQuery ->
       # if $(this) == $(".comment-form")[0]
         # $(xhr.responseText).hide().insertAfter($(this)).show('slow')
       # else
-      $('<ul class="comment-list">\n'+xhr.responseText+'\n</ul>').hide().insertAfter($(this)).show('slow')
+      $('<li class="comment">\n'+xhr.responseText+'\n</ul>').hide().insertAfter($(this)).show('slow')
+      # $('<ul class="comment-list">\n'+xhr.responseText+'\n</ul>').hide().insertAfter($(this)).show('slow')
       $(".comment-form:not(:first)").hide()
 
   # Toggle reply to comment form
