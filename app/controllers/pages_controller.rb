@@ -56,4 +56,7 @@ class PagesController < ApplicationController
 
   def dashboard
   end
+
+  def stories
+  end
 end
