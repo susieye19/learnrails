@@ -92,7 +92,7 @@
 		color: #5D951F;
 		font-size: 20px;
 		}
-	}	
+	}
 }
 
 .show .col-md-9 .notes {
@@ -118,14 +118,18 @@
 		}
 	}
 
-	.comment {
-		list-style-type: none;
-		border-top: 1px solid #ddd;
-		padding: 5px;
-		p {
-			margin-top: 5px;
-		}
+	.response {
+		margin-left: 10px;
 	}
+
+	// .comment {
+	// 	list-style-type: none;
+	// 	border-top: 1px solid #ddd;
+	// 	padding: 5px;
+	// 	p {
+	// 		margin-top: 5px;
+	// 	}
+	// }
 
 	.comment-list > .comment {
 		border-top: none !important;

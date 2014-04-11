@@ -4,9 +4,13 @@ Learnrails::Application.routes.draw do
 
   resources :videos
 
-  resources :chapters do
-    resources :comments, only: [:create, :destroy]
-  end
+  resources :chapters
+
+  resources :comments, :only => [:create, :destroy]
+
+  # resources :chapters do
+  #   resources :comments, only: [:create, :destroy]
+  # end
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   get 'faq' => 'pages#faq'

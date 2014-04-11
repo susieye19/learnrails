@@ -9,9 +9,7 @@
 
   <% @categories.each do |category| %>
     <div class="row">
-      <div class="col-md-12">
-        <h3><%= category %></h3>
-      </div>
+      <h3><%= category %></h3>
     </div>
 
     <% Video.where(category: category).each do |video| %>
@@ -20,7 +18,7 @@
           <div class="thumbnail">
             <h4><%= video.title %></h4>
             <p><%= video.notes %></p>
-            <%= link_to "Show", video_path(video), class: "btn btn-link" %>
+            <%= link_to "Show", video_path(video), class: "btn btn-link", 'data-no-turbolink' => true %>
             <%= link_to "Edit", edit_video_path(video), class: "btn btn-link" %>
             <%= link_to "Destroy", video_path(video), method: :delete, class: "btn btn-link" %>
           </div>

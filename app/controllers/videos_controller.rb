@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_correct_url, only: [:show]
 
   # GET /videos
   # GET /videos.json
@@ -11,7 +12,6 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-
   end
 
   # GET /videos/new
@@ -66,7 +66,14 @@ class VideosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video
-      @video = Video.find(params[:id])
+      @video = Video.friendly.find(params[:id])
+    end
+
+    def redirect_to_correct_url
+      # Redirect to the correct URL if the title of the video has since been changed
+      if request.path != video_path(@video)
+        return redirect_to @video, :status => :moved_permanently
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

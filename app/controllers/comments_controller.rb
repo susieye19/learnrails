@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
-
   def create
-    @chapter = Chapter.friendly.find(params[:chapter_id])
-    @new_comment = Comment.build_from(@chapter, current_user, "")
     @comment_hash = params[:comment]
-    @comment = Comment.build_from(@chapter, current_user.id, @comment_hash[:body])
-    @comment.chapter_id = @chapter.id
+    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
+    @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body])
 
-    if (params[:comment].has_key?(:parent_id))
+    # Prepare a new_comment object in case user wants to post another comment
+    @new_comment = Comment.build_from(@obj, current_user, "")
+
+    unless (params[:parent_id].blank?)
       @parent = Comment.find(params[:comment][:parent_id])
     end
 
@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
       if @parent
         @comment.move_to_child_of(@parent)
       end
-      render :partial => "comments/comment", locals: { comment: @comment, new_comment: @new_comment, chapter: @chapter }, layout: false, status: :created
+      render :partial => "comments/comment", locals: { comment: @comment, new_comment: @new_comment },
+          layout: false, status: :created
     else
       render :js => "alert('Error saving comment');"
     end

@@ -31,8 +31,8 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
           <li class="active"><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
-          <li><%= link_to "Notes", "#notes", :'data-toggle' => "tab" %></li>
-          <li><%= link_to "Discussion", "#discussion", :'data-toggle' => "tab" %></li>
+          <li><%= link_to "Notes", "#notes",                          :'data-toggle' => "tab" %></li>
+          <li><%= link_to "Discussion", "#discussion",                :'data-toggle' => "tab" %></li>
         </ul>
 
         <br>
@@ -55,12 +55,19 @@
           </div>
           <div class="tab-pane fade" id="discussion">
 
-            <%= render partial: 'comments/form', locals: { new_comment: @new_comment,
-                chapter: @chapter } %>
+            <!-- Display comment form -->
+            <div class="comment-form">
+              <h4>Post a comment</h4>
+              <%= render partial: 'comments/form', locals: { comment: new_comment(@chapter), parent_id: nil } %>
+            </div>
 
-            <%= render partial: 'comments/comment', collection: @comments,
-                as: :comment, locals:
-                { new_comment: @new_comment, chapter: @chapter } %>
+            <!-- Display all comments -->
+            <%= render partial: 'comments/comment', collection: @comments, as: :comment %>
+
+            <% if false %>
+              <%= render partial: 'comments/comment', collection: @comments, as: :comment,
+                  locals: { new_comment: @new_comment } %>
+            <% end %>
           </div>
         </div>
       </div>
