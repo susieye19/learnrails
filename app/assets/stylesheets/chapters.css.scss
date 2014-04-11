@@ -1,20 +1,21 @@
 .show .sidebar {
 	margin-top: 40px;
-	margin-left: 20px;
+	margin-left: 10px;
+	padding-left: 20px;
 	background-color: #fff;
 	border: 1px solid #e5e5e5;
 }
 
 .show .sidebar a {
 	color: #707685;
-	font-size: 15px;
-	font-weight: 300;
+	font-size: 14px;
+	font-weight: 400;
 	font-family: 'Open Sans',sans-serif;
 }
 
 .show .sidebar a:hover {
 	text-decoration: none;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .show .sidebar h4 {
@@ -48,21 +49,22 @@
 
 .index .sidebar {
 	margin-top: 40px;
-	margin-left: 20px;
+	padding-left: 20px;
+	margin-left: 10px;
 	background-color: #fff;
 	border: 1px solid #e5e5e5;
 }
 
 .index .sidebar a {
 	color: #707685;
-	font-size: 15px;
-	font-weight: 300;
+	font-size: 14px;
+	font-weight: 400;
 	font-family: 'Open Sans',sans-serif;
 }
 
 .index .sidebar a:hover {
 	text-decoration: none;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .index .sidebar h4 {
