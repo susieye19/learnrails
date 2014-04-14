@@ -1,5 +1,7 @@
 Learnrails::Application.routes.draw do
 
+  resources :questions
+
   get "/blog" => redirect("/blog/")
 
   resources :videos

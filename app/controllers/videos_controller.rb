@@ -12,6 +12,8 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
+    @comments = @video.root_comments.order('created_at DESC')
+    @new_comment = Comment.build_from(@video, current_user, "")
   end
 
   # GET /videos/new
@@ -78,6 +80,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:title, :category, :notes, :transcript, :url)
+      params.require(:video).permit(:title, :description, :category, :notes, :transcript, :url)
     end
 end

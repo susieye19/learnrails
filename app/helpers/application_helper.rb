@@ -10,9 +10,4 @@ module ApplicationHelper
 		}
 		return notes
 	end
-
-	def new_comment(obj)
-		@new_comment = Comment.build_from(obj, current_user, "")
-		return @new_comment
-	end
 end

@@ -58,16 +58,13 @@
             <!-- Display comment form -->
             <div class="comment-form">
               <h4>Post a comment</h4>
-              <%= render partial: 'comments/form', locals: { comment: new_comment(@chapter), parent_id: nil } %>
+              <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: nil } %>
             </div>
 
             <!-- Display all comments -->
-            <%= render partial: 'comments/comment', collection: @comments, as: :comment %>
+            <%= render partial: 'comments/comment', collection: @comments, as: :comment,
+                locals: { new_comment: @new_comment } %>
 
-            <% if false %>
-              <%= render partial: 'comments/comment', collection: @comments, as: :comment,
-                  locals: { new_comment: @new_comment } %>
-            <% end %>
           </div>
         </div>
       </div>

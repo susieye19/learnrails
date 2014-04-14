@@ -17,10 +17,15 @@
         <div class="col-md-12">
           <div class="thumbnail">
             <h4><%= video.title %></h4>
-            <p><%= video.notes %></p>
-            <%= link_to "Show", video_path(video), class: "btn btn-link", 'data-no-turbolink' => true %>
-            <%= link_to "Edit", edit_video_path(video), class: "btn btn-link" %>
-            <%= link_to "Destroy", video_path(video), method: :delete, class: "btn btn-link" %>
+            <p><%= video.description %></p>
+
+            <% if false %>
+            <% if current_user.try(:admin?) %>
+              <%= link_to "Show", video_path(video), class: "btn btn-link", 'data-no-turbolink' => true %>
+              <%= link_to "Edit", edit_video_path(video), class: "btn btn-link" %>
+              <%= link_to "Destroy", video_path(video), method: :delete, class: "btn btn-link" %>
+            <% end %>
+            <% end %>
           </div>
         </div>
       </div>

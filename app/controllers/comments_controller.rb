@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     # Prepare a new_comment object in case user wants to post another comment
     @new_comment = Comment.build_from(@obj, current_user, "")
 
-    unless (params[:parent_id].blank?)
+    unless (params[:comment][:parent_id].blank?)
       @parent = Comment.find(params[:comment][:parent_id])
     end
 
@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
       if @parent
         @comment.move_to_child_of(@parent)
       end
+
       render :partial => "comments/comment", locals: { comment: @comment, new_comment: @new_comment },
           layout: false, status: :created
     else
@@ -24,6 +25,14 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+
+    # # Set parent_id of child comments to parent of @comment
+    # if @comment.has_children?
+    #   @comment.children.each do |child|
+    #     child.parent_id = @comment.parent_id
+    #   end
+    # end
+
     if @comment.destroy
       render :json => @comment, :status => :ok
     else

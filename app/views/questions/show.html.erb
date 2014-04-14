@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3><strong><%= @question.title %></strong></h3>
+    <h4>
+      <%= "Posted #{time_ago_in_words(@question.created_at)} ago by" %>
+      <% if @question.user.admin? %>
+        <span id="admin">
+      <% else %>
+        <span id="name">
+      <% end %>
+        <%= @question.user.name %>
+      </span>
+    </h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <!-- Display comment form -->
+    <div class="comment-form">
+      <h4>Post a comment</h4>
+      <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: nil } %>
+    </div>
+
+    <!-- Display all comments -->
+    <%= render partial: 'comments/comment', collection: @comments, as: :comment,
+        locals: { new_comment: @new_comment } %>
+
+  </div>
+</div>
+
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+  <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to 'Back', questions_path %>
+

@@ -30,6 +30,7 @@ var google_remarketing_only = false;
     <% @comments.each do |comment| %>
       <div class="comment">
         <div class="comment-chapter">
+          <%= puts comment.commentable.inspect %>
           <%= "#{comment.commentable.section}: #{comment.commentable.title}" %>
         </div>
         <small>
