@@ -24,7 +24,7 @@
   <div class="max-width has-padding">
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <%= link_to info_path(anchor: "step1") do %>
+        <%= link_to info_path(anchor: "step1"), 'data-no-turbolink' => true do %>
           <div class="thumbnail one">
         <h2 class="steps center">Immersive Course</h2>
         <%= image_tag "https://dl.dropboxusercontent.com/s/lc8o41zcv4fg38d/rubyicon.png" %>
@@ -35,7 +35,7 @@
       </div>
 
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <%= link_to info_path(anchor: "step2") do %>
+        <%= link_to info_path(anchor: "step2"), 'data-no-turbolink' => true do %>
           <div class="thumbnail two">
             <h2 class="steps center">Additional tutorials</h2>
             <%= image_tag "https://dl.dropboxusercontent.com/s/13pqwl6plnsef0o/features.png" %>
@@ -46,7 +46,7 @@
       </div>
 
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <%= link_to info_path(anchor: "step3") do %>
+        <%= link_to info_path(anchor: "step3"), 'data-no-turbolink' => true do %>
           <div class="thumbnail three">
             <h2 class="steps center">Support</h2>
             <%= image_tag "https://dl.dropboxusercontent.com/s/dxulweg9dyt2vs2/communityicon.png" %>

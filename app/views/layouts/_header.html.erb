@@ -35,7 +35,7 @@
       </ul>
     <% else %>
       <ul class="nav navbar-nav">
-        <li><%= link_to "How it works", info_path %></li>
+        <li><%= link_to "How it works", info_path, 'data-no-turbolink' => true %></li>
         <li><%= link_to "Immersive course", marketplace_path %></li>
         <li><%= link_to "Video library", videos_path %></li>
         <li><%= link_to "Developer Q&A", info_path %></li>
