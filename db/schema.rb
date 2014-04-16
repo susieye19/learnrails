@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20140414164908) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "questions", force: true do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string   "subject"
+    t.text     "details"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
