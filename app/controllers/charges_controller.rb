@@ -21,6 +21,7 @@ class ChargesController < ApplicationController
     )
 
     current_user.update_attribute(:extra_access, true)
+    redirect_to videos_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
