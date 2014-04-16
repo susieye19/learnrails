@@ -85,7 +85,7 @@ class VideosController < ApplicationController
         # User needs to have paid for extra_access
         unless current_user.extra_access
           flash[:error] = "The Video Library and Developer Q&A sections are available as a paid add-on for students"
-          redirect_to root_path
+          redirect_to new_charge_path
         end
       else
         # User needs to be signed in first
