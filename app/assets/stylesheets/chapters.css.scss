@@ -14,8 +14,9 @@
 }
 
 .show .sidebar a:hover {
-	text-decoration: none;
+	text-decoration: underline;
 	font-weight: 500;
+	color: #4d515b;
 }
 
 .show .sidebar h4 {
@@ -63,8 +64,9 @@
 }
 
 .index .sidebar a:hover {
-	text-decoration: none;
+	text-decoration: underline;
 	font-weight: 500;
+	color: #4d515b;
 }
 
 .index .sidebar h4 {
