@@ -42,6 +42,17 @@
 		}
 		.thumbnail {
 			padding: 15px 25px;
+			background-color: #f9f9f9;
+			border: none;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		.thumbnail:hover {
+			h4 {
+				color: #428bca;
+			}
+			background-color: #f4f7fb;
 		}
 	}
 }
