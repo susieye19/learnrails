@@ -14,11 +14,13 @@ class ChargesController < ApplicationController
     )
 
     charge = Stripe::Charge.create(
-      :customer    => current_user.id,
+      :customer    => customer.id,
       :amount      => @amount,
       :description => 'Extra access charge',
       :currency    => 'usd'
     )
+
+    current_user.update_attribute(:extra_access, true)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
