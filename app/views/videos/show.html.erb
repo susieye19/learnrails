@@ -1,81 +1,81 @@
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="center">
-      <!-- <div class="embed-container"> -->
-        <div id="<%= "wistia_#{@video.url}" %>" class="wistia_embed">&nbsp;</div>
-        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-        <script type="text/javascript">
-          wistiaEmbed = Wistia.embed("<%= @video.url %>", {
-            videoFoam: true,
-            videoQuality: "hd-only",
-            playerPreference: "html5",
-            trackEmail: "<%= current_user.email %>"
-          });
-        </script>
-      <!-- </div> -->
-    </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="center">
+        <!-- <div class="embed-container"> -->
+          <div id="<%= "wistia_#{@video.url}" %>" class="wistia_embed">&nbsp;</div>
+          <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+          <script type="text/javascript">
+            wistiaEmbed = Wistia.embed("<%= @video.url %>", {
+              videoFoam: true,
+              videoQuality: "hd-only",
+              playerPreference: "html5",
+              trackEmail: "<%= current_user.email %>"
+            });
+          </script>
+        <!-- </div> -->
+      </div>
 
-    <h3><%= @video.title %></h3>
+      <h3><%= @video.title %></h3>
 
-    <div class="panel panel-default">
-      <div class="panel-body">
+      <div class="panel panel-default">
+        <div class="panel-body">
 
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs">
-          <li class="active"><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
-          <li><%= link_to "Notes", "#notes",                          :'data-toggle' => "tab" %></li>
-          <li><%= link_to "Discussion", "#discussion",                :'data-toggle' => "tab" %></li>
-        </ul>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><%= link_to "Transcript", "#transcript", :'data-toggle' => "tab" %></li>
+            <li><%= link_to "Notes", "#notes",                          :'data-toggle' => "tab" %></li>
+            <li><%= link_to "Discussion", "#discussion",                :'data-toggle' => "tab" %></li>
+          </ul>
 
-        <br>
+          <br>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane fade in active" id="transcript">
-            <div class="transcript">
-              <% unless @video.transcript.blank? %>
-                <%= raw textilize(coderay(@video.try(:transcript))) %>
-              <% end %>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="transcript">
+              <div class="transcript">
+                <% unless @video.transcript.blank? %>
+                  <%= raw textilize(coderay(@video.try(:transcript))) %>
+                <% end %>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="notes">
-            <div class="notes">
-              <% unless @video.notes.blank? %>
-                <%= raw textilize(coderay(@video.try(:notes))) %>
-              <% end %>
+            <div class="tab-pane fade" id="notes">
+              <div class="notes">
+                <% unless @video.notes.blank? %>
+                  <%= raw textilize(coderay(@video.try(:notes))) %>
+                <% end %>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="discussion">
+            <div class="tab-pane fade" id="discussion">
 
-            <!-- Display comment form -->
-            <div class="comment-form">
-              <h4>Post a comment</h4>
-              <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: nil } %>
+              <!-- Display comment form -->
+              <div class="comment-form">
+                <h4>Post a comment</h4>
+                <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: nil } %>
+              </div>
+
+              <!-- Display all comments -->
+              <%= render partial: 'comments/comment', collection: @comments, as: :comment,
+                  locals: { new_comment: @new_comment } %>
+
             </div>
-
-            <!-- Display all comments -->
-            <%= render partial: 'comments/comment', collection: @comments, as: :comment,
-                locals: { new_comment: @new_comment } %>
-
           </div>
         </div>
       </div>
+
+      <%= link_to 'Back to library', videos_path, class: "btn btn-link" %>
     </div>
-
-    <%= link_to 'Back to library', videos_path, class: "btn btn-link" %>
   </div>
-</div>
 
-<!-- Mixpanel event and identity tracking -->
-<script>
-  mixpanel.track("Viewed video", {
-    "Title": "<%= @video.title %>"
-  });
+  <!-- Mixpanel event and identity tracking -->
+  <script>
+    mixpanel.track("Viewed video", {
+      "Title": "<%= @video.title %>"
+    });
 
-  mixpanel.identify("<%= current_user.id %>")
-  mixpanel.people.set({
-    "$name": "<%= current_user.name %>",
-    "$email": "<%= current_user.email %>",
-    "Paid": "<%= current_user.amount %>"
-  })
-</script>
+    mixpanel.identify("<%= current_user.id %>")
+    mixpanel.people.set({
+      "$name": "<%= current_user.name %>",
+      "$email": "<%= current_user.email %>",
+      "Paid": "<%= current_user.amount %>"
+    })
+  </script>
