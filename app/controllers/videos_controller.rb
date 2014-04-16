@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
+  before_action :check_user_permissions, except: [:index]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_correct_url, only: [:show]
+
 
   # GET /videos
   # GET /videos.json
@@ -75,6 +77,20 @@ class VideosController < ApplicationController
       # Redirect to the correct URL if the title of the video has since been changed
       if request.path != video_path(@video)
         return redirect_to @video, :status => :moved_permanently
+      end
+    end
+
+    def check_user_permissions
+      if user_signed_in?
+        # User needs to have paid for extra_access
+        unless current_user.extra_access
+          flash[:error] = "The Video Library and Developer Q&A sections are available as a paid add-on for students"
+          redirect_to new_charge_path
+        end
+      else
+        # User needs to be signed in first
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to new_user_session_path
       end
     end
 

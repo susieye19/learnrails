@@ -1,13 +1,12 @@
 Learnrails::Application.routes.draw do
 
+  resources :charges
   resources :questions
 
   get "/blog" => redirect("/blog/")
 
   resources :videos
-
   resources :chapters
-
   resources :comments, :only => [:create, :destroy]
 
   # resources :chapters do

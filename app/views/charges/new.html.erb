@@ -1,0 +1,18 @@
+<div class="row">
+  <h3>Thanks for being a BaseRails student!</h3>
+  <p>We've gotten a ton of requests for new content, so we put up some of the most popular requests for you all. If you've enjoyed the Etsydemo course videos so far, I hope that you'll support us by paying $25 to check out our latest content. As always, I'm happy to answer any questions you have.</p>
+  <br>
+  <p>Thanks for your support!</p>
+</div>
+
+<div class="center">
+  <%= form_tag charges_path do %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Access to video library"
+            data-email="<%= current_user.email %>"
+            data-name="BaseRails"
+            data-allow-remember-me="false"
+            data-amount="2500"></script>
+  <% end %>
+</div>
