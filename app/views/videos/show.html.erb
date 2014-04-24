@@ -1,4 +1,4 @@
-  <div class="row">
+  <div class="row shortvideo">
     <div class="col-md-8 col-md-offset-2">
       <div class="center">
         <!-- <div class="embed-container"> -->
@@ -61,10 +61,6 @@
           </div>
         </div>
       </div>
-
-      <%= link_to 'Back to library', videos_path, class: "btn btn-link" %>
-
-      <br>
 
       <% if current_user.try(:admin?) %>
         <%= link_to 'Edit Video', edit_video_path(@video), class: "btn btn-link" %>

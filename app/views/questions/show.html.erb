@@ -10,7 +10,7 @@
   <div class="col-md-8 col-md-offset-2">
     <h3><%= @question.subject %></h3>
     <h4><%= @question.details %></h3>
-    <h4>
+    <h5>
       <%= "Posted #{time_ago_in_words(@question.created_at)} ago by" %>
       <% if @question.user.admin? %>
         <span id="admin">
@@ -19,29 +19,34 @@
       <% end %>
         <%= @question.user.name %>
       </span>
-    </h4>
+    </h5>
   </div>
 </div>
 
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
 
-      <!-- Display comment form -->
-      <div class="comment-form">
-        <h4>Post a comment</h4>
-        <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: nil } %>
-      </div>
-
       <% if user_signed_in? %>
-        <!-- Display all comments -->
-        <%= render partial: 'comments/comment', collection: @comments, as: :comment,
-            locals: { new_comment: @new_comment } %>
+        <!-- Display comment form -->
+        <div class="comment-form">
+          <h4>Post a comment</h4>
+          <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: nil } %>
+        </div>
       <% end %>
+
+      <!-- Display all comments -->
+      <%= render partial: 'comments/comment', collection: @comments, as: :comment,
+          locals: { new_comment: @new_comment } %>
 
     </div>
   </div>
 
-<%= link_to 'Back', questions_path, class: "btn btn-md btn-default" %>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= link_to 'Back', questions_path, class: "btn btn-md btn-default" %>
+    </div>
+  </div>
 
 <br>
 

@@ -35,11 +35,17 @@
 		color: #48505e;
 		font-size: 28px;
 		font-weight: 400;
+		font-family: 'Open Sans',sans-serif;
 	}
 	h4 {
-		font-size: 15px;
-		font-weight: 400;
+		font-size: 20px;
+		font-weight: 200;
 		color: #707685;
+		line-height: 1.2em;
+		font-family: 'Open Sans',sans-serif;
+	}
+	h5 {
+		font-family: 'Open Sans',sans-serif;
 	}
 	#name {
 		color: #428bca;
@@ -54,8 +60,11 @@
 			color: #707685;
 		}
 		p {
-			font-size: 16px;
+			font-size: 18px;
+			font-family: 'Open Sans',sans-serif;
+			color: #707685;
 		}
+		border-top: 1px solid #e5e5e5;
 	}
 	.comment-form {
 		h4 {
@@ -72,9 +81,15 @@
 		}
 	}
 	.btn-default {
-		margin: 20px 0px 50px 220px;
+		// margin: 20px 0px 50px 220px;
 	}
-}	
+	.row {
+		margin-top: 0px !important;
+	}
+	.btn-primary {
+		margin-left: 0px !important;
+	}
+}
 
 .new {
 	.btn-primary {

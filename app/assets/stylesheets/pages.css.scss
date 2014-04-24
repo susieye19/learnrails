@@ -126,6 +126,16 @@
 			line-height: 1.5em;
 		}
 	}
+	.btn-default {
+		background-color: #70a885;
+		border: none;
+		color: #fff;
+		font-size: 18px;
+		padding: 7px 20px;
+		margin-right: 3rem;
+		font-family: 'Open Sans',sans-serif;
+		font-weight: 200;
+	}
 }
 
 .thanks {
@@ -184,7 +194,7 @@
 		color: #48505e;
 		font-family: 'Open Sans',sans-serif;
 	}
-	h2 {	
+	h2 {
 		color: #707685;
 		font-size: 22px;
 		margin: auto;
@@ -236,7 +246,7 @@
 	}
 	.thumbnail:hover {
 		background-color: #f9f9f9;
-	
+
 	}
 	.thumbnail {
 		border: none;
@@ -250,7 +260,7 @@
 
 	.title {
 		.container {
-/*			background-color: #fdfdfb;	
+/*			background-color: #fdfdfb;
 */			width: 22%;
 			h1 {
 				color: #48505e;
@@ -259,7 +269,7 @@
 				font-weight: 500;
 				font-family: 'Open Sans',sans-serif;
 				margin-top: -40px;
-				background-color: #fff;	
+				background-color: #fff;
 				border-radius: 3px;
 			}
 		}
@@ -503,7 +513,7 @@
 		margin-top: 3rem;
 		border: none;
 	}
-	
+
 	.b {
 		background-color: #b7b7b7;
 		font-family: 'Open Sans',sans-serif;

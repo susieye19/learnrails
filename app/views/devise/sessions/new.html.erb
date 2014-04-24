@@ -27,14 +27,22 @@
         </div>
 
         <div class="form-group">
-          <div class="checkbox">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="checkbox">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="form-group">
-          <%= f.submit "Sign in", class: "btn btn-primary" %>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.submit "Sign in", class: "btn btn-primary signbtn" %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

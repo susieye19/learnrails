@@ -69,8 +69,8 @@
   color: #7b7b7b;
 }
 
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus, {
   background-color: #fdfdfb;
   color: #7b7b7b;
@@ -269,4 +269,8 @@ footer {
       margin: 0px 5px;
     }
   }
+}
+
+.signbtn {
+  margin-top: 0px !important;
 }
