@@ -1,18 +1,28 @@
 Learnrails::Application.routes.draw do
 
+  resources :charges
+  resources :questions
+
   get "/blog" => redirect("/blog/")
 
-  resources :chapters do
-    resources :comments, only: [:create, :destroy]
-  end
+  resources :videos
+  resources :chapters
+  resources :comments, :only => [:create, :destroy]
+
+  # resources :chapters do
+  #   resources :comments, only: [:create, :destroy]
+  # end
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   get 'faq' => 'pages#faq'
   get 'testimonial' => 'pages#testimonial'
   get 'thanks' => 'pages#thanks'
-  get 'courses' => 'pages#courses'
-  get 'courses/marketplace' => 'pages#marketplace'
+  get 'marketplace' => 'pages#marketplace'
   get 'about' => 'pages#about'
+  get 'info' => 'pages#info'
+  get 'library' => 'pages#library'
+  get 'dashboard' => 'pages#dashboard'
+  get 'stories' => 'pages#stories'
 
   root 'pages#home'
 

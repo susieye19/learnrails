@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :questions, dependent: :destroy
   validates :name, presence: true
 
   def save_with_payment
@@ -12,17 +13,15 @@ class User < ActiveRecord::Base
       token = stripe_card_token
 
       if coupon.blank?
-        amount = 9900
-      elsif coupon.upcase == "SWSD"
-        amount = 2500
+        amount = 14900
       elsif coupon.upcase == "BROC"
-        amount = 5000
+        amount = 7500
       elsif coupon.upcase == "BRSM"
-        amount = 5000
+        amount = 7500
       elsif coupon.upcase == "EVENTSOC"
-        amount = 5000
+        amount = 7500
       elsif coupon.upcase == "BETASPRING"
-        amount = 5000
+        amount = 7500
       elsif coupon.upcase == "UDEMY"
         amount = 0
       elsif coupon.upcase == "FREEACCESS"

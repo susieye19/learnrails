@@ -7,14 +7,14 @@ class ChaptersController < ApplicationController
   # GET /chapters.json
   def index
     @chapters = Chapter.all
-    @comments = Comment.find(:all, limit: 15, order: 'created_at desc')
+    @comments = Comment.where(commentable_type: "Chapter").find(:all, limit: 15, order: 'created_at DESC')
   end
 
   # GET /chapters/1
   # GET /chapters/1.json
   def show
     @chapters = Chapter.all
-    @comments = @chapter.root_comments.order('created_at asc')
+    @comments = @chapter.root_comments.order('created_at DESC')
     @new_comment = Comment.build_from(@chapter, current_user, "")
 
     # if current_user.amount > 0

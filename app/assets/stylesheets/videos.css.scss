@@ -1,0 +1,68 @@
+// Place all the styles related to the Videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index {
+	h1 {
+		color: #48505e;
+		font-size: 33px;
+		font-weight: 200;
+		font-family: 'Open Sans',sans-serif;
+	}
+	h2 {
+		color: #707685;
+		font-size: 17px;
+		font-weight: 200;
+		font-family: 'Open Sans',sans-serif;
+		line-height: 1.5em;
+		padding: 0px 100px;
+	}
+	h3 {
+		color: #48505e;
+		font-size: 25px;
+		font-weight: 200;
+		font-family: 'Open Sans',sans-serif;
+		margin-left: -10px;
+		margin-bottom: 20px;
+		margin-top: 30px;
+	}
+	.col-md-12 {
+		h4 {
+			color: #707685;
+			font-size: 18px;
+			font-weight: 500;
+			font-family: 'Open Sans',sans-serif;
+		}
+		p {
+			color: #707685;
+			font-size: 17px;
+			font-weight: 200;
+			font-family: 'Open Sans',sans-serif;
+			line-height: 1.5em;
+		}
+		.thumbnail {
+			padding: 15px 25px;
+			background-color: #f9f9f9;
+			border: none;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		.thumbnail:hover {
+			h4 {
+				color: #428bca;
+			}
+			background-color: #f4f7fb;
+		}
+	}
+}
+
+.show {
+	h3 {
+		font-weight: 200;
+		font-family: 'Open Sans',sans-serif;
+	}
+	.shortvideo {
+		margin-top: 5rem !important;
+	}
+}

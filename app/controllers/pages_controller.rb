@@ -42,15 +42,21 @@ class PagesController < ApplicationController
   def testimonial
   end
 
-  def thanks
-  end
-
-  def courses
-  end
-
   def marketplace
   end
 
   def about
+  end
+
+  def info
+  end
+
+  def thanks
+  end
+
+  def dashboard
+  end
+
+  def stories
   end
 end

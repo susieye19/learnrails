@@ -3,7 +3,6 @@ class Chapter < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history]
 
   acts_as_commentable
-  has_many :comments
 
   validates :title, :section, :slug, presence: true
 

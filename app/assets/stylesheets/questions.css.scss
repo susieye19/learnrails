@@ -1,0 +1,104 @@
+// Place all the styles related to the Questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index {
+	.col-md-8 {
+		h3 {
+/*			font-family: 'Open Sans',sans-serif;
+*/			color: #428bca;
+			font-size: 15px;
+			font-weight: 400;
+			margin: 10px 0px;
+			a {
+				color: #48505e;
+				font-size: 20px;
+/*				font-family: 'Open Sans',sans-serif;
+*/				font-weight: 500;
+			}
+		}
+	}
+	.newq {
+		position: relative;
+		float: right;
+		margin: 20px 0px;
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+
+
+.show {
+	h3 {
+		color: #48505e;
+		font-size: 28px;
+		font-weight: 400;
+		font-family: 'Open Sans',sans-serif;
+	}
+	h4 {
+		font-size: 20px;
+		font-weight: 200;
+		color: #707685;
+		line-height: 1.2em;
+		font-family: 'Open Sans',sans-serif;
+	}
+	h5 {
+		font-family: 'Open Sans',sans-serif;
+	}
+	#name {
+		color: #428bca;
+	}
+	#admin {
+		color: #ffae19;
+		font-weight: 600;
+	}
+	.comment {
+		margin: 20px 0px;
+		small {
+			color: #707685;
+		}
+		p {
+			font-size: 18px;
+			font-family: 'Open Sans',sans-serif;
+			color: #707685;
+		}
+		border-top: 1px solid #e5e5e5;
+	}
+	.comment-form {
+		h4 {
+			color: #333;
+		}
+	}
+	.newq {
+		position: relative;
+		float: right;
+		margin: 20px 0px;
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	.btn-default {
+		// margin: 20px 0px 50px 220px;
+	}
+	.row {
+		margin-top: 0px !important;
+	}
+	.btn-primary {
+		margin-left: 0px !important;
+	}
+}
+
+.new {
+	.btn-primary {
+		margin-top: 4rem;
+	}
+	h1 {
+		font-family: 'Open Sans',sans-serif;
+		color: #48505e;
+		font-weight: 200;
+		margin-bottom: 5rem;
+	}
+}

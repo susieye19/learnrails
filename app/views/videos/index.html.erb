@@ -1,0 +1,32 @@
+<div class="has-padding max-width">
+
+  <div class="row">
+    <div class="center">
+      <h1>Browse our video library</h1>
+      <h2>Customize your app with our step-by-step video tutorials that walk you through implementing popular web and design features<h2>
+    </div>
+  </div>
+
+  <% @categories.each do |category| %>
+    <div class="row">
+      <h3><%= category %></h3>
+    </div>
+
+    <% Video.where(category: category).order("title ASC").each do |video| %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= link_to video_path(video), data: { no_turbolink: true } do %>
+            <div class="thumbnail">
+              <h4><%= video.title %></h4>
+              <p><%= video.description %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'New Video', new_video_path %>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.charges-body {
+	h3 {
+		color: #48505e;
+		font-size: 33px;
+		font-weight: 200;
+		font-family: 'Open Sans',sans-serif;
+		margin-bottom: 3rem;
+	}
+	p {
+		color: #707685;
+		font-size: 17px;
+		font-weight: 200;
+		font-family: 'Open Sans',sans-serif;
+		padding: 0rem 10rem;
+		line-height: 1.5em;
+	}
+	.pay {
+		margin-top: 3rem;
+	}
+}

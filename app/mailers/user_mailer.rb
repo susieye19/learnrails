@@ -6,11 +6,10 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.comment_notification.subject
   #
-  def comment_notification(recipient_email, recipient_name, commenter_name, body, chapter_id)
+  def comment_notification(recipient_email, recipient_name, commenter_name, body)
     @recipient_name = recipient_name
     @commenter_name = commenter_name
     @body = body
-    @chapter_id = chapter_id
     email_with_name = "#{recipient_name} <#{recipient_email}>"
 
     mail to: email_with_name, subject: "#{commenter_name} replied to your comment on BaseRails"
