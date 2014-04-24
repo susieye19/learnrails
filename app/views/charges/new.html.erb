@@ -26,8 +26,7 @@
 
 <!-- Mixpanel event and identity tracking -->
 <script>
-  mixpanel.track("Video Library Signup Page", {
-  });
+  mixpanel.track("Video Library Signup Page");
 
   mixpanel.identify("<%= current_user.id %>")
   mixpanel.people.set({

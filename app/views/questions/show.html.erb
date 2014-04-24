@@ -55,6 +55,16 @@
   <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
+<!-- Mixpanel event and identity tracking -->
+<script>
+  mixpanel.track("Q&A Show", {
+    "Title": "<%= @question.subject %>"
+  });
 
-
-
+  mixpanel.identify("<%= current_user.id %>")
+  mixpanel.people.set({
+    "$name": "<%= current_user.name %>",
+    "$email": "<%= current_user.email %>",
+    "Paid": "<%= current_user.amount %>"
+  })
+</script>
