@@ -67,3 +67,8 @@
     <%= link_to 'New Video', new_video_path %>
   <% end %>
 </div>
+
+<!-- Mixpanel event and identity tracking -->
+<script>
+  mixpanel.track("Video Library");
+</script>
