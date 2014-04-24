@@ -26,6 +26,43 @@
     <% end %>
   <% end %>
 
+  <div class="row">
+    <h3>Coming Soon</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to '#', data: { no_turbolink: true } do %>
+        <div class="thumbnail">
+          <h4>Add a Twitter 'Follow' Button</h4>
+          <p>Build your website's following by adding a 'Follow' button for Twitter.</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to '#', data: { no_turbolink: true } do %>
+        <div class="thumbnail">
+          <h4>Switch Over from SQLite to PostgreSQL</h4>
+          <p>Use the same database in both localhost and Heroku to minimize the issues you'll face during deployment.</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to '#', data: { no_turbolink: true } do %>
+        <div class="thumbnail">
+          <h4>Integrate Google Maps into Your App</h4>
+          <p>Use the Google Maps API to implement location-based features.</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
   <% if current_user.try(:admin?) %>
     <%= link_to 'New Video', new_video_path %>
   <% end %>
