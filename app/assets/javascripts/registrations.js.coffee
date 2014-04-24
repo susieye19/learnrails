@@ -11,11 +11,7 @@ $(".registrations.create").ready ->
 subscription =
   setupForm: ->
     $('#verify_coupon').click ->
-      if $('#user_coupon').val().toUpperCase() == "SWSD"
-        $('#coupon_success').text("75% off discount applied!").show()
-        $('#coupon_error').hide()
-        false
-      else if $('#user_coupon').val().toUpperCase() == "BROC"
+      if $('#user_coupon').val().toUpperCase() == "BROC"
         $('#coupon_success').text("50% off discount applied!").show()
         $('#coupon_error').hide()
         false
@@ -27,10 +23,6 @@ subscription =
         $('#coupon_success').text("50% off discount applied!").show()
         $('#coupon_error').hide()
         false
-      else if $('#user_coupon').val().toUpperCase() == "JEFF"
-        $('#coupon_success').text("Thanks for your support! Your price is now $24.00!").show()
-        $('#coupon_error').hide()
-        false
       else if $('#user_coupon').val().toUpperCase() == "UDEMY"
         $('#coupon_success').text("Free! You'll still need to input a valid credit card though").show()
         $('#coupon_error').hide()
@@ -40,7 +32,7 @@ subscription =
         $('#coupon_error').hide()
         false
       else if $('#user_coupon').val().toUpperCase() == "BETASPRING"
-        $('#coupon_success').text("Lucky you - you've unlocked a discounted price of $50!").show()
+        $('#coupon_success').text("Lucky you - you've unlocked a discounted price of $75!").show()
         $('#coupon_error').hide()
         false
       else

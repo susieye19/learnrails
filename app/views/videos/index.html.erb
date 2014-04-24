@@ -12,21 +12,13 @@
       <h3><%= category %></h3>
     </div>
 
-    <% Video.where(category: category).each do |video| %>
+    <% Video.where(category: category).order("title ASC").each do |video| %>
       <div class="row">
         <div class="col-md-12">
-          <%= link_to video_path(video) do %>
+          <%= link_to video_path(video), data: { no_turbolink: true } do %>
             <div class="thumbnail">
               <h4><%= video.title %></h4>
               <p><%= video.description %></p>
-
-              <% if false %>
-              <% if current_user.try(:admin?) %>
-                <%= link_to "Show", video_path(video), class: "btn btn-link", 'data-no-turbolink' => true %>
-                <%= link_to "Edit", edit_video_path(video), class: "btn btn-link" %>
-                <%= link_to "Destroy", video_path(video), method: :delete, class: "btn btn-link" %>
-              <% end %>
-              <% end %>
             </div>
           <% end %>
         </div>

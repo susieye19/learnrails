@@ -63,6 +63,13 @@
       </div>
 
       <%= link_to 'Back to library', videos_path, class: "btn btn-link" %>
+
+      <br>
+
+      <% if current_user.try(:admin?) %>
+        <%= link_to 'Edit Video', edit_video_path(@video), class: "btn btn-link" %>
+      <% end %>
+
     </div>
   </div>
 
