@@ -3,5 +3,5 @@ class Question < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :subject, :details, presence: true
+  validates :subject, presence: true
 end
