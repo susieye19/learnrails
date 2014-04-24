@@ -1,23 +1,25 @@
-<div class="row">
-  <div class="col-md-11">
-    <div class="newq btn btn-primary">
-      <%= link_to 'Post new question', new_question_path %>
-    </div>
-  </div>
-</div>
-
-<% @questions.each do |question| %>
+<div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h3>
-        <%= link_to question do %>
-        <%= question.subject %>
-        <% end %>
-        by <%= question.user.name %>
-      </h3>
+    <div class="col-md-11">
+      <div class="newq btn btn-primary">
+        <%= link_to 'Post new question', new_question_path %>
+      </div>
     </div>
   </div>
-<% end %>
+
+  <% @questions.each do |question| %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>
+          <%= link_to question do %>
+          <%= question.subject %>
+          <% end %>
+          by <%= question.user.name %>
+        </h3>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <!-- Mixpanel event tracking -->
 <script>

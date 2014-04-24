@@ -20,7 +20,7 @@
       <%= "#{comment.user.name}" %>
     </span>
   </small>
-  <p><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
+  <p class="etsycomment"><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
 
   <% if user_signed_in? %>
     <div class="reply">
