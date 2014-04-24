@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all.order('created_at ASC')
+    @questions = Question.all.order('created_at DESC')
   end
 
   # GET /questions/1
