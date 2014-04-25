@@ -60,11 +60,4 @@
   mixpanel.track("Q&A Show", {
     "Title": "<%= @question.subject %>"
   });
-
-  mixpanel.identify("<%= current_user.id %>")
-  mixpanel.people.set({
-    "$name": "<%= current_user.name %>",
-    "$email": "<%= current_user.email %>",
-    "Paid": "<%= current_user.amount %>"
-  })
 </script>
