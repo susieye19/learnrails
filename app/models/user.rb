@@ -18,16 +18,16 @@ class User < ActiveRecord::Base
         amount = 7500
       elsif coupon.upcase == "BRSM"
         amount = 7500
-      elsif coupon.upcase == "EVENTSOC"
+      elsif coupon.upcase == "SLIDESHARE"
         amount = 7500
+      elsif coupon.upcase == "GETSTARTED"
+        amount = 12000
       elsif coupon.upcase == "BETASPRING"
         amount = 7500
       elsif coupon.upcase == "UDEMY"
         amount = 0
       elsif coupon.upcase == "FREEACCESS"
         amount = 0
-      elsif coupon.upcase == "WAIHON"
-        amount = 3500
       end
 
       if amount > 0
