@@ -35,14 +35,14 @@
       </ul>
     <% else %>
       <ul class="nav navbar-nav">
-        <li><%= link_to "How it works", info_path, 'data-no-turbolink' => true %></li>
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "How it works", info_path, 'data-no-turbolink' => true %></li>
         <li><%= link_to "4-week course", marketplace_path %></li>
-        <li><%= link_to "Video library", videos_path, data: { no_turbolink: true } %></li>
-        <li><%= link_to "Ask a Developer", questions_path, data: { no_turbolink: true } %></li>
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Video library", videos_path, data: { no_turbolink: true } %></li>
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Ask a Developer", questions_path, data: { no_turbolink: true } %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Enroll", new_user_registration_path %></li>
-        <li><%= link_to "Login", new_user_session_path %></li>
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Enroll", new_user_registration_path %></li>
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Login", new_user_session_path %></li>
       </ul>
     <% end %>
   </div><!-- /.navbar-collapse -->
