@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>(function() {
-    var _fbq = window._fbq || (window._fbq = []);
-    if (!_fbq.loaded) {
-      var fbds = document.createElement('script');
-      fbds.async = true;
-      fbds.src = '//connect.facebook.net/en_US/fbds.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(fbds, s);
-      _fbq.loaded = true;
-    }
-    _fbq.push(['addPixelId', '705812962798866']);
-  })();
-  window._fbq = window._fbq || [];
-  window._fbq.push(['track', 'PixelInitialized', {}]);
+  <script type="text/javascript">
+    (function() {
+      window._pa = window._pa || {};
+      // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+      // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+      // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+      var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+      pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/53609cbab000f47fb9000051.js";
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+    })();
   </script>
-  <noscript><img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=705812962798866&amp;ev=NoScript" /></noscript>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <title>BaseRails: Learn to build web applications from scratch</title>
