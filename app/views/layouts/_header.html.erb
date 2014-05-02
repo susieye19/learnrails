@@ -11,7 +11,11 @@
     <% if Rails.env.development? %>
       <%= link_to "BaseRails", root_path, class: "navbar-brand" %>
     <% else %>
-      <a href="https://www.baserails.com" itemprop="url" class="navbar-brand"><span itemprop="name">BaseRails</span></a>
+      <% link_to root_path, class: "navbar-brand", data: { no_turbolink: true }, itemprop: "url" do %>
+        <span itemprop="name">BaseRails</span>
+      <% end %>
+
+      <!-- <a href="https://www.baserails.com" itemprop="url" class="navbar-brand"><span itemprop="name">BaseRails</span></a> -->
     <% end %>
     <p>Build something that works</p>
   </div>
