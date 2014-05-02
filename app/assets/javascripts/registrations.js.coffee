@@ -31,6 +31,10 @@ subscription =
         $('#coupon_success').text("Lucky you - you've unlocked a discounted price of $75!").show()
         $('#coupon_error').hide()
         false
+      else if $('#user_coupon').val().toUpperCase() == "REFERYWH"
+        $('#coupon_success').text("50% off discount applied!").show()
+        $('#coupon_error').hide()
+        false
       else if $('#user_coupon').val().toUpperCase() == "UDEMY"
         $('#coupon_success').text("Free! You'll still need to input a valid credit card though").show()
         $('#coupon_error').hide()
