@@ -28,7 +28,7 @@ subscription =
         $('#coupon_error').hide()
         false
       else if $('#user_coupon').val().toUpperCase() == "BETASPRING"
-        $('#coupon_success').text("Lucky you - you've unlocked a discounted price of $75!").show()
+        $('#coupon_success').text("Lucky you - you've unlocked a discounted price of $25!").show()
         $('#coupon_error').hide()
         false
       else if $('#user_coupon').val().toUpperCase() == "REFERYWH"
@@ -36,7 +36,7 @@ subscription =
         $('#coupon_error').hide()
         false
       else if $('#user_coupon').val().toUpperCase() == "PROMO50"
-        $('#coupon_success').text("Lucky you - access our base course for just $50!").show()
+        $('#coupon_success').text("Lucky you - access our base course for just $25!").show()
         $('#coupon_error').hide()
         false
       else if $('#user_coupon').val().toUpperCase() == "UDEMY"
