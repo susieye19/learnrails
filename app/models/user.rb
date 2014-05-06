@@ -13,21 +13,21 @@ class User < ActiveRecord::Base
       token = stripe_card_token
 
       if coupon.blank?
-        amount = 4900
+        amount = 14900
       elsif coupon.upcase == "BROC"
-        amount = 2500
+        amount = 7500
       elsif coupon.upcase == "BRSM"
-        amount = 2500
+        amount = 7500
       elsif coupon.upcase == "SLIDESHARE"
-        amount = 2500
+        amount = 7500
       elsif coupon.upcase == "GETSTARTED"
-        amount = 4000
+        amount = 12000
       elsif coupon.upcase == "BETASPRING"
-        amount = 2500
+        amount = 7500
       elsif coupon.upcase == "REFERYWH"
-        amount = 2500
+        amount = 7500
       elsif coupon.upcase == "PROMO50"
-        amount = 2500
+        amount = 5000
       elsif coupon.upcase == "UDEMY"
         amount = 0
       elsif coupon.upcase == "FREEACCESS"
