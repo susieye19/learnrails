@@ -3,19 +3,23 @@
   <div class="max-width has-padding">
     <div class="containertagline center">
       <div class="section-header center">
-        <h1>Build web apps like Etsy and Airbnb in 30 days</h1>
-        <h2>Don't waste $20,000 outsourcing your projects.<br>Build it yourself for $149.<br></h2>
+        <h1>Build an online marketplace in 30 days</h1>
+        <h2>Don't waste $10,000 outsourcing your projects. <br>Build it yourself for $149.<br></h2><br>
+        <h3>Learn to code and deploy Rails apps from scratch. <br>Let us take you from zero to launch.</h3>
+
         <div class="marketplaceproject">
           <%= link_to "Enroll today", new_user_registration_path, class: "btn btn-lg btn-default center",
               data: { no_turbolink: true } %>
-          <%= link_to "How it works", info_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
-      </div>
+<!--           <%= link_to "How it works", info_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
+ -->              
+          <%= link_to "How it works", root_path(anchor: "step1"), class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>  
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="summary">
+<!-- <section class="summary">
   <div class="title">
     <div class="container">
       <h1 class="center">How we help you</h1>
@@ -58,7 +62,109 @@
     </div>
   </div>
 
+</section> -->
+
+<section class="info">
+
+  <div class="container">
+    <header class="center">
+      <h1>Your ideas deserve to be built</h1>
+      <h2>BaseRails is a video-learning platform that helps you develop the skills to build web apps. Work on real projects and learn to code in layers. No fluff, just results.</h2>
+      <%= image_tag "https://dl.dropboxusercontent.com/s/4g5khl0egopew26/ideaicon.png" %>
+      <%= image_tag "https://dl.dropboxusercontent.com/s/5l5hz85u9m0m4l9/arrowicon.png" %>
+      <%= image_tag "https://dl.dropboxusercontent.com/s/zgjh3jg5dmhptx2/webappicon.png" %>
+    </header>
+  </div> 
+
+  <div id="step1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Step 1: Start by building a base Etsy app</h1>
+          <h2>We believe in learning by working on projects. Our comprehensive 43-video online course walks you step-by step through building an online marketplace like Etsy. Learn how to implement features like user login, product uploads, online payments, dashboards, and much more.</h2>
+          <h2><%= link_to marketplace_path do %>
+            <i class="glyphicon glyphicon-arrow-right"></i> Explore our syllabus
+          <% end %><h2>
+        </div>
+        <div class="col-md-6">
+            <div class="demovideo">
+              <div id="wistia_oowbkfykya" class="wistia_embed" style="width:550px;height:333px;"> </div>
+              <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+              <script>
+              wistiaEmbed = Wistia.embed("oowbkfykya");
+              </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="step2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+<!--          <%= image_tag "https://dl.dropboxusercontent.com/s/bd87rehdwirzqsi/railscourse.png" %>
+ -->        <%= image_tag "https://dl.dropboxusercontent.com/s/k1l271laj5sq830/webdesignicons.png" %>
+        </div>
+        <div class="col-md-6">
+          <h1>Step 2: Add more awesome features</h1>
+          <h2>Head on over to our video library and learn how to implement additional features including social media integration, search, reviews, online payments, and many more. Take your web app to the next level.</h2>
+          <h2><%= link_to videos_path do %>
+            <i class="glyphicon glyphicon-arrow-right"></i> View library
+          <% end %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="step3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Step 3: Build out your own idea</h1>
+          <h2>You're now ready to take what you've learned and create your own Rails app, or simply customize the one you just built. You've mastered technologies such as Ruby on Rails, HTML, Bootstrap, APIs, databases, Github, and Heroku, which will all be useful for building any idea. </h2>
+          <h2><%= link_to stories_path do %>
+            <i class="glyphicon glyphicon-arrow-right"></i> Read student stories
+          <% end %></h2>
+        </div>
+        <div class="col-md-6">
+          <div class="thumbnail">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+<!-- <section class="showcase">
+  <div class="container">
+
+    <div class="title">
+        <h1 class="center">Student Projects</h1>
+        <h2 class="center">See what our students are currently working on</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/7hxmbbo0eyooyus/tenniscourt.png" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png" %>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section> -->
 
 <section class="difference">
   <div class="container">
@@ -67,31 +173,23 @@
         <header class="section-header center">
           <h1>The BaseRails Difference</h1>
         </header>
-        <h3>Here at BaseRails, we'll walk you step-by-step through building fully functional web apps from beginning to end. You'll learn practical, up-to-date skills that can be instantly useful for implementing your idea and testing your MVP with real users.</h3>
-        <h3>We don't think you need to memorize complicated programming syntax, get a computer science degree, or shell out $10,000 for an in-person class just to build a website.
-        </h3>
-        <div class="center">
+        <h3>Learning to code and learning to build web apps is different, but everyone still teaches it the same way. Not us. With BaseRails, you'll learn as you go by creating a real application you can test with actual users. We don't think you need to memorize complicated programming syntax, get a computer science degree, or shell out $10,000 just to build a website.<br><br>Millions of people start learning how to code, but most still can't build anything afterwards. We make sure everyone finishes BaseRails with something to show for it.</h3>
+<!--         <div class="center">
           <%= link_to "Enroll today for $149", new_user_registration_path,
             class: "btn btn-lg btn-success", data: { no_turbolink: true } %>
           <%= link_to "View student projects", stories_path, class: "btn btn-lg btn-default", data: { no_turbolink: true } %>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6">
-        <!-- <div class="features">
+        <div class="features">
           <ul class="check">
             <li>Practical video screencast lectures with step-by-step instructions </li>
             <li>Word-for-word transcript of each lecture to follow along with as you watch each video</li>
             <li>Source Code for immediate reference and readability</li>
-            <li>24-hour response time from instructors to help with troubleshooting</li>
+            <li>Active community of entrepreneurs launching new ideas</li>
+            <li>100% troubleshooting success rate within 24 hours</li>
           <ul>
-        </div> -->
-          <div class="demovideo">
-              <div id="wistia_oowbkfykya" class="wistia_embed" style="width:550px;height:333px;"> </div>
-              <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-              <script>
-              wistiaEmbed = Wistia.embed("oowbkfykya");
-              </script>
-          </div>
+        </div> 
       </div>
     </div>
   </div>
@@ -112,11 +210,12 @@
         </tr>
       </tbody>
     </table>
-    <h2 class="center">&ldquo;I personally and wholeheartedly recommend this for anyone who wants to jump in with both feet and learn as you go by creating an actual application that you can use and or modify for your own use.&rdquo;</h2>
-    <h3>- William P.</h3>
-
+    <h2 class="center">&ldquo;I personally and wholeheartedly recommend this for anyone who wants to jump in with both feet and learn as you go by creating an actual application that you can use and or modify for your own use.&rdquo;  - William P.</h2>
+    <div class="button center"><%= link_to "Get started today", new_user_registration_path, class: "btn btn-primary center" %></div>
   </div>
 </section>
+
+
 
 <!-- Mixpanel event tracking -->
 <% if user_signed_in? %>
