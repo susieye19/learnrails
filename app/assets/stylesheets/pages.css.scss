@@ -176,14 +176,15 @@
 	background-position: bottom;
 	background-repeat: no-repeat;
 	padding-bottom: 6rem;
-	height: 530px;
-	.containertagline {
+	height: 650px;
+/*	height: 530px;
+*/	.containertagline {
 		max-width: 980px;
 		width: 100%;
 	}
 	.section-header {
 		background-color: rgba(255,255,255,0.92);
-		margin: 40px auto 0 auto;
+		margin: 60px auto 0 auto;
 		max-width: 800px;
 		text-align: center;
 		border-radius: 5px;
@@ -191,21 +192,27 @@
 		z-index: 150;
 	}
 	h1 {
-		font-size: 32px;
-		color: #48505e;
+/*		font-size: 32px;
+*/		color: #48505e;
 		font-family: 'Open Sans',sans-serif;
+		font-size: 38px;
 	}
 	h2 {
 		color: #707685;
-		font-size: 22px;
-		margin: auto;
+/*		font-size: 22px;
+*/		margin: auto;
 		padding-top: 10px;
 		font-family: 'Open Sans',sans-serif;
-		line-height: 3rem;
-		width: 85%;
+/*		line-height: 3rem;
+*/		width: 85%;
+		font-size: 25px;
+		line-height: 3.2rem;
 	}
 	h3 {
-		color: #5b5b5b;
+		color: #707685;
+		font-size: 19px;
+		font-family: 'Open Sans',sans-serif;
+		line-height: 2.5rem;
 	}
 	p {
 		color: #6b6b6b;
@@ -609,13 +616,20 @@
   	font-family: 'Open Sans',sans-serif;
   	line-height: 1.3em;
   }
-  h3 {
-  	text-align: right;
-  	font-size: 20px;
-  	margin-right: 100px;
-  	font-weight: 400;
-  	font-family: 'Open Sans',sans-serif;
-  }
+	.btn-primary {
+		text-decoration: none;
+		position: center;
+		font-size: 22px;
+		background-color: #70a885;
+		border: none;
+		font-family: 'Open Sans',sans-serif;
+		font-weight: 200;
+		margin-top: 5rem;
+		padding: 7px 25px;
+	}
+	.btn-primary:hover {
+		background-color: #649777;
+	}
 }
 
 .info {
@@ -718,20 +732,16 @@
 			line-height: 1.5em;
 			margin-bottom: 5rem;
 		}
-		.button {
-			width: 450px;
+		.glyphicon-arrow-right {
+			position: relative;
+			float: right;
+			padding-top: 4px;
+			padding-right: 3rem;
 		}
-		.btn-primary {
+		a {
 			text-decoration: none;
-			position: center;
-			font-size: 18px;
-			background-color: #70a885;
-			border: none;
-			font-family: 'Open Sans',sans-serif;
-			font-weight: 200;
-		}
-		.btn-primary:hover {
-			background-color: #649777;
+			text-align: center;
+			padding-left: 25rem;
 		}
 	}
 }
