@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
     </button>
     <% if Rails.env.development? %>
-      <%= link_to "BaseRails", root_path, class: "navbar-brand" %>
+      <%= link_to "BaseRails", root_path, class: "navbar-brand", data: { no_turbolink: true} %>
     <% else %>
       <%= link_to "https://www.baserails.com", class: "navbar-brand", data: { no_turbolink: true}, itemprop: "url" do %>
         <span itemprop="name">BaseRails</span>
