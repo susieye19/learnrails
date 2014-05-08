@@ -17,16 +17,7 @@
   <%= yield %>
   <%= render 'layouts/footer' %>
 
-  <%#= render 'layouts/zopim' %>
-
-  <% if false %>
-  <script>
-    $zopim(function() {
-      $zopim.livechat.setName("<%= currently_signed_in_user.name %>");
-      $zopim.livechat.setEmail("<%= currently_signed_in_user.email %>");
-    });
-  </script>
-  <% end %>
-
+  <%#= render 'layouts/olark' %>
+  <%= render 'layouts/zopim' %>
 </body>
 </html>

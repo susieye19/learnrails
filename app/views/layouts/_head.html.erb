@@ -1,0 +1,16 @@
+<%= render 'layouts/optimizely' %>
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<title>BaseRails: Learn to build web applications from scratch</title>
+
+<%= render 'layouts/metatags' %>
+
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+<%= favicon_link_tag 'https://dl.dropboxusercontent.com/s/s82cg7msu6y6zaz/BaseRails.ico' %>
+<%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<%= render 'layouts/mixpanel' %>
