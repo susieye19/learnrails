@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
         amount = 7500
       elsif coupon.upcase == "PROMO50"
         amount = 5000
+      elsif coupon.upcase == "F6S"
+        amount = 7500
+      elsif coupon.upcase == "FATWALLET"
+        amount = 7500
       elsif coupon.upcase == "UDEMY"
         amount = 0
       elsif coupon.upcase == "FREEACCESS"
