@@ -17,15 +17,32 @@
   <%= yield %>
   <%= render 'layouts/footer' %>
 
-  <%#= render 'layouts/zopim' %>
+  <%= render 'layouts/zopim' %>
 
-  <% if false %>
+  <% if user_signed_in? %>
     <script>
       $zopim(function() {
-        $zopim.livechat.setName("<%= currently_signed_in_user.name %>");
-        $zopim.livechat.setEmail("<%= currently_signed_in_user.email %>");
+        $zopim.livechat.hideAll();
+        $zopim.livechat.setName("<%= current_user.name %>");
+        $zopim.livechat.setEmail("<%= current_user.email %>");
       });
     </script>
+  <% else %>
+    <script>
+      $zopim(function() {
+        $zopim.livechat.button.show();
+      });
+    </script>
+
+    <% if false %>
+      <script>
+        $zopim(function() {
+          $zopim.livechat.setOnUnreadMsgs(function(number) {
+            alert("Hello");
+          });
+        });
+      </script>
+    <% end %>
   <% end %>
 
 </body>
