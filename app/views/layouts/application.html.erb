@@ -17,8 +17,9 @@
   <%= yield %>
   <%= render 'layouts/footer' %>
 
-  <%= render 'layouts/zopim' %>
+  <%#= render 'layouts/zopim' %>
 
+  <% if false %>
   <% if user_signed_in? %>
     <script>
       $zopim(function() {
@@ -47,6 +48,7 @@
         });
       });
     </script>
+  <% end %>
   <% end %>
 
 </body>

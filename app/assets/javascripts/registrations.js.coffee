@@ -10,6 +10,8 @@ $(".registrations.create").ready ->
 
 subscription =
   setupForm: ->
+    # alert users
+
     $('#verify_coupon').click ->
       if $('#user_coupon').val().toUpperCase() == "BROC"
         $('#coupon_success').text("50% off discount applied!").show()

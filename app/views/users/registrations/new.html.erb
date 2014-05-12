@@ -1,7 +1,7 @@
 <% if false %>
-  <% content_for :head do %>
-    <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
-  <% end %>
+<%= javascript_tag do %>
+  window.users = '<%= raw User.all.to_json %>'
+<% end %>
 <% end %>
 
 <div class="container">
