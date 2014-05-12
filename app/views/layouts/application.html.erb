@@ -36,8 +36,8 @@
   <% else %>
     <script>
       $zopim(function() {
-        $zopim.livechat.button.setHideWhenOffline(true);
         $zopim.livechat.button.show();
+        $zopim.livechat.button.setHideWhenOffline(true);
 
         $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
           if (numUnreadMsgs != 0) {
