@@ -30,19 +30,16 @@
   <% else %>
     <script>
       $zopim(function() {
+        $zopim.livechat.button.setHideWhenOffline(true);
         $zopim.livechat.button.show();
+
+        $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
+          if (numUnreadMsgs != 0) {
+            $zopim.livechat.window.show();
+          }
+        });
       });
     </script>
-
-    <% if false %>
-      <script>
-        $zopim(function() {
-          $zopim.livechat.setOnUnreadMsgs(function(number) {
-            alert("Hello");
-          });
-        });
-      </script>
-    <% end %>
   <% end %>
 
 </body>
