@@ -25,6 +25,12 @@
         $zopim.livechat.hideAll();
         $zopim.livechat.setName("<%= current_user.name %>");
         $zopim.livechat.setEmail("<%= current_user.email %>");
+
+        $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
+          if (numUnreadMsgs != 0) {
+            $zopim.livechat.window.show();
+          }
+        });
       });
     </script>
   <% else %>
