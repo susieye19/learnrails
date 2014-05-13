@@ -42,6 +42,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
 
+    puts resource.inspect
+
     if resource.save_with_payment
 
       unless resource.coupon.present? && ((resource.coupon.upcase == "UDEMY") || (resource.coupon.upcase == "PROMO50"))

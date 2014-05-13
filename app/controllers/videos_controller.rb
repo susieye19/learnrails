@@ -2,6 +2,7 @@ class VideosController < ApplicationController
   before_action :check_user_permissions, except: [:index]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_correct_url, only: [:show]
+  before_action :require_admin, except: [:index, :show]
 
   # GET /videos
   # GET /videos.json

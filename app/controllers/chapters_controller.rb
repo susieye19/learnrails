@@ -2,6 +2,7 @@ class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_correct_url, only: [:show]
   before_action :authenticate_user!
+  before_action :require_admin, except: [:index, :show]
 
   # GET /chapters
   # GET /chapters.json
