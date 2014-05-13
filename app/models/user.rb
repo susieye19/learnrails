@@ -14,10 +14,12 @@ class User < ActiveRecord::Base
 
       if coupon.blank?
         amount = 14900
+        self.extra_access = true
       else
         Coupon.all.each do |c|
           if coupon.upcase == c.code.upcase
             amount = c.price
+            self.extra_access = c.extra_access
           end
         end
       end

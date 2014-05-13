@@ -46,9 +46,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if resource.save_with_payment
 
-      unless resource.coupon.present? && ((resource.coupon.upcase == "UDEMY") || (resource.coupon.upcase == "PROMO50"))
-        resource.update_attribute(:extra_access, true)
-      end
+      # unless resource.coupon.present? && ((resource.coupon.upcase == "UDEMY") || (resource.coupon.upcase == "PROMO50"))
+      #   resource.update_attribute(:extra_access, true)
+      # end
 
       # Alias anonymous user to user_id
       # Analytics.alias(from: request.session_options[:id], to: resource.id)

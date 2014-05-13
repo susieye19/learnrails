@@ -15,6 +15,8 @@ subscription =
       $('#coupon_error').hide()
       for key, value of $('#verify_coupon').data('coupons')
         if $('#user_coupon').val().toUpperCase() == value.code
+          if value.price == 0
+            $('#stripe_form').hide()
           $('#coupon_success').text(value.message).show()
           $('#coupon_error').hide()
           break
@@ -78,7 +80,9 @@ subscription =
 
     $('#payment_form').submit ->
       $('input[type=submit]').attr('disabled', true)
-      if $('#card_number').length
+      if $('#stripe_form').is(':hidden')
+        true
+      else if $('#card_number').length
         Stripe.card.createToken($('#payment_form'), subscription.handleStripeResponse)
         false
       else
