@@ -39,6 +39,46 @@
   }
 }
 
+@media only screen and (min-width : 320px) and (max-width : 770px) {
+  .navbar-header {
+    p {
+/*      font-size: 12px !important;
+*/      overflow: hidden;
+      float: left;
+      text-align: left;
+      display: block;
+
+    }
+    .navbar-brand {
+      display: inline-block;
+      margin: 0 auto;
+      float: left;
+      overflow: hidden;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    display: none;
+  }
+  .navbar {
+      padding: 15px 70px 15px 60px;
+  }
+}
+
+@media only screen and (min-width : 770px) and (max-width : 1140px) {
+  .navbar-left {
+    display: none;
+    padding: 15px 200px 15px 100px;
+  }
+}
+
+@media only screen and (min-width : 500px) and (max-width : 770px) {
+  .navbar-header {
+    p {
+      padding-top: 18px;
+    }
+  }
+}
+
 .navbar-default .navbar-nav {
   margin-top: 3rem;
   margin-left: 5rem;
@@ -274,3 +314,5 @@ footer {
 .signbtn {
   margin-top: 0px !important;
 }
+
+
