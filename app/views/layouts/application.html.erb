@@ -17,39 +17,7 @@
   <%= yield %>
   <%= render 'layouts/footer' %>
 
-  <%#= render 'layouts/zopim' %>
-
-  <% if false %>
-  <% if user_signed_in? %>
-    <script>
-      $zopim(function() {
-        $zopim.livechat.hideAll();
-        $zopim.livechat.setName("<%= current_user.name %>");
-        $zopim.livechat.setEmail("<%= current_user.email %>");
-
-        $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
-          if (numUnreadMsgs != 0) {
-            $zopim.livechat.window.show();
-          }
-        });
-      });
-    </script>
-  <% else %>
-    <script>
-      $zopim(function() {
-        $zopim.livechat.hideAll();
-        // $zopim.livechat.button.show();
-        // $zopim.livechat.button.setHideWhenOffline(true);
-
-        $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
-          if (numUnreadMsgs != 0) {
-            $zopim.livechat.window.show();
-          }
-        });
-      });
-    </script>
-  <% end %>
-  <% end %>
+  <%= render 'layouts/zopim' %>
 
 </body>
 </html>

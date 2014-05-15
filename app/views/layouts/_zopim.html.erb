@@ -1,4 +1,39 @@
 <!--Start of Zopim Live Chat Script-->
-<!-- <script src="//v2.zopim.com/?26KzicVsRVW2iRpzZ4ILpZAcitQEYHNt" charset="utf-8" type="text/javascript"></script> -->
 <script src="//v2.zopim.com/?26KzicVsRVW2iRpzZ4ILpZAcitQEYHNt" charset="utf-8" type="text/javascript"></script>
 <!--End of Zopim Live Chat Script-->
+
+<% if user_signed_in? %>
+  <script>
+    $zopim(function() {
+      $zopim.livechat.hideAll(); // Hide the entire widget when the chat is offline
+      $zopim.livechat.setName("<%= current_user.name %>");
+      $zopim.livechat.setEmail("<%= current_user.email %>");
+
+      $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
+        if (numUnreadMsgs != 0) {
+          $zopim.livechat.window.show(); // Show the window if there are any unread msgs
+        }
+      });
+    });
+  </script>
+<% else %>
+  <script>
+    $zopim(function() {
+      $zopim.livechat.setOnStatus(zopchat);
+
+      function zopchat(status) {
+        if (status == 'online') {
+          $zopim.livechat.button.show(); // Show only the button
+          $zopim.livechat.setOnUnreadMsgs(function (numUnreadMsgs) {
+            if (numUnreadMsgs != 0) {
+              $zopim.livechat.window.show(); // Show the window if there are any unread msgs
+            }
+          });
+        }
+        else {
+          $zopim.livechat.hideAll(); // Hide the entire widget when the chat is offline
+        }
+      }
+    });
+  </script>
+<% end %>
