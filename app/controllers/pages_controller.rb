@@ -42,13 +42,10 @@ class PagesController < ApplicationController
   def testimonial
   end
 
-  def marketplace
+  def syllabus
   end
 
   def about
-  end
-
-  def info
   end
 
   def thanks

@@ -1,68 +1,23 @@
+ <% @title="BaseRails: Learn Ruby on Rails with project-based tutorials" %>
+
 <script src="//cdn.optimizely.com/js/702173075.js"></script>
 <section class="projects">
   <div class="max-width has-padding">
     <div class="containertagline center">
       <div class="section-header center">
-        <h1>Learn to build web applications in 30 days</h1>
-        <h2>The most practical $149 education you can give yourself</h2><br>
+        <h1>Learn Ruby on Rails by building real projects</h1>
+        <h2>The most valuable $149 education you can give yourself</h2><br>
         <h3>Learn to code and deploy Rails apps from scratch. <br>Let us take you from zero to launch.</h3>
 
         <div class="marketplaceproject">
           <%= link_to "Enroll today", new_user_registration_path, class: "btn btn-lg btn-default center",
-              data: { no_turbolink: true } %>
-<!--           <%= link_to "How it works", info_path, class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
- -->              
+              data: { no_turbolink: true } %>             
           <%= link_to "How it works", root_path(anchor: "step1"), class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>  
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- <section class="summary">
-  <div class="title">
-    <div class="container">
-      <h1 class="center">How we help you</h1>
-    </div>
-  </div>
-
-  <div class="max-width has-padding">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <%= link_to info_path(anchor: "step1"), 'data-no-turbolink' => true do %>
-          <div class="thumbnail one">
-        <h2 class="steps center">Build an online marketplace</h2>
-        <%= image_tag "https://dl.dropboxusercontent.com/s/lc8o41zcv4fg38d/rubyicon.png" %>
-            <h2 class="center">4-week course</h2>
-            <p class="center">Learn to build a fully functional Rails app from scratch with 40+ comprehensive video lectures.</p>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <%= link_to info_path(anchor: "step2"), 'data-no-turbolink' => true do %>
-          <div class="thumbnail two">
-            <h2 class="steps center">Add more popular features</h2>
-            <%= image_tag "https://dl.dropboxusercontent.com/s/13pqwl6plnsef0o/features.png" %>
-            <h2 class="center">Video library</h2>
-            <p class="center">Customize your web app by adding social integration, search functionality, payments, and more.</p>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <%= link_to info_path(anchor: "step3"), 'data-no-turbolink' => true do %>
-          <div class="thumbnail three">
-            <h2 class="steps center">100% debugging <br>success Rate</h2>
-            <%= image_tag "https://dl.dropboxusercontent.com/s/dxulweg9dyt2vs2/communityicon.png" %>
-            <h2 class="center">Ask a developer</h2>
-            <p class="center">We have 100% success rate in answering all your questions in less than 24 hours.</p>
-          </div>
-        <% end %>
-    </div>
-  </div>
-
-</section> -->
 
 <section class="info">
 
@@ -80,9 +35,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1>Step 1: Start by building a base Etsy app</h1>
+          <h1>Step 1: Start with an online marketplace</h1>
           <h2>We believe in learning by working on projects. Our comprehensive 43-video online course walks you step-by step through building an online marketplace like Etsy. Learn how to implement features like user login, product uploads, online payments, dashboards, and much more.</h2>
-          <h2><%= link_to marketplace_path do %>
+          <h2><%= link_to syllabus_path do %>
             <i class="glyphicon glyphicon-arrow-right"></i> Explore our syllabus
           <% end %><h2>
         </div>
@@ -175,11 +130,6 @@
           <h1>The BaseRails Difference</h1>
         </header>
         <h3>Learning to code and learning to build web apps is different, but everyone still teaches it the same way. Not us. With BaseRails, you'll learn as you go by creating a real application you can test with actual users. We don't think you need to memorize complicated programming syntax, get a computer science degree, or shell out $10,000 just to build a website.<br><br>Millions of people start learning how to code, but most still can't build anything afterwards. We make sure everyone finishes BaseRails with something to show for it.</h3>
-<!--         <div class="center">
-          <%= link_to "Enroll today for $149", new_user_registration_path,
-            class: "btn btn-lg btn-success", data: { no_turbolink: true } %>
-          <%= link_to "View student projects", stories_path, class: "btn btn-lg btn-default", data: { no_turbolink: true } %>
-        </div> -->
       </div>
       <div class="col-md-6">
         <div class="features">
