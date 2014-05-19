@@ -59,4 +59,7 @@ class PagesController < ApplicationController
 
   def stories
   end
+
+  def pricing
+  end
 end

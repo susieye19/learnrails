@@ -24,6 +24,7 @@ Learnrails::Application.routes.draw do
   get 'library' => 'pages#library'
   get 'dashboard' => 'pages#dashboard'
   get 'stories' => 'pages#stories'
+  get 'pricing' => 'pages#pricing'
 
   root 'pages#home'
 
