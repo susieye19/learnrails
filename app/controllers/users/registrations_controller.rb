@@ -2,7 +2,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
 
   def new
-    super
+    @plan = params[:plan]
+    if @plan
+      Stripe.api_key = ENV["STRIPE_API_KEY"]
+      begin
+        Stripe::Plan.retrieve(@plan)
+        super
+      rescue => e
+        redirect_to pricing_path, notice: "Nice try! You'll need to choose from one of the plans below :-)"
+      end
+    else
+      redirect_to pricing_path, notice: "You'll need to choose a plan first before you can sign up!"
+    end
   end
 
   def create
