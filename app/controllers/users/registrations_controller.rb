@@ -3,40 +3,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     super
-
-    # # Identify user and track 'Visit Signup Form' event
-    # if user_signed_in?
-    #   Analytics.identify(
-    #     user_id: current_user.id,
-    #     traits: {
-    #       name: current_user.name,
-    #       email: current_user.email,
-    #       amount: current_user.amount
-    #     }
-    #   )
-    #   Analytics.track(
-    #     user_id: current_user.id,
-    #     event: 'Visit Signup Form',
-    #     context: {
-    #       'Google Analytics' => {
-    #         clientId: '471240751.1390206154'
-    #       }
-    #     }
-    #   )
-    # # else
-    #   Analytics.identify(
-    #     user_id: request.session_options[:id]
-    #   )
-    #   Analytics.track(
-    #     user_id: request.session_options[:id],
-    #     event: 'Visit Signup Form',
-    #     context: {
-    #       'Google Analytics' => {
-    #         clientId: '471240751.1390206154'
-    #       }
-    #     }
-    #   )
-    # end
   end
 
   def create
@@ -45,63 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     puts resource.inspect
 
     if resource.save_with_payment
-
-      # unless resource.coupon.present? && ((resource.coupon.upcase == "UDEMY") || (resource.coupon.upcase == "PROMO50"))
-      #   resource.update_attribute(:extra_access, true)
-      # end
-
-      # Alias anonymous user to user_id
-      # Analytics.alias(from: request.session_options[:id], to: resource.id)
-
-      # Identify user and track both paid and free enrollments for Segment.io analytics
-      # if resource.amount > 0
-
-      #   Analytics.identify(
-      #     user_id: resource.id,
-      #     traits: {
-      #       name: resource.name,
-      #       email: resource.email,
-      #       amount: resource.amount
-      #     }
-      #   )
-
-      #   Analytics.track(
-      #     user_id: resource.id,
-      #     event: 'Enrolled on Etsydemo - PAID',
-      #     properties: {
-      #       coupon: resource.coupon,
-      #       amount: resource.amount
-      #     },
-      #     context: {
-      #       'Google Analytics' => {
-      #         clientId: '471240751.1390206154'
-      #       }
-      #     }
-      #   )
-      # else
-      #   Analytics.identify(
-      #     user_id: resource.id,
-      #     traits: {
-      #       name: resource.name,
-      #       email: resource.email,
-      #       amount: "FREE"
-      #     }
-      #   )
-
-      #   Analytics.track(
-      #     user_id: resource.id,
-      #     event: 'Enrolled on Etsydemo - FREE',
-      #     properties: {
-      #       coupon: resource.coupon,
-      #       amount: resource.amount
-      #     },
-      #     context: {
-      #       'Google Analytics' => {
-      #         clientId: '471240751.1390206154'
-      #       }
-      #     }
-      #   )
-      # end
 
       yield resource if block_given?
       if resource.active_for_authentication?
