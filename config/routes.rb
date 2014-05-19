@@ -8,6 +8,7 @@ Learnrails::Application.routes.draw do
   resources :videos
   resources :chapters
   resources :comments, :only => [:create, :destroy]
+  resources :coupons, :except => [:show]
 
   # resources :chapters do
   #   resources :comments, only: [:create, :destroy]

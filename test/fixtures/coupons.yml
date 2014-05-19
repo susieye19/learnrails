@@ -2,8 +2,10 @@
 
 one:
   code: MyString
-  discount: 1
+  price: 1
+  message: MyString
 
 two:
   code: MyString
-  discount: 1
+  price: 1
+  message: MyString

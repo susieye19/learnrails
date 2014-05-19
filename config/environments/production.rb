@@ -79,7 +79,7 @@ Learnrails::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Required for Devise. REMEMBER TO CHANGE TO ACTUAL HOST
-  config.action_mailer.default_url_options = { :host => '' }
+  config.action_mailer.default_url_options = { :host => 'baserails.com' }
 
   # MailGun email configuration
   config.action_mailer.delivery_method = :smtp

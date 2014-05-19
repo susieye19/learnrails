@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="col-md-2">Code</th>
+            <th class="col-md-1">Price</th>
+            <th class="col-md-5">Message</th>
+            <th class="col-md-2">Extra Access</th>
+            <th class="col-md-1"></th>
+            <th class="col-md-1"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @coupons.each do |coupon| %>
+            <tr>
+              <td><%= coupon.code %></td>
+              <td><%= coupon.price %></td>
+              <td><%= coupon.message %></td>
+              <td><%= coupon.extra_access %></td>
+              <td><%= link_to 'Edit', edit_coupon_path(coupon) %></td>
+              <td><%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Coupon', new_coupon_path %>
+    </div>
+  </div>
+</div>
