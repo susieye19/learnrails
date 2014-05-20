@@ -1,8 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
+  before_action :set_plan, only: [:new, :create]
 
   def new
-    @plan = params[:plan]
     if @plan
       Stripe.api_key = ENV["STRIPE_API_KEY"]
       begin
@@ -18,8 +18,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-
-    puts resource.inspect
 
     if resource.save_with_payment
 
@@ -45,6 +43,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  def build_resource(*args)
+    super
+    if params[:plan]
+      resource.plan = params[:plan]
+    end
+  end
+
+  def set_plan
+    @plan = params[:plan] || params[:user].try(:[], :plan)
+  end
+
   def after_sign_up_path_for(resource)
     thanks_path
   end
@@ -53,6 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:sign_up) << :stripe_card_token
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :coupon
+    devise_parameter_sanitizer.for(:sign_up) << :plan
     devise_parameter_sanitizer.for(:account_update) << :name
   end
 end
