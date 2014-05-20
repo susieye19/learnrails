@@ -1,9 +1,4 @@
-$(".registrations.new").ready ->
-  $.externalScript("https://js.stripe.com/v2/").done (script, textStatus) ->
-    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
-    subscription.setupForm()
-
-$(".registrations.create").ready ->
+$(".registrations").ready ->
   $.externalScript("https://js.stripe.com/v2/").done (script, textStatus) ->
     Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
     subscription.setupForm()
