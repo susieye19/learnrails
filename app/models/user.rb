@@ -9,44 +9,85 @@ class User < ActiveRecord::Base
   has_many :questions, dependent: :destroy
   validates :name, presence: true
 
-  def save_with_payment
-    if valid?
-      Stripe.api_key = ENV["STRIPE_API_KEY"]
-      token = stripe_card_token
-
+  def update_stripe
+    if customer_id.nil?
+      # Create new Stripe customer
       if coupon.blank?
-        amount = 14900
-        self.extra_access = true
+        customer = Stripe::Customer.create(
+          email: email,
+          description: name,
+          card: stripe_card_token,
+          plan: plan
+        )
       else
-        Coupon.all.each do |c|
-          if coupon.upcase == c.code.upcase
-            amount = c.price
-            self.extra_access = c.extra_access
-          end
-        end
-      end
-
-      if amount > 0
-        charge = Stripe::Charge.create(
-          :amount => amount,
-          :currency => "usd",
-          :card => token,
-          :description => "Charge for #{email}"
+        customer = Stripe::Customer.create(
+          email: email,
+          description: name,
+          card: stripe_card_token,
+          plan: plan,
+          coupon: coupon
         )
       end
-
-      self.amount = amount/100.0
-      save!
+    else
+      # Update Stripe customer info
+      customer = Stripe::Customer.retrieve(customer_id)
+      if stripe_card_token.present?
+        customer.card = stripe_card_token
+      end
+      customer.email = email
+      customer.description = name
+      customer.save
     end
-  rescue Stripe::CardError => e
-    errors.add :base, "There was a problem with your credit card."
+
+    # Save Stripe information to User database
+    self.customer_id = customer.id
+    self.last_4_digits = customer.cards.retrieve(customer.default_card).last4
     self.stripe_card_token = nil
-    self.coupon = nil
-    false
-  rescue Stripe::InvalidRequestError => e
+  rescue Stripe::StripeError => e
     errors.add :base, "#{e.message}"
     self.stripe_card_token = nil
-    self.coupon = nil
     false
   end
+
+
+
+  #   if valid?
+  #     Stripe.api_key = ENV["STRIPE_API_KEY"]
+  #     token = stripe_card_token
+
+  #     if coupon.blank?
+  #       amount = 14900
+  #       self.extra_access = true
+  #     else
+  #       Coupon.all.each do |c|
+  #         if coupon.upcase == c.code.upcase
+  #           amount = c.price
+  #           self.extra_access = c.extra_access
+  #         end
+  #       end
+  #     end
+
+  #     if amount > 0
+  #       charge = Stripe::Charge.create(
+  #         :amount => amount,
+  #         :currency => "usd",
+  #         :card => token,
+  #         :description => "Charge for #{email}"
+  #       )
+  #     end
+
+  #     self.amount = amount/100.0
+  #     save!
+  #   end
+  # rescue Stripe::CardError => e
+  #   errors.add :base, "There was a problem with your credit card."
+  #   self.stripe_card_token = nil
+  #   self.coupon = nil
+  #   false
+  # rescue Stripe::InvalidRequestError => e
+  #   errors.add :base, "#{e.message}"
+  #   self.stripe_card_token = nil
+  #   self.coupon = nil
+  #   false
+  # end
 end

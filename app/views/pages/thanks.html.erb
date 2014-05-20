@@ -29,32 +29,14 @@ var google_remarketing_only = false;
 </noscript>
 
 <!-- Mixpanel event and identity tracking -->
-<% if current_user.amount > 0 %>
-  <script>
-    mixpanel.track("Enrolled on Etsydemo - PAID", {
-      "Paid": "<%= current_user.amount %>"
-    });
+<script>
+  mixpanel.track("Subscribed", {
+    "Plan": "<%= current_user.plan %>"
+  });
 
-    mixpanel.alias("<%= current_user.id %>");
-    mixpanel.people.set({
-      "$name": "<%= current_user.name %>",
-      "$email": "<%= current_user.email %>",
-      "Paid": "<%= current_user.amount %>"
-    })
-
-    mixpanel.people.track_charge(<%= current_user.amount %>);
-  </script>
-<% else %>
-  <script>
-    mixpanel.track("Enrolled on Etsydemo - FREE", {
-      "Paid": "0"
-    });
-
-    mixpanel.alias("<%= current_user.id %>");
-    mixpanel.people.set({
-      "$name": "<%= current_user.name %>",
-      "$email": "<%= current_user.email %>",
-      "Paid": "0"
-    })
-  </script>
-<% end %>
+  mixpanel.alias("<%= current_user.id %>");
+  mixpanel.people.set({
+    "$name": "<%= current_user.name %>",
+    "$email": "<%= current_user.email %>",
+  })
+</script>
