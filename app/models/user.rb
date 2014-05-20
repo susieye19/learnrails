@@ -4,12 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :stripe_card_token
-  before_save :update_stripe
 
   has_many :questions, dependent: :destroy
   validates :name, presence: true
 
-  def update_stripe
+  def save_with_payment
     if customer_id.nil?
       # Create new Stripe customer
       if coupon.blank?

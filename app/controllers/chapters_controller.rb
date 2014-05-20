@@ -2,6 +2,7 @@ class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_correct_url, only: [:show]
   before_action :authenticate_user!
+  before_action :check_permission
   before_action :require_admin, except: [:index, :show]
 
   # GET /chapters
@@ -105,6 +106,12 @@ class ChaptersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_chapter
       @chapter = Chapter.friendly.find(params[:id])
+    end
+
+    def check_permission
+      if !current_user.etsydemo_access && current_user.plan.blank?
+        redirect_to edit_user_registration_path, notice: "You need to be subscribed to access this content"
+      end
     end
 
     def redirect_to_correct_url
