@@ -9,9 +9,13 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   def save_with_payment
+    puts "Checkpoint 1"
     if customer_id.nil?
+      puts "Checkpoint 2"
       # Create new Stripe customer
       if coupon.blank?
+        puts "Checkpoint 3"
+        puts "Stripe Card Token is #{stripe_card_token}"
         customer = Stripe::Customer.create(
           email: email,
           description: name,
@@ -19,6 +23,7 @@ class User < ActiveRecord::Base
           plan: plan
         )
       else
+        puts "Checkpoint 4"
         customer = Stripe::Customer.create(
           email: email,
           description: name,
@@ -28,9 +33,11 @@ class User < ActiveRecord::Base
         )
       end
     else
+      puts "Checkpoint 5"
       # Update Stripe customer info
       customer = Stripe::Customer.retrieve(customer_id)
       if stripe_card_token.present?
+        puts "Checkpoint 6"
         customer.card = stripe_card_token
       end
       customer.email = email
@@ -40,11 +47,31 @@ class User < ActiveRecord::Base
 
     # Save Stripe information to User database
     self.customer_id = customer.id
+    puts customer.inspect
+
     self.last_4_digits = customer.cards.retrieve(customer.default_card).last4
     self.stripe_card_token = nil
+    self.save
   rescue Stripe::StripeError => e
     errors.add :base, "#{e.message}"
     self.stripe_card_token = nil
+    false
+  end
+
+  def update_plan(plan)
+    unless customer_id.blank?
+      customer = Stripe::Customer.retrieve(customer_id)
+      subscription = customer.subscriptions.first
+      subscription.plan = plan
+      subscription.save
+
+      self.plan = plan
+      self.save
+    end
+    true
+  rescue Stripe::StripeError => e
+    puts e.message
+    errors.add :base, "We couldn't update your subscription. #{e.message}"
     false
   end
 

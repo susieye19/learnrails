@@ -37,8 +37,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def update
-    super
+  def subscribe
+  end
+
+  def update_plan
+    @user = current_user
+    plan = params[:user][:plan]
+    if @user.update_plan(plan)
+      redirect_to edit_user_registration_path, notice: "Your plan was updated!"
+    else
+      flash.alert = "Sorry, we were unable to update your plan"
+      render :edit
+    end
+  end
+
+  def update_card
+    @user = current_user
+    @user.stripe_card_token = params[:user][:stripe_card_token]
+    if @user.save_with_payment
+      redirect_to edit_user_registration_path, notice: "Your card was updated!"
+    else
+      flash.alert = "Sorry, we were unable to update your card"
+      render :edit
+    end
+  end
+
+  def update_both
+    @user = current_user
+    @user.plan = params[:user][:plan]
+    @user.stripe_card_token = params[:user][:stripe_card_token]
+    if @user.save_with_payment
+      redirect_to subscribe_path, notice: "Thanks for subscribing!"
+    else
+      @user.plan = nil
+      @user.save
+      redirect_to subscribe_path, notice: "We weren't able to subscribe you"
+    end
   end
 
   protected
@@ -64,5 +98,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:sign_up) << :coupon
     devise_parameter_sanitizer.for(:sign_up) << :plan
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) << :stripe_card_token
+    devise_parameter_sanitizer.for(:account_update) << :plan
   end
 end
