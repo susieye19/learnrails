@@ -5,7 +5,7 @@
     <div class="maincontainer">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h2>Sign up</h2>
+          <h2>Sign up for the <%= @plan.titleize %> plan</h2>
         </div>
 
         <div class="panel-body">
@@ -39,6 +39,7 @@
 
             <br>
 
+            <%= f.hidden_field :plan, value: @plan %>
             <%= f.hidden_field :stripe_card_token %>
 
             <div id="stripe_error" class="alert alert-danger alert-dismissable" style="display:none">

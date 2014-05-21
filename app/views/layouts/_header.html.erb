@@ -44,7 +44,7 @@
         <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Ask a Developer", questions_path, data: { no_turbolink: true } %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Enroll for $149", new_user_registration_path %></li>
+        <li><%= link_to "Pricing", pricing_path, data: { no_turbolink: true } %></li>
         <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to "Login", new_user_session_path %></li>
       </ul>
     <% end %>

@@ -1,107 +1,25 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
+  before_action :set_plan, only: [:new, :create]
 
   def new
-    super
-
-    # # Identify user and track 'Visit Signup Form' event
-    # if user_signed_in?
-    #   Analytics.identify(
-    #     user_id: current_user.id,
-    #     traits: {
-    #       name: current_user.name,
-    #       email: current_user.email,
-    #       amount: current_user.amount
-    #     }
-    #   )
-    #   Analytics.track(
-    #     user_id: current_user.id,
-    #     event: 'Visit Signup Form',
-    #     context: {
-    #       'Google Analytics' => {
-    #         clientId: '471240751.1390206154'
-    #       }
-    #     }
-    #   )
-    # # else
-    #   Analytics.identify(
-    #     user_id: request.session_options[:id]
-    #   )
-    #   Analytics.track(
-    #     user_id: request.session_options[:id],
-    #     event: 'Visit Signup Form',
-    #     context: {
-    #       'Google Analytics' => {
-    #         clientId: '471240751.1390206154'
-    #       }
-    #     }
-    #   )
-    # end
+    if @plan
+      Stripe.api_key = ENV["STRIPE_API_KEY"]
+      begin
+        Stripe::Plan.retrieve(@plan)
+        super
+      rescue => e
+        redirect_to pricing_path, notice: "Nice try! You'll need to choose from one of the plans below :-)"
+      end
+    else
+      redirect_to pricing_path, notice: "You'll need to choose a plan first before you can sign up!"
+    end
   end
 
   def create
     build_resource(sign_up_params)
 
-    puts resource.inspect
-
     if resource.save_with_payment
-
-      # unless resource.coupon.present? && ((resource.coupon.upcase == "UDEMY") || (resource.coupon.upcase == "PROMO50"))
-      #   resource.update_attribute(:extra_access, true)
-      # end
-
-      # Alias anonymous user to user_id
-      # Analytics.alias(from: request.session_options[:id], to: resource.id)
-
-      # Identify user and track both paid and free enrollments for Segment.io analytics
-      # if resource.amount > 0
-
-      #   Analytics.identify(
-      #     user_id: resource.id,
-      #     traits: {
-      #       name: resource.name,
-      #       email: resource.email,
-      #       amount: resource.amount
-      #     }
-      #   )
-
-      #   Analytics.track(
-      #     user_id: resource.id,
-      #     event: 'Enrolled on Etsydemo - PAID',
-      #     properties: {
-      #       coupon: resource.coupon,
-      #       amount: resource.amount
-      #     },
-      #     context: {
-      #       'Google Analytics' => {
-      #         clientId: '471240751.1390206154'
-      #       }
-      #     }
-      #   )
-      # else
-      #   Analytics.identify(
-      #     user_id: resource.id,
-      #     traits: {
-      #       name: resource.name,
-      #       email: resource.email,
-      #       amount: "FREE"
-      #     }
-      #   )
-
-      #   Analytics.track(
-      #     user_id: resource.id,
-      #     event: 'Enrolled on Etsydemo - FREE',
-      #     properties: {
-      #       coupon: resource.coupon,
-      #       amount: resource.amount
-      #     },
-      #     context: {
-      #       'Google Analytics' => {
-      #         clientId: '471240751.1390206154'
-      #       }
-      #     }
-      #   )
-      # end
 
       yield resource if block_given?
       if resource.active_for_authentication?
@@ -125,6 +43,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  def build_resource(*args)
+    super
+    if params[:plan]
+      resource.plan = params[:plan]
+    end
+  end
+
+  def set_plan
+    @plan = params[:plan] || params[:user].try(:[], :plan)
+  end
+
   def after_sign_up_path_for(resource)
     thanks_path
   end
@@ -133,6 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:sign_up) << :stripe_card_token
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :coupon
+    devise_parameter_sanitizer.for(:sign_up) << :plan
     devise_parameter_sanitizer.for(:account_update) << :name
   end
 end

@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable#, :timeoutable
+         :recoverable, :rememberable, :trackable, :validatable
+  attr_accessor :stripe_card_token
 
   has_many :questions, dependent: :destroy
   validates :name, presence: true
@@ -23,31 +24,6 @@ class User < ActiveRecord::Base
           end
         end
       end
-      # elsif coupon.upcase == "BROC"
-      #   amount = 7500
-      # elsif coupon.upcase == "BRSM"
-      #   amount = 7500
-      # elsif coupon.upcase == "SLIDESHARE"
-      #   amount = 7500
-      # elsif coupon.upcase == "GETSTARTED"
-      #   amount = 12000
-      # elsif coupon.upcase == "BETASPRING"
-      #   amount = 7500
-      # elsif coupon.upcase == "REFERYWH"
-      #   amount = 7500
-      # elsif coupon.upcase == "PROMO50"
-      #   amount = 5000
-      # elsif coupon.upcase == "F6S"
-      #   amount = 7500
-      # elsif coupon.upcase == "FATWALLET"
-      #   amount = 7500
-      # elsif coupon.upcase == "NETECH"
-      #   amount = 1000
-      # elsif coupon.upcase == "UDEMY"
-      #   amount = 0
-      # elsif coupon.upcase == "FREEACCESS"
-      #   amount = 0
-      # end
 
       if amount > 0
         charge = Stripe::Charge.create(
