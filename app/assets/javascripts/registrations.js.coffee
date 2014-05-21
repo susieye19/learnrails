@@ -22,7 +22,6 @@ subscription =
       false
 
     $('#payment_form').submit ->
-      console.log("Checkpoint 1")
       $('input[type=submit]').attr('disabled', true)
       $('#plan_error').hide()
 
@@ -32,40 +31,17 @@ subscription =
         $('input[type=submit]').attr('disabled', false)
         false
       else if $('#stripe_form').is(':hidden')
-        console.log("Checkpoint 2")
         true
       else if $('#card_number').length
-        console.log("Checkpoint 3")
         Stripe.card.createToken($('#payment_form'), subscription.handleStripeResponse)
         false
       else
-        console.log("Checkpoint 4")
         true
-
-    # $('#payment_form2').submit ->
-    #   $('input[type=submit]').attr('disabled', true)
-    #   $('#plan_error').hide()
-
-    #   if $('input[type=radio]:checked').size() == 0
-    #     $('#plan_error').text("You'll need to choose a plan first!").show()
-    #     $('input[type=submit]').attr('disabled', false)
-    #     false
-    #   else if $('#stripe_form2').is(':hidden')
-    #     true
-    #   else if $('#card_number').length
-    #     console.log "Checkpoint 4"
-    #     Stripe.card.createToken($('#payment_form2'), subscription.handleStripeResponse)
-    #     false
-    #   else
-    #     console.log "Checkpoint 5"
-    #     true
 
   handleStripeResponse: (status, response) ->
     if status == 200
-      console.log("Checkpoint 5")
       $('#user_stripe_card_token').val(response.id)
       $('#payment_form')[0].submit()
     else
-      console.log("Checkpoint 6")
       $('#stripe_error').text(response.error.message).show()
       $('input[type=submit]').attr('disabled', false)
