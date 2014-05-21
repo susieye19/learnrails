@@ -59,14 +59,21 @@ class User < ActiveRecord::Base
       self.plan = plan
       self.save
     end
-    true
   rescue Stripe::StripeError => e
     puts e.message
     errors.add :base, "We couldn't update your subscription. #{e.message}"
     false
   end
 
+  def pause_plan
+    unless customer_id.blank?
+      customer = Stripe::Customer.retrieve(customer_id)
+      subscription = customer.subscriptions.first.delete()
 
+      self.plan = nil
+      self.save
+    end
+  end
 
   #   if valid?
   #     Stripe.api_key = ENV["STRIPE_API_KEY"]

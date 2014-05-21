@@ -53,6 +53,8 @@
         <!-- Allow subscribers to change to a new plan -->
         <p><%= current_user.plan.titleize %></p>
         <button class="btn btn-primary" data-toggle="modal" data-target="#plan-options">Change Plan</button>
+        <%= link_to "Pause Subscription", :action => "pause", class: "btn btn-danger",
+              :data => { :confirm => "Are you sure?" } %>
       <% end %>
 
       <h3>Payment Card</h3>

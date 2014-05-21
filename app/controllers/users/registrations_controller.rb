@@ -40,6 +40,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def subscribe
   end
 
+  def pause
+    puts "Checkpoint 1"
+    @user = current_user
+    if @user.pause_plan
+      puts "Checkpoint 2"
+      redirect_to edit_user_registration_path, notice: "Your current plan has been cancelled"
+    else
+      puts "Checkpoint 3"
+      flash.alert = "Sorry, we were unable to cancel your plan"
+      render :edit
+    end
+  end
+
   def update_plan
     @user = current_user
     plan = params[:user][:plan]
