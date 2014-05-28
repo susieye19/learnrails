@@ -40,7 +40,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def subscribe
   end
 
-  def pause
+  def cancel
     puts "Checkpoint 1"
     @user = current_user
     if @user.pause_plan

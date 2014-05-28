@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
     false
   end
 
-  def pause_plan
+  def cancel_plan
     unless customer_id.blank?
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first.delete()
