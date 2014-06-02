@@ -19,7 +19,6 @@ gem 'newrelic_rpm'
 gem 'friendly_id', '~> 5.0.0'
 gem 'coderay'
 gem 'RedCloth'
-gem 'sitemap_generator'
 gem "rack-reverse-proxy", :require => "rack/reverse_proxy"
 gem 'acts_as_commentable_with_threading'
 gem "rest-client"
