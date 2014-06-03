@@ -39,33 +39,36 @@
   </div>
 
   <div class="panel-footer">
-    <h3>Subscription Plan</h3>
-    <% if current_user.customer_id.blank? %>
-      <!-- Allow legacy users to add a plan + card -->
-      <p>You aren't subscribed right now</p>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#combined-modal">Subscribe</button>
-    <% else %>
-      <% if current_user.plan.blank? %>
-        <!-- Allow users with a card on file to add a new plan -->
+
+    <% if false %>
+      <h3>Subscription Plan</h3>
+      <% if current_user.customer_id.blank? %>
+        <!-- Allow legacy users to add a plan + card -->
         <p>You aren't subscribed right now</p>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#plan-options">Subscribe</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#combined-modal">Subscribe</button>
       <% else %>
-        <!-- Allow subscribers to change to a new plan -->
-        <p><%= current_user.plan.titleize %></p>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#plan-options">Change Plan</button>
-        <%= link_to "Pause Subscription", :action => "cancel", class: "btn btn-danger",
-              :data => { :confirm => "Are you sure?" } %>
+        <% if current_user.plan.blank? %>
+          <!-- Allow users with a card on file to add a new plan -->
+          <p>You aren't subscribed right now</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#plan-options">Subscribe</button>
+        <% else %>
+          <!-- Allow subscribers to change to a new plan -->
+          <p><%= current_user.plan.titleize %></p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#plan-options">Change Plan</button>
+          <%= link_to "Pause Subscription", :action => "cancel", class: "btn btn-danger",
+                :data => { :confirm => "Are you sure?" } %>
+        <% end %>
+
+        <h3>Payment Card</h3>
+        <p>Using card ending with <%= current_user.last_4_digits %></p>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#card-data">Change Card</button>
       <% end %>
-
-      <h3>Payment Card</h3>
-      <p>Using card ending with <%= current_user.last_4_digits %></p>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#card-data">Change Card</button>
-
-      <h3>Cancel my account</h3>
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name),
-        :data => { :confirm => "Are you sure?" }, class: "btn btn-danger",
-        :method => :delete %></p>
     <% end %>
+
+    <h3>Cancel my account</h3>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name),
+      :data => { :confirm => "Are you sure?" }, class: "btn btn-danger",
+      :method => :delete %></p>
   </div>
 </div>
 
