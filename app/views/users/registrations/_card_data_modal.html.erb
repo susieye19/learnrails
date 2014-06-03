@@ -1,0 +1,68 @@
+<!-- Card data modal -->
+<div class="modal fade" id="card-data" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for(resource, :as => resource_name, :url => update_card_path, :html => {id: "payment_form",
+            :method => :put}) do |f| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3>Change Credit Card</h3>
+        </div>
+
+        <div class="modal-body">
+          <div id="stripe_error" class="alert alert-danger alert-dismissable" style="display:none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+          </div>
+
+          <div id="stripe_form">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-8">
+                  <%= label_tag :card_number, "Credit Card Number" %>
+                  <%= text_field_tag :card_number, nil,
+                      { :name => nil, :'data-stripe' => "number", maxlength: "16",
+                        autocompletetype: "cc-number", class: "form-control card-number input-sm" } %>
+                </div>
+                <div class="col-lg-4">
+                  <%= label_tag :card_code, "CVC" %>
+                  <%= text_field_tag :card_code, nil,
+                      { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
+                        autocomplete: "off", autocompletetype: "cc-csc",
+                        class: "form-control card-cvc input-sm" } %>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <%= select_month nil, {use_two_digit_numbers: true, prompt: "Month"},
+                      { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control input-sm" } %>
+                </div>
+                <div class="col-lg-2">
+                  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15, prompt: "Year"},
+                      { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control input-sm" } %>
+                </div>
+              </div>
+
+              <%= f.hidden_field :name %>
+              <%= f.hidden_field :email %>
+              <%= f.hidden_field :stripe_card_token %>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Change Credit Card", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

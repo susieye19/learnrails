@@ -1,0 +1,25 @@
+<!-- Plan options modal -->
+<div class="modal fade" id="plan-options" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for(resource, :as => resource_name, :url => update_plan_path, :html => {:method => :put}) do |f| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3>Change Plan</h3>
+        </div>
+
+        <div class="modal-body">
+          <% Stripe::Plan.all.each do |p| %>
+            <%= f.label :plan, p.name %>
+            <%= f.radio_button :plan, p.id %>
+          <% end %>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Change Plan", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

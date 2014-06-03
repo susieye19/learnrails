@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :check_user_permissions, except: [:index]
+  before_action :check_permission, except: [:index]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_correct_url, only: [:show]
   before_action :require_admin, except: [:index, :show]
@@ -80,17 +80,15 @@ class VideosController < ApplicationController
       end
     end
 
-    def check_user_permissions
+    def check_permission
       if user_signed_in?
-        # User needs to have paid for extra_access
-        unless current_user.extra_access
-          flash[:error] = "The Video Library and Developer Q&A sections are available as a paid add-on for students"
-          redirect_to new_charge_path
+        # User needs to have paid for extra_access or be subscribed
+        if !current_user.extra_access && current_user.plan.blank?
+          redirect_to edit_user_registration_path, notice: "You need to be subscribed to access this content"
         end
       else
         # User needs to be signed in first
-        flash[:error] = "You must be logged in to access this section"
-        redirect_to new_user_session_path
+        redirect_to new_user_session_path, notice: "You must be logged in to access this section"
       end
     end
 

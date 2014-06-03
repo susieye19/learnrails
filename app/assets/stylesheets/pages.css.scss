@@ -499,6 +499,7 @@
 
 .action {
 	padding-bottom: 5rem;
+	background-color: #fff;
 	.section-header {
 	margin-bottom: 3rem;
 	}
@@ -871,5 +872,66 @@
 		.social {
 			display: none;
 		}
+	}
+}
+
+.pricing {
+	background-color: #fdfdfb;
+	h2 {
+		font-family: 'Open Sans',sans-serif;
+		color: #48505e;
+		font-size: 33px;
+		font-weight: 200;
+	}
+	h3 {
+		font-family: 'Open Sans',sans-serif;
+		color: #48505e;
+		font-size: 25px;
+	}
+	li {
+		font-family: 'Open Sans',sans-serif;
+		font-size: 17px;
+	}
+	.check {
+		list-style-image: url('https://dl.dropboxusercontent.com/s/ly1407fah0viibt/checkmark.png');
+		list-style-position: inside;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+	.thumbnail {
+		background-color: #fff;
+		border: none;
+		border-radius: 5px;
+		height: 350px;
+		margin-top: 30px;
+	}
+	.a {
+		margin-top: 40px;
+		border: none;
+	}
+	.b {
+		margin-top: 103px;
+		border: none;
+	}
+}
+
+.membershipfaq {
+	background-color: #fff;
+	padding: 60px 10px 100px 10px;
+	h2 {
+		margin-bottom: 30px;
+	}
+	h3 {
+		font-family: 'Open Sans',sans-serif;
+		color: #48505e;
+		font-size: 22px;
+		font-weight: 500;
+		margin-top: 30px;
+	}
+	h4 {
+		font-family: 'Open Sans',sans-serif;
+		color: #5b5b5b;
+		font-size: 18px;
+		line-height: 1.5;
 	}
 }
