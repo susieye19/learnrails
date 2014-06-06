@@ -21,4 +21,11 @@ class UserMailer < ActionMailer::Base
 
     mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{commenter_name} posted a new comment on BaseRails"
   end
+
+  def new_subscription_notification(user_name, email, plan)
+    @user_name = user_name
+    @plan = plan
+    @email = email
+    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{user_name} subscribed for the #{plan} free trial"
+  end
 end
