@@ -1,0 +1,28 @@
+<p>Current Subscription: <%= @current_plan.name %></p>
+<p>Current Price: <%= number_to_currency(@current_plan.amount.to_f/100) %></p>
+<br>
+<p>Billing Information: XXXX-XXXX-XXXX-<%= @card.last4 %></p>
+<p>Expiration: <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
+
+<%= form_for(:user, :url => { :action => :update_plan }, :html => {id: "plan_form", :method => :put}) do |f| %>
+  <div id="plan_error" class="alert alert-danger alert-dismissable" style="display:none">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  </div>
+
+  <div id="plan_form">
+    <div class="form-group">
+      <% Stripe::Plan.all.each do |p| %>
+        <%= f.label :plan, p.name %>
+        <%= f.radio_button :plan, p.id %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my subscription", cancel_path,
+  :data => { :confirm => "Are you sure?" }, class: "btn btn-danger" %></p>
