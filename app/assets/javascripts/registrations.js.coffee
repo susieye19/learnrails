@@ -21,26 +21,35 @@ subscription =
     #     $('#coupon_success').hide()
     #   false
 
+    # Submission of payment form
     $('#payment_form').submit ->
-      # console.log "Checkpoint 1"
       $('input[type=submit]').attr('disabled', true)
       $('#plan_error').hide()
 
       # Display error message if no plan was selected (for legacy users only)
       if $('#plan_form').length and ($('input[type=radio]:checked').size() == 0)
-        # console.log "Checkpoint 2"
         $('#plan_error').text("You'll need to choose a plan first!").show()
         $('input[type=submit]').attr('disabled', false)
         false
       else if $('#stripe_form').is(':hidden')
-        # console.log "Checkpoint 3"
         true
       else if $('#card_number').length
-        # console.log "Checkpoint 4"
         Stripe.card.createToken($('#payment_form'), subscription.handleStripeResponse)
         false
       else
-        # console.log "Checkpoint 5"
+        true
+
+    # Submission of change plan form for subscribers
+    $('#plan_form').submit ->
+      $('input[type=submit]').attr('disabled', true)
+      $('#plan_error').hide()
+
+      # Display error message if no plan was selected (for legacy users only)
+      if $('#plan_form').length and ($('input[type=radio]:checked').size() == 0)
+        $('#plan_error').text("You'll need to choose a plan first!").show()
+        $('input[type=submit]').attr('disabled', false)
+        false
+      else
         true
 
   handleStripeResponse: (status, response) ->

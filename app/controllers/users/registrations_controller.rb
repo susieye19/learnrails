@@ -38,16 +38,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def subscribe
+    Stripe.api_key = ENV["STRIPE_API_KEY"]
+    @current_plan = Stripe::Plan.retrieve(current_user.plan)
+    @current_customer = Stripe::Customer.retrieve(current_user.customer_id)
+    @card = @current_customer.cards.retrieve(@current_customer.cards.data[0]['id'])
   end
 
   def cancel
-    puts "Checkpoint 1"
+    puts "Checkpoint hERE"
     @user = current_user
-    if @user.pause_plan
-      puts "Checkpoint 2"
-      redirect_to edit_user_registration_path, notice: "Your current plan has been cancelled"
+    if @user.cancel_plan
+      redirect_to subscribe_path, notice: "Your current plan has been cancelled"
     else
-      puts "Checkpoint 3"
       flash.alert = "Sorry, we were unable to cancel your plan"
       render :edit
     end
@@ -56,8 +58,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_plan
     @user = current_user
     plan = params[:user][:plan]
-    if @user.update_plan(plan)
-      redirect_to edit_user_registration_path, notice: "Your plan was updated!"
+    if @user.plan == plan
+      redirect_to subscribe_path, notice: "You're already on that plan!"
+    elsif @user.update_plan(plan)
+      redirect_to subscribe_path, notice: "Your plan was updated!"
     else
       flash.alert = "Sorry, we were unable to update your plan"
       render :edit

@@ -50,7 +50,9 @@ class User < ActiveRecord::Base
   end
 
   def update_plan(plan)
-    unless customer_id.blank?
+    if self.plan == plan
+      puts "HELLOOOO"
+    else
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first
       subscription.plan = plan
@@ -66,7 +68,7 @@ class User < ActiveRecord::Base
   end
 
   def cancel_plan
-    unless customer_id.blank?
+    unless plan.blank?
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first.delete()
 
