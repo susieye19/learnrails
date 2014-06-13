@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
           card: stripe_card_token,
           plan: plan
         )
+        UserMailer.new_subscription_notification(name, email, plan).deliver
       else
         customer = Stripe::Customer.create(
           email: email,
