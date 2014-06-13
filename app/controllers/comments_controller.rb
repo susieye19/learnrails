@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment_hash = params[:comment]
     @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
     @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body])
+    @comment.user_name = current_user.name
 
     # Prepare a new_comment object in case user wants to post another comment
     @new_comment = Comment.build_from(@obj, current_user, "")

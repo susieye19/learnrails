@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :questions, dependent: :destroy
   validates :name, presence: true
+  before_destroy :delete_subscription
 
   def save_with_payment
     if customer_id.nil?
@@ -18,6 +19,7 @@ class User < ActiveRecord::Base
           card: stripe_card_token,
           plan: plan
         )
+        UserMailer.new_subscription_notification(name, email, plan).deliver
       else
         customer = Stripe::Customer.create(
           email: email,
@@ -80,6 +82,16 @@ class User < ActiveRecord::Base
 
       self.plan = nil
       self.save
+    end
+  end
+
+private
+
+  def delete_subscription
+    if self.plan.present?
+      customer = Stripe::Customer.retrieve(customer_id)
+      subscription = customer.subscriptions.first.delete()
+      UserMailer.unsubscribe_notification(self.name, self.email, self.plan).deliver
     end
   end
 

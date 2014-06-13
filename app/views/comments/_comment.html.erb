@@ -12,12 +12,12 @@
 
   <small>
     <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by" %>
-    <% if comment.user.admin? %>
+    <% if comment.user.present? && comment.user.admin? %>
       <span id="admin">
     <% else %>
       <span id="name">
     <% end %>
-      <%= "#{comment.user.name}" %>
+      <%= "#{comment.user_name}" %>
     </span>
   </small>
   <p class="etsycomment"><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
