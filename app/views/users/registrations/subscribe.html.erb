@@ -5,10 +5,10 @@
 
   <div class="panel-body">
 
-    <% if current_user.plan.blank? %>
-      <%= render 'legacy_user' %>
-    <% else %>
+    <% if current_user.customer_id.present? %>
       <%= render 'existing_subscriber' %>
+    <% else %>
+      <%= render 'legacy_user' %>
     <% end %>
 
   <div class="panel-footer">

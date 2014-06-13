@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, only: [:cancel]
+
+  # Static pages in front of the paywall
   def home
   end
 
@@ -24,5 +27,15 @@ class PagesController < ApplicationController
   end
 
   def pricing
+  end
+
+  # Pages for managing user subscriptions
+  def cancel
+    @user = current_user
+    if @user.cancel_plan
+      redirect_to subscribe_path, notice: "Your current plan has been cancelled"
+    else
+      redirect_to subscribe_path, notice: "Sorry, we were unable to cancel your plan"
+    end
   end
 end

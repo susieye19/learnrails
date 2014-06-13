@@ -1,5 +1,11 @@
-<p>Current Subscription: <%= @current_plan.name %></p>
-<p>Current Price: <%= number_to_currency(@current_plan.amount.to_f/100) %></p>
+<!-- Display current plan info -->
+<% if current_user.plan.present? %>
+  <p>Current Subscription: <%= @current_plan.name %></p>
+  <p>Current Price: <%= number_to_currency(@current_plan.amount.to_f/100) %></p>
+<% else %>
+  <p>Current Subscription: None</p>
+  <p>Current Price: N/A</p>
+<% end %>
 <br>
 <p>Billing Information: XXXX-XXXX-XXXX-<%= @card.last4 %></p>
 <p>Expiration: <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
@@ -19,10 +25,13 @@
     </div>
   </div>
 
-  <%= f.submit "Update", class: "btn btn-primary" %>
+  <%= f.submit "Update subscription", class: "btn btn-primary" %>
 <% end %>
 
-<h3>Cancel my account</h3>
+<% if current_user.plan.present? %>
+  <h3>Cancel my subscription</h3>
 
-<p>Unhappy? <%= link_to "Cancel my subscription", cancel_path,
-  :data => { :confirm => "Are you sure?" }, class: "btn btn-danger" %></p>
+  <p>Unhappy?</p>
+  <%= link_to "Cancel subscription", cancel_path,
+    :data => { :confirm => "Are you sure?" }, class: "btn btn-danger" %></p>
+<% end %>
