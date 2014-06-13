@@ -17,7 +17,7 @@ Learnrails::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   devise_scope :user do
     get 'subscribe', to: 'users/registrations#subscribe'
-    get 'cancel', to: 'users/registrations#cancel'
+    # get 'cancel_plan', to: 'users/registrations#cancel'
     put 'update_plan', to: 'users/registrations#update_plan'
     put 'update_card', to: 'users/registrations#update_card'
     put 'update_both', to: 'users/registrations#update_both'
@@ -32,6 +32,7 @@ Learnrails::Application.routes.draw do
   get 'dashboard' => 'pages#dashboard'
   get 'stories' => 'pages#stories'
   get 'pricing' => 'pages#pricing'
+  get 'cancel' => 'pages#cancel'
 
   root 'pages#home'
 

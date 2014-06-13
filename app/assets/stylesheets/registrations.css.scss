@@ -1,0 +1,30 @@
+.registrations .subscribe {
+	font-family: 'open sans';
+	.panel-body {
+		padding: 20px 30px;
+	}
+	h2 {
+		font-family: 'open sans';
+	}
+	h3 {
+		font-family: 'open sans';
+	}
+	p {
+		font-size: 20px;
+	}
+	h4 {
+		margin-top: 50px;
+		font-family: 'open sans';
+	}
+	.form-group {
+		margin-top: 40px;
+		font-size: 22px;
+		label {
+			font-family: 'open sans';
+			font-weight: 600;
+		}
+		input {
+			margin-right: 40px;
+		}
+	}
+}

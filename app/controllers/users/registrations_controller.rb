@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
   before_action :set_plan, only: [:new, :create]
+  before_action :authenticate_user!, except: [:new, :create]
 
   def new
     if @plan
@@ -38,29 +39,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def subscribe
-  end
+    if current_user.customer_id
+      Stripe.api_key = ENV["STRIPE_API_KEY"]
+      if current_user.plan
+        @current_plan = Stripe::Plan.retrieve(current_user.plan)
+      end
 
-  def cancel
-    puts "Checkpoint 1"
-    @user = current_user
-    if @user.pause_plan
-      puts "Checkpoint 2"
-      redirect_to edit_user_registration_path, notice: "Your current plan has been cancelled"
-    else
-      puts "Checkpoint 3"
-      flash.alert = "Sorry, we were unable to cancel your plan"
-      render :edit
+      @current_customer = Stripe::Customer.retrieve(current_user.customer_id)
+      @card = @current_customer.cards.retrieve(@current_customer.cards.data[0]['id'])
     end
   end
 
   def update_plan
     @user = current_user
     plan = params[:user][:plan]
-    if @user.update_plan(plan)
-      redirect_to edit_user_registration_path, notice: "Your plan was updated!"
+    if @user.plan == plan
+      redirect_to subscribe_path, notice: "You're already on that plan!"
+    elsif @user.update_plan(plan)
+      redirect_to subscribe_path, notice: "Your plan was updated!"
     else
-      flash.alert = "Sorry, we were unable to update your plan"
-      render :edit
+      redirect_to subscribe_path, notice: "Sorry, we were unable to update your plan"
     end
   end
 
