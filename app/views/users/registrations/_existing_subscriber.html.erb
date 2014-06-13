@@ -29,9 +29,8 @@
 <% end %>
 
 <% if current_user.plan.present? %>
-  <h3>Cancel my subscription</h3>
+  <h4>Unhappy?</h4>
 
-  <p>Unhappy?</p>
   <%= link_to "Cancel subscription", cancel_path,
     :data => { :confirm => "Are you sure?" }, class: "btn btn-danger" %></p>
 <% end %>
