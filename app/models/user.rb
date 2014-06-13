@@ -84,6 +84,7 @@ private
     if self.plan.present?
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first.delete()
+      UserMailer.unsubscribe_notification(self.name, self.email, self.plan).deliver
     end
   end
 

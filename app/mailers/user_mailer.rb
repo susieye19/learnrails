@@ -1,11 +1,6 @@
 class UserMailer < ActionMailer::Base
   default from: "BaseRails <alex@baserails.com>"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.comment_notification.subject
-  #
   def comment_notification(recipient_email, recipient_name, commenter_name, body)
     @recipient_name = recipient_name
     @commenter_name = commenter_name
@@ -26,6 +21,15 @@ class UserMailer < ActionMailer::Base
     @user_name = user_name
     @plan = plan
     @email = email
+
     mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{user_name} subscribed for the #{plan} free trial"
+  end
+
+  def unsubscribe_notification(user_name, email, plan)
+    @user_name = user_name
+    @plan = plan
+    @email = email
+
+    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{user_name} unsubscribed from the #{plan} plan"
   end
 end
