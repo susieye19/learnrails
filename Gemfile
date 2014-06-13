@@ -23,6 +23,7 @@ gem "rack-reverse-proxy", :require => "rack/reverse_proxy"
 gem 'acts_as_commentable_with_threading'
 gem "rest-client"
 gem 'analytics-ruby', '~>1.0'
+gem 'quiet_assets', :group => :development
 
 group :production do
   gem 'rails_12factor'

@@ -39,7 +39,7 @@ subscription =
       else
         true
 
-    # Submission of change plan form for subscribers
+    # Submission of change plan form for existing subscribers
     $('#plan_form').submit ->
       $('input[type=submit]').attr('disabled', true)
       $('#plan_error').hide()

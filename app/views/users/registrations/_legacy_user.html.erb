@@ -1,3 +1,9 @@
+<% if current_user.extra_access == true %>
+  <p>You already have lifetime access to the Etsydemo course and the Video Library. Subscribe to access all other content on BaseRails!</p>
+<% elsif current_user.etsydemo_access == true %>
+  <p>You already have lifetime access to the Etsydemo course. Subscribe to access the Video Library and all other content on BaseRails!</p>
+ <% end %>
+
 <%= form_for(:user, :url => update_both_path, :html => {id: "payment_form", :method => :put}) do |f| %>
 
   <div id="plan_error" class="alert alert-danger alert-dismissable" style="display:none">
