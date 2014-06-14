@@ -84,7 +84,7 @@ class VideosController < ApplicationController
       if user_signed_in?
         # User needs to have paid for extra_access or be subscribed
         if !current_user.extra_access && current_user.plan.blank?
-          redirect_to edit_user_registration_path, notice: "You need to be subscribed to access this content"
+          redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
         end
       else
         # User needs to be signed in first

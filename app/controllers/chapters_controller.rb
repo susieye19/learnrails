@@ -110,7 +110,7 @@ class ChaptersController < ApplicationController
 
     def check_permission
       if !current_user.etsydemo_access && current_user.plan.blank?
-        redirect_to edit_user_registration_path, notice: "You need to be subscribed to access this content"
+        redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
       end
     end
 
