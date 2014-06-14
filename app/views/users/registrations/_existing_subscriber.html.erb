@@ -19,7 +19,7 @@
   <div id="plan_form">
     <div class="form-group">
       <% Stripe::Plan.all.each do |p| %>
-        <%= f.label :plan, p.name %>
+        <%= f.label :plan, "$#{p.amount/100} #{p.name}" %>
         <%= f.radio_button :plan, p.id %>
       <% end %>
     </div>
