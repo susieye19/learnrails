@@ -10,6 +10,14 @@ class UserMailer < ActionMailer::Base
     mail to: email_with_name, subject: "#{commenter_name} replied to your comment on BaseRails"
   end
 
+  def question_notification(asker, subject, details)
+    @asker = asker
+    @subject = subject
+    @details = details
+
+    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{asker} posted a new question on BaseRails"
+  end
+
   def alex_notification(commenter_name, body)
     @commenter_name = commenter_name
     @body = body

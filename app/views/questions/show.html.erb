@@ -12,12 +12,12 @@
     <h4><%= @question.details %></h3>
     <h5>
       <%= "Posted #{time_ago_in_words(@question.created_at)} ago by" %>
-      <% if @question.user.admin? %>
+      <% if @question.user.present? && @question.user.admin? %>
         <span id="admin">
       <% else %>
         <span id="name">
       <% end %>
-        <%= @question.user.name %>
+        <%= @question.user_name %>
       </span>
     </h5>
   </div>

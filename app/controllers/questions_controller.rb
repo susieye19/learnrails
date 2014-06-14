@@ -30,9 +30,11 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user_id = current_user.id
+    @question.user_name = current_user.name
 
     respond_to do |format|
       if @question.save
+        UserMailer.question_notification(current_user.name, @question.subject, @question.details).deliver
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
