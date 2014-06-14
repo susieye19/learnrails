@@ -19,6 +19,23 @@
 	.form-group {
 		margin-top: 40px;
 		font-size: 22px;
+		background-color: whitesmoke;
+		padding: 20px;
+		h3 {
+			display: inline-block;
+			font-size: 28px;
+			margin-bottom: 30px;
+			line-height: 0.8;
+		}
+		#jargon {
+			font-size: 15px;
+		}
+		img {
+			vertical-align: 50%;			
+		}
+		#credit {
+			vertical-align: text-bottom;
+		}
 		label {
 			font-family: 'open sans';
 			font-weight: 600;
@@ -26,5 +43,35 @@
 		input {
 			margin-right: 40px;
 		}
+	}
+}
+
+.registration_new {
+	h3 {
+		display: inline-block;
+		font-size: 28px;
+		margin-bottom: 30px;
+		font-family: 'open sans';
+		line-height: 0.8;
+	}
+	#jargon {
+		font-size: 15px;
+	}
+	img {
+		vertical-align: 70%;			
+	}
+	#credit {
+		vertical-align: text-bottom;
+	}
+	label {
+		font-family: 'open sans';
+	}
+	.input-sm {
+		margin-bottom: 10px;
+	}
+	#stripe_form {
+		background-color: whitesmoke;
+		padding: 15px;
+		border-radius: 5px;
 	}
 }
