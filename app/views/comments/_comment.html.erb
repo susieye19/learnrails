@@ -11,7 +11,7 @@
   <% end %>
 
   <small>
-    <%= "Posted #{time_ago_in_words(comment.updated_at)} ago by" %>
+    <%= "Posted #{time_ago_in_words(comment.created_at)} ago by" %>
     <% if comment.user.present? && comment.user.admin? %>
       <span id="admin">
     <% else %>
