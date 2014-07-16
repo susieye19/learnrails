@@ -32,7 +32,11 @@ Learnrails::Application.routes.draw do
   get 'dashboard' => 'pages#dashboard'
   get 'stories' => 'pages#stories'
   get 'pricing' => 'pages#pricing'
+  get 'library' => 'pages#library'
+  get 'modules' => 'pages#modules'
   get 'cancel' => 'pages#cancel'
+  get 'marketplace' => 'pages#marketplace'
+  get 'reviewapp' => 'pages#reviewapp'
 
   root 'pages#home'
 

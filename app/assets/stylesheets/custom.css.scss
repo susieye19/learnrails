@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+body, h1, h2, h3, h4, h5 {
+  font-family: 'Open Sans',sans-serif;
+}
+
 .center {
   text-align: center;
 }
@@ -21,12 +25,10 @@
 }
 
 .navbar-default {
-/*  background-color: #f4f3ee;
-*/
-  background-color: #fdfdfb;
-  border: none;
+  background-color: #f4f7fc;
+  border-bottom: 1px solid rgba(0,0,0,.1);
 	border-radius: 0px;
-  padding: 15px 100px 5px 100px;
+  padding: 25px 130px 5px 130px;
   margin-bottom: 0px;
 }
 
@@ -96,17 +98,17 @@
 }
 
 .navbar-default .navbar-brand:hover {
-  color: #7b7b7b;
+  color: #5b5b5b;
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #5b5b5b;
+	color: #48505e;
   font-size: 16px;
   font-family: 'Open Sans',sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  color: #7b7b7b;
+  color: #5b5b5b;
 }
 
 .navbar-default .navbar-nav > .open > a,
@@ -282,8 +284,9 @@ footer {
 }
 
 footer {
-  background-color: #2d2d2d;
-  .footer-links {
+  background-color: #253341;
+/*  background-color: #2d2d2d;  
+*/  .footer-links {
     a {
       color: #e5e5e5;
       font-size: 15px;
