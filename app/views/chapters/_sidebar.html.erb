@@ -4,12 +4,22 @@
   <% sections = chapters.sort_by(&:id).to_a.map { |c| c.section }.uniq %>
 
   <% sections.each_with_index do |section, index| %>
-    <h4><%= "#{index+1}. #{section}" %></h4>
-
+    <!-- Retrieve chapter titles for that section -->
     <% subchapters = (chapters.select { |c| c.section == section }).sort_by(&:id) %>
 
+    <!-- Display section numbers and names (e.g. "1. Get Up and Running") -->
+    <h4>
+      <%= "#{index+1}. #{section}" %>
+      <% unless subchapters.first.free? %>
+        <%= image_tag "https://dl.dropboxusercontent.com/s/84yuo6f6ctljoeu/lockicon.png" %>
+      <% end %>
+    </h4>
+
+    <!-- Display links to each chapter -->
     <% subchapters.each do |subchapter| %>
-      <h5><%= link_to "#{subchapter.title}", course_chapter_path(@course, subchapter), 'data-no-turbolink' => true %></h5>
+      <h5>
+        <%= link_to "#{subchapter.title}", course_chapter_path(@course, subchapter), 'data-no-turbolink' => true %>
+      </h5>
     <% end %>
   <% end %>
 </div>
