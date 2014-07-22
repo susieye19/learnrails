@@ -1,7 +1,7 @@
 	.show .sidebar {
-		margin-top: 40px;
+		margin-top: 20px;
 		margin-left: 10px;
-		padding-left: 20px;
+		padding-left: 15px;
 		background-color: #fff;
 		border: 1px solid #e5e5e5;
 	}
@@ -9,22 +9,26 @@
 	.show .sidebar a {
 		color: #707685;
 		font-size: 14px;
-		font-weight: 400;
+		font-weight: 200;
 		font-family: 'Open Sans',sans-serif;
 	}
 
 	.show .sidebar a:hover {
 		text-decoration: underline;
-		font-weight: 500;
+		font-weight: 200;
 		color: #4d515b;
 	}
 
 	.show .sidebar h4 {
 		padding-top: 10px;
 		color: #48505e;
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: 500;
 		font-family: 'Open Sans',sans-serif;
+	}
+
+	.show .sidebar img {
+		margin-bottom: 5px;
 	}
 
 	.show .btn-primary {
