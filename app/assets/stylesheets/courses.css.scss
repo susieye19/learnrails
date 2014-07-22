@@ -1,3 +1,84 @@
-// Place all the styles related to the Courses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.coursedashboard {
+	font-family: 'Open Sans',sans-serif;
+	.line-shadow {
+		background-color: #fff;
+	}
+	#course {
+		background-color: #7b8f9d;
+		padding: 6rem 0rem;
+
+		.ribbon-wrapper-orange {
+			width: 85px;
+			height: 88px;
+			overflow: hidden;
+			float: right;
+			margin-top: 0px;
+			margin-right: 20px;
+		}
+		.ribbon-orange {
+			font: bold 12px Sans-Serif;
+			color: #999;
+			text-align: center;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			position: relative;
+			padding: 6px 0;
+			left: -6px;
+			top: 18px;
+			width: 120px;
+			background-color: #e27500;
+			background-image: -webkit-gradient(linear,left top,left bottom,from(#dc903d),to(#e27500));
+			background-image: -webkit-linear-gradient(top,#dc903d,#e27500);
+			color: #eee;
+			box-shadow: 0 0 3px rgba(0,0,0,0.3);
+		}
+		#icon {
+			margin-left: 120px;
+		}
+
+		h1 {
+			font-size: 1.7em;
+			font-family: 'Open Sans',sans-serif;
+			color: #fff;
+		}
+		h2 {
+			font-size: 1.8em;
+			font-family: 'Open Sans',sans-serif;
+			color: #48505e;
+			margin-bottom: 1em;
+		}
+		h3 {
+			font-size: 20px;
+			line-height: 1.3em;
+			font-family: 'Open Sans',sans-serif;
+			color: #48505e;
+			font-weight: 600;
+		}
+		p {
+			font-size: 17px;
+			color: #636365;
+			margin: 20px 0px;
+			line-height: 25px;
+		}
+		.thumbnail {
+			border: none;
+			padding: 30px 20px 20px 20px;
+			border: none;
+			margin: 0px 20px 0px 20px;
+		}
+		.btn-default {
+			padding: 15px 28px;
+			width: 290px;
+			font-size: 18px;
+			font-weight: 600;
+			color: #fff;
+			border: none;
+			background-color: #253341;
+		}
+		.btn-default:hover {
+			background-color: #2e4051;
+		}
+	}
+}
