@@ -2,25 +2,91 @@
 
 <section class="aboutus">
 	<div class="max-width has-padding">
-		<h1>Hello and welcome to BaseRails!</h1>
-		<div class="message">
-			<p>First of all, congratulations on learning to implement your startup ideas! Developing the ability to build a working prototype of any idea is an incredibly powerful tool for all entrepreneurs.</p><br>
-			<p>Here at BaseRails, we think of building web apps as working on a 100,000-piece jigsaw puzzle. There are tiny pieces strewn everywhere and you have no clue where to even start. BaseRails will serve as an instruction manual on how to put all those puzzle pieces together.</p><br>
-			<p>We're a team of self-taught developers and we take a more practical approach to learning than most traditional classes. Our goal is to get you up to speed faster and save you months of time in building your websites.</p><br>
-			<p>By the end of this course, you’ll have the ability to apply what you’ve learned toward implementing any idea of your own. You'll finally be able to build a product that actually works. Good luck and happy building!</p>
+		<h2>About Us</h2>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="message">
+					<p>BaseRails is a video learning platform that teaches Ruby on Rails and other technologies through building real world projects. Our collection of project-based courses walk you through coding robust applications like Etsy and Yelp while covering the most relevant programming topics, APIs, and tools used by developers. </p><br>
+					<p>Whether you're learning to code to become a web developer, or just looking to prototype your MVP, we believe working on projects is the most effective way to learn. Instead of being taught theory, you’ll learn by building working applications. You understand the big picture concepts before filling in the details. You learn to build apps the way developers do — one feature at a time. <br><br>Most people feel demotivated when they take traditional programming classes, but with BaseRails, you’ll make rapid progress on your projects so you always stay engaged. Along the way, you learn in-demand tech skills through practice and solving problems with available resources, not through brute memorization.<br><br> With a growing community of students who love our practical approach, we aim to become the leader of online, project-based learning for every subject.</p><br>
+				</div>
+				<div class="learning-bites">
+					<div class="row center">
+						<div class="col-md-6">
+							<div class="thumbnail">
+								<div class="row">
+									<div class="col-md-2">
+							  		<%= image_tag "https://dl.dropboxusercontent.com/s/w9lykerl3oe1z01/screenshare.png" %>
+							  	</div>
+							  	<div class="col-md-10">
+										<h3>Build and deploy products on your own computer</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="thumbnail">
+								<div class="row">
+									<div class="col-md-2">
+							  		<%= image_tag "https://dl.dropboxusercontent.com/s/bxqib7rhcvazcaq/portfolioicon.png" %>
+							  	</div>
+							  	<div class="col-md-10">
+										<h3>Develop and showcase a portfolio of live products</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row center">
+						<div class="col-md-6">
+							<div class="thumbnail">
+								<div class="row">
+									<div class="col-md-2">
+							  		<%= image_tag "https://dl.dropboxusercontent.com/s/9l224ioq9t4o0y9/projectsicon.png" %>
+							  	</div>
+							  	<div class="col-md-10">
+										<h3>Measure progress through projects completed</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="thumbnail">
+								<div class="row">
+									<div class="col-md-2">
+							  		<%= image_tag "https://dl.dropboxusercontent.com/s/2hn5yssxhe9sbam/customizeicon.png" %>
+							  	</div>
+							  	<div class="col-md-10">
+										<h3>Customize your products for your own needs and ideas</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>			
+				</div>
+			</div>
+			<div class="col-md-2">
+				<ul>
+					<li><span class="number">100+</span> video screencasts</li>
+					<li><span class="number">1000+</span> enrolled students</li>
+					<li><span class="number">100%</span> troubleshooting success rate</li>
+				</ul>
+			</div>
 		</div>
+
+
 		<div class="row bio-main">
+			<h2>Co-founders</h2>
 			<div class="col-md-3 info">
 				<%= image_tag "https://dl.dropboxusercontent.com/s/9u279iingo4jg5y/susie.jpg" %>
 				<div class="name">
 					<h4>Susie Ye</h4>
-					<h5>Co-Founder</h5>
+					<h5>Chief Executive Officer</h5>
 					<%= mail_to "susie@baserails.com" do %>susie@baserails.com<% end %>
 					<%= link_to image_tag("https://dl.dropboxusercontent.com/s/kpx2i5usp95n9n2/followme.png"), "http://www.twitter.com/yesusie" %>
 				</div>
 			</div>
 			<div class="col-md-8 details">
-				<p> Susie graduated with a doctorate in pharmacy but after attending a tech event in New York, she decided to launch her own company instead of working in the medical field.<br><br>Her experience co-founding a social selling platform for STEM-inspired toys helped her realize she needed to learn technical skills to further build out her ideas. However, the lack of practical web development resources led to the inspration for BaseRails as a resource where anyone can learn to build out their idea.<br><br>She has previously taught a 4-week course at DUMBO Incubator NYC to help students learn the customer development methodology.
+				<p> Susie graduated with a doctorate in pharmacy but she was always operating businesses on the side.<br><br> She paid her way through pharmacy school by selling used books on Amazon, generating six-figures in profits per year. After graduation, she co-founded a social selling platform for STEM-inspired toys in New York and San Francisco.<br><br>From these experiences, she realized she needed to learn technical skills to further build and scale her startup ideas. However, the lack of practical web development education led to the inspration for BaseRails as a resource where anyone can learn to build products that work for the real world. 
 		        </p>
 			</div>
 		</div>
@@ -29,7 +95,7 @@
 				<%= image_tag "https://dl.dropboxusercontent.com/s/j1aiq616595df0d/alex.jpg" %>
 				<div class="name">
 					<h4>Alex Yang</h4>
-					<h5>Co-Founder</h5>
+					<h5>Chief Content Officer</h5>
 					<%= mail_to "alex@baserails.com" do %>alex@baserails.com<% end %>
 					<%#= link_to image_tag("https://dl.dropboxusercontent.com/s/kpx2i5usp95n9n2/followme.png"), "http://www.twitter.com/alexyang21" %>
 				</div>

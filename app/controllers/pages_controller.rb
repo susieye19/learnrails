@@ -29,6 +29,12 @@ class PagesController < ApplicationController
   def pricing
   end
 
+  def marketplace
+  end
+
+  def reviewapp
+  end
+
   # Pages for managing user subscriptions
   def cancel
     @user = current_user

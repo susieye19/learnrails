@@ -2,91 +2,205 @@
 
 <script src="//cdn.optimizely.com/js/702173075.js"></script>
 <section class="projects">
-  <div class="max-width has-padding">
-    <div class="containertagline center">
-      <div class="section-header center">
-        <h1>Learn to build web applications in Ruby on Rails</h1>
-        <h2>Work on real projects like creating Airbnb and Yelp</h2><br>
-        <h2>We don't just teach you to code,<br> we teach you to <i>build</i>.</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/qmcg3t9fpvk8f18/3projectsblue.png", id: "projects" %>
+      </div>
+      <div class="col-md-8">
+        <div class="section-header">  
+          <h1 class>Project-based learning<br> <span id="is">is</span> more effective learning.</h1>
+          <h2 class>Master Ruby on Rails and other web technologies <br>through real world projects.</h2><br>
 
-        <div class="marketplaceproject">
-          <%= link_to "Start free trial", new_user_registration_path, class: "btn btn-lg btn-default center",
-              data: { no_turbolink: true } %>
-          <%= link_to "How it works", root_path(anchor: "step1"), class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
+          <div class="marketplaceproject">
+            <%= link_to "Start free trial", new_user_registration_path, class: "btn btn-lg btn-default center",
+                data: { no_turbolink: true } %>
+            <%= link_to "View courses", root_path(anchor: "course"), class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</section> 
+
+<section class="ideas">
+  <div class="container">
+    <header class="center">
+      <h1>On-demand video learning</h1>
+      <h2>BaseRails teaches Ruby on Rails, web scraping, and other technologies <br>through building real projects like Etsy, Yelp, and data scrapers.</h2>
+<!--        <%= image_tag "https://dl.dropboxusercontent.com/s/4g5khl0egopew26/ideaicon.png" %>
+      <%= image_tag "https://dl.dropboxusercontent.com/s/5l5hz85u9m0m4l9/arrowicon.png" %>
+      <%= image_tag "https://dl.dropboxusercontent.com/s/zgjh3jg5dmhptx2/webappicon.png" %> -->
+    </header>
+  </div> 
 </section>
 
 <section class="info">
+  <div id="course">
+    <div class="container">
+    <h1 class="center">Learn Ruby on Rails and other web technologies through project-based courses.</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/yqwyf808udsqx66/shoppingcart.png" %>
+            <h3 class="track-header1 center">Build a two-sided<br> marketplace like Etsy</h3>
+            <p class="track-description1 center">Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.</p>
+            <div class="center">
+              <%= link_to "View course", marketplace_path, class: "btn btn-default a center" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          
+          <div class="ribbon-wrapper-orange">
+            <div class="ribbon-orange">NEW
+            </div>
+          </div>
 
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/0vgj1y5s792zyt1/restauranticon.png", id: "icon" %>
+            <h3 class="track-header2 center">Build a restaurant review <br>aggregator like Yelp</h3>
+            <p class="track-description2 center">Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.</p>
+            <div class="center">
+              <%= link_to "View course", reviewapp_path, class: "btn btn-default b center" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/j3gvikkyr1oeo6o/dataicon.png" %>
+            <h3 class="track-header3 center">Build a web scraper <br>to collect data</h3>
+            <p class="track-description3 center">Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.</p>
+            <div class="center">
+              <%= link_to "Coming soon", "#", class: "btn btn-default c center" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+ <section class="steps">
+  <div class="max-width has-padding">
+    <h1 class="center">How it works</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail center">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/4cyt2wkxgfgu7m6/number1.png" %>
+          <h2>Complete a project</h2>
+          <p>Take a foundational course and learn core technical skills like Ruby on Rails and web scraping</p>
+          <%= link_to "View courses", root_path(anchor: "course"), class: "btn btn-default center" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail center">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/e6xodbv229bh9k2/number2.png" %>
+          <h2>Add additional features</h2>
+          <p>View our features library and customize your project with more advanced functionalities.</p>
+          <%= link_to "View features library", videos_path, class: "btn btn-default center" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail center apply">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/x5bqaj02g76hadi/number3.png" %>
+          <h2>Build your own ideas</h2>
+          <p>Use your new technical skills to build out your ideas, get hired, or work with developers.</p>
+          <%= link_to "Ask a developer", questions_path, class: "btn btn-default center" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section class="membership">
   <div class="container">
-    <header class="center">
-      <h1>Your ideas deserve to be built</h1>
-      <h2>BaseRails is a video-learning platform that helps you develop the skills to build web apps. Work on real projects and learn to code in layers. No fluff, just results.</h2>
-      <%= image_tag "https://dl.dropboxusercontent.com/s/4g5khl0egopew26/ideaicon.png" %>
-      <%= image_tag "https://dl.dropboxusercontent.com/s/5l5hz85u9m0m4l9/arrowicon.png" %>
-      <%= image_tag "https://dl.dropboxusercontent.com/s/zgjh3jg5dmhptx2/webappicon.png" %>
-    </header>
-  </div>
+    <div class="row">
 
-  <div id="step1">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>Step 1: Start with an online marketplace</h1>
-          <h2>We believe in learning by working on projects. Our comprehensive 43-video online course walks you step-by step through building an online marketplace like Etsy. Learn how to implement features like user login, product uploads, online payments, dashboards, and much more.</h2>
-          <h2><%= link_to syllabus_path do %>
-            <i class="glyphicon glyphicon-arrow-right"></i> Explore our syllabus
-          <% end %><h2>
+      <div class="col-md-5">
+        <h1>Comprehensive learning platform</h1>
+        <p>Build complex apps with the easiest and most intuitive learning platform. We provide all the resources you need so you can focus on learning and building.</p>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row>">
+          <div class="col-sm-4">
+            <div class="thumbnail center">
+              <%= image_tag "https://dl.dropboxusercontent.com/s/dswzny3l8bgg40z/projectbasedcourse.png" %>
+              <h2 class>Full length <br>courses</h2>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail center">
+              <%= image_tag "https://dl.dropboxusercontent.com/s/zybzx3zv00cb8x9/mappin.png" %>
+              <h2>Library of <br>feature add-ons</h2>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail center">
+              <%= image_tag "https://dl.dropboxusercontent.com/s/rkjw2r60s9v6hsy/transcripticon.png" %>
+              <h2>Word-for-word <br>transcripts</h2>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
-            <div class="demovideo">
-              <div id="wistia_oowbkfykya" class="wistia_embed" style="width:550px;height:333px;"> </div>
-              <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-              <script>
-              wistiaEmbed = Wistia.embed("oowbkfykya");
-              </script>
+
+        <div class="row>">
+          <div class="col-sm-4">
+            <div class="thumbnail center">
+              <%= image_tag "https://dl.dropboxusercontent.com/s/2ogfgk9sp6x2vbp/sourcecode.png" %>
+              <h2>Source <br>code notes</h2>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail center">
+              <%= image_tag "https://dl.dropboxusercontent.com/s/g3igvecmuzgy0wx/discussion.png" %>
+              <h2>Discussion <br> thread per video</h2>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail center">
+                <%= image_tag "https://dl.dropboxusercontent.com/s/w9lykerl3oe1z01/screenshare.png" %>
+                <h2>Screencast <br>sharing tool</h2>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div id="step2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/k1l271laj5sq830/webdesignicons.png" %>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <h1>Step 2: Add more awesome features</h1>
-          <h2>Head on over to our video library and learn how to implement additional features including social media integration, search, reviews, online payments, and many more. Take your web app to the next level.</h2>
-          <h2><%= link_to videos_path do %>
-            <i class="glyphicon glyphicon-arrow-right"></i> View library
-          <% end %></h2>
+    </div>
+
+  </div>
+</section>
+
+<section class="support">
+  <div class="container">
+    <h1 class="center">Stuck? Get all the help you need.</h1>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail center">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/5rmovnzv3wx79q4/discussion2.png" %>
+          <h2>Forum support</h2>
+          <h3>Get help from your fellow peers in our video discussion threads.</h3>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div id="step3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1>Step 3: Build out your own idea</h1>
-          <h2>You're now ready to take what you've learned and create your own Rails app, or simply customize the one you just built. You've mastered technologies such as Ruby on Rails, HTML, Bootstrap, APIs, databases, Github, and Heroku, which will all be useful for building any idea. </h2>
-          <h2><%= link_to stories_path do %>
-            <i class="glyphicon glyphicon-arrow-right"></i> View student projects
-          <% end %></h2>
+      <div class="col-md-3">
+        <div class="thumbnail center">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/ksnl51wk8609o2o/bwtwitter.png" %>
+          <h2>Twitter support</h2>
+          <h3>Tweet @baserails with an error screenshot and we'll respond in 24 hours.</h3>
         </div>
-        <div class="col-md-6">
-          <div class="thumbnail">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png" %>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail center">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/4rahdlze2oib4pk/bwemail.png" %>
+          <h2>Email support</h2>
+          <h3>We offer 7 days per week email troubleshooting support.</h3>
         </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail center final">
+          <%= image_tag "https://dl.dropboxusercontent.com/s/q0g78w5gbxskxu0/ask.png" %>
+          <h2>Ask a developer Q&A</h2>
+          <h3>Ask and recieve general technical advice and tips on our community forum.</h3>
         </div>
       </div>
     </div>
@@ -94,75 +208,10 @@
 </section>
 
 
-<!-- <section class="showcase">
-  <div class="container">
-
-    <div class="title">
-        <h1 class="center">Student Projects</h1>
-        <h2 class="center">See what our students are currently working on</h2>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/7hxmbbo0eyooyus/tenniscourt.png" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="thumbnail">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png" %>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section> -->
-
-<section class="difference">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <header class="section-header center">
-          <h1>The BaseRails Difference</h1>
-        </header>
-        <h3>Learning to code and learning to build web apps is different, but everyone still teaches it the same way. Not us. With BaseRails, you'll learn as you go by creating a real application you can test with actual users. We don't think you need to memorize complicated programming syntax, get a computer science degree, or shell out $10,000 just to build a website.<br><br>Millions of people start learning how to code, but most still can't build anything afterwards. We make sure everyone finishes BaseRails with something to show for it.</h3>
-      </div>
-      <div class="col-md-6">
-        <div class="features">
-          <ul class="check">
-            <li>Practical video screencast lectures with step-by-step instructions </li>
-            <li>Word-for-word transcript of each lecture to follow along with as you watch each video</li>
-            <li>Source code for immediate reference and readability</li>
-            <li>Active community of entrepreneurs launching new ideas</li>
-            <li>100% troubleshooting success rate within 24 hours</li>
-          <ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="trust">
-  <div class="container">
-    <h1 class="center">We've helped entrepreneurs from all over the world build out their ideas</h1>
-    <table cellspacing="0" cellpadding="20" class="center">
-      <tbody>
-        <tr>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/pfvdfdyrkt47rut/ebaybw.png" %></td>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/4k8pw37ilfef7id/disney.png" %></td>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/n5w2u6k5z02nhgb/teespring.png" %></td>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/ma0e48jgnj8ovgb/micosoftlogo.png" %></td>
-          <td><%= image_tag "https://dl.dropboxusercontent.com/s/bcqdk4o9e3lyajo/cambridge.png" %></td>
-        </tr>
-      </tbody>
-    </table>
-    <h2 class="center">&ldquo;I personally and wholeheartedly recommend this for anyone who wants to jump in with both feet and learn as you go by creating an actual application that you can use and or modify for your own use.&rdquo;  - William P.</h2>
-    <div class="button center"><%= link_to "Start your free trial", new_user_registration_path, class: "btn btn-primary center" %></div>
+<section class="action">
+  <div class="max-width has-padding center">
+      <h2>We don't just teach you to code, we teach you to <i>build</i>.</h2>  
+      <a class="btn btn-lg btn-default center" data-no-turbolink="true" href="/users/sign_up">Try a free 7-day trial</a>
   </div>
 </section>
 

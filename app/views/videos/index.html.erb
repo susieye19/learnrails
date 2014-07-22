@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="center">
-      <h1>Browse our video library</h1>
+      <h1>Browse our features library</h1>
       <h2>Customize your app with our step-by-step video tutorials that walk you through implementing popular web and design features<h2>
     </div>
   </div>
@@ -33,11 +33,14 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12">      
       <%= link_to '#', data: { no_turbolink: true } do %>
         <div class="thumbnail">
-          <h4>Add a Twitter 'Follow' Button</h4>
-          <p>Build your website's following by adding a 'Follow' button for Twitter.</p>
+          <div class="feature-description">
+            <h4>Add a Twitter 'Follow' Button</h4>
+            <p>Build your website's following by adding a 'Follow' button for Twitter.</p>
+          </div>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/294ywd70el4zciw/play_button_big.png", class: "play-icon" %>
         </div>
       <% end %>
     </div>
@@ -47,8 +50,11 @@
     <div class="col-md-12">
       <%= link_to '#', data: { no_turbolink: true } do %>
         <div class="thumbnail">
-          <h4>Switch Over from SQLite to PostgreSQL</h4>
-          <p>Use the same database in both localhost and Heroku to minimize the issues you'll face during deployment.</p>
+          <div class="feature-description">
+            <h4>Switch Over from SQLite to PostgreSQL</h4>
+            <p>Use the same database in both localhost and Heroku to minimize the issues you'll face during deployment.</p>
+          </div> 
+          <%= image_tag "https://dl.dropboxusercontent.com/s/294ywd70el4zciw/play_button_big.png", class: "play-icon" %>
         </div>
       <% end %>
     </div>
@@ -58,8 +64,11 @@
     <div class="col-md-12">
       <%= link_to '#', data: { no_turbolink: true } do %>
         <div class="thumbnail">
-          <h4>Integrate Google Maps into Your App</h4>
-          <p>Use the Google Maps API to implement location-based features.</p>
+          <div class="feature-description">
+            <h4>Integrate Google Maps into Your App</h4>
+            <p>Use the Google Maps API to implement location-based features.</p>
+          </div>
+          <%= image_tag "https://dl.dropboxusercontent.com/s/294ywd70el4zciw/play_button_big.png", class: "play-icon" %>
         </div>
       <% end %>
     </div>

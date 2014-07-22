@@ -7,6 +7,11 @@ class CommentsController < ApplicationController
     @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body])
     @comment.user_name = current_user.name
 
+    # Set course_id if comment is posted to a Chapter
+    if @comment.commentable_type == "Chapter"
+      @comment.course_id = Chapter.find(@comment.commentable_id).course_id
+    end
+
     # Prepare a new_comment object in case user wants to post another comment
     @new_comment = Comment.build_from(@obj, current_user, "")
 

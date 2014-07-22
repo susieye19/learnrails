@@ -1,0 +1,9 @@
+<div class="row">
+	<% @courses.each do |course| %>
+		<div class="col-md-6">
+			<div class="center">
+				<%= link_to course.name, course %>
+			</div>
+		</div>
+	<% end %>
+</div>

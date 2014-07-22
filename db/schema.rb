@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614001617) do
+ActiveRecord::Schema.define(version: 20140721221713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20140614001617) do
     t.text     "transcript"
     t.string   "url"
     t.string   "slug"
+    t.boolean  "free"
+    t.integer  "course_id"
   end
 
   create_table "comments", force: true do |t|
@@ -40,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140614001617) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_name"
+    t.integer  "course_id"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -52,6 +55,12 @@ ActiveRecord::Schema.define(version: 20140614001617) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "extra_access", default: false
+  end
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "friendly_id_slugs", force: true do |t|

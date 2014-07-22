@@ -1,4 +1,4 @@
-<% @title = "Dashboard for BaseRails course" %>
+<% @title = "#{@course.name} Dashboard" %>
 
 <!-- Google Code for BaseRails Enrollment Conversion Page -->
 <script type="text/javascript">
@@ -23,7 +23,7 @@ var google_remarketing_only = false;
 
 <div class="row">
   <div class="col-md-3">
-    <%= render partial: "sidebar", locals: {chapters: @chapters} %>
+    <%= render partial: "/chapters/sidebar", locals: {chapters: @chapters} %>
   </div>
 
   <div class="col-md-9">
