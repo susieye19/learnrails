@@ -6,11 +6,13 @@ Learnrails::Application.routes.draw do
   get "/blog" => redirect("/blog/")
 
   resources :videos
-  resources :chapters
   resources :comments, :only => [:create, :destroy]
   resources :coupons, :except => [:show]
 
   resources :courses, only: [:show, :index]
+  resources :courses, only: [] do
+    resources :chapters, except: [:index], path: ''
+  end
 
   # resources :chapters do
   #   resources :comments, only: [:create, :destroy]

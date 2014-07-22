@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <h4><%= link_to "Course Main Page", chapters_path %></h4>
+  <h4><%= link_to "Course Main Page", course_path(@course) %></h4>
 
   <% sections = chapters.sort_by(&:id).to_a.map { |c| c.section }.uniq %>
 
@@ -9,12 +9,12 @@
     <% subchapters = (chapters.select { |c| c.section == section }).sort_by(&:id) %>
 
     <% subchapters.each do |subchapter| %>
-      <h5><%= link_to "#{subchapter.title}", chapter_path(subchapter), 'data-no-turbolink' => true %></h5>
+      <h5><%= link_to "#{subchapter.title}", course_chapter_path(@course, subchapter), 'data-no-turbolink' => true %></h5>
     <% end %>
   <% end %>
 </div>
 
 <% if current_user.try(:admin?) %>
   <br>
-  <%= link_to 'New Chapter', new_chapter_path, class: "btn btn-primary" %>
+  <%= link_to 'New Chapter', new_course_chapter_path(@course), class: "btn btn-primary" %>
 <% end %>

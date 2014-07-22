@@ -1,4 +1,4 @@
-<%= form_for(@chapter) do |f| %>
+<%= form_for([@course, @chapter]) do |f| %>
   <% if @chapter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this chapter from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :section %>
-    <%= f.text_field :section, class: "form-control" %>
+    <%= f.text_field :section, autofocus: true, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :title %>
