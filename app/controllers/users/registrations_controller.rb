@@ -3,6 +3,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :set_plan, only: [:new, :create]
   before_action :authenticate_user!, except: [:new, :create]
 
+  def new_free
+    build_resource({})
+    respond_with self.resource
+  end
+
   def new
     if @plan
       Stripe.api_key = ENV["STRIPE_API_KEY"]
@@ -20,22 +25,61 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
 
-    if resource.save_with_payment
-
-      yield resource if block_given?
-      if resource.active_for_authentication?
-        set_flash_message :notice, :signed_up if is_flashing_format?
-        sign_up(resource_name, resource)
-        respond_with resource, :location => after_sign_up_path_for(resource)
+    puts "@plan variable is #{@plan}"
+    if @plan.blank?
+      puts "Currently in the @plan.blank? section"
+      if resource.save
+        puts "Currently in the resource.save section"
+        yield resource if block_given?
+        if resource.active_for_authentication?
+          set_flash_message :notice, :signed_up if is_flashing_format?
+          sign_up(resource_name, resource)
+          respond_with resource, :location => after_sign_up_path_for(resource)
+        else
+          set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+          expire_data_after_sign_in!
+          respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+        end
       else
-        set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
-        expire_data_after_sign_in!
-        respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+        clean_up_passwords resource
+        respond_with resource
       end
     else
-      clean_up_passwords resource
-      respond_with resource
+      puts "Currently in the not @plan.blank? section"
+      if resource.save_with_payment
+        puts "Currently in the resource.save_with_payment section"
+        yield resource if block_given?
+        if resource.active_for_authentication?
+          set_flash_message :notice, :signed_up if is_flashing_format?
+          sign_up(resource_name, resource)
+          respond_with resource, :location => after_sign_up_path_for(resource)
+        else
+          set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+          expire_data_after_sign_in!
+          respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+        end
+      else
+        clean_up_passwords resource
+        respond_with resource
+      end
     end
+
+    # if resource.save_with_payment
+
+    #   yield resource if block_given?
+    #   if resource.active_for_authentication?
+    #     set_flash_message :notice, :signed_up if is_flashing_format?
+    #     sign_up(resource_name, resource)
+    #     respond_with resource, :location => after_sign_up_path_for(resource)
+    #   else
+    #     set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+    #     expire_data_after_sign_in!
+    #     respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+    #   end
+    # else
+    #   clean_up_passwords resource
+    #   respond_with resource
+    # end
   end
 
   def subscribe

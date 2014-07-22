@@ -15,7 +15,7 @@
             <li>Troubleshooting support within 24 hours</li>
           </ul>
           <div class="center">
-            <%= link_to "Start your 7 day free trial", new_user_registration_path(plan: "monthly"), class: "btn btn-lg btn-success a" %>
+            <%= link_to "Enroll", new_user_registration_path(plan: "monthly"), class: "btn btn-lg btn-success a" %>
           </div>
         </div>
       </div>
@@ -28,17 +28,13 @@
             <li>Unlimited Developer Q&A questions</li>
           </ul>
           <div class="center">
-            <%= link_to "Start your 7 day free trial", new_user_registration_path(plan: "yearly"), class: "btn btn-lg btn-success center b" %>
+            <%= link_to "Enroll", new_user_registration_path(plan: "yearly"), class: "btn btn-lg btn-success center b" %>
           </div>
         </div>
       </div>
     </div>
 
-    <h4><%= mail_to "susie@baserails.com" do %>
-        Contact us
-      <% end %>
-      for a group membership plan.
-    </h4>
+    <h4>Sign up for a <%= link_to 'free preview', signup_free_path %></h4>
   </div>
 </section>
 
