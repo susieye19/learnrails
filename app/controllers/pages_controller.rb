@@ -29,12 +29,6 @@ class PagesController < ApplicationController
   def pricing
   end
 
-  def library
-  end
-
-  def modules
-  end
-
   def marketplace
   end
 

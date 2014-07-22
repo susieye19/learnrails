@@ -2,7 +2,7 @@ class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_correct_url, only: [:show]
   before_action :authenticate_user!
-  before_action :check_permission
+  before_action :check_permission, only: [:show]
   before_action :require_admin, except: [:index, :show]
 
   # GET /chapters
@@ -109,8 +109,16 @@ class ChaptersController < ApplicationController
     end
 
     def check_permission
-      if !current_user.etsydemo_access && current_user.plan.blank?
-        redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
+      unless @chapter.free?
+        if (@chapter.course.name == "Etsydemo")
+          if !current_user.etsydemo_access && current_user.plan.blank?
+            redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
+          end
+        else
+          if current_user.plan.blank?
+            redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
+          end
+        end
       end
     end
 
@@ -123,6 +131,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:title, :section, :notes, :transcript, :url)
+      params.require(:chapter).permit(:title, :section, :free, :url, :notes, :transcript)
     end
 end

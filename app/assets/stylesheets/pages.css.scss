@@ -511,40 +511,73 @@
 }
 
 .aboutus {
-	background-color: #fdfdfb;
+	background-color: #253341;
 	padding-bottom: 9rem;
 	font-family: 'Open Sans',sans-serif;
-	h1 {
-		padding-bottom: 2rem;
-		color: #3f3f3f;
-		font-size: 25px;
+	h2 {
+		padding-bottom: 1.5rem;
+		color: #e5ecf8;
+		font-size: 23px;
 		font-family: 'Open Sans',sans-serif;
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid #7b8f9d;
+		font-weight: 600;
 	}
 	h4 {
 		margin: 7px 0px 4px 0px;
+		color: #b7caec;
 	}
 	h5 {
-		color: #7b7b7b;
+		color: #e5ecf8;
 		margin: 0px 0px 5px;
 	}
 	p {
-		color: #333;
-		font-weight: 300;
+		color: #e5ecf8;
 		font-size: 18px;
 	}
 	a {
 		text-decoration: none;
 	}
+	.learning-bites {
+		margin-bottom: 50px;
+		 h3 {
+			color: #48505e;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 25px;
+			margin: 0px;
+			padding: 10px 0px;
+		}
+		.col-md-6 {
+			padding-left: 0px;
+			.thumbnail {
+				background-color: #f4f7fc;
+			}
+			img {
+				margin-top: 1rem;
+			}
+		}
+	}
+	.col-md-2 {
+		padding: 0px;
+		margin: 0px;
+		ul {
+			list-style-type: none;
+			li {
+				color: #f7b410;
+				font-size: 20px;
+				line-height: 19px;
+				padding: 25px 0px;
+				.number {
+					font-size: 50px;
+				}
+			}	
+		}
+	}
 	.message {
-		border-bottom: 1px solid #ddd;
 		padding-bottom: 10px;
 	}
 	.bio-main {
-		padding: 25px 0px;
-	}
-	.info {
-		border-right: 1px solid #ddd;
+		padding-bottom: 50px;
 	}
 	.details {
 		padding-left: 4rem;

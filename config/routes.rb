@@ -10,6 +10,8 @@ Learnrails::Application.routes.draw do
   resources :comments, :only => [:create, :destroy]
   resources :coupons, :except => [:show]
 
+  resources :courses, only: [:show, :index]
+
   # resources :chapters do
   #   resources :comments, only: [:create, :destroy]
   # end
@@ -32,8 +34,6 @@ Learnrails::Application.routes.draw do
   get 'dashboard' => 'pages#dashboard'
   get 'stories' => 'pages#stories'
   get 'pricing' => 'pages#pricing'
-  get 'library' => 'pages#library'
-  get 'modules' => 'pages#modules'
   get 'cancel' => 'pages#cancel'
   get 'marketplace' => 'pages#marketplace'
   get 'reviewapp' => 'pages#reviewapp'
