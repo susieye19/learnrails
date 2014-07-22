@@ -71,8 +71,8 @@
     </div>
 
     <% if current_user.try(:admin?) %>
-      <%= link_to 'Edit', edit_chapter_path(@chapter), class: "btn btn-link" %> |
-      <%= link_to 'Back', chapters_path, class: "btn btn-link" %>
+      <%= link_to 'Edit', edit_course_chapter_path(@course, @chapter), class: "btn btn-link" %> |
+      <%= link_to 'Back', course_path(@course), class: "btn btn-link" %>
     <% end %>
   </div>
 </div>
