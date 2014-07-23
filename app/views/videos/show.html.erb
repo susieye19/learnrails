@@ -71,14 +71,13 @@
 
   <!-- Mixpanel event and identity tracking -->
   <script>
-    mixpanel.track("Viewed video", {
+    mixpanel.track("Show Video", {
       "Title": "<%= @video.title %>"
     });
 
     mixpanel.identify("<%= current_user.id %>")
     mixpanel.people.set({
       "$name": "<%= current_user.name %>",
-      "$email": "<%= current_user.email %>",
-      "Paid": "<%= current_user.amount %>"
+      "$email": "<%= current_user.email %>"
     })
   </script>
