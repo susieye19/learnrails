@@ -80,6 +80,9 @@
 	background-size: 105% auto;
 	height: 320px;
 	padding: 5em 11em;
+	.container {
+		width: auto;
+	}
 	header {
 		h1 {
 			font-size: 26px;
@@ -189,7 +192,7 @@
 		margin-bottom: 40px;
 		font-weight: 200;
 		font-family: 'Open Sans',sans-serif;
-		font-size: 26px;	
+		font-size: 26px;
 	}
 	h2 {
 		color: #48505e;
@@ -570,7 +573,7 @@
 				.number {
 					font-size: 50px;
 				}
-			}	
+			}
 		}
 	}
 	.message {
@@ -753,7 +756,7 @@
 		line-height: 1.6;
 	}
 	.course-summary {
-		padding: 15px 0px; 
+		padding: 15px 0px;
 	}
 	.chapter-header {
 		color: #444;
@@ -1040,7 +1043,7 @@
 		margin-left: 0px;
 		padding: 0px 15px;
 		list-style: circle;
-	} 
+	}
 	.title {
 		margin-bottom: 15px;
 		.courseicon {
@@ -1073,7 +1076,7 @@
 			margin-left: 0px;
 			padding: 0px;
 			list-style: circle;
-		} 
+		}
 	    -moz-column-count: 2;
 	    -moz-column-gap: 5px;
 	    -webkit-column-count: 2;
@@ -1121,7 +1124,7 @@
 		line-height: 1.6;
 	}
 	.course-summary {
-		padding: 15px 0px; 
+		padding: 15px 0px;
 	}
 	.chapter-header {
 		color: #444;
@@ -1195,7 +1198,7 @@
 			}
 			ul {
 				    list-style-type: none;
-			}	
+			}
 			li {
 				background: url('https://dl.dropboxusercontent.com/s/wrsjch2ih5vthu1/play_button.png') no-repeat;
 		  	line-height: 50px;
