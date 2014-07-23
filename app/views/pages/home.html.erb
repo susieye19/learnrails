@@ -13,7 +13,7 @@
           <h2 class>Master Ruby on Rails and other web technologies <br>through real world projects.</h2><br>
 
           <div class="marketplaceproject">
-            <%= link_to "Enroll", pricing_path, class: "btn btn-lg btn-default center",
+            <%= link_to "Enroll today", pricing_path, class: "btn btn-lg btn-default center",
                 data: { no_turbolink: true } %>
             <%= link_to "View courses", root_path(anchor: "course"), class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
           </div>
@@ -41,16 +41,6 @@
     <h1 class="center">Learn Ruby on Rails and other web technologies through project-based courses.</h1>
       <div class="row">
         <div class="col-md-4">
-          <div class="thumbnail center">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/yqwyf808udsqx66/shoppingcart.png" %>
-            <h3 class="track-header1 center">Build a two-sided<br> marketplace like Etsy</h3>
-            <p class="track-description1 center">Learn Ruby on Rails by building an online marketplace like Etsy or Airbnb from scratch. Connect two parties through your platform.</p>
-            <div class="center">
-              <%= link_to "View course", marketplace_path, class: "btn btn-default a center" %>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
 
           <div class="ribbon-wrapper-orange">
             <div class="ribbon-orange">NEW
@@ -63,6 +53,16 @@
             <p class="track-description2 center">Learn Ruby on Rails by building a site for people to browse and add reviews for restaurants. Allow people to search and rate local eateries.</p>
             <div class="center">
               <%= link_to "View course", reviewapp_path, class: "btn btn-default b center" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/yqwyf808udsqx66/shoppingcart.png" %>
+            <h3 class="track-header1 center">Build a two-sided<br> marketplace like Etsy</h3>
+            <p class="track-description1 center">Learn Ruby on Rails by building an online marketplace like Etsy or Airbnb from scratch. Connect two parties through your platform.</p>
+            <div class="center">
+              <%= link_to "View course", marketplace_path, class: "btn btn-default a center" %>
             </div>
           </div>
         </div>
