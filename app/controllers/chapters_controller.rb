@@ -71,7 +71,7 @@ class ChaptersController < ApplicationController
 
     respond_to do |format|
       if @chapter.save
-        format.html { redirect_to course_course_path(@course, @chapter), notice: 'Chapter was successfully created.' }
+        format.html { redirect_to course_chapter_path(@course, @chapter), notice: 'Chapter was successfully created.' }
         format.json { render action: 'show', status: :created, location: @chapter }
       else
         format.html { render action: 'new' }
