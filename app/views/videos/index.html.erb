@@ -19,8 +19,11 @@
         <div class="col-md-12">
           <%= link_to video_path(video), data: { no_turbolink: true } do %>
             <div class="thumbnail">
-              <h4><%= video.title %></h4>
-              <p><%= video.description %></p>
+              <div class="feature-description">
+                <h4><%= video.title %></h4>
+                <p><%= video.description %></p>
+              </div>
+              <%= image_tag "https://dl.dropboxusercontent.com/s/294ywd70el4zciw/play_button_big.png", class: "play-icon" %>
             </div>
           <% end %>
         </div>
