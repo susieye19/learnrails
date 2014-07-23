@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <h4><%= link_to "Course Main Page", course_path(@course) %></h4>
+  <h4><%= link_to "#{@course.name} Course Page", course_path(@course) %></h4>
 
   <% sections = chapters.sort_by(&:id).to_a.map { |c| c.section }.uniq %>
 

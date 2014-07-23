@@ -3,6 +3,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :set_plan, only: [:new, :create]
   before_action :authenticate_user!, except: [:new, :create]
 
+  # def new_free
+  #   build_resource({})
+  #   respond_with self.resource
+  # end
+
   def new
     if @plan
       Stripe.api_key = ENV["STRIPE_API_KEY"]
@@ -13,29 +18,72 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to pricing_path, notice: "Nice try! You'll need to choose from one of the plans below :-)"
       end
     else
-      redirect_to pricing_path, notice: "You'll need to choose a plan first before you can sign up!"
+      super
+      # redirect_to pricing_path, notice: "You'll need to choose a plan first before you can sign up!"
     end
   end
 
   def create
     build_resource(sign_up_params)
 
-    if resource.save_with_payment
+    if @plan.blank?
 
-      yield resource if block_given?
-      if resource.active_for_authentication?
-        set_flash_message :notice, :signed_up if is_flashing_format?
-        sign_up(resource_name, resource)
-        respond_with resource, :location => after_sign_up_path_for(resource)
+      if resource.save
+        # Send new user email notification
+        UserMailer.new_user(resource.name, resource.email).deliver
+
+        yield resource if block_given?
+        if resource.active_for_authentication?
+          set_flash_message :notice, :signed_up if is_flashing_format?
+          sign_up(resource_name, resource)
+          respond_with resource, :location => after_sign_up_path_for(resource)
+        else
+          set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+          expire_data_after_sign_in!
+          respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+        end
       else
-        set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
-        expire_data_after_sign_in!
-        respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+        clean_up_passwords resource
+        respond_with resource
       end
     else
-      clean_up_passwords resource
-      respond_with resource
+
+      if resource.save_with_payment
+        # Send new subscription email notification
+        UserMailer.new_subscription(resource.name, resource.email, @plan).deliver
+
+        yield resource if block_given?
+        if resource.active_for_authentication?
+          set_flash_message :notice, :signed_up if is_flashing_format?
+          sign_up(resource_name, resource)
+          respond_with resource, :location => after_sign_up_path_for(resource)
+        else
+          set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+          expire_data_after_sign_in!
+          respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+        end
+      else
+        clean_up_passwords resource
+        respond_with resource
+      end
     end
+
+    # if resource.save_with_payment
+
+    #   yield resource if block_given?
+    #   if resource.active_for_authentication?
+    #     set_flash_message :notice, :signed_up if is_flashing_format?
+    #     sign_up(resource_name, resource)
+    #     respond_with resource, :location => after_sign_up_path_for(resource)
+    #   else
+    #     set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+    #     expire_data_after_sign_in!
+    #     respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+    #   end
+    # else
+    #   clean_up_passwords resource
+    #   respond_with resource
+    # end
   end
 
   def subscribe
@@ -56,6 +104,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.plan == plan
       redirect_to subscribe_path, notice: "You're already on that plan!"
     elsif @user.update_plan(plan)
+      # Send edit subscription email notification
+      UserMailer.edit_subscription(@user.name, @user.email, plan).deliver
+
       redirect_to subscribe_path, notice: "Your plan was updated!"
     else
       redirect_to subscribe_path, notice: "Sorry, we were unable to update your plan"
@@ -78,6 +129,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.plan = params[:user][:plan]
     @user.stripe_card_token = params[:user][:stripe_card_token]
     if @user.save_with_payment
+
+      # Send legacy subscription email notification
+      UserMailer.convert_to_paid(@user.name, @user.email, @user.plan).deliver
+
       redirect_to subscribe_path, notice: "Thanks for subscribing!"
     else
       @user.plan = nil

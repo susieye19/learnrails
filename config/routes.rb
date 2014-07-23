@@ -11,15 +11,12 @@ Learnrails::Application.routes.draw do
 
   resources :courses, only: [:show, :index]
   resources :courses, only: [] do
-    resources :chapters, except: [:index], path: ''
+    resources :chapters, path: '', except: [:index]
   end
-
-  # resources :chapters do
-  #   resources :comments, only: [:create, :destroy]
-  # end
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   devise_scope :user do
+    # get 'signup/free', to: 'users/registrations#new_free'
     get 'subscribe', to: 'users/registrations#subscribe'
     # get 'cancel_plan', to: 'users/registrations#cancel'
     put 'update_plan', to: 'users/registrations#update_plan'

@@ -20,13 +20,22 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
-      if @parent
-        UserMailer.comment_notification(@parent.user.email, @parent.user.name, @comment.user.name, @comment.body).deliver
-        @comment.move_to_child_of(@parent)
-      end
 
-      unless @comment.user.email == "alex@baserails.com"
-        UserMailer.alex_notification(@comment.user.name, @comment.body).deliver
+      if @parent
+        # Send a comment reply notification to the parent user
+        UserMailer.comment_reply_notification(@parent.user.email, @parent.user.name, @comment.user.name, @comment.body, request.referrer).deliver
+
+        # Send Alex a new comment notification if Alex wasn't involved
+        if (@parent.user.email != "alex@baserails.com") && (@comment.user.email != "alex@baserails.com")
+          UserMailer.new_comment(@comment.user.name, @comment.body, request.referrer).deliver
+        end
+
+        @comment.move_to_child_of(@parent)
+      else
+        # Send Alex a new comment notification if Alex wasn't involved
+        unless @comment.user.email == "alex@baserails.com"
+          UserMailer.new_comment(@comment.user.name, @comment.body, request.referrer).deliver
+        end
       end
 
       render :partial => "comments/comment", locals: { comment: @comment, new_comment: @new_comment },
