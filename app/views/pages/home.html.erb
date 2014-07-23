@@ -8,12 +8,12 @@
             <%= image_tag "https://dl.dropboxusercontent.com/s/qmcg3t9fpvk8f18/3projectsblue.png", id: "projects" %>
       </div>
       <div class="col-md-8">
-        <div class="section-header">  
+        <div class="section-header">
           <h1 class>Project-based learning<br> <span id="is">is</span> more effective learning.</h1>
           <h2 class>Master Ruby on Rails and other web technologies <br>through real world projects.</h2><br>
 
           <div class="marketplaceproject">
-            <%= link_to "Start free trial", new_user_registration_path, class: "btn btn-lg btn-default center",
+            <%= link_to "Enroll", pricing_path, class: "btn btn-lg btn-default center",
                 data: { no_turbolink: true } %>
             <%= link_to "View courses", root_path(anchor: "course"), class: "btn btn-lg btn-success center", data: { no_turbolink: true } %>
           </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-</section> 
+</section>
 
 <section class="ideas">
   <div class="container">
@@ -32,7 +32,7 @@
       <%= image_tag "https://dl.dropboxusercontent.com/s/5l5hz85u9m0m4l9/arrowicon.png" %>
       <%= image_tag "https://dl.dropboxusercontent.com/s/zgjh3jg5dmhptx2/webappicon.png" %> -->
     </header>
-  </div> 
+  </div>
 </section>
 
 <section class="info">
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          
+
           <div class="ribbon-wrapper-orange">
             <div class="ribbon-orange">NEW
             </div>
@@ -70,16 +70,16 @@
           <div class="thumbnail center">
             <%= image_tag "https://dl.dropboxusercontent.com/s/j3gvikkyr1oeo6o/dataicon.png" %>
             <h3 class="track-header3 center">Build a web scraper <br>to collect data</h3>
-            <p class="track-description3 center">Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.</p>
+            <p class="track-description3 center">Master your Ruby skills and increase your technical street cred by learning to build dynamic, sustainable applications for the web.</p>
             <div class="center">
-              <%= link_to "Coming soon", "#", class: "btn btn-default c center" %>
+              <%= link_to "Coming soon", root_path(anchor: "course"), class: "btn btn-default c center" %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>
 
  <section class="steps">
   <div class="max-width has-padding">
@@ -111,7 +111,7 @@
       </div>
     </div>
   </div>
-</section> 
+</section>
 
 <section class="membership">
   <div class="container">
@@ -210,8 +210,8 @@
 
 <section class="action">
   <div class="max-width has-padding center">
-      <h2>We don't just teach you to code, we teach you to <i>build</i>.</h2>  
-      <a class="btn btn-lg btn-default center" data-no-turbolink="true" href="/users/sign_up">Try a free 7-day trial</a>
+    <h2>We don't just teach you to code, we teach you to <i>build</i>.</h2>
+    <%= link_to "Enroll now", pricing_path, class: "btn btn-lg btn-default center", data: { no_turbolink: true } %>
   </div>
 </section>
 

@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
           card: stripe_card_token,
           plan: plan
         )
-        UserMailer.new_subscription_notification(name, email, plan).deliver
       else
         customer = Stripe::Customer.create(
           email: email,
@@ -78,7 +77,14 @@ class User < ActiveRecord::Base
   def cancel_plan
     unless plan.blank?
       customer = Stripe::Customer.retrieve(customer_id)
+      puts "Customer is the following:"
+      puts customer.inspect
+      puts "Customer.subscriptions is the following:"
+      puts customer.subscriptions.inspect
       subscription = customer.subscriptions.first.delete()
+
+      # Send unsubscribe email notification
+      UserMailer.unsubscribe(name, email, plan).deliver
 
       self.plan = nil
       self.save
@@ -91,7 +97,6 @@ private
     if self.plan.present?
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first.delete()
-      UserMailer.unsubscribe_notification(self.name, self.email, self.plan).deliver
     end
   end
 

@@ -6,6 +6,6 @@
   <body>
     <p>Hi <%= @recipient_name %>, just wanted to let you know that <%= @commenter_name %> replied to your comment:</p>
     <%= %Q["#{@body}"] %>
-    <p>View it on <%= link_to "BaseRails", "https://baserails.com/" %></p>
+    <p>View the thread <%= link_to "here", @url %></p>
   </body>
 </html>
