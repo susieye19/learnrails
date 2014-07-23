@@ -31,6 +31,12 @@
 <% if current_user.plan.present? %>
   <h4>Unhappy?</h4>
 
-  <%= link_to "Cancel subscription", cancel_path,
-    :data => { :confirm => "Are you sure?" }, class: "btn btn-danger" %></p>
+  <p>
+    <%= link_to "Cancel subscription", cancel_path, :data => { :confirm => "Are you sure?" },
+        class: "btn btn-danger", id: "unsubscribe-link" %>
+  </p>
 <% end %>
+
+<script>
+  mixpanel.track_links("#unsubscribe-link", "Click unsubscribe link");
+</script>

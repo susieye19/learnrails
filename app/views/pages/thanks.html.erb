@@ -1,4 +1,4 @@
- <% @title="Welcome to BaseRails" %>
+<% @title="Welcome to BaseRails" %>
 
 <div class="container">
 	<div class="box">
@@ -31,14 +31,29 @@ var google_remarketing_only = false;
 </noscript>
 
 <!-- Mixpanel event and identity tracking -->
-<script>
-  mixpanel.track("Subscribed", {
-    "Plan": "<%= current_user.plan %>"
-  });
+<% if current_user.plan? %>
+  <script>
+    mixpanel.track("Subscribed", {
+      "Plan": "<%= current_user.plan %>"
+    });
 
-  mixpanel.alias("<%= current_user.id %>");
-  mixpanel.people.set({
-    "$name": "<%= current_user.name %>",
-    "$email": "<%= current_user.email %>",
-  })
-</script>
+    mixpanel.alias("<%= current_user.id %>");
+    mixpanel.people.set({
+      "$name": "<%= current_user.name %>",
+      "$email": "<%= current_user.email %>",
+    })
+  </script>
+<% else %>
+  <script>
+    mixpanel.track("Registered", {
+      "Plan": "Free"
+    });
+
+    mixpanel.alias("<%= current_user.id %>");
+    mixpanel.people.set({
+      "$name": "<%= current_user.name %>",
+      "$email": "<%= current_user.email %>",
+    })
+  </script>
+<% end %>
+

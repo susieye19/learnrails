@@ -3,11 +3,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :set_plan, only: [:new, :create]
   before_action :authenticate_user!, except: [:new, :create]
 
-  # def new_free
-  #   build_resource({})
-  #   respond_with self.resource
-  # end
-
   def new
     if @plan
       Stripe.api_key = ENV["STRIPE_API_KEY"]
@@ -19,7 +14,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     else
       super
-      # redirect_to pricing_path, notice: "You'll need to choose a plan first before you can sign up!"
     end
   end
 
@@ -104,6 +98,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.plan == plan
       redirect_to subscribe_path, notice: "You're already on that plan!"
     elsif @user.update_plan(plan)
+
       # Send edit subscription email notification
       UserMailer.edit_subscription(@user.name, @user.email, plan).deliver
 
