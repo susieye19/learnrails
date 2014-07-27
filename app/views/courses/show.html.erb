@@ -20,34 +20,35 @@ var google_remarketing_only = false;
 </div>
 </noscript>
 
+<section class="courses-show">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render partial: "/chapters/sidebar", locals: {chapters: @chapters} %>
+    </div>
 
-<div class="row">
-  <div class="col-md-3">
-    <%= render partial: "/chapters/sidebar", locals: {chapters: @chapters} %>
-  </div>
-
-  <div class="col-md-9">
-  	<h3>Welcome to BaseRails! Choose a chapter on the left to get started.</h3><br>
-  	<h4>Recent discussion:</h4>
-    <% @comments.each do |comment| %>
-      <div class="comment">
-        <div class="comment-chapter">
-          <%= puts comment.commentable.inspect %>
-          <%= "#{comment.commentable.section}: #{comment.commentable.title}" %>
+    <div class="col-md-9">
+    	<h3>Welcome to BaseRails! Choose a chapter on the left to get started.</h3><br>
+    	<h4>Recent discussion:</h4>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <div class="comment-chapter">
+            <%= puts comment.commentable.inspect %>
+            <%= "#{comment.commentable.section}: #{comment.commentable.title}" %>
+          </div>
+          <small>
+          	<%= "Posted #{time_ago_in_words(comment.updated_at)} ago by" %>
+      		<% if comment.user.present? && comment.user.admin? %>
+        			<span id="admin">
+      		<% else %>
+        			<span id="name">
+      		<% end %>
+        			<%= "#{comment.user_name}" %>
+      		</span>
+          </small>
+          <p><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
         </div>
-        <small>
-        	<%= "Posted #{time_ago_in_words(comment.updated_at)} ago by" %>
-    		<% if comment.user.present? && comment.user.admin? %>
-      			<span id="admin">
-    		<% else %>
-      			<span id="name">
-    		<% end %>
-      			<%= "#{comment.user_name}" %>
-    		</span>
-        </small>
-        <p><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
