@@ -12,22 +12,12 @@ class User < ActiveRecord::Base
   def save_with_payment
     if customer_id.nil?
       # Create new Stripe customer
-      if coupon.blank?
-        customer = Stripe::Customer.create(
-          email: email,
-          description: name,
-          card: stripe_card_token,
-          plan: plan
-        )
-      else
-        customer = Stripe::Customer.create(
-          email: email,
-          description: name,
-          card: stripe_card_token,
-          plan: plan,
-          coupon: coupon
-        )
-      end
+      customer = Stripe::Customer.create(
+        email: email,
+        description: name,
+        card: stripe_card_token,
+        plan: plan
+      )
     else
       # Update Stripe customer info
       customer = Stripe::Customer.retrieve(customer_id)

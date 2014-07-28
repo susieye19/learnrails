@@ -156,7 +156,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :stripe_card_token
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :coupon
+    # devise_parameter_sanitizer.for(:sign_up) << :coupon
     devise_parameter_sanitizer.for(:sign_up) << :plan
     devise_parameter_sanitizer.for(:account_update) << :name
     devise_parameter_sanitizer.for(:account_update) << :stripe_card_token
