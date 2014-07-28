@@ -119,7 +119,7 @@ class ChaptersController < ApplicationController
         puts "Checkpoint 2"
         if (@chapter.course.name == "Etsydemo")
           puts "Checkpoint 3"
-          if !current_user.etsydemo_access && current_user.plan.blank?
+          if (!current_user.etsydemo_access) && (current_user.plan.blank?)
             puts "Checkpoint 4"
             redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
           end
