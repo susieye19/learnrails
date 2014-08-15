@@ -18,10 +18,16 @@
 
   <div id="plan_form">
     <div class="form-group">
-      <% Stripe::Plan.all.each do |p| %>
-        <%= f.label :plan, "$#{p.amount/100} #{p.name}" %>
-        <%= f.radio_button :plan, p.id %>
-      <% end %>
+      <%= f.label :plan, "$#{Stripe::Plan.retrieve("monthly").amount/100} monthly" %>
+      <%= f.radio_button :plan, "monthly" %>
+
+      <%= f.label :plan, "$#{Stripe::Plan.retrieve("yearly").amount/100} yearly" %>
+      <%= f.radio_button :plan, "yearly" %>
+
+      <%# Stripe::Plan.all.each do |p| %>
+        <%#= f.label :plan, "$#{p.amount/100} #{p.name}" %>
+        <%#= f.radio_button :plan, p.id %>
+      <%# end %>
     </div>
   </div>
 

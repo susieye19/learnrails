@@ -67,10 +67,6 @@ class User < ActiveRecord::Base
   def cancel_plan
     unless plan.blank?
       customer = Stripe::Customer.retrieve(customer_id)
-      puts "Customer is the following:"
-      puts customer.inspect
-      puts "Customer.subscriptions is the following:"
-      puts customer.subscriptions.inspect
       subscription = customer.subscriptions.first.delete()
 
       # Send unsubscribe email notification
