@@ -13,10 +13,14 @@
 
   <div id="plan_form">
     <div class="form-group">
-      <% Stripe::Plan.all.each do |p| %>
-        <%= f.label :plan, "$#{p.amount/100} #{p.name}" %>
-        <%= f.radio_button :plan, p.id %>
-      <% end %>
+      <%= f.label :plan, "$#{Stripe::Plan.retrieve("monthly_paid").amount/100} monthly" %>
+      <%= f.radio_button :plan, "monthly" %>
+
+      <%= f.label :plan, "$#{Stripe::Plan.retrieve("yearly_paid").amount/100} yearly" %>
+      <%= f.radio_button :plan, "yearly" %>
+
+      <%#= f.label :plan, "$#{p.amount/100} #{p.name}" %>
+      <%#= f.radio_button :plan, p.id %>
     </div>
   </div>
 
@@ -28,14 +32,14 @@
   <div id="stripe_form">
     <div class="form-group">
       <div class="row">
-          <%= image_tag "https://dl.dropboxusercontent.com/s/qq57gvp6m3qfjra/lock.png" %>          
+          <%= image_tag "https://dl.dropboxusercontent.com/s/qq57gvp6m3qfjra/lock.png" %>
           <h3>Secure credit card payment<br>
           <span id="jargon">This is a secure 128-bit SSL encrypted payment.</span></h3>
       </div>
       <div class="row">
         <div class="col-lg-8">
           <%= label_tag :card_number, "Credit Card Number" %>
-          <%= image_tag "https://dl.dropboxusercontent.com/s/wup1jm6duaz4vbx/creditcardicon.png", id: "credit" %>          
+          <%= image_tag "https://dl.dropboxusercontent.com/s/wup1jm6duaz4vbx/creditcardicon.png", id: "credit" %>
           <%= text_field_tag :card_number, nil,
               { :name => nil, :'data-stripe' => "number", maxlength: "16",
                 autocompletetype: "cc-number", class: "form-control card-number input-sm" } %>

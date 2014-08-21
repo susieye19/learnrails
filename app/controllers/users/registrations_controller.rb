@@ -104,7 +104,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
       redirect_to subscribe_path, notice: "Your plan was updated!"
     else
-      redirect_to subscribe_path, notice: "Sorry, we were unable to update your plan"
+      redirect_to subscribe_path, notice: "There was a problem with your plan information. Please try again."
     end
   end
 
@@ -114,7 +114,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.save_with_payment
       redirect_to edit_user_registration_path, notice: "Your card was updated!"
     else
-      flash.alert = "Sorry, we were unable to update your card"
+      flash.alert = "There was a problem with your card information. Please try again."
       render :edit
     end
   end
@@ -132,7 +132,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       @user.plan = nil
       @user.save
-      redirect_to subscribe_path, notice: "We weren't able to subscribe you"
+      redirect_to subscribe_path, notice: "There was a problem with your card information. Please try again."
     end
   end
 
