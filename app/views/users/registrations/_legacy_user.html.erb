@@ -14,10 +14,10 @@
   <div id="plan_form">
     <div class="form-group">
       <%= f.label :plan, "$#{Stripe::Plan.retrieve("monthly_paid").amount/100} monthly" %>
-      <%= f.radio_button :plan, "monthly" %>
+      <%= f.radio_button :plan, "monthly_paid" %>
 
       <%= f.label :plan, "$#{Stripe::Plan.retrieve("yearly_paid").amount/100} yearly" %>
-      <%= f.radio_button :plan, "yearly" %>
+      <%= f.radio_button :plan, "yearly_paid" %>
 
       <%#= f.label :plan, "$#{p.amount/100} #{p.name}" %>
       <%#= f.radio_button :plan, p.id %>
