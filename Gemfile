@@ -24,6 +24,8 @@ gem 'acts_as_commentable_with_threading'
 gem "rest-client"
 gem 'analytics-ruby', '~>1.0'
 gem 'quiet_assets', :group => :development
+gem 'activeadmin', github: 'activeadmin'
+gem 'ransack' #required for activeadmin
 
 group :production do
   gem 'rails_12factor'
