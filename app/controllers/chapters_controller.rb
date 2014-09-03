@@ -114,23 +114,13 @@ class ChaptersController < ApplicationController
     end
 
     def check_permission
-      puts "Current User is #{current_user.inspect}"
-      puts "Current Chapter is #{@chapter.inspect}"
-      puts "Checkpoint 1"
       unless @chapter.free?
-        puts "Checkpoint 2"
         if (@chapter.course.name == "Etsydemo")
-          puts "Checkpoint 3"
           if (!current_user.etsydemo_access) && (current_user.plan.blank?)
-            puts "Checkpoint 4"
-            puts "!current_user.etsydemo_access is #{!current_user.etsydemo_access}"
-            puts "current_user.plan.blank? is #{current_user.plan.blank?}"
             redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
           end
         else
-          puts "Checkpoint 5"
           if current_user.plan.blank? && !current_user.admin?
-            puts "Checkpoint 6"
             redirect_to subscribe_path, notice: "You need to be subscribed to access this content"
           end
         end
