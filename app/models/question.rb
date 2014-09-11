@@ -9,6 +9,6 @@ class Question < ActiveRecord::Base
   validates :subject, presence: true
   
   def should_generate_new_friendly_id?
-    title_changed?
+    subject_changed?
   end
 end
