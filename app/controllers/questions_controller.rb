@@ -1,13 +1,15 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :redirect_to_correct_url, only: [:show]
   before_action :check_permission, only: [:new, :create]
   before_action :require_admin, only: [:edit, :update, :destroy]
 
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all.order('created_at DESC')
+    @questions = Question.all.order('created_at DESC').limit(5)
+    @replies = Comment.where(commentable_type: "Question").order('created_at DESC').limit(5)
   end
 
   # GET /questions/1
@@ -73,6 +75,13 @@ class QuestionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_question
       @question = Question.find(params[:id])
+    end
+    
+    def redirect_to_correct_url
+      # Redirect to the correct URL if the title of the video has since been changed
+      if request.path != question_path(@question)
+        return redirect_to @question, :status => :moved_permanently
+      end
     end
 
     def check_permission
