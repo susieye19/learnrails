@@ -8,8 +8,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all.order('created_at DESC').limit(5)
-    @replies = Comment.where(commentable_type: "Question").order('created_at DESC').limit(5)
+    @questions = Question.all.order('created_at DESC')#.limit(5)
+    #@replies = Comment.where(commentable_type: "Question").order('created_at DESC').limit(5)
   end
 
   # GET /questions/1
