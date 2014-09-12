@@ -20,8 +20,12 @@ ActiveAdmin.register_page "Dashboard" do
                 link_to Video.find(@id).title, video_path(@id)
               end
             end
-            column "Text", :body
-            column "User", :user_name
+            column "Text" do |comment|
+                comment.body
+            end
+            column "User" do |comment|
+                comment.user_name
+            end
           end
         end
 

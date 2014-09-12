@@ -11,6 +11,20 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+.col-type {
+  width: 7%;
+}
+.col-title {
+  width: 10%;
+}
+.col-text {
+  width: 73%;
+  padding-right: 20px;
+}
+.col-user {
+  width: 10%;
+}
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //

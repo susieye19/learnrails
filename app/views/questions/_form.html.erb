@@ -14,12 +14,12 @@
   <div class="form-group">
     <%= f.label :subject %>
     <%= f.text_field :subject, class: "form-control", autofocus: true,
-        placeholder: 'Example: Do I need to learn to code in Ruby before starting Ruby on Rails?' %>
+        placeholder: 'Example: Do I need to learn Ruby before trying to learn Ruby on Rails?' %>
   </div>
   <div class="form-group">
-    <%= f.label :details %>
+    <%= f.label :details, 'Details (optional)' %>
     <%= f.text_area :details, class: "form-control",
-        placeholder: "Optional: I've never programmed before and come from a non-technical, marketing background." %>
+        placeholder: "Example: I've never programmed before and come from a non-technical, marketing background." %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
