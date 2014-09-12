@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .questions.index {
+	.description-body {
+		width: 80%;
+		margin: 0 auto;
+		border: 1px solid black;
+	}
 	.questions {
 		padding-bottom: 7rem;
 	}

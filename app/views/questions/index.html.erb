@@ -1,32 +1,46 @@
- <% @title="Ask a Developer" %>
+<% @title="Ask a Developer" %>
 
-<div class="container questions">
-
+<!-- <div class="container questions"> -->
+<div class="container">
   <div class="row">
-    <div class="col-md-11">
-      <div class="newq btn btn-primary">
-        <%= link_to 'Post new question', new_question_path %>
+    <div class="col-md-12 center">
+      <h1>Welcome to the Ask a Developer forum</h1>
+      <div class="description-body">
+        <p>
+          The Ask a Developer forum is here as a source of technical advice. Do you need help outlining the approach for your app's next feature? Or do you just have a general question about a specific Rails topic? Ask experienced developers here in the BaseRails community.
+        </p>
+        <p>
+          If instead you're having trouble with a specific BaseRails video, please post a comment in the 'Discussion' section below the video. For troubleshooting specific to your app, check out <%= link_to "Stack Overflow", "http://stackoverflow.com/" %>.
+        </p>
       </div>
     </div>
   </div>
 
-  <% @questions.each do |question| %>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h3>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <% @questions.each do |question| %>
+        <h4>
           <%= link_to question do %>
-          <%= question.subject %>
+            <%= question.subject %><br>
           <% end %>
-          by <%= question.user_name %>
-        </h3>
+        </h4>
+        <%= "Posted #{time_ago_in_words(question.created_at)} ago by #{question.user_name}" %>
+        <%= "#{Comment.where(commentable_id: question.id).where(commentable_type: "Question").length} replies" %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="row">
+    <div class="col-md-11">
+      <div class="newq btn btn-primary">
+        <%#= link_to 'Post new question', new_question_path %>
       </div>
     </div>
-  <% end %>
-
-</div>
+  </div> -->
 
 <!-- Mixpanel event tracking -->
 <script>
   mixpanel.track("Index Questions");
 </script>
-
