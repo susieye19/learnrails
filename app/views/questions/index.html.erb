@@ -37,7 +37,7 @@
         <% end %>
 
         <span id="time"> <%= "Posted #{time_ago_in_words(question.created_at)} ago" %></span> by <span id="name"><%= question.user_name %></span>
-        <span id="replies"><%= "#{Comment.where(commentable_id: question.id).where(commentable_type: "Question").length} replies" %></span>
+        <span id="replies"><%= pluralize(Comment.where(commentable_id: question.id).where(commentable_type: "Question").length, 'reply') %></span>
 
         <br>
       </div>
