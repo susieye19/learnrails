@@ -8,16 +8,8 @@
         <h3 class="center">Welcome to the Ask a Developer forum!</h3>
         <p>
           The Ask a Developer forum is here to help you with technical advice. Need help outlining the approach for your app's next feature? Or have a general question about a specific Rails topic? Ask experienced developers here in the BaseRails community.
-          
           <br>
         </p>
-        
-        <!-- <div class="newq btn btn-primary"> -->
-          <%#= link_to 'Post new question', new_question_path %>
-        <!-- </div> -->
-        <!-- <p>
-          If instead you're having trouble with a specific BaseRails video, please post a comment in the 'Discussion' section below the video. For troubleshooting specific to your app, check out <%#= link_to "Stack Overflow", "http://stackoverflow.com/" %>.
-        </p> -->
       </div>
     </div>
   </div>
@@ -50,6 +42,8 @@
         <br>
       </div>
       <% end %>
+      
+      <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
     </div>
   </div>
 
