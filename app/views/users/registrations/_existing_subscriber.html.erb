@@ -23,15 +23,75 @@
 
       <%= f.label :plan, "$#{Stripe::Plan.retrieve("yearly_paid").amount/100} yearly" %>
       <%= f.radio_button :plan, "yearly_paid" %>
-
-      <%# Stripe::Plan.all.each do |p| %>
-        <%#= f.label :plan, "$#{p.amount/100} #{p.name}" %>
-        <%#= f.radio_button :plan, p.id %>
-      <%# end %>
     </div>
   </div>
 
   <%= f.submit "Update subscription", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+
+
+
+
+
+<%= form_for(:user, :url => { :action => :update_card }, :html => {id: "card_form", :method => :put}) do |f| %>
+  <div id="card_error" class="alert alert-danger alert-dismissable" style="display:none">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  </div>
+
+  <!-- <div class="row"> -->
+    <%#= image_tag "https://dl.dropboxusercontent.com/s/qq57gvp6m3qfjra/lock.png" %>
+<!--     <h3>Secure credit card payment<br>
+    <span id="jargon">This is a secure 128-bit SSL encrypted payment.</span></h3>
+  </div> -->
+  
+  <%= f.hidden_field :stripe_card_token %>
+  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-lg-8">
+        <%= label_tag :card_number, "Credit Card Number" %>
+        <%= image_tag "https://dl.dropboxusercontent.com/s/wup1jm6duaz4vbx/creditcardicon.png", id: "credit" %>
+
+        <%= text_field_tag :card_number, nil,
+            { :name => nil, :'data-stripe' => "number", maxlength: "16",
+              autocompletetype: "cc-number", class: "form-control card-number input-sm" } %>
+      </div>
+      <div class="col-lg-4">
+        <%= label_tag :card_code, "CVC" %>
+        <%= text_field_tag :card_code, nil,
+            { :name => nil, :'data-stripe' => "cvc", maxlength: "4",
+              autocomplete: "off", autocompletetype: "cc-csc",
+              class: "form-control card-cvc input-sm" } %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <%= label_tag :card_month, "Expiration (MM/YYYY)" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= select_month nil, {use_two_digit_numbers: true, prompt: "Month"},
+            { :name => nil, :id => "card_month", :'data-stripe' => "exp-month", :class => "form-control input-sm" } %>
+      </div>
+      <div class="col-lg-3">
+        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15, prompt: "Year"},
+            { :name => nil, :id => "card_year", :'data-stripe' => "exp-year", :class => "form-control input-sm" } %>
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <%= f.submit "Update card", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <% if current_user.plan.present? %>

@@ -110,12 +110,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update_card
     @user = current_user
-    @user.stripe_card_token = params[:user][:stripe_card_token]
-    if @user.save_with_payment
-      redirect_to edit_user_registration_path, notice: "Your card was updated!"
+    if @user.update_card(params[:user][:stripe_card_token])
+      redirect_to subscribe_path, notice: "Your card was updated!"
     else
-      flash.alert = "There was a problem with your card information. Please try again."
-      render :edit
+      redirect_to subscribe_path, notice: "There was a problem with your card information. Please try again."
     end
   end
 
