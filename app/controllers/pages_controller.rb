@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def syllabus
+    redirect_to marketplace_path, status: 301
   end
 
   def about

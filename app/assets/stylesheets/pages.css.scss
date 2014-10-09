@@ -1435,9 +1435,11 @@
 
 	.questions.index {
 		clear: both;
+		padding-bottom: 300px;
 		.questions {
-			margin-bottom: 250px;
 			.col-md-12 {
+				padding: 0px;
+				margin: 0px auto;
 				.description-body {
 					padding: 0px 5px;
 					margin: 10px 0px;
@@ -1451,7 +1453,7 @@
 
 	.single-question {
 		clear: both;
-		margin-bottom: 300px;
+		padding-bottom: 300px;
 		.col-md-8 {
 			h3 {
 				font-size: 23px;

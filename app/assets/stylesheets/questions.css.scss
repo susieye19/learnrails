@@ -6,12 +6,17 @@
 	.description-body {
 		margin: 20px auto;
 		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
 		padding: 10px 70px;
+		width: 90%;
 		p {
 			font-size: 17px;
+			font-family: 'Open Sans',sans-serif;
+			font-weight: 200;
 		}
 		h3 {
 			margin-top: 10px;
+			font-family: 'Open Sans',sans-serif;
 		}
 	}
 	.question-each {
@@ -24,6 +29,7 @@
 		color: #428bca;
 		border: 1px solid #428bca;
 		padding: 0 3px;
+		margin-left: 7px;
 	}
 	.questions {
 		padding-bottom: 7rem;
@@ -42,7 +48,6 @@
 	.newq {
 		position: relative;
 		float: right;
-		margin: 20px 0px;
 		a {
 			color: #fff;
 			text-decoration: none;
@@ -123,6 +128,12 @@
 		font-family: 'Open Sans',sans-serif;
 		color: #48505e;
 		font-weight: 200;
-		margin-bottom: 5rem;
+		margin-bottom: 2rem;
+	}
+	ol {
+		margin-bottom: 25px;
+	}
+	li {
+		font-weight: 200;
 	}
 }

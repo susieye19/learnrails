@@ -51,6 +51,14 @@ subscription =
         false
       else
         true
+        
+    # Submission of update card form for existing subscribers
+    $('#card_form').submit ->
+      $('input[type=submit]').attr('disabled', true)
+      $('#card_error').hide()
+      Stripe.card.createToken($('#card_form'), subscription.handleCardResponse)
+      false
+      
 
   handleStripeResponse: (status, response) ->
     if status == 200
@@ -59,3 +67,11 @@ subscription =
     else
       $('#stripe_error').text(response.error.message).show()
       $('input[type=submit]').attr('disabled', false)
+  
+  handleCardResponse: (status, response) ->
+    if status == 200
+      $('#user_stripe_card_token').val(response.id)
+      $('#card_form')[0].submit()
+    else
+      $('#card_error').text(response.error.message).show()
+      $('input[type=submit]').attr('disabled', false)    

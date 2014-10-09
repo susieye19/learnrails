@@ -26,6 +26,8 @@ gem 'analytics-ruby', '~>1.0'
 gem 'quiet_assets', :group => :development
 gem 'activeadmin', github: 'activeadmin'
 gem 'ransack' #required for activeadmin
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 group :production do
   gem 'rails_12factor'

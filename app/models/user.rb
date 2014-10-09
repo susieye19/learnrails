@@ -63,6 +63,25 @@ class User < ActiveRecord::Base
     errors.add :base, "We couldn't update your subscription. #{e.message}"
     false
   end
+  
+  def update_card(token)
+    # Retrieve customer info from Stripe
+    customer = Stripe::Customer.retrieve(customer_id)
+    existing_card = customer.cards.retrieve(customer.default_card)
+    
+    # Delete original card
+    customer.cards.retrieve(existing_card.id).delete
+    
+    # Add new card and set as default
+    new_card = customer.cards.create(card: token)
+    customer.default_card = new_card.id
+    
+    # Update user info in database
+    self.last_4_digits = customer.cards.retrieve(customer.default_card).last4
+    self.stripe_card_token = nil
+    self.save
+  end
+    
 
   def cancel_plan
     unless plan.blank?

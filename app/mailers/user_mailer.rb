@@ -38,7 +38,7 @@ class UserMailer < ActionMailer::Base
     @user_name = user_name
     @email = email
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "Free User: #{email}"
+    mail to: "Susie Ye <susie@baserails.com>", subject: "Free User: #{email}"
   end
 
   # New paid subscription is created
@@ -47,7 +47,7 @@ class UserMailer < ActionMailer::Base
     @email = email
     @plan = plan
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{plan.capitalize} User: #{email}"
+    mail to: "Susie Ye <susie@baserails.com>", subject: "#{plan.capitalize} User: #{email}"
   end
 
   def convert_to_paid(user_name, email, plan)
@@ -55,7 +55,7 @@ class UserMailer < ActionMailer::Base
     @email = email
     @plan = plan
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "Convert to #{plan}: #{email}"
+    mail to: "Susie Ye <susie@baserails.com>", subject: "Convert to #{plan}: #{email}"
   end
 
   def edit_subscription(user_name, email, plan)
@@ -63,7 +63,7 @@ class UserMailer < ActionMailer::Base
     @email = email
     @plan = plan
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "Subscription changed to #{plan}"
+    mail to: "Susie Ye <susie@baserails.com>", subject: "Subscription changed to #{plan}"
   end
 
   # Alex's notification when an existing paid membership is cancelled
@@ -72,6 +72,6 @@ class UserMailer < ActionMailer::Base
     @plan = plan
     @email = email
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{user_name} unsubscribed from the #{plan} plan"
+    mail to: "Susie Ye <susie@baserails.com>", subject: "#{user_name} unsubscribed from the #{plan} plan"
   end
 end
