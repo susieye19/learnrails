@@ -279,14 +279,14 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 180px;
+    min-height: 180px;
     width: 100%;
+    clear: both;
 }
 
 footer {
   background-color: #253341;
-/*  background-color: #2d2d2d;  
-*/  .footer-links {
+  .footer-links {
     a {
       color: #e5e5e5;
       font-size: 15px;

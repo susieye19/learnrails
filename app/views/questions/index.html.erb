@@ -1,53 +1,50 @@
 <% @title="Ask a Developer" %>
 
-<div class="container questions"> 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="description-body">
-        <h3 class="center">Welcome to the Ask a Developer forum!</h3>
-        <p>
-          The Ask a Developer forum is here to help you with technical advice. Need help outlining the approach for your app's next feature? Or have a general question about a specific Rails topic? Ask experienced developers here in the BaseRails community.
-          <br>
-        </p>
+<section class="questions"> 
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="description-body">
+          <h3 class="center">Welcome to the Ask a Developer forum!</h3>
+          <p>
+            The Ask a Developer forum is here to help you with technical advice. Need help outlining the approach for your app's next feature? Or have a general question about a specific Rails topic? Ask experienced developers here in the BaseRails community.
+            <br>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-11">
-      <div class="newq btn btn-primary">
-        <%= link_to 'Post new question', new_question_path %>
+    <div class="row">
+      <div class="col-md-11">
+        <div class="newq btn btn-primary">
+          <%= link_to 'Post new question', new_question_path %>
+        </div>
       </div>
-    </div>
-  </div> 
+    </div> 
 
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <% @questions.each do |question| %>
-      <div class="question-each">
-        <h4>
-          <%= link_to question do %>
-            <%= question.subject %><br>
-          <% end %>
-        </h4>
-        <% if false %>
-        Posted <span id="time"> <%= time_ago_in_words(question.created_at) %></span> ago by <span id="name"><%= question.user_name %></span>
-        <span id="replies"><%= "#{Comment.where(commentable_id: question.id).where(commentable_type: "Question").length} replies" %></span>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <% @questions.each do |question| %>
+          <div class="question-each">
+            <h4>
+              <%= link_to question do %>
+                <%= question.subject %><br>
+              <% end %>
+            </h4>
+
+            <span id="time"> <%= "Posted #{time_ago_in_words(question.created_at)} ago" %></span> by <span id="name"><%= question.user_name %></span>
+            <span id="replies"><%= pluralize(Comment.where(commentable_id: question.id).where(commentable_type: "Question").length, 'reply') %></span>
+
+            <br>
+          </div>
         <% end %>
-
-        <span id="time"> <%= "Posted #{time_ago_in_words(question.created_at)} ago" %></span> by <span id="name"><%= question.user_name %></span>
-        <span id="replies"><%= pluralize(Comment.where(commentable_id: question.id).where(commentable_type: "Question").length, 'reply') %></span>
-
-        <br>
       </div>
-      <% end %>
-      
+        
       <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
     </div>
   </div>
-
-</div>
+</section>
 
 <!-- Mixpanel event tracking -->
 <script>
