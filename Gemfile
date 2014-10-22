@@ -1,3 +1,4 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
 ruby '2.1.1'
 
@@ -12,7 +13,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise'
 gem 'pg'
 gem 'figaro'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe'#, :git => 'https://github.com/stripe/stripe-ruby'
 gem 'jquery-turbolinks'
 gem 'aws-sdk', '~> 1.0'
 gem 'newrelic_rpm'
@@ -24,8 +25,6 @@ gem 'acts_as_commentable_with_threading'
 gem "rest-client"
 gem 'analytics-ruby', '~>1.0'
 gem 'quiet_assets', :group => :development
-gem 'activeadmin', github: 'activeadmin'
-gem 'ransack' #required for activeadmin
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 
