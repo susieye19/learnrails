@@ -21,7 +21,9 @@ class UserMailer < ActionMailer::Base
     @body = body
     @url = url
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{commenter_name} posted a new comment on BaseRails"
+    mail  to: "Alex Yang <alexyang.personal@gmail.com>",
+          from: "BaseRails <notifications@baserails.com>",
+          subject: "#{commenter_name} posted a new comment on BaseRails"
   end
 
   # New question is asked
@@ -30,9 +32,12 @@ class UserMailer < ActionMailer::Base
     @subject = subject
     @details = details
 
-    mail to: "Alex Yang <alexyang.personal@gmail.com>", subject: "#{asker} posted a new question on BaseRails"
+    mail  to: "Alex Yang <alexyang.personal@gmail.com>",
+          from: "BaseRails <notifications@baserails.com>",
+          subject: "#{asker} posted a new question on BaseRails"
   end
 
+  # SUSIE NOTIFICATIONS
   # New free membership is created
   def new_user(user_name, email)
     @user_name = user_name
@@ -66,7 +71,7 @@ class UserMailer < ActionMailer::Base
     mail to: "Susie Ye <susie@baserails.com>", subject: "Subscription changed to #{plan}"
   end
 
-  # Alex's notification when an existing paid membership is cancelled
+  # Notification when an existing paid membership is cancelled
   def unsubscribe(user_name, email, plan)
     @user_name = user_name
     @plan = plan
