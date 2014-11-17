@@ -45,8 +45,8 @@
 				<div class="thumbnail last">
 					<h2>Time</h2>
 					<ul>
-						<li>Video content: <br>2 hours</li>
-						<li>Average completion time:<br>1 week</li>
+						<li>Video content: <br>4 hours</li>
+						<li>Average completion time:<br>3 week</li>
 					</ul>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 					<div class="well-topper">
 					Course Syllabus
 					</div>
-					<p class="course-summary">In this course, you'll learn how to access a webpage's HTML and identify proper selectors for parsing through data. Write a script in the Ruby programming language to scrape Wikipedia and Airbnb and export the information into a database. 
+					<p class="course-summary">In this course, you'll learn to gather data through an API and use that data to build a custom Ruby on Rails web app. You'll write a script in the Ruby programming language to collect and process the data you receive, then save the information to a database, and build a front-end interface for users to interact with it. By the end of the course, you'll have learned to automate the data collection process and have an app that's live on Heroku. 
 					</p>
 					<div class="chapter-header">
 						<h3>Chapters</h3>
@@ -78,8 +78,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
 			              	<div class="row">
 			              		<div class="col-md-11">
-				                	<h2>Get up and running</h2>
-				                	<h3>In this chapter, you'll learn how to install and set up your computer environment with the proper tools and software to start coding.</h3>
+				                	<h2>Explore 3taps API</h2>
+				                	<h3>Learn to work with the 3taps API by reading the documentation and making your first API requests through the web browser. Filter data by adding parameters through the URL.</h3>
 				                </div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -94,16 +94,20 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Course Introduction (2:31)</h4>
-			                	<p>View a live demonstration of the final Yelpdemo app we'll be building. Get a quick tour of the BaseRails platform to see how you can navigate the site and get support when you get stuck. </p>
+			                	<h4>Course Introduction (5:04)</h4>
+			                	<p>Understand more about APIs and why they can be so powerful. See a demonstration of the final app you'll be building. </p>
 			                </li>
 			                <li>
-			                	<h4>Installation for Mac Users (6:08)</h4>
-			                	<p>Install the latest versions of Ruby on Rails, Xcode, iTerm2, Homebrew, Git, and Sublime Text on your Mac computer. Set up a shortcut to launch Sublime Text from your terminal. </p>
+			                	<h4>Using the Reference API (11:46)</h4>
+			                	<p>Register to use the 3taps API and use its Reference API to explore the 3taps dataset. </p>
 			                </li>
 			                <li>
-			                	<h4>Installation for Non-Mac Users (3:35)</h4>
-			                	<p>Install the latest versions of Ruby on Rails and Sublime Text on your computer. Launch your terminal with Git Bash and set up a shortcut to launch Sublime Text from your command line.</p>
+			                	<h4>Retrieving Posting Data (9:47)</h4>
+			                	<p>Learn about the anchor system that 3taps uses to track data requests through its Polling API. Use the Polling API to retrieve our first set of real data.</p>
+			                </li>
+			                <li>
+			                	<h4>Refining our API Request (6:46)</h4>
+			                	<p>Add additional parameters to your data request to filter the data that you want to see.</p>
 			                </li>
 			              </ul>
 			            </div>
@@ -115,8 +119,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
 			              	<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Create our website</h2>
-					                <h3>Learn the routine process of how to create a new Rails app, add static pages, display links, and generate a migration for a new database. Use 'rake routes' to find what routes to use for your URLs and learn to set the homepage URL. </h3>
+					                <h2>Import Data Into Our App</h2>
+					                <h3>Learn to submit an API request through a custom script written in the Ruby programming language. Save the data returned to a database of your own and view it with the SQLite database browser. </h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -131,24 +135,16 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Create a New App (5:28)</h4>
-			                	<p>Learn common terminal commands and create a new app Rails. Launch your Rails server and explore localhost:3000 to see your new app.</p>
+			                	<h4>Convert our Request to a Script (10:41)</h4>
+			                	<p>Write a custom script in the Ruby programming language to submit a request to the 3taps API and view the results in the command line.</p>
 			                </li>
 			                <li>
-			                	<h4>Add Our First Pages (6:54)</h4>
-			                	<p>Generate a Pages controller in Rails and create an "About" and "Contact" page for your app. Add content to your pages with HTML. </p>
+			                	<h4>Create a Rake Task (6:18)</h4>
+			                	<p>Create a new Ruby on Rails web app and learn about rake tasks. Build a custom rake task to make API requests. </p>
 			                </li>
 			                <li>
-			                	<h4>Add Links (8:08)</h4>
-			                	<p>Add links for the "About" and "Contact" URLs and learn how to create links to external sites. Organize common code into a single location in the Application Layout file to decrease code redundancy.</p>
-			                </li>
-			                <li>
-			                	<h4>Add Restaurants (5:03)</h4>
-			                	<p>Learn the three-step process for generating migration in Rails. Create a Restaurants database with name, address, phone, and website fields. </p>
-			                </li>
-			                <li>
-			                	<h4>Set the Home Page (3:41)</h4>
-			                	<p>Replace the default Rails homepage with the Restaurant Index page that you generated. Use 'rake routes' to find which routes to use for existing URLs.  </p>
+			                	<h4>Save Posts to Database (11:08)</h4>
+			                	<p>Modify your custom rake task to save the retrieved data into a SQLite database in your app.</p>
 			                </li>
 			              </ul>
 			            </div>
@@ -160,8 +156,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
 			              	<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Get started with Bootstrap</h2>
-					                <h3>Use Bootstrap to add powerful design features to your app. Create a sleek navigation bar on top of your site and clean up the design of your forms, links, and buttons. Along the way, you'll learn how to use partials and embedded Ruby to simplify your code files for readability and organization. </h3>
+					                <h2>Improve Display of Data</h2>
+					                <h3>Process the raw data that gets returned in the API request and display it in a more user-friendly format with Bootstrap and Rails gems. </h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -176,20 +172,12 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Install Bootstrap (5:08)</h4>
-			                	<p>Install a front-end tool called Bootstrap through the Bootstrap CDN method. Add the table class to the Restaurant Index page and layer additional options on top.   </p>
+			                	<h4>Clean Up Data Formats (10:49)</h4>
+			                	<p>Add the Bootstrap framework to style elements on the page. Learn about different data types and use Rails helpers to format the display of the information.   </p>
 			                </li>
 			                <li>
-			                	<h4>Add a Navigation Bar (6:17)</h4>
-			                	<p>Learn to work with Bootstrap by reading the documentation on their site. Use Bootstrap to add a navigation bar and add the "About" and "Contact" links. </p>
-			                </li>
-			                <li>
-			                	<h4>Simplify Our Code (6:19)</h4>
-			                	<p>It's best practice to simplify code files for readability and debugging. Learn how partials and embedded Ruby work to create a navbar, footer, and Bootstrap partial to store our code.  </p>
-			                </li>
-			                <li>
-			                	<h4>Build Beautiful Forms (13:10)</h4>
-			                	<p>Use Bootstrap classes with embedded Ruby code to add better spacing and design to our Restaurant forms. Wrap your pages in a fluid-container for a responsive layout.  </p>
+			                	<h4>Paginate the Index Page (5:20)</h4>
+			                	<p>Use the 'will_paginate' and 'will_paginate-bootstrap' gems to divide content into multiple pages.</p>
 			                </li>
 			              </ul>
 			            </div>
@@ -201,8 +189,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
 			              	<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Launch our Site</h2>
-					                <h3>Learn how to save your code using a version control system called Git, then pushing your code files online to Github by creating a new repository for your app. Launch your app live on the web by hosting it for free on Heroku.</h3>
+					                <h2>Gather Detailed Data</h2>
+					                <h3>Take a closer look at your original data request and extract additional details. Scrape image URLs and store them in a separate database. Learn to deal with situations where data may be incomplete or missing.</h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -217,16 +205,16 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Set Up Github (5:55)</h4>
-			                	<p>Save your code using a version control system called Git, then create a new Github account to save your code online in a repository. Generate a new SSH key to authenticate your account on your computer.  </p>
+			                	<h4>Scrape Apartment Details (12:00)</h4>
+			                	<p>Revisit your original data request and extract additional details to save to your database. Account for possibly absent or incomplete data.  </p>
 			                </li>
 			                <li>
-			                	<h4>Save Our Progress (6:31)</h4>
-			                	<p>Learn how to commit and push your code to Github. Start by creating a new repository on Github for your app. Learn the four commands you need to run each time you save your code to Github.   </p>
+			                	<h4>Display Details (3:22)</h4>
+			                	<p>Incorporate additional data fields into the display of your web app.   </p>
 			                </li>
 			                <li>
-			                	<h4>Deploy on Heroku (12:26)</h4>
-			                	<p>Learn how to launch your app live on the web by hosting it for free on Heroku. Set up Heroku for the production and development environments on your computer and launch your app live on the web for the first time. </p>
+			                	<h4>Collect and Store Images (9:41)</h4>
+			                	<p>Collect image URLs from your API request and store them in a separate, linked database. Display images that are hosted on an external URL. </p>
 			                </li>
 			              </ul>
 			            </div>
@@ -238,8 +226,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
 			              	<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Add Images</h2>
-					                <h3>Add and resize images on your Restaurant pages with the Carrierwave gem. Use the Fog gem to link Carrierwave with Amazon S3, an image hosting service so people can see your images live on the web. Protect your sensitive Amazon S3 account information with the Figaro gem. </h3>
+					                <h2>Scrape Location Data</h2>
+					                <h3>Collect reference data through a new API request to convert location codes into human-readable neighborhood names. Incorporate neighborhood field into your web app. </h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -254,20 +242,12 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Add the Carrierwave Gem (9:55)</h4>
-			                	<p>Add images to your Restaurants pages with the Carrierwave gem. Add a new column to your Restaurants database to store images and a file_field helper to upload images in your New Restaurant form. Use strong parameters to tell Rails that your image form field is safe. </p>
+			                	<h4>Look Up Neighborhoods (6:41)</h4>
+			                	<p>Use the 3taps Reference API to write a rake task to scrape location data into a new database. </p>
 			                </li>
 			                <li>
-			                	<h4>Image Hosting with Amazon S3 (9:20)</h4>
-			                	<p>Use the Fog gem to link Carrierwave with Amazon S3, where we'll set up image hosting service to people can see your images live on the web. Store localhost images on your local computer and Heroku images on Amazon S3. </p>
-			                </li>
-			                <li>
-			                	<h4>Protect Our Passwords (7:34)</h4>
-			                	<p>Use the Figaro gem to pass your confidential Amazon S3 account information to Heroku without having it show up on GitHub for anyone to see.</p>
-			                </li>
-			                <li>
-			                	<h4>Resize Images (6:16)</h4>
-			                	<p>Install ImageMagick and MiniMagick to use Carrierwave options to resize your images to a preset thumbnail width and height. </p>
+			                	<h4>Display Neighborhoods (4:35)</h4>
+			                	<p>Revise your existing rake task to use a reference table to process data prior to saving it into a database. </p>
 			                </li>
 			              </ul>
 			            </div>
@@ -279,8 +259,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
 											<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Add front-end design</h2>
-					                <h3>Customize your homepage by adding a banner through Bootstrap's jumbotron class. Use CSS to format the background color, font, and spacing in the navigation bar. Add a static image to the bottom of your homepage to improve the overall design. </h3>
+					                <h2>Add Data Filters</h2>
+					                <h3>Implement an advanced filter using URL parameters to allow users to narrow the content they browse. Incorporate checkboxes, dropdown menus, and placeholder text to improve the usability of the form. </h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -295,16 +275,16 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Create a Custom Banner (9:05)</h4>
-			                	<p>Create a homepage banner with Bootstrap's jumbotron class. Add a custom.css.scss file to write CSS code to format the background-color, border, and font inside the banner. Learn to use Google Chrome extensions to find specific web colors.   </p>
+			                	<h4>Build an Advanced Filter (10:16)</h4>
+			                	<p>Create a search form with multiple fields and save the search parameters in the URL. Use those to filter the results displayed on the page.  </p>
 			                </li>
 			                <li>
-			                	<h4>Format the Navbar (5:59)</h4>
-			                	<p>Use CSS to format the background color, links, and logo in the navigation bar. Use the padding property to push out some area around the content.  </p>
+			                	<h4>Improve Filter Display (6:38)</h4>
+			                	<p>Convert text inputs in the search filter to more intuitive checkboxes and dropdown menus.  </p>
 			                </li>
 			                <li>
-			                	<h4>Add Static Images (4:14)</h4>
-			                	<p>Download and save a static image to your Amazon S3 account and use Ruby code to embed it to your homepage. </p>
+			                	<h4>Structure Filter Layout (12:17)</h4>
+			                	<p>Use Bootstrap's grid system to organize the input fields of the search filter. Revise the input field labels and add placeholder text to improve the overall look. </p>
 			                </li>
 			              </ul>
 			            </div>
@@ -316,8 +296,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseSeven">
 											<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Add Users</h2>
-					                <h3>Use the Devise gem to install multiple user accounts and customize the look and feel of the forms. Add conditional links for users who are signed in or signed out. Use Ruby and jQuery to format Devise alerts and error messages when users don't fill in the form properly.</h3>
+					                <h2>Add Front-End Styling</h2>
+					                <h3>Design page layouts, add images, and write custom CSS to polish the look of your site. Create a new homepage, format the show and index page, and organize data so it's easier for users to browse through rentals.</h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -332,20 +312,20 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Install Devise (9:07)</h4>
-			                	<p>Install and set up a popular gem called Devise to give our app the ability to have multiple user accounts. Verify that it works by signing up with an email and password.   </p>
+			                	<h4>Design Homepage (12:29)</h4>
+			                	<p>Add a homepage containing a jumbotron with a high-resolution image. Add CSS styling to give your homepage a more professional look.  </p>
 			                </li>
 			                <li>
-			                	<h4>Insert Conditional Links (16:14)</h4>
-			                	<p>Convert the HTML links into embedded Ruby with the link_to Rails helper. Learn to use the command 'rake routes' to find which routes to use for creating new URLs. Add the "Sign up", "Sign in", and "Sign out" links to our navigation bar. Learn how to add conditional links so different users see different links depending on whether they are signed in or not.   </p>
+			                	<h4>Add Thumbnail Images (13:12)</h4>
+			                	<p>Add a thumbnail image preview to the search results page. Use CSS techniques to resize images stored on external URLs and include a default image for post's without any uploaded images. </p>
 			                </li>
 			                <li>
-			                	<h4>Style Devise Forms (11:15)</h4>
-			                	<p>Improve the look and feel of the Devise forms for signing in and signing up. Use Bootstrap to add sleek buttons to the forms.  </p>
+			                	<h4>Structure Show Page (11:04)</h4>
+			                	<p>Use the Bootstrap grid system to design the layout of the page with a post's details. Use 'if statements' to suppress the display of missing data fields. </p>
 			                </li>
 			                <li>
-			                	<h4>Customize Alerts and Error Messages (6:36)</h4>
-			                	<p>Add some custom Ruby and jQuery code to customize the Devise alert and error messages when users don't fill in the form properly. Use iQuery to add a close button to the messages.  </p>
+			                	<h4>Style Show Page: (7:31)</h4>
+			                	<p>AUse CSS techniques to scale images proportionally to fit inside their columns. Apply background colors, borders, margins, and other properties. </p>
 			                </li>
 			              </ul>
 			            </div>
@@ -357,8 +337,8 @@
 			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseEight">
 											<div class="row">
 			              		<div class="col-md-11">
-					                <h2>Add Reviews: part 1</h2>
-					                <h3>Create a new Reviews database and link it the Users database by tracking the User ID that each Review belongs to. Delete unnecessary default scaffold URLs and clean up the ripple effect in your code. Learn to use the Rails console to modify existing data in both localhost and Heroku. </h3>
+					                <h2>Deploy and Automate</h2>
+					                <h3>Launch your app live on the web using the Heroku platform. Learn to automate both the collection and removal of data so your app stays relevant and up-to-date with Craigslist data. Collect and display new apartment posts every ten minutes. </h3>
 												</div>
 				                <div class="col-md-1">
 				                  <button type="button" class="btn btn-default btn-sm">
@@ -373,168 +353,20 @@
 			            <div class="panel-body">
 			              <ul>
 			                <li>
-			                	<h4>Build a Review Scaffold (8:52)</h4>
-			                	<p>Create a Reviews database by understand how the 'Rails generate scaffold' command works and how Creating, Reading, Updating, and Deleting (CRUD) are the available four actions for any resource. Get a sense for how Models Views Controller works for the Reviews database. </p>
+			                	<h4>Refresh Our Data (8:22)</h4>
+			                	<p>Set up your rake task to retrieve all the latest postings when run. </p>
 			                </li>
 			                <li>
-			                	<h4>Link Reviews to Users (9:45)</h4>
-			                	<p>Generate a migration to add a new column in the Reviews database to track the User ID that each Review belongs to. Tell Rails how the Users and Reviews databases are linked. </p>
+			                	<h4>Deploy on Heroku (6:05)</h4>
+			                	<p>Modify your Gemfile and set up your app to save with Git, store code online with GitHub, and launch live on Heroku. </p>
 			                </li>
 			                <li>
-			                	<h4>Modify Data with Rails Console (5:21)</h4>
-			                	<p>Learn how to use the Rails Console to assign a User for every Review in the database. Modify existing localhost and Heroku data. </p>
+			                	<h4>Automate Rake Tasks (5:51)</h4>
+			                	<p>Write a new rake task to clean out stale data. Learn to automate both the collection and removal of data. </p>
 			                </li>
 			                <li>
-			                	<h4>Remove Unnecessary URLs (6:07)</h4>
-			                	<p>Customize the default scaffold URLs to include only the ones that you need. Delete the View pages, disable routes that point to those URLs, and redirect your links to different pages.  </p>
-			                </li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="panel panel-default">
-			          <div class="panel-heading">
-			            <div class="panel-title">
-			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseNine">
-											<div class="row">
-			              		<div class="col-md-11">
-			                		<h2>Add Reviews: part 2</h2>
-			                		<h3>Link the Reviews database to the Restaurants database by tracking the Restaurant ID that each Review belongs to. Nest the Restaurant ID in the URL and use 'rake routes' to link it properly. Display all the reviews for each Restaurant on its own page.</h3>
-												</div>
-				                <div class="col-md-1">
-				                  <button type="button" class="btn btn-default btn-sm">
-											  		<span class="glyphicon glyphicon-plus"></span>
-													</button>
-				                </div>
-				             	</div>
-			              </a>
-			            </div>
-			          </div>
-			          <div id="collapseNine" class="panel-collapse collapse">
-			            <div class="panel-body">
-			              <ul>
-			                <li>
-			                	<h4>Link Reviews to Restaurants (10:56)</h4>
-			                	<p>Generate a migration to add a new column in the Reviews database to track the Restaurant ID that each Review belongs to. Tell Rails how the Restaurants and Reviews databases are linked. Nest the Restaurant ID in the URL and use Rails Console to figure out specific Restaurant IDs on Heroku.  </p>
-			                </li>
-			                <li>
-			                	<h4>Nest Resource URLs (7:51)</h4>
-			                	<p>Use 'rake routes' to create proper links for each individual restaurant, the 'Edit Review' page, and a "Write a Review" link. </p>
-			                </li>
-			                <li>
-			                	<h4>Display Reviews (9:11)</h4>
-			                	<p>Display the specific reviews for each Restaurant on its own page. Use Bootstrap's grid layout to format the page into two columns.  </p>
-			                </li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="panel panel-default">
-			          <div class="panel-heading">
-			            <div class="panel-title">
-			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTen">
-											<div class="row">
-			              		<div class="col-md-11">
-			               		 <h2>Add star ratings</h2>
-			               		 <h3>Use the iQuery Raty plugin to add star ratings onto our Restaurant's site and New Review page. Learn to calculate an average star rating, display the total number of reviews, and display reviews in reverse chronological order. </h3>
-												</div>
-				                <div class="col-md-1">
-				                  <button type="button" class="btn btn-default btn-sm">
-											  		<span class="glyphicon glyphicon-plus"></span>
-													</button>
-				                </div>
-				             	</div>
-			              </a>
-			            </div>
-			          </div>
-			          <div id="collapseTen" class="panel-collapse collapse">
-			            <div class="panel-body">
-			              <ul>
-			                <li>
-			                	<h4>Convert Numbers to Stars (8:02)</h4>
-			                	<p>Download and set up the jQuery Raty plugin to convert numerical ratings to star ratings.  </p>
-			                </li>
-			                <li>
-			                	<h4>Layer on More Options (10:23)</h4>
-			                	<p>Calculate an average star rating for each Restaurant and display it on the Restaurant's Show page along with the total number of reviews written. For each Review written, turn raw text into HTML and display the reviews in reverse chronological order. </p>
-			                </li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="panel panel-default">
-			          <div class="panel-heading">
-			            <div class="panel-title">
-			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseEleven">
-											<div class="row">
-			              		<div class="col-md-11">
-			                <h2>Set validations and permissions</h2>
-			                <h3>Add a first name and last name field on the 'Sign Up' form and display the user's name and date for each Review. Use regular expressions to verify if user-submitted data is in the appropriate format. Set different permissions for admin and regular users as well as signed-in and signed-out users. </h3>
-												</div>
-				                <div class="col-md-1">
-				                  <button type="button" class="btn btn-default btn-sm">
-											  		<span class="glyphicon glyphicon-plus"></span>
-													</button>
-				                </div>
-				             	</div>
-			              </a>
-			            </div>
-			          </div>
-			          <div id="collapseEleven" class="panel-collapse collapse">
-			            <div class="panel-body">
-			              <ul>
-			                <li>
-			                	<h4>Add User Fields (10:46)</h4>
-			                	<p>Distinguish between Admin users and normal users by disabling the ability for normal users to create a new Restaurant page. Add a first and last name field to the 'Sign Up' page and tell Rails that those new fields are safe.  </p>
-			                </li>
-			                <li>
-			                	<h4>Integrate Names into Reviews (5:30)</h4>
-			                	<p>Display the User's first name and last initial for each Review. Add the date that each Review was written.  </p>
-			                </li>
-			                <li>
-			                	<h4>Validate Submitted Data (17:51)</h4>
-			                	<p>Validate that the data users are submitting is valid by learning about regular expressions and how to convey the character pattern to verify if data is in the appropriate format.   </p>
-			                </li>
-			                <li>
-			                	<h4>Set User Permissions (13:26)</h4>
-			                	<p>Set different authorizations for signed in and signed out users, admin and regular users, and different actions users can take depending on whether a review was written by them.   </p>
-			                </li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="panel panel-default">
-			          <div class="panel-heading">
-			            <div class="panel-title">
-			              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwelve">
-											<div class="row">
-			              		<div class="col-md-11">
-			                <h2>Add bells and whistles</h2>
-			                <h3>Use the Google Maps API to embed a dynamic map of each Restaurant location. Give users the ability to search through the restaurants with the Searchkick gem.  </h3>
-												</div>
-				                <div class="col-md-1">
-				                  <button type="button" class="btn btn-default btn-sm">
-											  		<span class="glyphicon glyphicon-plus"></span>
-													</button>
-				                </div>
-				             	</div>
-			              </a>
-			            </div>
-			          </div>
-			          <div id="collapseTwelve" class="panel-collapse collapse">
-			            <div class="panel-body">
-			              <ul>
-			                <li>
-			                	<h4>Set up Google Maps (8:15)</h4>
-			                	<p>Use the Google Maps API to embed a dynamic map of a specific location for each Restaurant. Zoom in and out and customize the default zoom.   </p>
-			                </li>
-			                <li>
-			                	<h4>Set Up Search (13:19)</h4>
-			                	<p>Install the Searchkick gem for localhost and Heroku and load it with the restaurants in the database. Create a new URL for the page showing the search results displayed in a table.  </p>
-			                </li>
-			                <li>
-			                	<h4>Course Summary (1:58)</h4>
-			                	<p>Customize your app further with additional add-on features in our Features Library. Complete additional projects for further practice. </p>
+			                	<h4>Conclusion: (1:38)</h4>
+			                	<p>Review your progress, reflect on the concepts that have been covered, and consider some next steps. </p>
 			                </li>
 			              </ul>
 			            </div>
@@ -555,30 +387,30 @@
 	<div class="container has-padding">
 		<h1 class="center">What you'll be building</h1>
 
-<%= link_to "http://yelpdemo.herokuapp.com/", class: "screenshot", :target => "_blank" do %>
+<%= link_to "http://craigslist-scraper.herokuapp.com/", class: "screenshot", :target => "_blank" do %>
 
 		<div class="demoscreenshot">
 			<div class="row">
 				<div class="col-md-5 col-md-offset-1">
 					<div class="thumbnail">
-						<%= image_tag "https://dl.dropboxusercontent.com/s/ghe342zt4mfaii4/yelpdemo1.png" %>
+						<%= image_tag "https://dl.dropboxusercontent.com/s/xb6pl1vwevg786f/Craigslist1.png" %>
 					</div>
 				</div>
 				<div class="col-md-5">
 					<div class="thumbnail">
-						<%= image_tag "https://dl.dropboxusercontent.com/s/kukk2jvigc0kaoz/yelpdemo2.png" %>
+						<%= image_tag "https://dl.dropboxusercontent.com/s/rsvb8skvoennzvn/Craigslist2.png" %>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-5 col-md-offset-1">
 					<div class="thumbnail">
-						<%= image_tag "https://dl.dropboxusercontent.com/s/yjg0aynga2z9j4z/yelpdemo3.png" %>
+						<%= image_tag "https://dl.dropboxusercontent.com/s/39j84q7a2mcqkqv/Craigslist3.png" %>
 					</div>
 				</div>
 				<div class="col-md-5">
 					<div class="thumbnail">
-						<%= image_tag "https://dl.dropboxusercontent.com/s/5vmc0sk1w6no79n/yelpdemo4.png" %>
+						<%= image_tag "https://dl.dropboxusercontent.com/s/qc6cgqctjowwg2r/Craigslist4.png" %>
 					</div>
 				</div>
 			</div>
@@ -587,9 +419,72 @@
 <% end %>
 		<div class="demo-description center">
 			<h2>An apartment rental site for Brooklyn, NYC populated with the most recent listings scraped from Craigslist. Allow users to filter for relevant information like square footage, laundry, pets, and parking.  </h2>
-			<%= link_to "Launch demo", "http://yelpdemo.herokuapp.com/", class: "btn btn-primary btn-lg center", :target => "_blank" %>
+			<%= link_to "Launch demo", "http://craigslist-scraper.herokuapp.com/", class: "btn btn-primary btn-lg center", :target => "_blank" %>
 		</div>
 	</div>
+</section>
+
+<section class="feature-library">
+	<div class="container has-padding">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <img alt="Webdesignicons" src="https://dl.dropboxusercontent.com/s/k1l271laj5sq830/webdesignicons.png">
+        </div>
+      </div>
+      <div class="col-md-6">
+      	<h1>Add more awesome features</h1>
+    		<h2>After the completeing the foundational course, head on over to our video library and learn how to implement additional features like social media integration, internationalization, and more. Take your web app to the next level.</h2>
+    		<%= link_to "View features library", videos_path, class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
+
+	</div>
+</section>
+
+<section class="project-showcase">
+  <div class="container has-padding">
+    <h1 class="center">See what projects our students are working on</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png"), "http://fleamarket-kw.herokuapp.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/e4dhb9tiy38kmr8/eventsorbet.png"), "http://www.eventsorbet.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/m5w3nd799pc9uco/gmaps.png"), "http://gmaps-2014.herokuapp.com/", :target => "_blank" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/7hxmbbo0eyooyus/tenniscourt.png"), "http://www.tenniscourtsponsorships.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/2hqi1gu08jj4lh0/tweetspeak.png"), "https://tweetspeakenglish.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/nream0t77winiao/jeolry.png"), "http://jeolry.herokuapp.com/", :target => "_blank" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <h2><%= link_to "Browse more student projects", studentprojects_path %></h2>
+    </div>
+
+  </div>
 </section>
 
 <section class="action2">
