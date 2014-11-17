@@ -5,7 +5,7 @@ class Chapter < ActiveRecord::Base
 
   acts_as_commentable
 
-  validates :course_id, :title, :section, :slug, presence: true
+  validates :course_id, :title, :slug, presence: true
 
   belongs_to :course
 
