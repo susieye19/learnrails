@@ -38,39 +38,53 @@
     <div class="container">
     <h1 class="center">Learn Ruby on Rails and other web technologies through project-based courses.</h1>
       <div class="row">
-        <div class="col-md-4">
-
-          <div class="ribbon-wrapper-orange">
-            <div class="ribbon-orange">NEW
-            </div>
-          </div>
-
+        <div class="col-md-3">
           <div class="thumbnail center">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/0vgj1y5s792zyt1/restauranticon.png", id: "icon" %>
-            <h3 class="track-header2 center">Build a restaurant review <br>aggregator like Yelp</h3>
+            <%= image_tag "https://dl.dropboxusercontent.com/s/0vgj1y5s792zyt1/restauranticon.png" %>
+            <h3 class="track-header2 center">Build a reviews and ratings site like Yelp</h3>
             <p class="track-description2 center">Learn Ruby on Rails by building a site for people to browse and add reviews for restaurants. Allow people to search and rate local eateries.</p>
             <div class="center">
-              <%= link_to "View course", reviewapp_path, class: "btn btn-default b center" %>
+              <%= link_to "View course", reviewapp_path, class: "btn btn-default center" %>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="thumbnail center">
             <%= image_tag "https://dl.dropboxusercontent.com/s/yqwyf808udsqx66/shoppingcart.png" %>
             <h3 class="track-header1 center">Build a two-sided<br> marketplace like Etsy</h3>
-            <p class="track-description1 center">Learn Ruby on Rails by building an online marketplace like Etsy or Airbnb from scratch. Connect two parties through your platform.</p>
+            <p class="track-description1 center">Learn Ruby on Rails by building an online marketplace like Etsy from scratch. Connect two parties through your platform.</p>
             <div class="center">
-              <%= link_to "View course", marketplace_path, class: "btn btn-default a center" %>
+              <%= link_to "View course", marketplace_path, class: "btn btn-default center" %>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+
+            <div class="ribbon-wrapper-orange">
+              <div class="ribbon-orange">NEW
+              </div>
+          </div>
+
           <div class="thumbnail center">
-            <%= image_tag "https://dl.dropboxusercontent.com/s/j3gvikkyr1oeo6o/dataicon.png" %>
+            <%= image_tag "https://dl.dropboxusercontent.com/s/j3gvikkyr1oeo6o/dataicon.png", id: "icon" %>
             <h3 class="track-header3 center">Build a web scraper <br>to collect data</h3>
-            <p class="track-description3 center">Write Ruby scripts to parse website code and extract the data you need. Save time by using technology to automate otherwise manual tasks.</p>
+            <p class="track-description3 center">Write Ruby scripts to parse Wikipedia and Airbnb. Use technology to extract the data you need to automate manual tasks.</p>
             <div class="center">
-              <%= link_to "Coming soon", root_path(anchor: "course"), class: "btn btn-default c center", id: "web-scraper" %>
+              <%= link_to "View course", webscraper_path, class: "btn btn-default center" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="ribbon-wrapper-orange">
+              <div class="ribbon-orange">NEW
+              </div>
+            </div> 
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/rprlvr24ypue895/api_scraper_icon.png", id: "icon" %>
+            <h3 class="track-header3 center">Build an apartment rental site like Craigslist</h3>
+            <p class="track-description3 center">Learn to use an API to scrape Craigslist apartment rental data. Build a beautiful web app to display live listings with filters.</p>
+            <div class="center">
+              <%= link_to "View course", apiscraper_path, class: "btn btn-default center" %>
             </div>
           </div>
         </div>
@@ -205,6 +219,50 @@
   </div>
 </section>
 
+<section class="project-showcase">
+  <div class="container has-padding">
+    <h1 class="center">See what projects our students are working on</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/xgp8xx2nprb5mcx/fleamarket.png"), "http://fleamarket-kw.herokuapp.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/e4dhb9tiy38kmr8/eventsorbet.png"), "http://www.eventsorbet.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/m5w3nd799pc9uco/gmaps.png"), "http://gmaps-2014.herokuapp.com/", :target => "_blank" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/7hxmbbo0eyooyus/tenniscourt.png"), "http://www.tenniscourtsponsorships.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/2hqi1gu08jj4lh0/tweetspeak.png"), "https://tweetspeakenglish.com/", :target => "_blank" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://dl.dropboxusercontent.com/s/nream0t77winiao/jeolry.png"), "http://jeolry.herokuapp.com/", :target => "_blank" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <h2><%= link_to "Browse more student projects", studentprojects_path %></h2>
+    </div>
+
+  </div>
+</section>
 
 <section class="action">
   <div class="max-width has-padding center">

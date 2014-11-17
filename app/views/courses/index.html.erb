@@ -1,33 +1,54 @@
 <section class="coursedashboard">
   <div id="course">
-    <div class="max-width has-padding">
+    <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div class="ribbon-wrapper-orange">
-            <div class="ribbon-orange">NEW</div>
-          </div>
-
+        <div class="col-md-3">
           <div class="thumbnail center">
             <%= image_tag "https://dl.dropboxusercontent.com/s/0vgj1y5s792zyt1/restauranticon.png", id: "icon" %>
-            <h3 class="track-header2 center">Build a restaurant review <br>aggregator like Yelp</h3>
+            <h3 class="track-header2 center">Build a reviews and ratings site like Yelp</h3>
             <p class="track-description2 center">Learn Ruby on Rails by building a site for people to browse and add reviews for restaurants. Allow people to search and rate local eateries.</p>
             <div class="center">
-              <%= link_to "Go to course", course_path(2), class: "btn btn-default b center" %>
-            </div>
-          </div>
-          </div>
-            <div class="col-md-6">
-              <div class="thumbnail center">
-                <%= image_tag "https://dl.dropboxusercontent.com/s/yqwyf808udsqx66/shoppingcart.png" %>
-                <h3 class="track-header1 center">Build a two-sided<br> marketplace like Etsy</h3>
-                <p class="track-description1 center">Learn Ruby on Rails by building an online marketplace like Etsy or Airbnb from scratch. Connect two parties through your platform.</p><br>
-                <div class="center">
-                  <%= link_to "Go to course", course_path(1), class: "btn btn-default a center" %>
-                </div>
-              </div>
+              <%= link_to "Go to course", course_path(2), class: "btn btn-default center" %>
             </div>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/yqwyf808udsqx66/shoppingcart.png" %>
+            <h3 class="track-header1 center">Build a two-sided<br> marketplace like Etsy</h3>
+            <p class="track-description1 center">Learn Ruby on Rails by building an online marketplace like Etsy from scratch. Connect two parties through your platform.</p>
+            <div class="center">
+              <%= link_to "Go to course", course_path(1), class: "btn btn-default center" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="ribbon-wrapper-orange">
+            <div class="ribbon-orange">NEW</div>
+          </div>
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/j3gvikkyr1oeo6o/dataicon.png", id: "icon" %>
+           <h3 class="track-header3 center">Build a web scraper <br>to collect data</h3>
+            <p class="track-description3 center">Write Ruby scripts to parse Wikipedia and Airbnb. Use technology to extract the data you need to automate manual tasks.</p>
+            <div class="center">
+              <%= link_to "Go to course", course_path(2), class: "btn btn-default center" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="ribbon-wrapper-orange">
+            <div class="ribbon-orange">NEW</div>
+          </div>
+          <div class="thumbnail center">
+            <%= image_tag "https://dl.dropboxusercontent.com/s/rprlvr24ypue895/api_scraper_icon.png", id: "icon" %>
+            <h3 class="track-header3 center">Build an apartment rental site like Craigslist</h3>
+            <p class="track-description3 center">Learn to use an API to scrape Craigslist apartment rental data. Build a beautiful web app to display live listings with filters.</p>
+            <div class="center">
+              <%= link_to "Go to course", course_path(2), class: "btn btn-default center" %>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
