@@ -31,11 +31,13 @@ Learnrails::Application.routes.draw do
   get 'about' => 'pages#about'
   get 'library' => 'pages#library'
   get 'dashboard' => 'pages#dashboard'
-  get 'stories' => 'pages#stories'
+  get 'studentprojects' => 'pages#studentprojects'
   get 'pricing' => 'pages#pricing'
   get 'cancel' => 'pages#cancel'
   get 'marketplace' => 'pages#marketplace'
   get 'reviewapp' => 'pages#reviewapp'
+  get 'webscraper' => 'pages#webscraper'
+  get 'apiscraper' => 'pages#apiscraper'
 
   root 'pages#home'
 

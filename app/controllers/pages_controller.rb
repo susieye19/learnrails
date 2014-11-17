@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   def dashboard
   end
 
-  def stories
+  def studentprojects
   end
 
   def pricing
@@ -34,6 +34,12 @@ class PagesController < ApplicationController
   end
 
   def reviewapp
+  end
+
+  def webscraper
+  end
+
+  def apiscraper
   end
 
   # Pages for managing user subscriptions
