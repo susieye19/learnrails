@@ -14,8 +14,8 @@ jQuery ->
 
   # Toggle reply to comment form
   $(".reply-link").click ->
-    $(this).next().find('textarea').val('');
-    $(this).next().show()
+    # $(this).next().find('textarea').val('')
+    $(this).next().toggle()
     false
 
   # Create a reply to a comment
@@ -30,15 +30,21 @@ jQuery ->
         .removeAttr('disabled', 'disabled')
         .val('');
       $(xhr.responseText).hide().insertAfter($(this)).show('slow')
-      $(this).hide();
+      $(this).hide()
       
   # Upvote a comment
   $(".upvote")
     .on 'ajax:success', (e, data, status, xhr) ->
-      $(this).html(data.count)
+      $(this).siblings('.vote-count').html(data.count)
+      $(this).hide()
+      $(this).siblings('.unvote').show()
       
   # Undo an upvote
-  # TO DO
+  $(".unvote")
+    .on 'ajax:success', (e, data, status, xhr) ->
+      $(this).siblings('.vote-count').html(data.count)
+      $(this).hide()
+      $(this).siblings('.upvote').show()
 
   # Delete a comment
   $(".close").click ->

@@ -21,27 +21,35 @@
     </span>
   </small>
   <p class="etsycomment"><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
-
-  <% if user_signed_in? %>
   
-    <div class="row">
-      <div class="col-md-1">
-        <!-- Display number of upvotes -->
-        <span class="vote-count">
-          <%= comment.get_upvotes.size %>
-        </span>
+  <div class="row">
+    <div class="col-md-1">
+      <!-- Display number of upvotes -->
+      <span class="vote-count">
+        <%= comment.get_upvotes.size %>
+      </span>
+      
+      <% if user_signed_in? %>
         
         <!-- Display upvote link only if user hasn't already voted and user isn't author -->
         <% if comment.user_id == current_user.id %>
           <!-- User is author -->
         <% elsif current_user.voted_for?(comment) %>
           <!-- User has already voted -->
-          <%= link_to unvote_comment_path(comment.id), method: :put do %>
+          <%= link_to unvote_comment_path(comment.id), method: :put, remote: true, class: "unvote", data: { type: :json } do %>
             <span class="glyphicon glyphicon-chevron-down"></span>
+          <% end %>
+          
+          <%= link_to upvote_comment_path(comment.id), method: :put, remote: true, class: "upvote", style: "display:none", data: { type: :json } do %>
+            <span class="glyphicon glyphicon-chevron-up"></span>
           <% end %>
         <% else %>
           <!-- User is eligible to vote -->
-          <%= link_to upvote_comment_path(comment.id), method: :put, remote: true, data: { type: :json } do %>
+          <%= link_to unvote_comment_path(comment.id), method: :put, remote: true, class: "unvote", style: "display:none", data: { type: :json } do %>
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          <% end %>
+          
+          <%= link_to upvote_comment_path(comment.id), method: :put, remote: true, class: "upvote", data: { type: :json } do %>
             <span class="glyphicon glyphicon-chevron-up"></span>
           <% end %>
         <% end %>    

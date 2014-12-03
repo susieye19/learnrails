@@ -13,7 +13,10 @@ class CommentsController < ApplicationController
   def unvote
     @comment = Comment.find(params[:id])
     @comment.unliked_by current_user
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render json: { count: @comment.votes_for.size } }
+    end
   end
 
   def create
@@ -52,6 +55,9 @@ class CommentsController < ApplicationController
           UserMailer.new_comment(@comment.user.name, @comment.body, request.referrer).deliver
         end
       end
+      
+      # Author automatically upvotes their own comment
+      @comment.upvote_by current_user
 
       render :partial => "comments/comment", locals: { comment: @comment, new_comment: @new_comment },
           layout: false, status: :created
