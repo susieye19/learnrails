@@ -36,13 +36,17 @@
           <!-- User is author -->
         <% elsif current_user.voted_for?(comment) %>
           <!-- User has already voted -->
-          <%= link_to unvote_comment_path(comment.id), method: :put, class: "glyphicon glyphicon-chevron-up" %>
+          <%= link_to unvote_comment_path(comment.id), method: :put do %>
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          <% end %>
         <% else %>
           <!-- User is eligible to vote -->
-          <%= link_to upvote_comment_path(comment.id), method: :put, class: "glyphicon glyphicon-chevron-up", 
-              remote: true, data: { type: :json } %>
+          <%= link_to upvote_comment_path(comment.id), method: :put, remote: true, data: { type: :json } do %>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          <% end %>
         <% end %>    
       </div>
+      
       <div class="col-md-2">
         <div class="reply">
           <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>

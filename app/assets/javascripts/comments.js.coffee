@@ -36,6 +36,9 @@ jQuery ->
   $(".upvote")
     .on 'ajax:success', (e, data, status, xhr) ->
       $(this).html(data.count)
+      
+  # Undo an upvote
+  # TO DO
 
   # Delete a comment
   $(".close").click ->
