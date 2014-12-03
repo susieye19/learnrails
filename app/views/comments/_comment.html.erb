@@ -24,30 +24,36 @@
 
   <% if user_signed_in? %>
   
-    <!-- Display number of upvotes -->
-    <span class="vote-count">
-      <%= comment.get_upvotes.size %>
-    </span>
-    
-    <!-- Display upvote link only if user hasn't already voted and user isn't author -->
-    <% if comment.user_id == current_user.id %>
-      <!-- User is author -->
-    <% elsif current_user.voted_for?(comment) %>
-      <!-- User has already voted -->
-      <%= link_to "-", unvote_comment_path(comment.id), method: :put %>
-    <% else %>
-      <!-- User is eligible to vote -->
-      <%= link_to "+", upvote_comment_path(comment.id), method: :put, class: "vote", 
-          remote: true, data: { type: :json } %>
-    <% end %>    
-    
-    <div class="reply">
-      <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>
+    <div class="row">
+      <div class="col-md-1">
+        <!-- Display number of upvotes -->
+        <span class="vote-count">
+          <%= comment.get_upvotes.size %>
+        </span>
+        
+        <!-- Display upvote link only if user hasn't already voted and user isn't author -->
+        <% if comment.user_id == current_user.id %>
+          <!-- User is author -->
+        <% elsif current_user.voted_for?(comment) %>
+          <!-- User has already voted -->
+          <%= link_to unvote_comment_path(comment.id), method: :put, class: "glyphicon glyphicon-chevron-up" %>
+        <% else %>
+          <!-- User is eligible to vote -->
+          <%= link_to upvote_comment_path(comment.id), method: :put, class: "glyphicon glyphicon-chevron-up", 
+              remote: true, data: { type: :json } %>
+        <% end %>    
+      </div>
+      <div class="col-md-2">
+        <div class="reply">
+          <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>
 
-      <div class="reply-form" style="display:none">
-        <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: comment.id } %>
+          <div class="reply-form" style="display:none">
+            <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: comment.id } %>
+          </div>
+        </div>
       </div>
     </div>
+
   <% end %>
 
   <% if comment.has_children? %>
