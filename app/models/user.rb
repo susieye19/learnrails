@@ -4,7 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :stripe_card_token
+  
+  # Used for the acts_as_votable gem
+  acts_as_voter
 
+  has_many :comments
   has_many :questions, dependent: :destroy
   validates :name, presence: true
   before_destroy :delete_subscription

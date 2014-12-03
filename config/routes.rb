@@ -6,7 +6,13 @@ Learnrails::Application.routes.draw do
   get "/blog" => redirect("/blog/")
 
   resources :videos
-  resources :comments, :only => [:create, :destroy]
+  resources :comments, :only => [:create, :destroy] do
+    member do
+      put "upvote", to: "comments#upvote"
+      put "unvote", to: "comments#unvote"
+    end  
+  end
+  
   resources :coupons, :except => [:show]
 
   resources :courses, only: [:show, :index]

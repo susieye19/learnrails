@@ -1,5 +1,20 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  
+  def upvote
+    @comment = Comment.find(params[:id])
+    @comment.upvote_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render json: { count: @comment.votes_for.size } }
+    end
+  end
+  
+  def unvote
+    @comment = Comment.find(params[:id])
+    @comment.unliked_by current_user
+    redirect_to :back
+  end
 
   def create
     @comment_hash = params[:comment]

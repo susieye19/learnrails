@@ -21,7 +21,26 @@
           <%= link_to 'Post new question', new_question_path %>
         </div>
       </div>
-    </div> 
+    </div>
+    
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <% @moderator_questions.each do |question| %>
+          <div class="question-each">
+            <h4>
+              <%= link_to question do %>
+                <%= question.subject %><br>
+              <% end %>
+            </h4>
+
+            <%= "Posted " %></span> by <span id="name"><%= question.user_name %>
+            <span id="replies"><%= pluralize(Comment.where(commentable_id: question.id).where(commentable_type: "Question").length, 'reply') %></span>
+
+            <br>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">

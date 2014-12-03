@@ -23,6 +23,24 @@
   <p class="etsycomment"><%= h(comment.body).gsub(/\n/, '<br/>').html_safe %></p>
 
   <% if user_signed_in? %>
+  
+    <!-- Display number of upvotes -->
+    <span class="vote-count">
+      <%= comment.get_upvotes.size %>
+    </span>
+    
+    <!-- Display upvote link only if user hasn't already voted and user isn't author -->
+    <% if comment.user_id == current_user.id %>
+      <!-- User is author -->
+    <% elsif current_user.voted_for?(comment) %>
+      <!-- User has already voted -->
+      <%= link_to "-", unvote_comment_path(comment.id), method: :put %>
+    <% else %>
+      <!-- User is eligible to vote -->
+      <%= link_to "+", upvote_comment_path(comment.id), method: :put, class: "vote", 
+          remote: true, data: { type: :json } %>
+    <% end %>    
+    
     <div class="reply">
       <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>
 
@@ -33,7 +51,8 @@
   <% end %>
 
   <% if comment.has_children? %>
-    <%= render(:partial => 'comments/comment', collection: comment.children, as: :comment) %>
+    <%= render(:partial => 'comments/comment', collection: comment.children.order('cached_votes_total DESC, created_at DESC'), 
+        as: :comment) %>
   <% end %>
 
 </div>

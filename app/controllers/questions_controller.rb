@@ -8,13 +8,14 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all.order('created_at DESC').paginate(page: params[:page], per_page: 20)
+    @moderator_questions = Question.where(moderator: true).order('created_at DESC')
+    @questions = Question.where(moderator: false).order('created_at DESC').paginate(page: params[:page], per_page: 20)
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
-    @comments = @question.root_comments.order('created_at DESC')
+    @comments = @question.root_comments.order('cached_votes_total DESC, created_at DESC')
     @new_comment = Comment.build_from(@question, current_user, "")
   end
 
