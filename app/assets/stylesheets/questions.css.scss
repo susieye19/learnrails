@@ -22,14 +22,18 @@
 	.question-each {
 		margin-bottom: 25px;
 	}
-	#time {
-		color: #ff9000;
+	#name {
+		color: #428bca;
 	}
 	#replies {
 		color: #428bca;
 		border: 1px solid #428bca;
 		padding: 0 3px;
 		margin-left: 7px;
+	}
+	#admin {
+		color: #ffae19;
+		font-weight: 600;
 	}
 	.questions {
 		padding-bottom: 7rem;
@@ -39,9 +43,14 @@
 			margin-bottom: 5px;
 			a {
 				color: #2e618d;
-/*				color: #48505e;
-*/				font-size: 20px;
+				font-size: 20px;
 				font-weight: 500;
+			}
+		}
+		.moderator-question {
+			margin-bottom: 25px;
+			a {
+				font-weight: 600;
 			}
 		}
 	}
@@ -134,7 +143,7 @@
 		margin-left: 0px !important;
 	}
 	.response {
-		margin-left: 20px;
+		margin-left: 25px;
 	}
 }
 
