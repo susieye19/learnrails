@@ -2,19 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.col-md-1 {
-	padding: 2px 5px;
-	width: 5%;
-	background-color: #f0f0f0;
-	text-align: center;
-	border-radius: 5px;
-	.glyphicon-chevron-up {
-		font-size: 12px;
-		opacity: 0.75;
-	}
-	.glyphicon-chevron-down {
-		font-size: 12px;
-		color: #bdbdbd;
+.comment-partial {
+	.col-md-1 {
+		padding: 2px 5px;
+		width: 5%;
+		background-color: #f0f0f0;
+		text-align: center;
+		border-radius: 5px;
+		.glyphicon-chevron-up {
+			font-size: 12px;
+			opacity: 0.75;
+		}
+		.glyphicon-chevron-down {
+			font-size: 12px;
+			color: #bdbdbd;
+		}
 	}
 }
 
