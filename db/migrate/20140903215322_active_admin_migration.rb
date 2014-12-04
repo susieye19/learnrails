@@ -4,6 +4,5 @@ class CreateAdminUsers < ActiveRecord::Migration
   
   def self.down
     drop_table :admin_users
-    end
   end
 end
