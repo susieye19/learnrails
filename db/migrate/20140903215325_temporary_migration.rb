@@ -1,4 +1,4 @@
-class CreateActiveAdminComments < ActiveRecord::Migration
+class TemporaryMigration < ActiveRecord::Migration
   def self.up
   end
   

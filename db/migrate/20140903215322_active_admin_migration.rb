@@ -1,4 +1,4 @@
-class CreateAdminUsers < ActiveRecord::Migration
+class ActiveAdminMigration < ActiveRecord::Migration
   def self.up
   end
   
