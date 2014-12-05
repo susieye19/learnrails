@@ -52,10 +52,13 @@
           <%= link_to upvote_comment_path(comment.id), method: :put, remote: true, class: "upvote", data: { type: :json } do %>
             <span class="glyphicon glyphicon-chevron-up"></span>
           <% end %>
-        <% end %>    
-      </div>
-      
-      <div class="col-md-11">
+        <% end %>
+
+      <% end %>
+    </div>
+    
+    <div class="col-md-11">
+      <% if user_signed_in? %>
         <div class="reply">
           <p class="reply-link"><%= link_to "Reply", '#', remote: true %></p>
 
@@ -63,10 +66,9 @@
             <%= render partial: 'comments/form', locals: { comment: @new_comment, parent_id: comment.id } %>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
-
-  <% end %>
+  </div>
 
   <% if comment.has_children? %>
     <%= render(:partial => 'comments/comment', collection: comment.children.order('cached_votes_total DESC, created_at DESC'), 
