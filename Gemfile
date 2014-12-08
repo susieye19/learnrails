@@ -27,6 +27,7 @@ gem 'quiet_assets', :group => :development
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'stripe_event'
 
 group :production do
   gem 'rails_12factor'

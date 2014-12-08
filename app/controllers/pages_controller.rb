@@ -46,9 +46,9 @@ class PagesController < ApplicationController
   def cancel
     @user = current_user
     if @user.cancel_plan
-      redirect_to subscribe_path, notice: "Your current plan has been cancelled"
+      redirect_to subscribe_path, notice: "Subscription cancelled - enjoy access until the end of your billing cycle"
     else
-      redirect_to subscribe_path, notice: "Sorry, we were unable to cancel your plan"
+      redirect_to subscribe_path, notice: "We're having trouble cancelling your plan. Please email alex@baserails.com instead"
     end
   end
 end

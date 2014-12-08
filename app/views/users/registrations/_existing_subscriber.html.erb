@@ -2,11 +2,14 @@
 <% if current_user.plan.present? %>
   <p>Current Subscription: <%= @current_plan.name %></p>
   <p>Current Price: <%= number_to_currency(@current_plan.amount.to_f/100) %></p>
+  <p>Billing Cycle Ends: <%= Time.at(@subscription["current_period_end"]).strftime("%m/%d") %>
 <% else %>
   <p>Current Subscription: None</p>
   <p>Current Price: N/A</p>
 <% end %>
+
 <br>
+
 <p>Billing Information: XXXX-XXXX-XXXX-<%= @card.last4 %></p>
 <p>Expiration: <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
 
