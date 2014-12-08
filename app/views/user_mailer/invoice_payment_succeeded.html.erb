@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @recipient_name %>,</p>
+    
+    <p>This is just a friendly notification that your card was charged <%= number_to_currency(@amount) %>. To see more details or to manage your subscription, just head over to <%= link_to "baserails.com/subscribe", "https://baserails.com/subscribe" %>. And if you have any other billing-related questions, please let us know and we'll be happy to help.</p>
+    
+    <p>Thanks for being a BaseRails subscriber!</p>
+  </body>
+</html>

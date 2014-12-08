@@ -40,9 +40,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         clean_up_passwords resource
         respond_with resource
       end
+      
     else
 
-      if resource.save_with_payment
+      if resource.save && resource.save_with_payment
         # Send new subscription email notification
         UserMailer.new_subscription(resource.name, resource.email, @plan).deliver
 
@@ -60,8 +61,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         clean_up_passwords resource
         respond_with resource
       end
+      
     end
-    
   end
 
   def subscribe
