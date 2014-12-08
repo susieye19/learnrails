@@ -82,10 +82,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_plan
     @user = current_user
     plan = params[:user][:plan]
-    if @user.plan == plan
-      redirect_to subscribe_path, notice: "You're already on that plan!"
-    elsif @user.update_plan(plan)
 
+    if @user.update_plan(plan)
       # Send edit subscription email notification
       UserMailer.edit_subscription(@user.name, @user.email, plan).deliver
 
