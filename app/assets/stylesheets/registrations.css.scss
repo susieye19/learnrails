@@ -1,52 +1,83 @@
+	.panel {
+		border: none;
+		.panel-heading {
+			background-color: #7b8f9d;
+			h2 {
+				color: #fff;
+				font-size: 22px;
+				margin: 10px;
+			}
+		}
+		.panel-footer {
+			background-color: #7b8f9d;
+			border: none;
+			a {
+				color: #fff;
+			}
+		}
+	}
+
 .registrations .subscribe {
 	font-family: 'open sans';
-	.panel-body {
-		padding: 20px 30px;
-	}
-	h2 {
-		font-family: 'open sans';
-	}
-	h3 {
-		font-family: 'open sans';
-	}
-	p {
-		font-size: 20px;
-	}
-	h4 {
-		margin-top: 50px;
-		font-family: 'open sans';
-	}
-	.form-group {
-		margin-top: 40px;
-		font-size: 22px;
-		background-color: whitesmoke;
-		padding: 20px;
+	background-color: #f4f7fc;
+	color: #48505e;
+	.panel {
+		.panel-body {
+			padding: 20px 30px;
+			.current-info {
+				font-weight: 600;
+			}
+		}
+		h2 {
+			text-align: center;
+		}
 		h3 {
-			display: inline-block;
-			font-size: 28px;
-			margin-bottom: 30px;
-			line-height: 0.8;
-		}
-		#jargon {
-			font-size: 15px;
-		}
-		img {
-			vertical-align: 50%;			
-		}
-		#credit {
-			vertical-align: text-bottom;
-		}
-		label {
 			font-family: 'open sans';
-			font-weight: 600;
 		}
-		input {
-			margin-right: 40px;
+		p {
+			font-size: 18px;
+		}
+		h4 {
+			margin-top: 50px;
+			font-family: 'open sans';
+		}
+		.form-group {
+			margin-top: 40px;
+			font-size: 22px;
+			background-color: #f4f7fc;
+			padding: 20px;
+			h3 {
+				display: inline-block;
+				font-size: 28px;
+				margin-bottom: 30px;
+				line-height: 0.8;
+			}
+			#jargon {
+				font-size: 15px;
+			}
+			img {
+				vertical-align: 50%;			
+			}
+			#credit {
+				vertical-align: text-bottom;
+			}
+			label {
+				font-family: 'open sans';
+				font-weight: 600;
+				font-size: 16px;
+			}
+			input {
+				margin-right: 40px;
+			}
 		}
 	}
 }
 
 .registration_new {
+	font-family: 'open sans';
+	background-color: #f4f7fc;
+	color: #48505e;
+	padding-bottom: 50px;
 	h3 {
 		display: inline-block;
 		font-size: 28px;
@@ -70,8 +101,18 @@
 		margin-bottom: 10px;
 	}
 	#stripe_form {
-		background-color: whitesmoke;
+		background-color: #f4f7fc;
 		padding: 15px;
 		border-radius: 5px;
 	}
+}
+
+.sessions {
+	background-color: #f4f7fc;
+	color: #48505e;
+	padding-bottom: 50px;
+}
+
+.edit-profile {
+	background-color: #f4f7fc;
 }

@@ -1,17 +1,17 @@
 <!-- Display current plan info -->
 <% if current_user.plan.present? %>
-  <p>Current Subscription: <%= @current_plan.name %></p>
-  <p>Current Price: <%= number_to_currency(@current_plan.amount.to_f/100) %></p>
-  <p>Billing Cycle Ends: <%= Time.at(@subscription["current_period_end"]).strftime("%m/%d") %>
+  <p><span class="current-info">Current Subscription:</span> <%= @current_plan.name %></p>
+  <p><span class="current-info">Current Price:</span> <%= number_to_currency(@current_plan.amount.to_f/100) %></p>
+  <p><span class="current-info">Billing Cycle Ends:</span> <%= Time.at(@subscription["current_period_end"]).strftime("%m/%d") %>
 <% else %>
-  <p>Current Subscription: None</p>
-  <p>Current Price: N/A</p>
+  <p><span class="current-info">Current Subscription:</span> None</p>
+  <p><span class="current-info">Current Price:</span> N/A</p>
 <% end %>
 
 <br>
 
-<p>Billing Information: XXXX-XXXX-XXXX-<%= @card.last4 %></p>
-<p>Expiration: <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
+<p><span class="current-info">Billing Information:</span> XXXX-XXXX-XXXX-<%= @card.last4 %></p>
+<p><span class="current-info">Expiration:</span> <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
 
 <%= form_for(:user, :url => { :action => :update_plan }, :html => {id: "plan_form", :method => :put}) do |f| %>
   <div id="plan_error" class="alert alert-danger alert-dismissable" style="display:none">
