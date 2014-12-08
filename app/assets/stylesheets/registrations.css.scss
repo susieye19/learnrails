@@ -1,3 +1,9 @@
+
+
+.registrations .subscribe {
+	font-family: 'open sans';
+	background-color: #f4f7fc;
+	color: #48505e;
 	.panel {
 		border: none;
 		.panel-heading {
@@ -15,13 +21,6 @@
 				color: #fff;
 			}
 		}
-	}
-
-.registrations .subscribe {
-	font-family: 'open sans';
-	background-color: #f4f7fc;
-	color: #48505e;
-	.panel {
 		.panel-body {
 			padding: 20px 30px;
 			.current-info {
@@ -78,6 +77,24 @@
 	background-color: #f4f7fc;
 	color: #48505e;
 	padding-bottom: 50px;
+	.panel {
+		border: none;
+		.panel-heading {
+			background-color: #7b8f9d;
+			h2 {
+				color: #fff;
+				font-size: 22px;
+				margin: 10px;
+			}
+		}
+		.panel-footer {
+			background-color: #7b8f9d;
+			border: none;
+			a {
+				color: #fff;
+			}
+		}
+	}
 	h3 {
 		display: inline-block;
 		font-size: 28px;
@@ -111,8 +128,44 @@
 	background-color: #f4f7fc;
 	color: #48505e;
 	padding-bottom: 50px;
+	.panel {
+		border: none;
+		.panel-heading {
+			background-color: #7b8f9d;
+			h2 {
+				color: #fff;
+				font-size: 22px;
+				margin: 10px;
+			}
+		}
+		.panel-footer {
+			background-color: #7b8f9d;
+			border: none;
+			a {
+				color: #fff;
+			}
+		}
+	}
 }
 
 .edit-profile {
 	background-color: #f4f7fc;
+	.panel {
+		border: none;
+		.panel-heading {
+			background-color: #7b8f9d;
+			h2 {
+				color: #fff;
+				font-size: 22px;
+				margin: 10px;
+			}
+		}
+		.panel-footer {
+			background-color: #7b8f9d;
+			border: none;
+			a {
+				color: #fff;
+			}
+		}
+	}
 }
