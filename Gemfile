@@ -16,7 +16,6 @@ gem 'figaro'
 gem 'stripe'#, :git => 'https://github.com/stripe/stripe-ruby'
 gem 'jquery-turbolinks'
 gem 'aws-sdk', '~> 1.0'
-gem 'newrelic_rpm'
 gem 'friendly_id', '~> 5.0.0'
 gem 'coderay'
 gem 'RedCloth'
@@ -28,6 +27,7 @@ gem 'quiet_assets', :group => :development
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'stripe_event'
 
 group :production do
   gem 'rails_12factor'

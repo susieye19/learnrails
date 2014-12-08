@@ -121,8 +121,7 @@
                     <%= puts @user.stripe_card_token.inspect %>
                     <p>Credit card has already been provided.</p>
                   <% else %>
-    <!--                 <h3> Payment Info </h3><br/>
-     -->
+  
                     <div class="row">
                       <%= image_tag "https://dl.dropboxusercontent.com/s/qq57gvp6m3qfjra/lock.png" %>
                       <h3>Secure credit card payment<br>
@@ -167,34 +166,6 @@
                 </div>
 
                 <br>
-
-                <% if false %>
-                  <div class="form-group">
-                    <div id="coupon_success" class="alert alert-success alert-dismissable" style="display:none">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-                    </div>
-
-                    <div id="coupon_error" class="alert alert-danger alert-dismissable" style="display:none">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="input-group">
-                          <%= f.text_field :coupon, { placeholder: "Coupon (optional)", class: "form-control input-sm" } %>
-                          <span class="input-group-btn">
-                            <%= button_tag "Verify", { id: "verify_coupon", class: "btn btn-default btn-sm",
-                                data: { coupons: Coupon.all } } %>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <br>
-                <% end %>
 
                 <div class="form-group">
                   <div class="row">

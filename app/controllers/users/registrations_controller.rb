@@ -61,34 +61,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
         respond_with resource
       end
     end
-
-    # if resource.save_with_payment
-
-    #   yield resource if block_given?
-    #   if resource.active_for_authentication?
-    #     set_flash_message :notice, :signed_up if is_flashing_format?
-    #     sign_up(resource_name, resource)
-    #     respond_with resource, :location => after_sign_up_path_for(resource)
-    #   else
-    #     set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
-    #     expire_data_after_sign_in!
-    #     respond_with resource, :location => after_inactive_sign_up_path_for(resource)
-    #   end
-    # else
-    #   clean_up_passwords resource
-    #   respond_with resource
-    # end
+    
   end
 
   def subscribe
     if current_user.customer_id
       Stripe.api_key = ENV["STRIPE_API_KEY"]
-      if current_user.plan
-        @current_plan = Stripe::Plan.retrieve(current_user.plan)
-      end
-
+      
       @current_customer = Stripe::Customer.retrieve(current_user.customer_id)
       @card = @current_customer.cards.retrieve(@current_customer.cards.data[0]['id'])
+      
+      if current_user.plan
+        @current_plan = Stripe::Plan.retrieve(current_user.plan)
+        @subscription = @current_customer.subscriptions.try(:first)
+      end
     end
   end
 
@@ -154,7 +140,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :stripe_card_token
     devise_parameter_sanitizer.for(:sign_up) << :name
-    # devise_parameter_sanitizer.for(:sign_up) << :coupon
     devise_parameter_sanitizer.for(:sign_up) << :plan
     devise_parameter_sanitizer.for(:account_update) << :name
     devise_parameter_sanitizer.for(:account_update) << :stripe_card_token

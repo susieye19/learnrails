@@ -2,9 +2,7 @@ Learnrails::Application.routes.draw do
 
   resources :charges
   resources :questions
-
-  get "/blog" => redirect("/blog/")
-
+  resources :coupons, :except => [:show]
   resources :videos
   resources :comments, :only => [:create, :destroy] do
     member do
@@ -12,13 +10,14 @@ Learnrails::Application.routes.draw do
       put "unvote", to: "comments#unvote"
     end  
   end
-  
-  resources :coupons, :except => [:show]
-
   resources :courses, only: [:show, :index]
   resources :courses, only: [] do
     resources :chapters, path: '', except: [:index]
   end
+  
+  get "/blog" => redirect("/blog/")
+  
+  mount StripeEvent::Engine => '/stripe-webhooks'
 
   devise_for :users, :controllers => { :registrations => 'users/registrations'}
   devise_scope :user do

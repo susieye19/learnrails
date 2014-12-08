@@ -90,13 +90,13 @@ class User < ActiveRecord::Base
   def cancel_plan
     unless plan.blank?
       customer = Stripe::Customer.retrieve(customer_id)
-      subscription = customer.subscriptions.first.delete()
+      subscription = customer.subscriptions.first.try(:delete, at_period_end: true)
+      
+      # Send confirmation email to user
+      UserMailer.subscription_cancelled(email, name).deliver
 
-      # Send unsubscribe email notification
+      # Send Susie email notification
       UserMailer.unsubscribe(name, email, plan).deliver
-
-      self.plan = nil
-      self.save
     end
   end
 
@@ -108,44 +108,4 @@ private
       subscription = customer.subscriptions.first.delete()
     end
   end
-
-  #   if valid?
-  #     Stripe.api_key = ENV["STRIPE_API_KEY"]
-  #     token = stripe_card_token
-
-  #     if coupon.blank?
-  #       amount = 14900
-  #       self.extra_access = true
-  #     else
-  #       Coupon.all.each do |c|
-  #         if coupon.upcase == c.code.upcase
-  #           amount = c.price
-  #           self.extra_access = c.extra_access
-  #         end
-  #       end
-  #     end
-
-  #     if amount > 0
-  #       charge = Stripe::Charge.create(
-  #         :amount => amount,
-  #         :currency => "usd",
-  #         :card => token,
-  #         :description => "Charge for #{email}"
-  #       )
-  #     end
-
-  #     self.amount = amount/100.0
-  #     save!
-  #   end
-  # rescue Stripe::CardError => e
-  #   errors.add :base, "There was a problem with your credit card."
-  #   self.stripe_card_token = nil
-  #   self.coupon = nil
-  #   false
-  # rescue Stripe::InvalidRequestError => e
-  #   errors.add :base, "#{e.message}"
-  #   self.stripe_card_token = nil
-  #   self.coupon = nil
-  #   false
-  # end
 end

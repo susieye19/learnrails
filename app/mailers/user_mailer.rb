@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   default from: "BaseRails <alex@baserails.com>"
 
   # USER NOTIFICATIONS
-  # Notification email sent when someone replies to a user's comment
+  # Someone replies to a user's comment
   def comment_reply_notification(recipient_email, recipient_name, commenter_name, body, url)
     email_with_name = "#{recipient_name} <#{recipient_email}>"
     @recipient_name = recipient_name
@@ -12,7 +12,34 @@ class UserMailer < ActionMailer::Base
 
     mail to: email_with_name, subject: "#{commenter_name} replied to your comment on BaseRails"
   end
-
+  
+  # Invoice payment failed
+  def invoice_payment_failed(recipient_email, recipient_name)
+    @recipient_name = recipient_name
+    
+    # Email user
+    email_with_name = "#{recipient_name} <#{recipient_email}>"
+    mail to: email_with_name, subject: "BaseRails payment failed"
+    
+    # Email Susie
+    mail to: "Susie Ye <susie@baserails.com>", subject: "Automatic unsubscribe: #{recipient_email}"
+  end
+  
+  # Access ended
+  def access_ended(recipient_email, recipient_name)
+    @recipient_name = recipient_name
+    email_with_name = "#{recipient_name} <#{recipient_email}>"
+    mail to: email_with_name, subject: "Your BaseRails access has ended"
+  end
+  
+  # Subscription cancelled
+  def subscription_cancelled(recipient_email, recipient_name)
+    @recipient_name = recipient_name
+    email_with_name = "#{recipient_name} <#{recipient_email}>"
+    mail to: email_with_name, subject: "BaseRails subscription cancelled"
+  end
+  
+  
 
   # ALEX NOTIFICATIONS
   # New comment is posted
@@ -55,6 +82,7 @@ class UserMailer < ActionMailer::Base
     mail to: "Susie Ye <susie@baserails.com>", subject: "#{plan.capitalize} User: #{email}"
   end
 
+  # Free user converts to paid subscription
   def convert_to_paid(user_name, email, plan)
     @user_name = user_name
     @email = email
@@ -63,6 +91,7 @@ class UserMailer < ActionMailer::Base
     mail to: "Susie Ye <susie@baserails.com>", subject: "Convert to #{plan}: #{email}"
   end
 
+  # User manually changes subscription plan
   def edit_subscription(user_name, email, plan)
     @user_name = user_name
     @email = email
@@ -71,7 +100,7 @@ class UserMailer < ActionMailer::Base
     mail to: "Susie Ye <susie@baserails.com>", subject: "Subscription changed to #{plan}"
   end
 
-  # Notification when an existing paid membership is cancelled
+  # User manually cancelled subscription
   def unsubscribe(user_name, email, plan)
     @user_name = user_name
     @plan = plan
