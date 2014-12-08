@@ -45,23 +45,22 @@ class User < ActiveRecord::Base
   end
 
   def update_plan(plan)
-    unless self.plan == plan # Do nothing if new plan is same as existing one
-      customer = Stripe::Customer.retrieve(customer_id)
+    customer = Stripe::Customer.retrieve(customer_id)
 
-      # Add a new plan if one doesn't exist
-      if customer.subscriptions['total_count'] == 0
-        customer.subscriptions.create(plan: plan)
+    # Add a new plan if one doesn't exist
+    if customer.subscriptions['total_count'] == 0
+      customer.subscriptions.create(plan: plan)
 
-      # Otherwise, update the existing plan
-      else
-        subscription = customer.subscriptions.first
-        subscription.plan = plan
-        subscription.save
-      end
-
-      self.plan = plan
-      self.save
+    # Otherwise, update the existing plan
+    else
+      subscription = customer.subscriptions.first
+      subscription.plan = plan
+      subscription.save
     end
+
+    self.plan = plan
+    self.save
+    
   rescue Stripe::StripeError => e
     puts e.message
     errors.add :base, "We couldn't update your subscription. #{e.message}"

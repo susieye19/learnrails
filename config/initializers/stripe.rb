@@ -6,6 +6,14 @@ Rails.configuration.stripe = {
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
 StripeEvent.configure do |events|
+  events.subscribe 'invoice.payment_succeeded' do |event|
+    customer_id = event.data.object["customer"]
+    amount = event.data.object["amount_due"]/100
+    
+    user = User.find_by(customer_id: customer_id)
+    UserMailer.invoice_payment_succeeded(user.email, user.name, amount).deliver
+  end
+  
   events.subscribe 'invoice.payment_failed' do |event|
     customer_id = event.data.object["customer"]
     
@@ -28,7 +36,7 @@ StripeEvent.configure do |events|
     user.plan = nil
     user.save
     
-    # Send Access Revoked email notification
+    # Send email notification to user
     UserMailer.access_ended(user.email, user.name).deliver
   end
 end

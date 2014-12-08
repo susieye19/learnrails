@@ -13,6 +13,16 @@ class UserMailer < ActionMailer::Base
     mail to: email_with_name, subject: "#{commenter_name} replied to your comment on BaseRails"
   end
   
+  # Invoice payment succeeded
+  def invoice_payment_succeeded(recipient_email, recipient_name, amount)
+    @recipient_name = recipient_name
+    @amount = amount
+    
+    # Email user
+    email_with_name = "#{recipient_name} <#{recipient_email}>"
+    mail to: email_with_name, subject: "BaseRails payment notification"
+  end
+  
   # Invoice payment failed
   def invoice_payment_failed(recipient_email, recipient_name)
     @recipient_name = recipient_name
