@@ -42,7 +42,11 @@ subscription =
       $('#card_error').hide()
       Stripe.card.createToken($('#card_form'), subscription.handleCardResponse)
       false
-      
+
+    # Click unsubscribe button for existing subscribers
+    $('#unsubscribe_form').submit ->
+      $('input[type=submit]').attr('disabled', true)
+
 
   handleStripeResponse: (status, response) ->
     if status == 200

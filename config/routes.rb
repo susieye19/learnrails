@@ -23,10 +23,10 @@ Learnrails::Application.routes.draw do
   devise_scope :user do
     # get 'signup/free', to: 'users/registrations#new_free'
     get 'subscribe', to: 'users/registrations#subscribe'
-    # get 'cancel_plan', to: 'users/registrations#cancel'
     put 'update_plan', to: 'users/registrations#update_plan'
     put 'update_card', to: 'users/registrations#update_card'
     put 'update_both', to: 'users/registrations#update_both'
+    put 'cancel_plan', to: 'users/registrations#cancel_plan'
   end
 
   get 'faq' => 'pages#faq'
@@ -38,7 +38,6 @@ Learnrails::Application.routes.draw do
   get 'dashboard' => 'pages#dashboard'
   get 'studentprojects' => 'pages#studentprojects'
   get 'pricing' => 'pages#pricing'
-  get 'cancel' => 'pages#cancel'
   get 'marketplace' => 'pages#marketplace'
   get 'reviewapp' => 'pages#reviewapp'
   get 'webscraper' => 'pages#webscraper'

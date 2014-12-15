@@ -118,6 +118,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to subscribe_path, notice: "There was a problem with your card information. Please try again."
     end
   end
+  
+  def cancel_plan
+    @user = current_user
+    if @user.cancel_plan
+      redirect_to subscribe_path, notice: "Subscription cancelled - enjoy access until the end of your billing cycle"
+    else
+      redirect_to subscribe_path, notice: "We're having trouble cancelling your plan. Please email alex@baserails.com instead"
+    end
+  end
 
   protected
 

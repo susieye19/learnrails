@@ -98,12 +98,17 @@
 <% end %>
 
 <% if current_user.plan.present? %>
-  <h4>Unhappy?</h4>
-
-  <p>
-    <%= link_to "Cancel subscription", cancel_path, :data => { :confirm => "Are you sure?" },
-        class: "btn btn-danger", id: "unsubscribe-link" %>
-  </p>
+  
+  <%= form_for(:user, :url => { :action => :cancel_plan }, :html => {id: "unsubscribe_form", :method => :put}) do |f| %>
+    <div id="plan_error" class="alert alert-danger alert-dismissable" style="display:none">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+    </div>
+    
+    <h4>Unhappy?</h4>
+    
+    <%= f.submit "Cancel subscription", class: "btn btn-danger" %>
+  <% end %>
 <% end %>
 
 <script>

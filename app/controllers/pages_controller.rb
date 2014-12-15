@@ -41,14 +41,4 @@ class PagesController < ApplicationController
 
   def apiscraper
   end
-
-  # Pages for managing user subscriptions
-  def cancel
-    @user = current_user
-    if @user.cancel_plan
-      redirect_to subscribe_path, notice: "Subscription cancelled - enjoy access until the end of your billing cycle"
-    else
-      redirect_to subscribe_path, notice: "We're having trouble cancelling your plan. Please email alex@baserails.com instead"
-    end
-  end
 end
