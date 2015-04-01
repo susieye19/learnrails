@@ -42,8 +42,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
       
     else
-
-      if resource.save && resource.save_with_payment
+      if resource.save_with_payment
         # Send new subscription email notification
         UserMailer.new_subscription(resource.name, resource.email, @plan).deliver
 
@@ -70,7 +69,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       Stripe.api_key = ENV["STRIPE_API_KEY"]
       
       @current_customer = Stripe::Customer.retrieve(current_user.customer_id)
-      @card = @current_customer.cards.retrieve(@current_customer.cards.data[0]['id'])
+      
+      if @current_customer.cards.count > 0
+        @card = @current_customer.cards.retrieve(@current_customer.cards.data[0]['id'])
+      end
       
       if current_user.plan
         @current_plan = Stripe::Plan.retrieve(current_user.plan)

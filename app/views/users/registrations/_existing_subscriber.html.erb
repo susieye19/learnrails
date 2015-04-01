@@ -10,8 +10,13 @@
 
 <br>
 
-<p><span class="current-info">Billing Information:</span> XXXX-XXXX-XXXX-<%= @card.last4 %></p>
-<p><span class="current-info">Expiration:</span> <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
+<% if @card.nil? %>
+  <p><span class="current-info">Card Info:</span> No cards on file</p>
+<% else %>
+  <p><span class="current-info">Billing Information:</span> XXXX-XXXX-XXXX-<%= @card.last4 %></p>
+  <p><span class="current-info">Expiration:</span> <%= "#{@card.exp_month}/#{@card.exp_year}" %></p>
+<% end %>
+
 
 <%= form_for(:user, :url => { :action => :update_plan }, :html => {id: "plan_form", :method => :put}) do |f| %>
   <div id="plan_error" class="alert alert-danger alert-dismissable" style="display:none">

@@ -14,34 +14,36 @@ class User < ActiveRecord::Base
   before_destroy :delete_subscription
 
   def save_with_payment
-    if customer_id.nil?
-      # Create new Stripe customer
-      customer = Stripe::Customer.create(
-        email: email,
-        description: name,
-        card: stripe_card_token,
-        plan: plan
-      )
-    else
-      # Update Stripe customer info
-      customer = Stripe::Customer.retrieve(customer_id)
-      if stripe_card_token.present?
-        customer.card = stripe_card_token
+    begin
+      if customer_id.nil?
+        # Create new Stripe customer
+        customer = Stripe::Customer.create(
+          email: email,
+          description: name,
+          card: stripe_card_token,
+          plan: plan
+        )
+      else
+        # Update Stripe customer info
+        customer = Stripe::Customer.retrieve(customer_id)
+        if stripe_card_token.present?
+          customer.card = stripe_card_token
+        end
+        customer.email = email
+        customer.description = name
+        customer.save
       end
-      customer.email = email
-      customer.description = name
-      customer.save
-    end
 
-    # Save Stripe information to User database
-    self.customer_id = customer.id
-    self.last_4_digits = customer.cards.retrieve(customer.default_card).last4
-    self.stripe_card_token = nil
-    self.save
-  rescue Stripe::StripeError => e
-    errors.add :base, "#{e.message}"
-    self.stripe_card_token = nil
-    false
+      # Save Stripe information to User database
+      self.customer_id = customer.id
+      self.last_4_digits = customer.cards.retrieve(customer.default_card).last4
+      self.stripe_card_token = nil
+      self.save
+    rescue Stripe::StripeError => e
+      errors.add :base, "#{e.message}"
+      self.stripe_card_token = nil
+      false
+    end
   end
 
   def update_plan(plan)
@@ -70,10 +72,12 @@ class User < ActiveRecord::Base
   def update_card(token)
     # Retrieve customer info from Stripe
     customer = Stripe::Customer.retrieve(customer_id)
-    existing_card = customer.cards.retrieve(customer.default_card)
     
-    # Delete original card
-    customer.cards.retrieve(existing_card.id).delete
+    if customer.cards.count > 0
+      # Retrieve existing default card and delete it
+      existing_card = customer.cards.retrieve(customer.default_card)
+      customer.cards.retrieve(existing_card.id).delete
+    end
     
     # Add new card and set as default
     new_card = customer.cards.create(card: token)
