@@ -2,6 +2,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
   before_action :set_plan, only: [:new, :create]
   before_action :authenticate_user!, except: [:new, :create]
+  before_action :check_permission, only: [:subscribe]
 
   def new
     if @plan
@@ -43,6 +44,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
       
     else
       if resource.save_with_payment
+        
+        puts resource.coupon
+        
+        # Remove coupon from database
+        if resource.coupon.present?
+          @coupon = Coupon.find_by(code: resource.coupon)
+          @coupon.destroy
+          puts "Coupon should have been destroyed"
+        end
+        
         # Send new subscription email notification
         UserMailer.new_subscription(resource.name, resource.email, @plan).deliver
 
@@ -64,7 +75,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def subscribe
+  def subscribe    
     if current_user.customer_id
       Stripe.api_key = ENV["STRIPE_API_KEY"]
       
@@ -142,6 +153,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def set_plan
     @plan = params[:plan] || params[:user].try(:[], :plan)
   end
+  
+  def check_permission
+    if current_user.plan == "stacksocial"
+      redirect_to root_path, notice: "You don't have permission to visit that page"
+    end
+  end
 
   def after_sign_up_path_for(resource)
     thanks_path
@@ -151,6 +168,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:sign_up) << :stripe_card_token
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :plan
+    devise_parameter_sanitizer.for(:sign_up) << :coupon
     devise_parameter_sanitizer.for(:account_update) << :name
     devise_parameter_sanitizer.for(:account_update) << :stripe_card_token
     devise_parameter_sanitizer.for(:account_update) << :plan

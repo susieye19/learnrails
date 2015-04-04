@@ -166,6 +166,33 @@
                 </div>
 
                 <br>
+                
+                <div class="form-group">
+                  <div id="coupon_success" class="alert alert-success alert-dismissable" style="display:none">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+                  </div>
+                  
+                  <div id="coupon_error" class="alert alert-danger alert-dismissable" style="display:none">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="input-group">
+                        <%= f.text_field :coupon, { placeholder: "Promo code (optional)", 
+                                                    class: "form-control input-sm" } %>
+                        <span class="input-group-btn">
+                          <%#= button_tag "Verify", { id: "verify_coupon", class: "btn btn-default btn-sm",
+                              type: "button", data: { coupons: Coupon.all } } %>
+                          <%= button_tag "Verify", { id: "verify_coupon", class: "btn btn-default btn-sm",
+                              type: "button", :'data-validate' => '/coupons/check' } %>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="form-group">
                   <div class="row">

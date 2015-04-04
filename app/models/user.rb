@@ -16,13 +16,31 @@ class User < ActiveRecord::Base
   def save_with_payment
     begin
       if customer_id.nil?
-        # Create new Stripe customer
-        customer = Stripe::Customer.create(
-          email: email,
-          description: name,
-          card: stripe_card_token,
-          plan: plan
-        )
+        
+        # Check coupon validity, set to false by default
+        validity = false
+        if coupon.present?
+          Coupon.all.each do |c|
+            if coupon == c.code
+              @coupon = c
+              validity = true
+            end
+          end
+        end
+        
+        if validity == false # If no/invalid coupon, sign up for a Stripe subscription as usual
+          # Create new Stripe customer
+          customer = Stripe::Customer.create(
+            email: email,
+            description: name,
+            card: stripe_card_token,
+            plan: plan
+          )
+        else # If valid coupon present, save user and delete coupon code from database
+          self.stripe_card_token = nil
+          self.plan = "stacksocial"
+          return self.save
+        end
       else
         # Update Stripe customer info
         customer = Stripe::Customer.retrieve(customer_id)
@@ -91,7 +109,7 @@ class User < ActiveRecord::Base
     
 
   def cancel_plan
-    unless plan.blank?
+    unless plan.blank? || (plan == "stacksocial")
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first.try(:delete, at_period_end: true)
       
@@ -106,7 +124,7 @@ class User < ActiveRecord::Base
 private
 
   def delete_subscription
-    if self.plan.present?
+    if self.plan.present? && (self.plan != "stacksocial")
       customer = Stripe::Customer.retrieve(customer_id)
       subscription = customer.subscriptions.first.delete()
     end

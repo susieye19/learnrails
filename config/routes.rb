@@ -2,7 +2,11 @@ Learnrails::Application.routes.draw do
 
   resources :charges
   resources :questions
-  resources :coupons, :except => [:show]
+  resources :coupons, :except => [:show] do
+    collection do
+      get 'check'
+    end
+  end
   resources :videos
   resources :comments, :only => [:create, :destroy] do
     member do

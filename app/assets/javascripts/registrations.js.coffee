@@ -5,6 +5,26 @@ $(".registrations").ready ->
 
 subscription =
   setupForm: ->
+    $('#verify_coupon').click ->
+      $('#coupon_success').hide()
+      $('#coupon_error').hide()
+      
+      $.ajax
+        url: '/coupons/check'
+        type: 'GET'
+        dataType: 'json'
+        data: coupon: $('#user_coupon').val()
+        success: (data, status, xhr) ->
+          if data
+            $('#stripe_error').hide()
+            $('#stripe_form').hide()
+            $('#coupon_error').hide()
+            $('#coupon_success').text("Looks like you already paid via StackSocial. Enjoy your 2-year subscription!").show()
+          else
+            $('#stripe_form').show()
+            $('#coupon_success').hide()
+            $('#coupon_error').text("Sorry, the promo code you entered isn't valid").show()
+    
     # Submission of payment form
     $('#payment_form').submit ->
       $('input[type=submit]').attr('disabled', true)

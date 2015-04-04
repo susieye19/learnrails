@@ -1,6 +1,12 @@
 class CouponsController < ApplicationController
   before_action :set_coupon, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin
+  before_action :require_admin, except: [:check]
+
+  def check    
+    respond_to do |format|
+      format.json { render json: Coupon.where(code: params[:coupon]).present?}
+    end
+  end
 
   # GET /coupons
   # GET /coupons.json
